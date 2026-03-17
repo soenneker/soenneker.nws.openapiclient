@@ -199,7 +199,7 @@ namespace Soenneker.Nws.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Nws.OpenApiClient.Models.NWSZoneType>("type", ZoneType);
         }
         /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Nws.OpenApiClient.Models.StateTerritoryCode"/>, <see cref="string"/>
+        /// Composed type wrapper for classes <see cref="global::Soenneker.Nws.OpenApiClient.Models.StateTerritoryCode"/>, <see cref="global::Soenneker.Nws.OpenApiClient.Models.Zone_stateMember1"/>, <see cref="string"/>
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Zone_state : IComposedTypeWrapper, IParsable
@@ -213,6 +213,14 @@ namespace Soenneker.Nws.OpenApiClient.Models
 #nullable restore
 #else
             public string String { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Nws.OpenApiClient.Models.Zone_stateMember1"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.Nws.OpenApiClient.Models.Zone_stateMember1? ZoneStateMember1 { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.Nws.OpenApiClient.Models.Zone_stateMember1 ZoneStateMember1 { get; set; }
 #endif
             /// <summary>
             /// Creates a new instance of the appropriate class based on discriminator value
@@ -228,6 +236,10 @@ namespace Soenneker.Nws.OpenApiClient.Models
                 {
                     result.StateTerritoryCode = stateTerritoryCodeValue;
                 }
+                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.ZoneStateMember1 = new global::Soenneker.Nws.OpenApiClient.Models.Zone_stateMember1();
+                }
                 else if(parseNode.GetStringValue() is string stringValue)
                 {
                     result.String = stringValue;
@@ -240,6 +252,10 @@ namespace Soenneker.Nws.OpenApiClient.Models
             /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
             public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
             {
+                if(ZoneStateMember1 != null)
+                {
+                    return ZoneStateMember1.GetFieldDeserializers();
+                }
                 return new Dictionary<string, Action<IParseNode>>();
             }
             /// <summary>
@@ -252,6 +268,10 @@ namespace Soenneker.Nws.OpenApiClient.Models
                 if(StateTerritoryCode != null)
                 {
                     writer.WriteEnumValue<global::Soenneker.Nws.OpenApiClient.Models.StateTerritoryCode>(null, StateTerritoryCode);
+                }
+                else if(ZoneStateMember1 != null)
+                {
+                    writer.WriteObjectValue<global::Soenneker.Nws.OpenApiClient.Models.Zone_stateMember1>(null, ZoneStateMember1);
                 }
                 else if(String != null)
                 {

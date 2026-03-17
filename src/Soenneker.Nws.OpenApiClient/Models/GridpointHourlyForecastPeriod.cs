@@ -21,7 +21,7 @@ namespace Soenneker.Nws.OpenApiClient.Models
 #else
         public string DetailedForecast { get; set; }
 #endif
-        /// <summary>A structured value representing a measurement and its unit of measure. This object is a slightly modified version of the schema.org definition at https://schema.org/QuantitativeValue</summary>
+        /// <summary>Dewpoint. Only provided in hourly forecasts.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue? Dewpoint { get; set; }
@@ -52,7 +52,7 @@ namespace Soenneker.Nws.OpenApiClient.Models
 #endif
         /// <summary>Sequential period number.</summary>
         public int? Number { get; set; }
-        /// <summary>A structured value representing a measurement and its unit of measure. This object is a slightly modified version of the schema.org definition at https://schema.org/QuantitativeValue</summary>
+        /// <summary>Probability of precipitation for the period.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue? ProbabilityOfPrecipitation { get; set; }
@@ -60,7 +60,7 @@ namespace Soenneker.Nws.OpenApiClient.Models
 #else
         public global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue ProbabilityOfPrecipitation { get; set; }
 #endif
-        /// <summary>A structured value representing a measurement and its unit of measure. This object is a slightly modified version of the schema.org definition at https://schema.org/QuantitativeValue</summary>
+        /// <summary>Relative humidity. Only provided in hourly forecasts.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue? RelativeHumidity { get; set; }
@@ -237,11 +237,19 @@ namespace Soenneker.Nws.OpenApiClient.Models
             }
         }
         /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue"/>, <see cref="string"/>
+        /// Composed type wrapper for classes <see cref="global::Soenneker.Nws.OpenApiClient.Models.GridpointHourlyForecastPeriod_windGustMember1"/>, <see cref="global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue"/>, <see cref="string"/>
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class GridpointHourlyForecastPeriod_windGust : IComposedTypeWrapper, IParsable
         {
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Nws.OpenApiClient.Models.GridpointHourlyForecastPeriod_windGustMember1"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.Nws.OpenApiClient.Models.GridpointHourlyForecastPeriod_windGustMember1? GridpointHourlyForecastPeriodWindGustMember1 { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.Nws.OpenApiClient.Models.GridpointHourlyForecastPeriod_windGustMember1 GridpointHourlyForecastPeriodWindGustMember1 { get; set; }
+#endif
             /// <summary>Composed type representation for type <see cref="global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -268,7 +276,11 @@ namespace Soenneker.Nws.OpenApiClient.Models
                 if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
                 var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
                 var result = new global::Soenneker.Nws.OpenApiClient.Models.GridpointHourlyForecastPeriod.GridpointHourlyForecastPeriod_windGust();
-                if("QuantitativeValue".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.GridpointHourlyForecastPeriodWindGustMember1 = new global::Soenneker.Nws.OpenApiClient.Models.GridpointHourlyForecastPeriod_windGustMember1();
+                }
+                else if("QuantitativeValue".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
                     result.QuantitativeValue = new global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue();
                 }
@@ -284,7 +296,11 @@ namespace Soenneker.Nws.OpenApiClient.Models
             /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
             public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
             {
-                if(QuantitativeValue != null)
+                if(GridpointHourlyForecastPeriodWindGustMember1 != null)
+                {
+                    return GridpointHourlyForecastPeriodWindGustMember1.GetFieldDeserializers();
+                }
+                else if(QuantitativeValue != null)
                 {
                     return QuantitativeValue.GetFieldDeserializers();
                 }
@@ -297,7 +313,11 @@ namespace Soenneker.Nws.OpenApiClient.Models
             public virtual void Serialize(ISerializationWriter writer)
             {
                 if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(QuantitativeValue != null)
+                if(GridpointHourlyForecastPeriodWindGustMember1 != null)
+                {
+                    writer.WriteObjectValue<global::Soenneker.Nws.OpenApiClient.Models.GridpointHourlyForecastPeriod_windGustMember1>(null, GridpointHourlyForecastPeriodWindGustMember1);
+                }
+                else if(QuantitativeValue != null)
                 {
                     writer.WriteObjectValue<global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue>(null, QuantitativeValue);
                 }

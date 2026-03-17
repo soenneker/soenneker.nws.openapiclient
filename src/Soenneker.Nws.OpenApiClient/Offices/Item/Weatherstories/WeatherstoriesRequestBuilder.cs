@@ -4,67 +4,55 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Nws.OpenApiClient.Models;
-using Soenneker.Nws.OpenApiClient.Offices.Item.Briefing;
-using Soenneker.Nws.OpenApiClient.Offices.Item.Headlines;
-using Soenneker.Nws.OpenApiClient.Offices.Item.Weatherstories;
+using Soenneker.Nws.OpenApiClient.Offices.Item.Weatherstories.Download;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Soenneker.Nws.OpenApiClient.Offices.Item
+namespace Soenneker.Nws.OpenApiClient.Offices.Item.Weatherstories
 {
     /// <summary>
-    /// Builds and executes requests for operations under \offices\{officeId}
+    /// Builds and executes requests for operations under \offices\{officeId}\weatherstories
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class WithOfficeItemRequestBuilder : BaseRequestBuilder
+    public partial class WeatherstoriesRequestBuilder : BaseRequestBuilder
     {
-        /// <summary>The briefing property</summary>
-        public global::Soenneker.Nws.OpenApiClient.Offices.Item.Briefing.BriefingRequestBuilder Briefing
+        /// <summary>The download property</summary>
+        public global::Soenneker.Nws.OpenApiClient.Offices.Item.Weatherstories.Download.DownloadRequestBuilder Download
         {
-            get => new global::Soenneker.Nws.OpenApiClient.Offices.Item.Briefing.BriefingRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The headlines property</summary>
-        public global::Soenneker.Nws.OpenApiClient.Offices.Item.Headlines.HeadlinesRequestBuilder Headlines
-        {
-            get => new global::Soenneker.Nws.OpenApiClient.Offices.Item.Headlines.HeadlinesRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The weatherstories property</summary>
-        public global::Soenneker.Nws.OpenApiClient.Offices.Item.Weatherstories.WeatherstoriesRequestBuilder Weatherstories
-        {
-            get => new global::Soenneker.Nws.OpenApiClient.Offices.Item.Weatherstories.WeatherstoriesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Nws.OpenApiClient.Offices.Item.Weatherstories.Download.DownloadRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Nws.OpenApiClient.Offices.Item.WithOfficeItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Nws.OpenApiClient.Offices.Item.Weatherstories.WeatherstoriesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithOfficeItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/offices/{officeId}", pathParameters)
+        public WeatherstoriesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/offices/{officeId}/weatherstories", pathParameters)
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Nws.OpenApiClient.Offices.Item.WithOfficeItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Nws.OpenApiClient.Offices.Item.Weatherstories.WeatherstoriesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithOfficeItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/offices/{officeId}", rawUrl)
+        public WeatherstoriesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/offices/{officeId}/weatherstories", rawUrl)
         {
         }
         /// <summary>
-        /// Returns metadata about a NWS forecast office
+        /// Returns active weather stories for an NWS office
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Nws.OpenApiClient.Models.Office"/></returns>
+        /// <returns>A List&lt;global::Soenneker.Nws.OpenApiClient.Models.OfficeWeatherStory&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Nws.OpenApiClient.Models.ProblemDetail">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Nws.OpenApiClient.Models.Office?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.Nws.OpenApiClient.Models.OfficeWeatherStory>?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Nws.OpenApiClient.Models.Office> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.Nws.OpenApiClient.Models.OfficeWeatherStory>> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -72,10 +60,11 @@ namespace Soenneker.Nws.OpenApiClient.Offices.Item
             {
                 { "XXX", global::Soenneker.Nws.OpenApiClient.Models.ProblemDetail.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Nws.OpenApiClient.Models.Office>(requestInfo, global::Soenneker.Nws.OpenApiClient.Models.Office.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Nws.OpenApiClient.Models.OfficeWeatherStory>(requestInfo, global::Soenneker.Nws.OpenApiClient.Models.OfficeWeatherStory.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return collectionResult?.AsList();
         }
         /// <summary>
-        /// Returns metadata about a NWS forecast office
+        /// Returns active weather stories for an NWS office
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -96,18 +85,18 @@ namespace Soenneker.Nws.OpenApiClient.Offices.Item
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Nws.OpenApiClient.Offices.Item.WithOfficeItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Nws.OpenApiClient.Offices.Item.Weatherstories.WeatherstoriesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public global::Soenneker.Nws.OpenApiClient.Offices.Item.WithOfficeItemRequestBuilder WithUrl(string rawUrl)
+        public global::Soenneker.Nws.OpenApiClient.Offices.Item.Weatherstories.WeatherstoriesRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Soenneker.Nws.OpenApiClient.Offices.Item.WithOfficeItemRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Soenneker.Nws.OpenApiClient.Offices.Item.Weatherstories.WeatherstoriesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class WithOfficeItemRequestBuilderGetRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        public partial class WeatherstoriesRequestBuilderGetRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
     }

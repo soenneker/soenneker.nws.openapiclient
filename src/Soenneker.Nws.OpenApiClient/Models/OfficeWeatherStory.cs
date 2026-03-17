@@ -9,26 +9,28 @@ namespace Soenneker.Nws.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ObservationCollectionGeoJson : global::Soenneker.Nws.OpenApiClient.Models.GeoJsonFeatureCollection, IParsable
+    public partial class OfficeWeatherStory : global::Soenneker.Nws.OpenApiClient.Models.NWSConnectDocumentMetadata, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Links for retrieving more data from paged data sets</summary>
+        /// <summary>Alternative text description of the content of the image for assistive technology.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Nws.OpenApiClient.Models.PaginationInfo? Pagination { get; set; }
+        public string? AltText { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Nws.OpenApiClient.Models.PaginationInfo Pagination { get; set; }
+        public string AltText { get; set; }
 #endif
+        /// <summary>The order in which a weather story should be displayed. Unique for each object.</summary>
+        public int? Order { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Nws.OpenApiClient.Models.ObservationCollectionGeoJson"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Nws.OpenApiClient.Models.OfficeWeatherStory"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new global::Soenneker.Nws.OpenApiClient.Models.ObservationCollectionGeoJson CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new global::Soenneker.Nws.OpenApiClient.Models.OfficeWeatherStory CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Nws.OpenApiClient.Models.ObservationCollectionGeoJson();
+            return new global::Soenneker.Nws.OpenApiClient.Models.OfficeWeatherStory();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -38,7 +40,8 @@ namespace Soenneker.Nws.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "pagination", n => { Pagination = n.GetObjectValue<global::Soenneker.Nws.OpenApiClient.Models.PaginationInfo>(global::Soenneker.Nws.OpenApiClient.Models.PaginationInfo.CreateFromDiscriminatorValue); } },
+                { "altText", n => { AltText = n.GetStringValue(); } },
+                { "order", n => { Order = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -49,7 +52,8 @@ namespace Soenneker.Nws.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<global::Soenneker.Nws.OpenApiClient.Models.PaginationInfo>("pagination", Pagination);
+            writer.WriteStringValue("altText", AltText);
+            writer.WriteIntValue("order", Order);
         }
     }
 }
