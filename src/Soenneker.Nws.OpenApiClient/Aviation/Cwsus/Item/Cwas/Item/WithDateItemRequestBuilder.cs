@@ -27,19 +27,6 @@ namespace Soenneker.Nws.OpenApiClient.Aviation.Cwsus.Item.Cwas.Item
                 return new global::Soenneker.Nws.OpenApiClient.Aviation.Cwsus.Item.Cwas.Item.Item.WithSequenceItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
-        /// <summary>Gets an item from the Soenneker.Nws.OpenApiClient.aviation.cwsus.item.cwas.item.item collection</summary>
-        /// <param name="position">Sequence number</param>
-        /// <returns>A <see cref="global::Soenneker.Nws.OpenApiClient.Aviation.Cwsus.Item.Cwas.Item.Item.WithSequenceItemRequestBuilder"/></returns>
-        [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
-        public global::Soenneker.Nws.OpenApiClient.Aviation.Cwsus.Item.Cwas.Item.Item.WithSequenceItemRequestBuilder this[string position]
-        {
-            get
-            {
-                var urlTplParams = new Dictionary<string, object>(PathParameters);
-                if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("sequence", position);
-                return new global::Soenneker.Nws.OpenApiClient.Aviation.Cwsus.Item.Cwas.Item.Item.WithSequenceItemRequestBuilder(urlTplParams, RequestAdapter);
-            }
-        }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Nws.OpenApiClient.Aviation.Cwsus.Item.Cwas.Item.WithDateItemRequestBuilder"/> and sets the default values.
         /// </summary>

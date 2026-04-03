@@ -130,25 +130,14 @@ namespace Soenneker.Nws.OpenApiClient.Alerts
             public string[] Area { get; set; }
 #endif
             /// <summary>Certainty (observed, likely, possible, unlikely, unknown)</summary>
-            [Obsolete("This property is deprecated, use CertaintyAsAlertCertainty instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("certainty")]
-            public string[]? Certainty { get; set; }
+            public global::Soenneker.Nws.OpenApiClient.Models.AlertCertainty[]? Certainty { get; set; }
 #nullable restore
 #else
             [QueryParameter("certainty")]
-            public string[] Certainty { get; set; }
-#endif
-            /// <summary>Certainty (observed, likely, possible, unlikely, unknown)</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("certainty")]
-            public global::Soenneker.Nws.OpenApiClient.Models.AlertCertainty[]? CertaintyAsAlertCertainty { get; set; }
-#nullable restore
-#else
-            [QueryParameter("certainty")]
-            public global::Soenneker.Nws.OpenApiClient.Models.AlertCertainty[] CertaintyAsAlertCertainty { get; set; }
+            public global::Soenneker.Nws.OpenApiClient.Models.AlertCertainty[] Certainty { get; set; }
 #endif
             /// <summary>Event code</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -187,25 +176,14 @@ namespace Soenneker.Nws.OpenApiClient.Alerts
             [QueryParameter("limit")]
             public int? Limit { get; set; }
             /// <summary>Message type (alert, update, cancel)</summary>
-            [Obsolete("This property is deprecated, use MessageTypeAsGetMessageTypeQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("message_type")]
-            public string[]? MessageType { get; set; }
+            public global::Soenneker.Nws.OpenApiClient.Alerts.GetMessage_typeQueryParameterType[]? MessageType { get; set; }
 #nullable restore
 #else
             [QueryParameter("message_type")]
-            public string[] MessageType { get; set; }
-#endif
-            /// <summary>Message type (alert, update, cancel)</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("message_type")]
-            public global::Soenneker.Nws.OpenApiClient.Alerts.GetMessage_typeQueryParameterType[]? MessageTypeAsGetMessageTypeQueryParameterType { get; set; }
-#nullable restore
-#else
-            [QueryParameter("message_type")]
-            public global::Soenneker.Nws.OpenApiClient.Alerts.GetMessage_typeQueryParameterType[] MessageTypeAsGetMessageTypeQueryParameterType { get; set; }
+            public global::Soenneker.Nws.OpenApiClient.Alerts.GetMessage_typeQueryParameterType[] MessageType { get; set; }
 #endif
             /// <summary>Point (latitude,longitude)This parameter is incompatible with the following parameters: area, region, region_type, zone</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -218,105 +196,50 @@ namespace Soenneker.Nws.OpenApiClient.Alerts
             public string Point { get; set; }
 #endif
             /// <summary>Marine region codeThis parameter is incompatible with the following parameters: area, point, region_type, zone</summary>
-            [Obsolete("This property is deprecated, use RegionAsMarineRegionCode instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("region")]
-            public string[]? Region { get; set; }
+            public global::Soenneker.Nws.OpenApiClient.Models.MarineRegionCode[]? Region { get; set; }
 #nullable restore
 #else
             [QueryParameter("region")]
-            public string[] Region { get; set; }
-#endif
-            /// <summary>Marine region codeThis parameter is incompatible with the following parameters: area, point, region_type, zone</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("region")]
-            public global::Soenneker.Nws.OpenApiClient.Models.MarineRegionCode[]? RegionAsMarineRegionCode { get; set; }
-#nullable restore
-#else
-            [QueryParameter("region")]
-            public global::Soenneker.Nws.OpenApiClient.Models.MarineRegionCode[] RegionAsMarineRegionCode { get; set; }
-#endif
-            /// <summary>Region type (land or marine)This parameter is incompatible with the following parameters: area, point, region, zone</summary>
-            [Obsolete("This property is deprecated, use RegionTypeAsGetRegionTypeQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("region_type")]
-            public string? RegionType { get; set; }
-#nullable restore
-#else
-            [QueryParameter("region_type")]
-            public string RegionType { get; set; }
+            public global::Soenneker.Nws.OpenApiClient.Models.MarineRegionCode[] Region { get; set; }
 #endif
             /// <summary>Region type (land or marine)This parameter is incompatible with the following parameters: area, point, region, zone</summary>
             [QueryParameter("region_type")]
-            public global::Soenneker.Nws.OpenApiClient.Alerts.GetRegion_typeQueryParameterType? RegionTypeAsGetRegionTypeQueryParameterType { get; set; }
-            /// <summary>Severity (extreme, severe, moderate, minor, unknown)</summary>
-            [Obsolete("This property is deprecated, use SeverityAsAlertSeverity instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("severity")]
-            public string[]? Severity { get; set; }
-#nullable restore
-#else
-            [QueryParameter("severity")]
-            public string[] Severity { get; set; }
-#endif
+            public global::Soenneker.Nws.OpenApiClient.Alerts.GetRegion_typeQueryParameterType? RegionType { get; set; }
             /// <summary>Severity (extreme, severe, moderate, minor, unknown)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("severity")]
-            public global::Soenneker.Nws.OpenApiClient.Models.AlertSeverity[]? SeverityAsAlertSeverity { get; set; }
+            public global::Soenneker.Nws.OpenApiClient.Models.AlertSeverity[]? Severity { get; set; }
 #nullable restore
 #else
             [QueryParameter("severity")]
-            public global::Soenneker.Nws.OpenApiClient.Models.AlertSeverity[] SeverityAsAlertSeverity { get; set; }
+            public global::Soenneker.Nws.OpenApiClient.Models.AlertSeverity[] Severity { get; set; }
 #endif
             /// <summary>Start time</summary>
             [QueryParameter("start")]
             public DateTimeOffset? Start { get; set; }
             /// <summary>Status (actual, exercise, system, test, draft)</summary>
-            [Obsolete("This property is deprecated, use StatusAsGetStatusQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("status")]
-            public string[]? Status { get; set; }
+            public global::Soenneker.Nws.OpenApiClient.Alerts.GetStatusQueryParameterType[]? Status { get; set; }
 #nullable restore
 #else
             [QueryParameter("status")]
-            public string[] Status { get; set; }
-#endif
-            /// <summary>Status (actual, exercise, system, test, draft)</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("status")]
-            public global::Soenneker.Nws.OpenApiClient.Alerts.GetStatusQueryParameterType[]? StatusAsGetStatusQueryParameterType { get; set; }
-#nullable restore
-#else
-            [QueryParameter("status")]
-            public global::Soenneker.Nws.OpenApiClient.Alerts.GetStatusQueryParameterType[] StatusAsGetStatusQueryParameterType { get; set; }
-#endif
-            /// <summary>Urgency (immediate, expected, future, past, unknown)</summary>
-            [Obsolete("This property is deprecated, use UrgencyAsAlertUrgency instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("urgency")]
-            public string[]? Urgency { get; set; }
-#nullable restore
-#else
-            [QueryParameter("urgency")]
-            public string[] Urgency { get; set; }
+            public global::Soenneker.Nws.OpenApiClient.Alerts.GetStatusQueryParameterType[] Status { get; set; }
 #endif
             /// <summary>Urgency (immediate, expected, future, past, unknown)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("urgency")]
-            public global::Soenneker.Nws.OpenApiClient.Models.AlertUrgency[]? UrgencyAsAlertUrgency { get; set; }
+            public global::Soenneker.Nws.OpenApiClient.Models.AlertUrgency[]? Urgency { get; set; }
 #nullable restore
 #else
             [QueryParameter("urgency")]
-            public global::Soenneker.Nws.OpenApiClient.Models.AlertUrgency[] UrgencyAsAlertUrgency { get; set; }
+            public global::Soenneker.Nws.OpenApiClient.Models.AlertUrgency[] Urgency { get; set; }
 #endif
             /// <summary>Zone ID (forecast or county)This parameter is incompatible with the following parameters: area, point, region, region_type</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -328,14 +251,6 @@ namespace Soenneker.Nws.OpenApiClient.Alerts
             [QueryParameter("zone")]
             public string[] Zone { get; set; }
 #endif
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class AlertsRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Soenneker.Nws.OpenApiClient.Alerts.AlertsRequestBuilder.AlertsRequestBuilderGetQueryParameters>
-        {
         }
     }
 }
