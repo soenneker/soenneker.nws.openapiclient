@@ -2,7 +2,7 @@
   "descriptionHash": "C693E132E77FD306117C6AF555B8254641F0FED909E564378C188515D23F9C463C8522288378E7651FB1D35AF5404F0204DCB8E66F7EF7B24F4C4A642A0267B6",
   "descriptionLocation": "../../openapi.json",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.31.0",
+  "kiotaVersion": "1.31.1",
   "clientClassName": "NwsOpenApiClient",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "Soenneker.Nws.OpenApiClient",
