@@ -115,6 +115,14 @@ namespace Soenneker.Nws.OpenApiClient.Models
 #endif
         /// <summary>The messageType property</summary>
         public global::Soenneker.Nws.OpenApiClient.Models.AlertMessageType? MessageType { get; set; }
+        /// <summary>The text note accompanying the alert message. Per CAP spec, this should accompany alerts with a status of &quot;Test&quot;.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Note { get; set; }
+#nullable restore
+#else
+        public string Note { get; set; }
+#endif
         /// <summary>The expected time of the beginning of the subject event of the alert message.</summary>
         public DateTimeOffset? Onset { get; set; }
         /// <summary>System-specific additional parameters associated with the alert message.The keys in this object correspond to parameter definitions in the NWS CAP specification.</summary>
@@ -211,6 +219,7 @@ namespace Soenneker.Nws.OpenApiClient.Models
                 { "instruction", n => { Instruction = n.GetStringValue(); } },
                 { "language", n => { Language = n.GetStringValue(); } },
                 { "messageType", n => { MessageType = n.GetEnumValue<global::Soenneker.Nws.OpenApiClient.Models.AlertMessageType>(); } },
+                { "note", n => { Note = n.GetStringValue(); } },
                 { "onset", n => { Onset = n.GetDateTimeOffsetValue(); } },
                 { "parameters", n => { Parameters = n.GetObjectValue<global::Soenneker.Nws.OpenApiClient.Models.Alert_parameters>(global::Soenneker.Nws.OpenApiClient.Models.Alert_parameters.CreateFromDiscriminatorValue); } },
                 { "references", n => { References = n.GetCollectionOfObjectValues<global::Soenneker.Nws.OpenApiClient.Models.Alert_references>(global::Soenneker.Nws.OpenApiClient.Models.Alert_references.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -249,6 +258,7 @@ namespace Soenneker.Nws.OpenApiClient.Models
             writer.WriteStringValue("instruction", Instruction);
             writer.WriteStringValue("language", Language);
             writer.WriteEnumValue<global::Soenneker.Nws.OpenApiClient.Models.AlertMessageType>("messageType", MessageType);
+            writer.WriteStringValue("note", Note);
             writer.WriteDateTimeOffsetValue("onset", Onset);
             writer.WriteObjectValue<global::Soenneker.Nws.OpenApiClient.Models.Alert_parameters>("parameters", Parameters);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Nws.OpenApiClient.Models.Alert_references>("references", References);
