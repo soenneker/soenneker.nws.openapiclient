@@ -5,6 +5,7 @@ using Microsoft.Kiota.Abstractions;
 using Soenneker.Nws.OpenApiClient.Radar.Profilers;
 using Soenneker.Nws.OpenApiClient.Radar.Queues;
 using Soenneker.Nws.OpenApiClient.Radar.Servers;
+using Soenneker.Nws.OpenApiClient.Radar.Spgds;
 using Soenneker.Nws.OpenApiClient.Radar.Stations;
 using System.Collections.Generic;
 using System.IO;
@@ -32,6 +33,11 @@ namespace Soenneker.Nws.OpenApiClient.Radar
         public global::Soenneker.Nws.OpenApiClient.Radar.Servers.ServersRequestBuilder Servers
         {
             get => new global::Soenneker.Nws.OpenApiClient.Radar.Servers.ServersRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The spgds property</summary>
+        public global::Soenneker.Nws.OpenApiClient.Radar.Spgds.SpgdsRequestBuilder Spgds
+        {
+            get => new global::Soenneker.Nws.OpenApiClient.Radar.Spgds.SpgdsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The stations property</summary>
         public global::Soenneker.Nws.OpenApiClient.Radar.Stations.StationsRequestBuilder Stations
