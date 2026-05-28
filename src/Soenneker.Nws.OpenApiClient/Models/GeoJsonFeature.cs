@@ -16,10 +16,10 @@ namespace Soenneker.Nws.OpenApiClient.Models
         /// <summary>The Context property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Context { get; set; }
+        public global::Soenneker.Nws.OpenApiClient.Models.JsonLdContext? Context { get; set; }
 #nullable restore
 #else
-        public UntypedNode Context { get; set; }
+        public global::Soenneker.Nws.OpenApiClient.Models.JsonLdContext Context { get; set; }
 #endif
         /// <summary>A GeoJSON geometry object. Please refer to IETF RFC 7946 for information on the GeoJSON format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -65,7 +65,7 @@ namespace Soenneker.Nws.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "@context", n => { Context = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "@context", n => { Context = n.GetObjectValue<global::Soenneker.Nws.OpenApiClient.Models.JsonLdContext>(global::Soenneker.Nws.OpenApiClient.Models.JsonLdContext.CreateFromDiscriminatorValue); } },
                 { "geometry", n => { Geometry = n.GetObjectValue<global::Soenneker.Nws.OpenApiClient.Models.GeoJsonGeometry>(global::Soenneker.Nws.OpenApiClient.Models.GeoJsonGeometry.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "properties", n => { Properties = n.GetObjectValue<global::Soenneker.Nws.OpenApiClient.Models.GeoJsonFeature_properties>(global::Soenneker.Nws.OpenApiClient.Models.GeoJsonFeature_properties.CreateFromDiscriminatorValue); } },
@@ -79,7 +79,7 @@ namespace Soenneker.Nws.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<UntypedNode>("@context", Context);
+            writer.WriteObjectValue<global::Soenneker.Nws.OpenApiClient.Models.JsonLdContext>("@context", Context);
             writer.WriteObjectValue<global::Soenneker.Nws.OpenApiClient.Models.GeoJsonGeometry>("geometry", Geometry);
             writer.WriteStringValue("id", Id);
             writer.WriteObjectValue<global::Soenneker.Nws.OpenApiClient.Models.GeoJsonFeature_properties>("properties", Properties);

@@ -15,10 +15,10 @@ namespace Soenneker.Nws.OpenApiClient.Models
         /// <summary>The address property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Nws.OpenApiClient.Models.CenterWeatherServiceUnitJsonLd_address? Address { get; set; }
+        public global::Soenneker.Nws.OpenApiClient.Models.OfficeBodyAddress? Address { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Nws.OpenApiClient.Models.CenterWeatherServiceUnitJsonLd_address Address { get; set; }
+        public global::Soenneker.Nws.OpenApiClient.Models.OfficeBodyAddress Address { get; set; }
 #endif
         /// <summary>The approvedObservationStations property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -39,10 +39,10 @@ namespace Soenneker.Nws.OpenApiClient.Models
         /// <summary>The Context property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Context { get; set; }
+        public global::Soenneker.Nws.OpenApiClient.Models.JsonLdContext? Context { get; set; }
 #nullable restore
 #else
-        public UntypedNode Context { get; set; }
+        public global::Soenneker.Nws.OpenApiClient.Models.JsonLdContext Context { get; set; }
 #endif
         /// <summary>The email property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -152,10 +152,10 @@ namespace Soenneker.Nws.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "address", n => { Address = n.GetObjectValue<global::Soenneker.Nws.OpenApiClient.Models.CenterWeatherServiceUnitJsonLd_address>(global::Soenneker.Nws.OpenApiClient.Models.CenterWeatherServiceUnitJsonLd_address.CreateFromDiscriminatorValue); } },
+                { "address", n => { Address = n.GetObjectValue<global::Soenneker.Nws.OpenApiClient.Models.OfficeBodyAddress>(global::Soenneker.Nws.OpenApiClient.Models.OfficeBodyAddress.CreateFromDiscriminatorValue); } },
                 { "approvedObservationStations", n => { ApprovedObservationStations = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "id", n => { CenterWeatherServiceUnitJsonLdId = n.GetStringValue(); } },
-                { "@context", n => { Context = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "@context", n => { Context = n.GetObjectValue<global::Soenneker.Nws.OpenApiClient.Models.JsonLdContext>(global::Soenneker.Nws.OpenApiClient.Models.JsonLdContext.CreateFromDiscriminatorValue); } },
                 { "email", n => { Email = n.GetStringValue(); } },
                 { "faxNumber", n => { FaxNumber = n.GetStringValue(); } },
                 { "@id", n => { Id = n.GetStringValue(); } },
@@ -177,10 +177,10 @@ namespace Soenneker.Nws.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Nws.OpenApiClient.Models.CenterWeatherServiceUnitJsonLd_address>("address", Address);
+            writer.WriteObjectValue<global::Soenneker.Nws.OpenApiClient.Models.OfficeBodyAddress>("address", Address);
             writer.WriteCollectionOfPrimitiveValues<string>("approvedObservationStations", ApprovedObservationStations);
             writer.WriteStringValue("id", CenterWeatherServiceUnitJsonLdId);
-            writer.WriteObjectValue<UntypedNode>("@context", Context);
+            writer.WriteObjectValue<global::Soenneker.Nws.OpenApiClient.Models.JsonLdContext>("@context", Context);
             writer.WriteStringValue("email", Email);
             writer.WriteStringValue("faxNumber", FaxNumber);
             writer.WriteStringValue("@id", Id);

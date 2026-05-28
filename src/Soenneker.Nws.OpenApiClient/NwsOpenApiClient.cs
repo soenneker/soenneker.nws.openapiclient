@@ -10,14 +10,12 @@ using Soenneker.Nws.OpenApiClient.Alerts;
 using Soenneker.Nws.OpenApiClient.Aviation;
 using Soenneker.Nws.OpenApiClient.Glossary;
 using Soenneker.Nws.OpenApiClient.Gridpoints;
-using Soenneker.Nws.OpenApiClient.Icons;
 using Soenneker.Nws.OpenApiClient.Offices;
 using Soenneker.Nws.OpenApiClient.Points;
 using Soenneker.Nws.OpenApiClient.Products;
 using Soenneker.Nws.OpenApiClient.Radar;
 using Soenneker.Nws.OpenApiClient.Radio;
 using Soenneker.Nws.OpenApiClient.Stations;
-using Soenneker.Nws.OpenApiClient.Thumbnails;
 using Soenneker.Nws.OpenApiClient.Zones;
 using System.Collections.Generic;
 using System.IO;
@@ -51,11 +49,6 @@ namespace Soenneker.Nws.OpenApiClient
         {
             get => new global::Soenneker.Nws.OpenApiClient.Gridpoints.GridpointsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The icons property</summary>
-        public global::Soenneker.Nws.OpenApiClient.Icons.IconsRequestBuilder Icons
-        {
-            get => new global::Soenneker.Nws.OpenApiClient.Icons.IconsRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>The offices property</summary>
         public global::Soenneker.Nws.OpenApiClient.Offices.OfficesRequestBuilder Offices
         {
@@ -85,11 +78,6 @@ namespace Soenneker.Nws.OpenApiClient
         public global::Soenneker.Nws.OpenApiClient.Stations.StationsRequestBuilder Stations
         {
             get => new global::Soenneker.Nws.OpenApiClient.Stations.StationsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The thumbnails property</summary>
-        public global::Soenneker.Nws.OpenApiClient.Thumbnails.ThumbnailsRequestBuilder Thumbnails
-        {
-            get => new global::Soenneker.Nws.OpenApiClient.Thumbnails.ThumbnailsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The zones property</summary>
         public global::Soenneker.Nws.OpenApiClient.Zones.ZonesRequestBuilder Zones

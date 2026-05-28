@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using Soenneker.Nws.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
 using System;
@@ -17,10 +18,10 @@ namespace Soenneker.Nws.OpenApiClient.Glossary
         /// <summary>The Context property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Context { get; set; }
+        public global::Soenneker.Nws.OpenApiClient.Models.JsonLdContext? Context { get; set; }
 #nullable restore
 #else
-        public UntypedNode Context { get; set; }
+        public global::Soenneker.Nws.OpenApiClient.Models.JsonLdContext Context { get; set; }
 #endif
         /// <summary>A list of glossary terms</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -55,7 +56,7 @@ namespace Soenneker.Nws.OpenApiClient.Glossary
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "@context", n => { Context = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "@context", n => { Context = n.GetObjectValue<global::Soenneker.Nws.OpenApiClient.Models.JsonLdContext>(global::Soenneker.Nws.OpenApiClient.Models.JsonLdContext.CreateFromDiscriminatorValue); } },
                 { "glossary", n => { Glossary = n.GetCollectionOfObjectValues<global::Soenneker.Nws.OpenApiClient.Glossary.GlossaryGetResponse_glossary>(global::Soenneker.Nws.OpenApiClient.Glossary.GlossaryGetResponse_glossary.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -66,7 +67,7 @@ namespace Soenneker.Nws.OpenApiClient.Glossary
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<UntypedNode>("@context", Context);
+            writer.WriteObjectValue<global::Soenneker.Nws.OpenApiClient.Models.JsonLdContext>("@context", Context);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Nws.OpenApiClient.Glossary.GlossaryGetResponse_glossary>("glossary", Glossary);
             writer.WriteAdditionalData(AdditionalData);
         }

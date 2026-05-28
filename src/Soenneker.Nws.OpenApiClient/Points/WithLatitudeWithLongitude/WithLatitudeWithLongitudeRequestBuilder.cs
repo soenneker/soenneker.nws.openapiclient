@@ -5,7 +5,6 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Nws.OpenApiClient.Models;
 using Soenneker.Nws.OpenApiClient.Points.WithLatitudeWithLongitude.Radio;
-using Soenneker.Nws.OpenApiClient.Points.WithLatitudeWithLongitude.Stations;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -23,11 +22,6 @@ namespace Soenneker.Nws.OpenApiClient.Points.WithLatitudeWithLongitude
         public global::Soenneker.Nws.OpenApiClient.Points.WithLatitudeWithLongitude.Radio.RadioRequestBuilder Radio
         {
             get => new global::Soenneker.Nws.OpenApiClient.Points.WithLatitudeWithLongitude.Radio.RadioRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The stations property</summary>
-        public global::Soenneker.Nws.OpenApiClient.Points.WithLatitudeWithLongitude.Stations.StationsRequestBuilder Stations
-        {
-            get => new global::Soenneker.Nws.OpenApiClient.Points.WithLatitudeWithLongitude.Stations.StationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Nws.OpenApiClient.Points.WithLatitudeWithLongitude.WithLatitudeWithLongitudeRequestBuilder"/> and sets the default values.

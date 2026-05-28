@@ -9,9 +9,11 @@ namespace Soenneker.Nws.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class OfficeWeatherStory : global::Soenneker.Nws.OpenApiClient.Models.NWSConnectDocumentMetadata, IParsable
+    public partial class OfficeWeatherStory : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Alternative text description of the content of the image for assistive technology.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -20,14 +22,55 @@ namespace Soenneker.Nws.OpenApiClient.Models
 #else
         public string AltText { get; set; }
 #endif
+        /// <summary>A longer description and/or caption.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Description { get; set; }
+#nullable restore
+#else
+        public string Description { get; set; }
+#endif
+        /// <summary>The URL of the media content for the weather story.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Download { get; set; }
+#nullable restore
+#else
+        public string Download { get; set; }
+#endif
+        /// <summary>The time when the document becomes inactive. ISO8601 datetime.</summary>
+        public DateTimeOffset? EndTime { get; set; }
+        /// <summary>The id property</summary>
+        public Guid? Id { get; set; }
         /// <summary>The order in which a weather story should be displayed. Unique for each object.</summary>
         public int? Order { get; set; }
+        /// <summary>An indicator that a weather story should be emphasized.</summary>
+        public bool? Priority { get; set; }
+        /// <summary>The time when the document becomes active. ISO8601 datetime.</summary>
+        public DateTimeOffset? StartTime { get; set; }
+        /// <summary>A short title.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Title { get; set; }
+#nullable restore
+#else
+        public string Title { get; set; }
+#endif
+        /// <summary>When the document was last updated. ISO8601 datetime.</summary>
+        public DateTimeOffset? UpdateTime { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Nws.OpenApiClient.Models.OfficeWeatherStory"/> and sets the default values.
+        /// </summary>
+        public OfficeWeatherStory()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Nws.OpenApiClient.Models.OfficeWeatherStory"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new global::Soenneker.Nws.OpenApiClient.Models.OfficeWeatherStory CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Nws.OpenApiClient.Models.OfficeWeatherStory CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Soenneker.Nws.OpenApiClient.Models.OfficeWeatherStory();
@@ -36,24 +79,40 @@ namespace Soenneker.Nws.OpenApiClient.Models
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            return new Dictionary<string, Action<IParseNode>>
             {
                 { "altText", n => { AltText = n.GetStringValue(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "download", n => { Download = n.GetStringValue(); } },
+                { "endTime", n => { EndTime = n.GetDateTimeOffsetValue(); } },
+                { "id", n => { Id = n.GetGuidValue(); } },
                 { "order", n => { Order = n.GetIntValue(); } },
+                { "priority", n => { Priority = n.GetBoolValue(); } },
+                { "startTime", n => { StartTime = n.GetDateTimeOffsetValue(); } },
+                { "title", n => { Title = n.GetStringValue(); } },
+                { "updateTime", n => { UpdateTime = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer)
+        public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            base.Serialize(writer);
             writer.WriteStringValue("altText", AltText);
+            writer.WriteStringValue("description", Description);
+            writer.WriteStringValue("download", Download);
+            writer.WriteDateTimeOffsetValue("endTime", EndTime);
+            writer.WriteGuidValue("id", Id);
             writer.WriteIntValue("order", Order);
+            writer.WriteBoolValue("priority", Priority);
+            writer.WriteDateTimeOffsetValue("startTime", StartTime);
+            writer.WriteStringValue("title", Title);
+            writer.WriteDateTimeOffsetValue("updateTime", UpdateTime);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

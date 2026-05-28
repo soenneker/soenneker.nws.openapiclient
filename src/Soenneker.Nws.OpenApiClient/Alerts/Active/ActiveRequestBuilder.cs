@@ -114,7 +114,7 @@ namespace Soenneker.Nws.OpenApiClient.Alerts.Active
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ActiveRequestBuilderGetQueryParameters 
         {
-            /// <summary>State/territory code or marine area codeThis parameter is incompatible with the following parameters: point, region, region_type, zone</summary>
+            /// <summary>&quot;State/territory code or marine area codeThis parameter is incompatible with the following parameters: point, region, region_type, zone&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("area")]
@@ -164,7 +164,7 @@ namespace Soenneker.Nws.OpenApiClient.Alerts.Active
             [QueryParameter("message_type")]
             public global::Soenneker.Nws.OpenApiClient.Alerts.Active.GetMessage_typeQueryParameterType[] MessageType { get; set; }
 #endif
-            /// <summary>Point (latitude,longitude)This parameter is incompatible with the following parameters: area, region, region_type, zone</summary>
+            /// <summary>&quot;Point (latitude,longitude)This parameter is incompatible with the following parameters: area, region, region_type, zone&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("point")]
@@ -174,7 +174,7 @@ namespace Soenneker.Nws.OpenApiClient.Alerts.Active
             [QueryParameter("point")]
             public string Point { get; set; }
 #endif
-            /// <summary>Marine region codeThis parameter is incompatible with the following parameters: area, point, region_type, zone</summary>
+            /// <summary>&quot;Marine region codeThis parameter is incompatible with the following parameters: area, point, region_type, zone&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("region")]
@@ -184,7 +184,7 @@ namespace Soenneker.Nws.OpenApiClient.Alerts.Active
             [QueryParameter("region")]
             public global::Soenneker.Nws.OpenApiClient.Models.MarineRegionCode[] Region { get; set; }
 #endif
-            /// <summary>Region type (land or marine)This parameter is incompatible with the following parameters: area, point, region, zone</summary>
+            /// <summary>&quot;Region type (land or marine)This parameter is incompatible with the following parameters: area, point, region, zone&quot;</summary>
             [QueryParameter("region_type")]
             public global::Soenneker.Nws.OpenApiClient.Alerts.Active.GetRegion_typeQueryParameterType? RegionType { get; set; }
             /// <summary>Severity (extreme, severe, moderate, minor, unknown)</summary>
@@ -217,7 +217,7 @@ namespace Soenneker.Nws.OpenApiClient.Alerts.Active
             [QueryParameter("urgency")]
             public global::Soenneker.Nws.OpenApiClient.Models.AlertUrgency[] Urgency { get; set; }
 #endif
-            /// <summary>Zone ID (forecast or county)This parameter is incompatible with the following parameters: area, point, region, region_type</summary>
+            /// <summary>&quot;Zone ID (forecast or county)This parameter is incompatible with the following parameters: area, point, region, region_type&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("zone")]

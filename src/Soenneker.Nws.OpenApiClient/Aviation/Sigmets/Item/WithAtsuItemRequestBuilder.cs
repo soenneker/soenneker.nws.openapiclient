@@ -21,7 +21,7 @@ namespace Soenneker.Nws.OpenApiClient.Aviation.Sigmets.Item
         /// <summary>Gets an item from the Soenneker.Nws.OpenApiClient.aviation.sigmets.item.item collection</summary>
         /// <param name="position">Date (YYYY-MM-DD format)</param>
         /// <returns>A <see cref="global::Soenneker.Nws.OpenApiClient.Aviation.Sigmets.Item.Item.WithDateItemRequestBuilder"/></returns>
-        public global::Soenneker.Nws.OpenApiClient.Aviation.Sigmets.Item.Item.WithDateItemRequestBuilder this[Date position]
+        public global::Soenneker.Nws.OpenApiClient.Aviation.Sigmets.Item.Item.WithDateItemRequestBuilder this[string position]
         {
             get
             {
