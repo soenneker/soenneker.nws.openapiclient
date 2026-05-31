@@ -3020,6 +3020,7 @@
         ],
         "properties": {
           "type": {
+            "title": "type",
             "type": "string",
             "description": "Union discriminator"
           }
@@ -4424,18 +4425,14 @@
         ],
         "properties": {
           "type": {
+            "title": "type",
             "type": "string",
             "description": "Union discriminator"
           }
         },
         "description": "A time interval in ISO 8601 format. This can be one of:\n\n    1. Start and end time\n    2. Start time and duration\n    3. Duration and end time\nThe string \"NOW\" can also be used in place of a start/end time.\n",
         "discriminator": {
-          "propertyName": "type",
-          "mapping": {
-            "ISO8601Interval_1": "#/components/schemas/ISO8601Interval_Branch1",
-            "ISO8601Interval_2": "#/components/schemas/ISO8601Interval_Branch2",
-            "ISO8601Interval_3": "#/components/schemas/ISO8601Interval_Branch3"
-          }
+          "propertyName": "type"
         }
       },
       "JsonLdContext": {
@@ -4834,6 +4831,7 @@
         ],
         "properties": {
           "type": {
+            "title": "type",
             "type": "string",
             "description": "Union discriminator"
           }
@@ -5886,6 +5884,7 @@
         ],
         "properties": {
           "type": {
+            "title": "type",
             "type": "string",
             "description": "Union discriminator"
           }
@@ -6308,10 +6307,11 @@
             "type": "object",
             "oneOf": [
               {
-                "$ref": "#/components/schemas/StateTerritoryCode_Wrapper_2"
+                "$ref": "#/components/schemas/StateTerritoryCode"
               },
               {
-                "$ref": "#/components/schemas/UnionBranch"
+                "type": "string",
+                "additionalProperties": false
               }
             ],
             "nullable": true
@@ -6784,17 +6784,6 @@
         "properties": {
           "value": {
             "type": "integer"
-          }
-        }
-      },
-      "StateTerritoryCode_Wrapper_2": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "$ref": "#/components/schemas/StateTerritoryCode"
           }
         }
       }
