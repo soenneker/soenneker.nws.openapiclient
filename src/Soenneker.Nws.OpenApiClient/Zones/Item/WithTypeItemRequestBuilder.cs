@@ -156,11 +156,11 @@ namespace Soenneker.Nws.OpenApiClient.Zones.Item
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("type")]
-            public global::Soenneker.Nws.OpenApiClient.Models.NWSZoneType[]? Type { get; set; }
+            public global::Soenneker.Nws.OpenApiClient.Models.NwsZoneType[]? Type { get; set; }
 #nullable restore
 #else
             [QueryParameter("type")]
-            public global::Soenneker.Nws.OpenApiClient.Models.NWSZoneType[] Type { get; set; }
+            public global::Soenneker.Nws.OpenApiClient.Models.NwsZoneType[] Type { get; set; }
 #endif
         }
     }

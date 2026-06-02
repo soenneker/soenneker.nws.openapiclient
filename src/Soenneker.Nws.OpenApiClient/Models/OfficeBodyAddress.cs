@@ -45,7 +45,7 @@ namespace Soenneker.Nws.OpenApiClient.Models
         public string StreetAddress { get; set; }
 #endif
         /// <summary>The Type property</summary>
-        public global::Soenneker.Nws.OpenApiClient.Models.OfficeBodyAddress_Type? Type { get; set; }
+        public global::Soenneker.Nws.OpenApiClient.Models.OfficeBodyAddressType? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -68,7 +68,7 @@ namespace Soenneker.Nws.OpenApiClient.Models
                 { "addressRegion", n => { AddressRegion = n.GetStringValue(); } },
                 { "postalCode", n => { PostalCode = n.GetStringValue(); } },
                 { "streetAddress", n => { StreetAddress = n.GetStringValue(); } },
-                { "@type", n => { Type = n.GetEnumValue<global::Soenneker.Nws.OpenApiClient.Models.OfficeBodyAddress_Type>(); } },
+                { "@type", n => { Type = n.GetEnumValue<global::Soenneker.Nws.OpenApiClient.Models.OfficeBodyAddressType>(); } },
             };
         }
         /// <summary>
@@ -82,7 +82,7 @@ namespace Soenneker.Nws.OpenApiClient.Models
             writer.WriteStringValue("addressRegion", AddressRegion);
             writer.WriteStringValue("postalCode", PostalCode);
             writer.WriteStringValue("streetAddress", StreetAddress);
-            writer.WriteEnumValue<global::Soenneker.Nws.OpenApiClient.Models.OfficeBodyAddress_Type>("@type", Type);
+            writer.WriteEnumValue<global::Soenneker.Nws.OpenApiClient.Models.OfficeBodyAddressType>("@type", Type);
         }
     }
 }

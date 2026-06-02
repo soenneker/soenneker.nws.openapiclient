@@ -23,10 +23,10 @@ namespace Soenneker.Nws.OpenApiClient.Models
         /// <summary>The locations property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Nws.OpenApiClient.Models.TextProductLocationCollection_locations? Locations { get; set; }
+        public global::Soenneker.Nws.OpenApiClient.Models.TextProductLocationCollectionLocationsProperty? Locations { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Nws.OpenApiClient.Models.TextProductLocationCollection_locations Locations { get; set; }
+        public global::Soenneker.Nws.OpenApiClient.Models.TextProductLocationCollectionLocationsProperty Locations { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -47,7 +47,7 @@ namespace Soenneker.Nws.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "@context", n => { Context = n.GetObjectValue<global::Soenneker.Nws.OpenApiClient.Models.JsonLdContext>(global::Soenneker.Nws.OpenApiClient.Models.JsonLdContext.CreateFromDiscriminatorValue); } },
-                { "locations", n => { Locations = n.GetObjectValue<global::Soenneker.Nws.OpenApiClient.Models.TextProductLocationCollection_locations>(global::Soenneker.Nws.OpenApiClient.Models.TextProductLocationCollection_locations.CreateFromDiscriminatorValue); } },
+                { "locations", n => { Locations = n.GetObjectValue<global::Soenneker.Nws.OpenApiClient.Models.TextProductLocationCollectionLocationsProperty>(global::Soenneker.Nws.OpenApiClient.Models.TextProductLocationCollectionLocationsProperty.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -58,7 +58,7 @@ namespace Soenneker.Nws.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Nws.OpenApiClient.Models.JsonLdContext>("@context", Context);
-            writer.WriteObjectValue<global::Soenneker.Nws.OpenApiClient.Models.TextProductLocationCollection_locations>("locations", Locations);
+            writer.WriteObjectValue<global::Soenneker.Nws.OpenApiClient.Models.TextProductLocationCollectionLocationsProperty>("locations", Locations);
         }
     }
 }

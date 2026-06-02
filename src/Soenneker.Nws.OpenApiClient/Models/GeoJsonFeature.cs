@@ -40,13 +40,13 @@ namespace Soenneker.Nws.OpenApiClient.Models
         /// <summary>The properties property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Nws.OpenApiClient.Models.GeoJsonFeature_properties? Properties { get; set; }
+        public global::Soenneker.Nws.OpenApiClient.Models.GeoJsonFeaturePropertiesProperty? Properties { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Nws.OpenApiClient.Models.GeoJsonFeature_properties Properties { get; set; }
+        public global::Soenneker.Nws.OpenApiClient.Models.GeoJsonFeaturePropertiesProperty Properties { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.Nws.OpenApiClient.Models.GeoJsonFeature_type? Type { get; set; }
+        public global::Soenneker.Nws.OpenApiClient.Models.AlertGeoJsonType? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -68,8 +68,8 @@ namespace Soenneker.Nws.OpenApiClient.Models
                 { "@context", n => { Context = n.GetObjectValue<global::Soenneker.Nws.OpenApiClient.Models.JsonLdContext>(global::Soenneker.Nws.OpenApiClient.Models.JsonLdContext.CreateFromDiscriminatorValue); } },
                 { "geometry", n => { Geometry = n.GetObjectValue<global::Soenneker.Nws.OpenApiClient.Models.GeoJsonGeometry>(global::Soenneker.Nws.OpenApiClient.Models.GeoJsonGeometry.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "properties", n => { Properties = n.GetObjectValue<global::Soenneker.Nws.OpenApiClient.Models.GeoJsonFeature_properties>(global::Soenneker.Nws.OpenApiClient.Models.GeoJsonFeature_properties.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Nws.OpenApiClient.Models.GeoJsonFeature_type>(); } },
+                { "properties", n => { Properties = n.GetObjectValue<global::Soenneker.Nws.OpenApiClient.Models.GeoJsonFeaturePropertiesProperty>(global::Soenneker.Nws.OpenApiClient.Models.GeoJsonFeaturePropertiesProperty.CreateFromDiscriminatorValue); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Nws.OpenApiClient.Models.AlertGeoJsonType>(); } },
             };
         }
         /// <summary>
@@ -82,8 +82,8 @@ namespace Soenneker.Nws.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Nws.OpenApiClient.Models.JsonLdContext>("@context", Context);
             writer.WriteObjectValue<global::Soenneker.Nws.OpenApiClient.Models.GeoJsonGeometry>("geometry", Geometry);
             writer.WriteStringValue("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Nws.OpenApiClient.Models.GeoJsonFeature_properties>("properties", Properties);
-            writer.WriteEnumValue<global::Soenneker.Nws.OpenApiClient.Models.GeoJsonFeature_type>("type", Type);
+            writer.WriteObjectValue<global::Soenneker.Nws.OpenApiClient.Models.GeoJsonFeaturePropertiesProperty>("properties", Properties);
+            writer.WriteEnumValue<global::Soenneker.Nws.OpenApiClient.Models.AlertGeoJsonType>("type", Type);
         }
     }
 }

@@ -42,17 +42,17 @@ namespace Soenneker.Nws.OpenApiClient.Offices.Item.Weatherstories
         /// <summary>
         /// Returns active weather stories for an NWS office
         /// </summary>
-        /// <returns>A List&lt;global::Soenneker.Nws.OpenApiClient.Models.OfficeWeatherStory&gt;</returns>
+        /// <returns>A List&lt;global::Soenneker.Nws.OpenApiClient.Models.OfficeWeatherStoryBody&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Nws.OpenApiClient.Models.ProblemDetail">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<global::Soenneker.Nws.OpenApiClient.Models.OfficeWeatherStory>?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.Nws.OpenApiClient.Models.OfficeWeatherStoryBody>?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<List<global::Soenneker.Nws.OpenApiClient.Models.OfficeWeatherStory>> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.Nws.OpenApiClient.Models.OfficeWeatherStoryBody>> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -60,7 +60,7 @@ namespace Soenneker.Nws.OpenApiClient.Offices.Item.Weatherstories
             {
                 { "XXX", global::Soenneker.Nws.OpenApiClient.Models.ProblemDetail.CreateFromDiscriminatorValue },
             };
-            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Nws.OpenApiClient.Models.OfficeWeatherStory>(requestInfo, global::Soenneker.Nws.OpenApiClient.Models.OfficeWeatherStory.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Nws.OpenApiClient.Models.OfficeWeatherStoryBody>(requestInfo, global::Soenneker.Nws.OpenApiClient.Models.OfficeWeatherStoryBody.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.AsList();
         }
         /// <summary>

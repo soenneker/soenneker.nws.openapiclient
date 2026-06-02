@@ -8,58 +8,58 @@ using System;
 namespace Soenneker.Nws.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Nws.OpenApiClient.Models.GeoJsonGeometryMember1"/>, <see cref="global::Soenneker.Nws.OpenApiClient.Models.GeoJsonGeometryMember2"/>, <see cref="global::Soenneker.Nws.OpenApiClient.Models.GeoJsonGeometryMember3"/>, <see cref="global::Soenneker.Nws.OpenApiClient.Models.GeoJsonGeometryMember4"/>, <see cref="global::Soenneker.Nws.OpenApiClient.Models.GeoJsonGeometryMember5"/>, <see cref="global::Soenneker.Nws.OpenApiClient.Models.GeoJsonGeometryMember6"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Nws.OpenApiClient.Models.GeoJsonGeometryGeoJsonLineString"/>, <see cref="global::Soenneker.Nws.OpenApiClient.Models.GeoJsonGeometryGeoJsonMultiLineString"/>, <see cref="global::Soenneker.Nws.OpenApiClient.Models.GeoJsonGeometryGeoJsonMultiPoint"/>, <see cref="global::Soenneker.Nws.OpenApiClient.Models.GeoJsonGeometryGeoJsonMultiPolygon"/>, <see cref="global::Soenneker.Nws.OpenApiClient.Models.GeoJsonGeometryGeoJsonPoint"/>, <see cref="global::Soenneker.Nws.OpenApiClient.Models.GeoJsonGeometryGeoJsonPolygon"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class GeoJsonGeometry : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Nws.OpenApiClient.Models.GeoJsonGeometryMember1"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Nws.OpenApiClient.Models.GeoJsonGeometryGeoJsonLineString"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Nws.OpenApiClient.Models.GeoJsonGeometryMember1? GeoJsonGeometryMember1 { get; set; }
+        public global::Soenneker.Nws.OpenApiClient.Models.GeoJsonGeometryGeoJsonLineString? GeoJsonGeometryGeoJsonLineString { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Nws.OpenApiClient.Models.GeoJsonGeometryMember1 GeoJsonGeometryMember1 { get; set; }
+        public global::Soenneker.Nws.OpenApiClient.Models.GeoJsonGeometryGeoJsonLineString GeoJsonGeometryGeoJsonLineString { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Nws.OpenApiClient.Models.GeoJsonGeometryMember2"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Nws.OpenApiClient.Models.GeoJsonGeometryGeoJsonMultiLineString"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Nws.OpenApiClient.Models.GeoJsonGeometryMember2? GeoJsonGeometryMember2 { get; set; }
+        public global::Soenneker.Nws.OpenApiClient.Models.GeoJsonGeometryGeoJsonMultiLineString? GeoJsonGeometryGeoJsonMultiLineString { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Nws.OpenApiClient.Models.GeoJsonGeometryMember2 GeoJsonGeometryMember2 { get; set; }
+        public global::Soenneker.Nws.OpenApiClient.Models.GeoJsonGeometryGeoJsonMultiLineString GeoJsonGeometryGeoJsonMultiLineString { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Nws.OpenApiClient.Models.GeoJsonGeometryMember3"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Nws.OpenApiClient.Models.GeoJsonGeometryGeoJsonMultiPoint"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Nws.OpenApiClient.Models.GeoJsonGeometryMember3? GeoJsonGeometryMember3 { get; set; }
+        public global::Soenneker.Nws.OpenApiClient.Models.GeoJsonGeometryGeoJsonMultiPoint? GeoJsonGeometryGeoJsonMultiPoint { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Nws.OpenApiClient.Models.GeoJsonGeometryMember3 GeoJsonGeometryMember3 { get; set; }
+        public global::Soenneker.Nws.OpenApiClient.Models.GeoJsonGeometryGeoJsonMultiPoint GeoJsonGeometryGeoJsonMultiPoint { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Nws.OpenApiClient.Models.GeoJsonGeometryMember4"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Nws.OpenApiClient.Models.GeoJsonGeometryGeoJsonMultiPolygon"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Nws.OpenApiClient.Models.GeoJsonGeometryMember4? GeoJsonGeometryMember4 { get; set; }
+        public global::Soenneker.Nws.OpenApiClient.Models.GeoJsonGeometryGeoJsonMultiPolygon? GeoJsonGeometryGeoJsonMultiPolygon { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Nws.OpenApiClient.Models.GeoJsonGeometryMember4 GeoJsonGeometryMember4 { get; set; }
+        public global::Soenneker.Nws.OpenApiClient.Models.GeoJsonGeometryGeoJsonMultiPolygon GeoJsonGeometryGeoJsonMultiPolygon { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Nws.OpenApiClient.Models.GeoJsonGeometryMember5"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Nws.OpenApiClient.Models.GeoJsonGeometryGeoJsonPoint"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Nws.OpenApiClient.Models.GeoJsonGeometryMember5? GeoJsonGeometryMember5 { get; set; }
+        public global::Soenneker.Nws.OpenApiClient.Models.GeoJsonGeometryGeoJsonPoint? GeoJsonGeometryGeoJsonPoint { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Nws.OpenApiClient.Models.GeoJsonGeometryMember5 GeoJsonGeometryMember5 { get; set; }
+        public global::Soenneker.Nws.OpenApiClient.Models.GeoJsonGeometryGeoJsonPoint GeoJsonGeometryGeoJsonPoint { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Nws.OpenApiClient.Models.GeoJsonGeometryMember6"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Nws.OpenApiClient.Models.GeoJsonGeometryGeoJsonPolygon"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Nws.OpenApiClient.Models.GeoJsonGeometryMember6? GeoJsonGeometryMember6 { get; set; }
+        public global::Soenneker.Nws.OpenApiClient.Models.GeoJsonGeometryGeoJsonPolygon? GeoJsonGeometryGeoJsonPolygon { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Nws.OpenApiClient.Models.GeoJsonGeometryMember6 GeoJsonGeometryMember6 { get; set; }
+        public global::Soenneker.Nws.OpenApiClient.Models.GeoJsonGeometryGeoJsonPolygon GeoJsonGeometryGeoJsonPolygon { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -71,29 +71,29 @@ namespace Soenneker.Nws.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             var result = new global::Soenneker.Nws.OpenApiClient.Models.GeoJsonGeometry();
-            if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("GeoJsonGeometryGeoJsonLineString".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.GeoJsonGeometryMember1 = new global::Soenneker.Nws.OpenApiClient.Models.GeoJsonGeometryMember1();
+                result.GeoJsonGeometryGeoJsonLineString = new global::Soenneker.Nws.OpenApiClient.Models.GeoJsonGeometryGeoJsonLineString();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("GeoJsonGeometryGeoJsonMultiLineString".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.GeoJsonGeometryMember2 = new global::Soenneker.Nws.OpenApiClient.Models.GeoJsonGeometryMember2();
+                result.GeoJsonGeometryGeoJsonMultiLineString = new global::Soenneker.Nws.OpenApiClient.Models.GeoJsonGeometryGeoJsonMultiLineString();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("GeoJsonGeometryGeoJsonMultiPoint".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.GeoJsonGeometryMember3 = new global::Soenneker.Nws.OpenApiClient.Models.GeoJsonGeometryMember3();
+                result.GeoJsonGeometryGeoJsonMultiPoint = new global::Soenneker.Nws.OpenApiClient.Models.GeoJsonGeometryGeoJsonMultiPoint();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("GeoJsonGeometryGeoJsonMultiPolygon".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.GeoJsonGeometryMember4 = new global::Soenneker.Nws.OpenApiClient.Models.GeoJsonGeometryMember4();
+                result.GeoJsonGeometryGeoJsonMultiPolygon = new global::Soenneker.Nws.OpenApiClient.Models.GeoJsonGeometryGeoJsonMultiPolygon();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("GeoJsonGeometryGeoJsonPoint".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.GeoJsonGeometryMember5 = new global::Soenneker.Nws.OpenApiClient.Models.GeoJsonGeometryMember5();
+                result.GeoJsonGeometryGeoJsonPoint = new global::Soenneker.Nws.OpenApiClient.Models.GeoJsonGeometryGeoJsonPoint();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("GeoJsonGeometryGeoJsonPolygon".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.GeoJsonGeometryMember6 = new global::Soenneker.Nws.OpenApiClient.Models.GeoJsonGeometryMember6();
+                result.GeoJsonGeometryGeoJsonPolygon = new global::Soenneker.Nws.OpenApiClient.Models.GeoJsonGeometryGeoJsonPolygon();
             }
             return result;
         }
@@ -103,29 +103,29 @@ namespace Soenneker.Nws.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(GeoJsonGeometryMember1 != null)
+            if(GeoJsonGeometryGeoJsonLineString != null)
             {
-                return GeoJsonGeometryMember1.GetFieldDeserializers();
+                return GeoJsonGeometryGeoJsonLineString.GetFieldDeserializers();
             }
-            else if(GeoJsonGeometryMember2 != null)
+            else if(GeoJsonGeometryGeoJsonMultiLineString != null)
             {
-                return GeoJsonGeometryMember2.GetFieldDeserializers();
+                return GeoJsonGeometryGeoJsonMultiLineString.GetFieldDeserializers();
             }
-            else if(GeoJsonGeometryMember3 != null)
+            else if(GeoJsonGeometryGeoJsonMultiPoint != null)
             {
-                return GeoJsonGeometryMember3.GetFieldDeserializers();
+                return GeoJsonGeometryGeoJsonMultiPoint.GetFieldDeserializers();
             }
-            else if(GeoJsonGeometryMember4 != null)
+            else if(GeoJsonGeometryGeoJsonMultiPolygon != null)
             {
-                return GeoJsonGeometryMember4.GetFieldDeserializers();
+                return GeoJsonGeometryGeoJsonMultiPolygon.GetFieldDeserializers();
             }
-            else if(GeoJsonGeometryMember5 != null)
+            else if(GeoJsonGeometryGeoJsonPoint != null)
             {
-                return GeoJsonGeometryMember5.GetFieldDeserializers();
+                return GeoJsonGeometryGeoJsonPoint.GetFieldDeserializers();
             }
-            else if(GeoJsonGeometryMember6 != null)
+            else if(GeoJsonGeometryGeoJsonPolygon != null)
             {
-                return GeoJsonGeometryMember6.GetFieldDeserializers();
+                return GeoJsonGeometryGeoJsonPolygon.GetFieldDeserializers();
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -136,29 +136,29 @@ namespace Soenneker.Nws.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(GeoJsonGeometryMember1 != null)
+            if(GeoJsonGeometryGeoJsonLineString != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Nws.OpenApiClient.Models.GeoJsonGeometryMember1>(null, GeoJsonGeometryMember1);
+                writer.WriteObjectValue<global::Soenneker.Nws.OpenApiClient.Models.GeoJsonGeometryGeoJsonLineString>(null, GeoJsonGeometryGeoJsonLineString);
             }
-            else if(GeoJsonGeometryMember2 != null)
+            else if(GeoJsonGeometryGeoJsonMultiLineString != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Nws.OpenApiClient.Models.GeoJsonGeometryMember2>(null, GeoJsonGeometryMember2);
+                writer.WriteObjectValue<global::Soenneker.Nws.OpenApiClient.Models.GeoJsonGeometryGeoJsonMultiLineString>(null, GeoJsonGeometryGeoJsonMultiLineString);
             }
-            else if(GeoJsonGeometryMember3 != null)
+            else if(GeoJsonGeometryGeoJsonMultiPoint != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Nws.OpenApiClient.Models.GeoJsonGeometryMember3>(null, GeoJsonGeometryMember3);
+                writer.WriteObjectValue<global::Soenneker.Nws.OpenApiClient.Models.GeoJsonGeometryGeoJsonMultiPoint>(null, GeoJsonGeometryGeoJsonMultiPoint);
             }
-            else if(GeoJsonGeometryMember4 != null)
+            else if(GeoJsonGeometryGeoJsonMultiPolygon != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Nws.OpenApiClient.Models.GeoJsonGeometryMember4>(null, GeoJsonGeometryMember4);
+                writer.WriteObjectValue<global::Soenneker.Nws.OpenApiClient.Models.GeoJsonGeometryGeoJsonMultiPolygon>(null, GeoJsonGeometryGeoJsonMultiPolygon);
             }
-            else if(GeoJsonGeometryMember5 != null)
+            else if(GeoJsonGeometryGeoJsonPoint != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Nws.OpenApiClient.Models.GeoJsonGeometryMember5>(null, GeoJsonGeometryMember5);
+                writer.WriteObjectValue<global::Soenneker.Nws.OpenApiClient.Models.GeoJsonGeometryGeoJsonPoint>(null, GeoJsonGeometryGeoJsonPoint);
             }
-            else if(GeoJsonGeometryMember6 != null)
+            else if(GeoJsonGeometryGeoJsonPolygon != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Nws.OpenApiClient.Models.GeoJsonGeometryMember6>(null, GeoJsonGeometryMember6);
+                writer.WriteObjectValue<global::Soenneker.Nws.OpenApiClient.Models.GeoJsonGeometryGeoJsonPolygon>(null, GeoJsonGeometryGeoJsonPolygon);
             }
         }
     }

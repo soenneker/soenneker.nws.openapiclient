@@ -36,17 +36,17 @@ namespace Soenneker.Nws.OpenApiClient.Radar.Servers.Item
         /// <summary>
         /// Returns metadata about a given radar server
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Nws.OpenApiClient.Radar.Servers.Item.ServersGetResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Nws.OpenApiClient.Models.RadarServer200ResponseResponseLdJson"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Nws.OpenApiClient.Models.ProblemDetail">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Nws.OpenApiClient.Radar.Servers.Item.ServersGetResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Nws.OpenApiClient.Radar.Servers.Item.ServersItemRequestBuilder.ServersItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Nws.OpenApiClient.Models.RadarServer200ResponseResponseLdJson?> GetAsync(Action<RequestConfiguration<global::Soenneker.Nws.OpenApiClient.Radar.Servers.Item.ServersItemRequestBuilder.ServersItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Nws.OpenApiClient.Radar.Servers.Item.ServersGetResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Nws.OpenApiClient.Radar.Servers.Item.ServersItemRequestBuilder.ServersItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Nws.OpenApiClient.Models.RadarServer200ResponseResponseLdJson> GetAsync(Action<RequestConfiguration<global::Soenneker.Nws.OpenApiClient.Radar.Servers.Item.ServersItemRequestBuilder.ServersItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -54,7 +54,7 @@ namespace Soenneker.Nws.OpenApiClient.Radar.Servers.Item
             {
                 { "XXX", global::Soenneker.Nws.OpenApiClient.Models.ProblemDetail.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Nws.OpenApiClient.Radar.Servers.Item.ServersGetResponse>(requestInfo, global::Soenneker.Nws.OpenApiClient.Radar.Servers.Item.ServersGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Nws.OpenApiClient.Models.RadarServer200ResponseResponseLdJson>(requestInfo, global::Soenneker.Nws.OpenApiClient.Models.RadarServer200ResponseResponseLdJson.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns metadata about a given radar server

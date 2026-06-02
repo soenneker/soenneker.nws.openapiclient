@@ -9,27 +9,27 @@ namespace Soenneker.Nws.OpenApiClient.Models
     {
         [EnumMember(Value = "AL")]
         #pragma warning disable CS1591
-        AL,
+        Al,
         #pragma warning restore CS1591
         [EnumMember(Value = "AT")]
         #pragma warning disable CS1591
-        AT,
+        At,
         #pragma warning restore CS1591
         [EnumMember(Value = "GL")]
         #pragma warning disable CS1591
-        GL,
+        Gl,
         #pragma warning restore CS1591
         [EnumMember(Value = "GM")]
         #pragma warning disable CS1591
-        GM,
+        Gm,
         #pragma warning restore CS1591
         [EnumMember(Value = "PA")]
         #pragma warning disable CS1591
-        PA,
+        Pa,
         #pragma warning restore CS1591
         [EnumMember(Value = "PI")]
         #pragma warning disable CS1591
-        PI,
+        Pi,
         #pragma warning restore CS1591
     }
 }

@@ -47,7 +47,7 @@ namespace Soenneker.Nws.OpenApiClient.Models
         public string Title { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.Nws.OpenApiClient.Models.AlertCollectionGeoJson_type? Type { get; set; }
+        public global::Soenneker.Nws.OpenApiClient.Models.AlertCollectionGeoJsonType? Type { get; set; }
         /// <summary>The last time a change occurred to this collection</summary>
         public DateTimeOffset? Updated { get; set; }
         /// <summary>
@@ -79,7 +79,7 @@ namespace Soenneker.Nws.OpenApiClient.Models
                 { "features", n => { Features = n.GetCollectionOfObjectValues<global::Soenneker.Nws.OpenApiClient.Models.GeoJsonFeature>(global::Soenneker.Nws.OpenApiClient.Models.GeoJsonFeature.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "pagination", n => { Pagination = n.GetObjectValue<global::Soenneker.Nws.OpenApiClient.Models.PaginationInfo>(global::Soenneker.Nws.OpenApiClient.Models.PaginationInfo.CreateFromDiscriminatorValue); } },
                 { "title", n => { Title = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Nws.OpenApiClient.Models.AlertCollectionGeoJson_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Nws.OpenApiClient.Models.AlertCollectionGeoJsonType>(); } },
                 { "updated", n => { Updated = n.GetDateTimeOffsetValue(); } },
             };
         }
@@ -94,7 +94,7 @@ namespace Soenneker.Nws.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Nws.OpenApiClient.Models.GeoJsonFeature>("features", Features);
             writer.WriteObjectValue<global::Soenneker.Nws.OpenApiClient.Models.PaginationInfo>("pagination", Pagination);
             writer.WriteStringValue("title", Title);
-            writer.WriteEnumValue<global::Soenneker.Nws.OpenApiClient.Models.AlertCollectionGeoJson_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Nws.OpenApiClient.Models.AlertCollectionGeoJsonType>("type", Type);
             writer.WriteDateTimeOffsetValue("updated", Updated);
             writer.WriteAdditionalData(AdditionalData);
         }

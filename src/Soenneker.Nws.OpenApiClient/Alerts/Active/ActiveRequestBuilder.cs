@@ -158,11 +158,11 @@ namespace Soenneker.Nws.OpenApiClient.Alerts.Active
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("message_type")]
-            public global::Soenneker.Nws.OpenApiClient.Alerts.Active.GetMessage_typeQueryParameterType[]? MessageType { get; set; }
+            public global::Soenneker.Nws.OpenApiClient.Models.AlertMessageTypeItem[]? MessageType { get; set; }
 #nullable restore
 #else
             [QueryParameter("message_type")]
-            public global::Soenneker.Nws.OpenApiClient.Alerts.Active.GetMessage_typeQueryParameterType[] MessageType { get; set; }
+            public global::Soenneker.Nws.OpenApiClient.Models.AlertMessageTypeItem[] MessageType { get; set; }
 #endif
             /// <summary>&quot;Point (latitude,longitude)This parameter is incompatible with the following parameters: area, region, region_type, zone&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -186,7 +186,7 @@ namespace Soenneker.Nws.OpenApiClient.Alerts.Active
 #endif
             /// <summary>&quot;Region type (land or marine)This parameter is incompatible with the following parameters: area, point, region, zone&quot;</summary>
             [QueryParameter("region_type")]
-            public global::Soenneker.Nws.OpenApiClient.Alerts.Active.GetRegion_typeQueryParameterType? RegionType { get; set; }
+            public global::Soenneker.Nws.OpenApiClient.Models.AlertRegionType? RegionType { get; set; }
             /// <summary>Severity (extreme, severe, moderate, minor, unknown)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -201,11 +201,11 @@ namespace Soenneker.Nws.OpenApiClient.Alerts.Active
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("status")]
-            public global::Soenneker.Nws.OpenApiClient.Alerts.Active.GetStatusQueryParameterType[]? Status { get; set; }
+            public global::Soenneker.Nws.OpenApiClient.Models.AlertStatusItem[]? Status { get; set; }
 #nullable restore
 #else
             [QueryParameter("status")]
-            public global::Soenneker.Nws.OpenApiClient.Alerts.Active.GetStatusQueryParameterType[] Status { get; set; }
+            public global::Soenneker.Nws.OpenApiClient.Models.AlertStatusItem[] Status { get; set; }
 #endif
             /// <summary>Urgency (immediate, expected, future, past, unknown)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

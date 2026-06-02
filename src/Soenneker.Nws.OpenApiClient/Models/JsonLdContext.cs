@@ -25,10 +25,10 @@ namespace Soenneker.Nws.OpenApiClient.Models
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Nws.OpenApiClient.Models.JsonLdContext_value>? Value { get; set; }
+        public List<global::Soenneker.Nws.OpenApiClient.Models.JsonLdContextBranch1ValueItem>? Value { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Nws.OpenApiClient.Models.JsonLdContext_value> Value { get; set; }
+        public List<global::Soenneker.Nws.OpenApiClient.Models.JsonLdContextBranch1ValueItem> Value { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Nws.OpenApiClient.Models.JsonLdContext"/> and sets the default values.
@@ -56,7 +56,7 @@ namespace Soenneker.Nws.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "type", n => { Type = n.GetStringValue(); } },
-                { "value", n => { Value = n.GetCollectionOfObjectValues<global::Soenneker.Nws.OpenApiClient.Models.JsonLdContext_value>(global::Soenneker.Nws.OpenApiClient.Models.JsonLdContext_value.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<global::Soenneker.Nws.OpenApiClient.Models.JsonLdContextBranch1ValueItem>(global::Soenneker.Nws.OpenApiClient.Models.JsonLdContextBranch1ValueItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -67,7 +67,7 @@ namespace Soenneker.Nws.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("type", Type);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Nws.OpenApiClient.Models.JsonLdContext_value>("value", Value);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Nws.OpenApiClient.Models.JsonLdContextBranch1ValueItem>("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

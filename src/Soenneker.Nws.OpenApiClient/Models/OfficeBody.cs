@@ -133,7 +133,7 @@ namespace Soenneker.Nws.OpenApiClient.Models
         public string Telephone { get; set; }
 #endif
         /// <summary>The Type property</summary>
-        public global::Soenneker.Nws.OpenApiClient.Models.OfficeBody_Type? Type { get; set; }
+        public global::Soenneker.Nws.OpenApiClient.Models.OfficeBodyType? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -167,7 +167,7 @@ namespace Soenneker.Nws.OpenApiClient.Models
                 { "responsibleForecastZones", n => { ResponsibleForecastZones = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "sameAs", n => { SameAs = n.GetStringValue(); } },
                 { "telephone", n => { Telephone = n.GetStringValue(); } },
-                { "@type", n => { Type = n.GetEnumValue<global::Soenneker.Nws.OpenApiClient.Models.OfficeBody_Type>(); } },
+                { "@type", n => { Type = n.GetEnumValue<global::Soenneker.Nws.OpenApiClient.Models.OfficeBodyType>(); } },
             };
         }
         /// <summary>
@@ -192,7 +192,7 @@ namespace Soenneker.Nws.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("responsibleForecastZones", ResponsibleForecastZones);
             writer.WriteStringValue("sameAs", SameAs);
             writer.WriteStringValue("telephone", Telephone);
-            writer.WriteEnumValue<global::Soenneker.Nws.OpenApiClient.Models.OfficeBody_Type>("@type", Type);
+            writer.WriteEnumValue<global::Soenneker.Nws.OpenApiClient.Models.OfficeBodyType>("@type", Type);
         }
     }
 }

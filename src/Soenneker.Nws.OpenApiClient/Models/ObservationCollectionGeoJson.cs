@@ -39,7 +39,7 @@ namespace Soenneker.Nws.OpenApiClient.Models
         public global::Soenneker.Nws.OpenApiClient.Models.PaginationInfo Pagination { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.Nws.OpenApiClient.Models.ObservationCollectionGeoJson_type? Type { get; set; }
+        public global::Soenneker.Nws.OpenApiClient.Models.AlertCollectionGeoJsonType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Nws.OpenApiClient.Models.ObservationCollectionGeoJson"/> and sets the default values.
         /// </summary>
@@ -68,7 +68,7 @@ namespace Soenneker.Nws.OpenApiClient.Models
                 { "@context", n => { Context = n.GetObjectValue<global::Soenneker.Nws.OpenApiClient.Models.JsonLdContext>(global::Soenneker.Nws.OpenApiClient.Models.JsonLdContext.CreateFromDiscriminatorValue); } },
                 { "features", n => { Features = n.GetCollectionOfObjectValues<global::Soenneker.Nws.OpenApiClient.Models.GeoJsonFeature>(global::Soenneker.Nws.OpenApiClient.Models.GeoJsonFeature.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "pagination", n => { Pagination = n.GetObjectValue<global::Soenneker.Nws.OpenApiClient.Models.PaginationInfo>(global::Soenneker.Nws.OpenApiClient.Models.PaginationInfo.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Nws.OpenApiClient.Models.ObservationCollectionGeoJson_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Nws.OpenApiClient.Models.AlertCollectionGeoJsonType>(); } },
             };
         }
         /// <summary>
@@ -81,7 +81,7 @@ namespace Soenneker.Nws.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Nws.OpenApiClient.Models.JsonLdContext>("@context", Context);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Nws.OpenApiClient.Models.GeoJsonFeature>("features", Features);
             writer.WriteObjectValue<global::Soenneker.Nws.OpenApiClient.Models.PaginationInfo>("pagination", Pagination);
-            writer.WriteEnumValue<global::Soenneker.Nws.OpenApiClient.Models.ObservationCollectionGeoJson_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Nws.OpenApiClient.Models.AlertCollectionGeoJsonType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
