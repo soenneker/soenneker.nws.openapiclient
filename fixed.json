@@ -3578,7 +3578,6 @@
         "type": "string",
         "additionalProperties": false,
         "description": "Denotes the units used in the textual portions of the forecast.",
-        "default": "us",
         "x-ms-enum": {
           "name": "GridpointForecastUnits",
           "modelAsString": false,
