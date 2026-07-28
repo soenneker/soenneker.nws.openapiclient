@@ -3,7 +3,7 @@
   "info": {
     "title": "weather.gov API",
     "description": "weather.gov API",
-    "version": "3.10.0"
+    "version": "3.11.0"
   },
   "servers": [
     {
@@ -1603,6 +1603,64 @@
         }
       ]
     },
+    "/radio": {
+      "get": {
+        "description": "Returns a collection of transmitters",
+        "externalDocs": {
+          "url": "https://www.w3.org/TR/speech-synthesis/"
+        },
+        "operationId": "Transmitters",
+        "responses": {
+          "200": {
+            "description": "success",
+            "content": {
+              "application/ld\u002Bjson": {
+                "schema": {
+                  "$ref": "#/components/schemas/Transmitters200ResponseResponseLdJson"
+                }
+              }
+            }
+          },
+          "default": {
+            "$ref": "#/components/responses/Error"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/PaginationCursor"
+        }
+      ]
+    },
+    "/radio/{callSign}": {
+      "get": {
+        "description": "Returns a single transmitter",
+        "externalDocs": {
+          "url": "https://www.w3.org/TR/speech-synthesis/"
+        },
+        "operationId": "Transmitter",
+        "responses": {
+          "200": {
+            "description": "success",
+            "content": {
+              "application/ld\u002Bjson": {
+                "schema": {
+                  "$ref": "#/components/schemas/Transmitter200ResponseResponseLdJson"
+                }
+              }
+            }
+          },
+          "default": {
+            "$ref": "#/components/responses/Error"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/CallSign"
+        }
+      ]
+    },
     "/radio/{callSign}/broadcast": {
       "get": {
         "description": "Returns NOAA Weather Radio broadcast script for a transmitter",
@@ -2305,6 +2363,41 @@
           "required": true,
           "schema": {
             "type": "string"
+          }
+        },
+        {
+          "$ref": "#/components/parameters/NWSZoneId"
+        }
+      ]
+    },
+    "/zones/{type}/{zoneId}/radio": {
+      "get": {
+        "description": "Returns transmitter object for a given zone",
+        "operationId": "TransmitterZone",
+        "responses": {
+          "200": {
+            "description": "success",
+            "content": {
+              "application/ld\u002Bjson": {
+                "schema": {
+                  "$ref": "#/components/schemas/TransmitterZone200ResponseResponseLdJson"
+                }
+              }
+            }
+          },
+          "default": {
+            "$ref": "#/components/responses/Error"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "name": "type",
+          "in": "path",
+          "description": "Must be value \u0027county\u0027.",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/ZonesTypeZoneIdRadioType"
           }
         },
         {
@@ -7792,7 +7885,16 @@
       "RadarProfiler200Response": {
         "type": "object"
       },
+      "Transmitters200Response": {
+        "type": "object"
+      },
+      "Transmitter200Response": {
+        "type": "object"
+      },
       "AreaRadio200Response": {
+        "type": "object"
+      },
+      "TransmitterZone200Response": {
         "type": "object"
       },
       "StateTerritoryCodeWrapper": {
@@ -8056,7 +8158,16 @@
       "RadarProfiler200ResponseResponseLdJson": {
         "type": "object"
       },
+      "Transmitters200ResponseResponseLdJson": {
+        "type": "object"
+      },
+      "Transmitter200ResponseResponseLdJson": {
+        "type": "object"
+      },
       "AreaRadio200ResponseResponseSsmlXml": {
+        "type": "object"
+      },
+      "TransmitterZone200ResponseResponseLdJson": {
         "type": "object"
       },
       "Gridpoint12HForecastResponseNoaaDwmlXmlContent": {
@@ -9292,6 +9403,23 @@
             {
               "value": "tds",
               "name": "Tds"
+            }
+          ]
+        }
+      },
+      "ZonesTypeZoneIdRadioType": {
+        "enum": [
+          "county"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "ZonesTypeZoneIdRadioType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "county",
+              "name": "County"
             }
           ]
         }

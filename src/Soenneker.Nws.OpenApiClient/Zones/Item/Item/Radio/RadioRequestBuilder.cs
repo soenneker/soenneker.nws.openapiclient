@@ -4,55 +4,49 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Nws.OpenApiClient.Models;
-using Soenneker.Nws.OpenApiClient.Radio.Item.Broadcast;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Soenneker.Nws.OpenApiClient.Radio.Item
+namespace Soenneker.Nws.OpenApiClient.Zones.Item.Item.Radio
 {
     /// <summary>
-    /// Builds and executes requests for operations under \radio\{callSign}
+    /// Builds and executes requests for operations under \zones\{type}\{zoneId}\radio
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class WithCallSignItemRequestBuilder : BaseRequestBuilder
+    public partial class RadioRequestBuilder : BaseRequestBuilder
     {
-        /// <summary>The broadcast property</summary>
-        public global::Soenneker.Nws.OpenApiClient.Radio.Item.Broadcast.BroadcastRequestBuilder Broadcast
-        {
-            get => new global::Soenneker.Nws.OpenApiClient.Radio.Item.Broadcast.BroadcastRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Nws.OpenApiClient.Radio.Item.WithCallSignItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Nws.OpenApiClient.Zones.Item.Item.Radio.RadioRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithCallSignItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/radio/{callSign}", pathParameters)
+        public RadioRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{type}/{zoneId}/radio", pathParameters)
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Nws.OpenApiClient.Radio.Item.WithCallSignItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Nws.OpenApiClient.Zones.Item.Item.Radio.RadioRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithCallSignItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/radio/{callSign}", rawUrl)
+        public RadioRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{type}/{zoneId}/radio", rawUrl)
         {
         }
         /// <summary>
-        /// Returns a single transmitter
+        /// Returns transmitter object for a given zone
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Nws.OpenApiClient.Models.Transmitter200ResponseResponseLdJson"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Nws.OpenApiClient.Models.TransmitterZone200ResponseResponseLdJson"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Nws.OpenApiClient.Models.ProblemDetail">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Nws.OpenApiClient.Models.Transmitter200ResponseResponseLdJson?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Nws.OpenApiClient.Models.TransmitterZone200ResponseResponseLdJson?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Nws.OpenApiClient.Models.Transmitter200ResponseResponseLdJson> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Nws.OpenApiClient.Models.TransmitterZone200ResponseResponseLdJson> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -60,10 +54,10 @@ namespace Soenneker.Nws.OpenApiClient.Radio.Item
             {
                 { "XXX", global::Soenneker.Nws.OpenApiClient.Models.ProblemDetail.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Nws.OpenApiClient.Models.Transmitter200ResponseResponseLdJson>(requestInfo, global::Soenneker.Nws.OpenApiClient.Models.Transmitter200ResponseResponseLdJson.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Nws.OpenApiClient.Models.TransmitterZone200ResponseResponseLdJson>(requestInfo, global::Soenneker.Nws.OpenApiClient.Models.TransmitterZone200ResponseResponseLdJson.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns a single transmitter
+        /// Returns transmitter object for a given zone
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -84,11 +78,11 @@ namespace Soenneker.Nws.OpenApiClient.Radio.Item
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Nws.OpenApiClient.Radio.Item.WithCallSignItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Nws.OpenApiClient.Zones.Item.Item.Radio.RadioRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public global::Soenneker.Nws.OpenApiClient.Radio.Item.WithCallSignItemRequestBuilder WithUrl(string rawUrl)
+        public global::Soenneker.Nws.OpenApiClient.Zones.Item.Item.Radio.RadioRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Soenneker.Nws.OpenApiClient.Radio.Item.WithCallSignItemRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Soenneker.Nws.OpenApiClient.Zones.Item.Item.Radio.RadioRequestBuilder(rawUrl, RequestAdapter);
         }
     }
 }

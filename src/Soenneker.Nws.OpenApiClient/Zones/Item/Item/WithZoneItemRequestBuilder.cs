@@ -5,6 +5,7 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Nws.OpenApiClient.Models;
 using Soenneker.Nws.OpenApiClient.Zones.Item.Item.Forecast;
+using Soenneker.Nws.OpenApiClient.Zones.Item.Item.Radio;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -22,6 +23,11 @@ namespace Soenneker.Nws.OpenApiClient.Zones.Item.Item
         public global::Soenneker.Nws.OpenApiClient.Zones.Item.Item.Forecast.ForecastRequestBuilder Forecast
         {
             get => new global::Soenneker.Nws.OpenApiClient.Zones.Item.Item.Forecast.ForecastRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The radio property</summary>
+        public global::Soenneker.Nws.OpenApiClient.Zones.Item.Item.Radio.RadioRequestBuilder Radio
+        {
+            get => new global::Soenneker.Nws.OpenApiClient.Zones.Item.Item.Radio.RadioRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Nws.OpenApiClient.Zones.Item.Item.WithZoneItemRequestBuilder"/> and sets the default values.
