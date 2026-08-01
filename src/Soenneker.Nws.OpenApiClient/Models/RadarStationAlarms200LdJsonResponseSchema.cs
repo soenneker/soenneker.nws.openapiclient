@@ -7,30 +7,29 @@ using System.IO;
 using System;
 namespace Soenneker.Nws.OpenApiClient.Models
 {
-    /// <summary>
-    /// Active alerts by marine region
-    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class AlertsActiveCount200ResponseRegions : IAdditionalDataHolder, IParsable
+    #pragma warning disable CS1591
+    public partial class RadarStationAlarms200LdJsonResponseSchema : IAdditionalDataHolder, IParsable
+    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Nws.OpenApiClient.Models.AlertsActiveCount200ResponseRegions"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Nws.OpenApiClient.Models.RadarStationAlarms200LdJsonResponseSchema"/> and sets the default values.
         /// </summary>
-        public AlertsActiveCount200ResponseRegions()
+        public RadarStationAlarms200LdJsonResponseSchema()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Nws.OpenApiClient.Models.AlertsActiveCount200ResponseRegions"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Nws.OpenApiClient.Models.RadarStationAlarms200LdJsonResponseSchema"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Nws.OpenApiClient.Models.AlertsActiveCount200ResponseRegions CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Nws.OpenApiClient.Models.RadarStationAlarms200LdJsonResponseSchema CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Nws.OpenApiClient.Models.AlertsActiveCount200ResponseRegions();
+            return new global::Soenneker.Nws.OpenApiClient.Models.RadarStationAlarms200LdJsonResponseSchema();
         }
         /// <summary>
         /// The deserialization information for the current model

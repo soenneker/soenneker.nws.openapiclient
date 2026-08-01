@@ -147,7 +147,7 @@
             "content": {
               "application/ld\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/AlertsActiveCount200Response"
+                  "$ref": "#/components/schemas/AlertsActiveCount200LdJsonResponse"
                 }
               }
             }
@@ -237,7 +237,7 @@
             "content": {
               "application/ld\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/AlertsTypes200Response"
+                  "$ref": "#/components/schemas/AlertsTypes200LdJsonResponse"
                 }
               }
             }
@@ -268,7 +268,7 @@
               },
               "application/cap\u002Bxml": {
                 "schema": {
-                  "$ref": "#/components/schemas/AlertsSingle200Response"
+                  "$ref": "#/components/schemas/AlertsSingle200CapXmlResponse"
                 }
               }
             }
@@ -375,7 +375,7 @@
               },
               "application/vnd.noaa.uswx\u002Bxml": {
                 "schema": {
-                  "$ref": "#/components/schemas/Cwa200ResponseResponseNoaaUswxXml"
+                  "$ref": "#/components/schemas/Cwa200NoaaUswxXmlResponseSchema"
                 }
               }
             }
@@ -515,7 +515,7 @@
               },
               "application/vnd.noaa.uswx\u002Bxml": {
                 "schema": {
-                  "$ref": "#/components/schemas/Sigmet200ResponseResponseNoaaUswxXml"
+                  "$ref": "#/components/schemas/Sigmet200NoaaUswxXmlResponseSchema"
                 }
               }
             }
@@ -536,7 +536,7 @@
             "content": {
               "application/ld\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Glossary200Response"
+                  "$ref": "#/components/schemas/Glossary200LdJsonResponse"
                 }
               }
             }
@@ -793,7 +793,7 @@
             "content": {
               "application/ld\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Tafs200ResponseResponseLdJson"
+                  "$ref": "#/components/schemas/Tafs200LdJsonResponseSchema"
                 }
               }
             }
@@ -825,7 +825,7 @@
             "content": {
               "application/vnd.wmo.iwxxm\u002Bxml": {
                 "schema": {
-                  "$ref": "#/components/schemas/Taf200ResponseResponseWmoIwxxmXml"
+                  "$ref": "#/components/schemas/Taf200WmoIwxxmXmlResponseSchema"
                 }
               }
             }
@@ -991,7 +991,7 @@
             "content": {
               "application/pdf": {
                 "schema": {
-                  "$ref": "#/components/schemas/OfficeBriefingDownload200ResponseResponsePdf"
+                  "$ref": "#/components/schemas/OfficeBriefingDownload200PdfResponseSchema"
                 }
               }
             }
@@ -1087,7 +1087,7 @@
             "content": {
               "application/ld\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/OfficeWeatherstory200Response"
+                  "$ref": "#/components/schemas/OfficeWeatherstory200LdJsonResponse"
                 }
               }
             }
@@ -1113,7 +1113,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/OfficeWeatherstoryImage200ResponseResponseJson"
+                  "$ref": "#/components/schemas/OfficeWeatherstoryImage200Response"
                 }
               }
             }
@@ -1185,7 +1185,7 @@
             "content": {
               "application/ssml\u002Bxml": {
                 "schema": {
-                  "$ref": "#/components/schemas/PointRadio200ResponseResponseSsmlXml"
+                  "$ref": "#/components/schemas/PointRadio200SsmlXmlResponseSchema"
                 }
               }
             }
@@ -1224,7 +1224,7 @@
             "content": {
               "application/ld\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/RadarServers200ResponseResponseLdJson"
+                  "$ref": "#/components/schemas/RadarServers200LdJsonResponseSchema"
                 }
               }
             }
@@ -1255,7 +1255,7 @@
             "content": {
               "application/ld\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/RadarServer200ResponseResponseLdJson"
+                  "$ref": "#/components/schemas/RadarServer200LdJsonResponseSchema"
                 }
               }
             }
@@ -1297,7 +1297,7 @@
             "content": {
               "application/ld\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/RadarSpgds200ResponseResponseLdJson"
+                  "$ref": "#/components/schemas/RadarSpgds200LdJsonResponseSchema"
                 }
               }
             }
@@ -1349,12 +1349,12 @@
             "content": {
               "application/geo\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/RadarStations200ResponseResponseGeoJson"
+                  "$ref": "#/components/schemas/RadarStations200GeoJsonResponseSchema"
                 }
               },
               "application/ld\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/RadarStations200ResponseResponseLdJson2"
+                  "$ref": "#/components/schemas/RadarStations200LdJsonResponseSchema"
                 }
               }
             }
@@ -1393,12 +1393,12 @@
             "content": {
               "application/geo\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/RadarStation200ResponseResponseGeoJson"
+                  "$ref": "#/components/schemas/RadarStation200GeoJsonResponseSchema"
                 }
               },
               "application/ld\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/RadarStation200ResponseResponseLdJson2"
+                  "$ref": "#/components/schemas/RadarStation200LdJsonResponseSchema"
                 }
               }
             }
@@ -1430,7 +1430,7 @@
             "content": {
               "application/ld\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/RadarStationAlarms200ResponseResponseLdJson"
+                  "$ref": "#/components/schemas/RadarStationAlarms200LdJsonResponseSchema"
                 }
               }
             }
@@ -1531,7 +1531,7 @@
             "content": {
               "application/ld\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/RadarQueue200ResponseResponseLdJson"
+                  "$ref": "#/components/schemas/RadarQueue200LdJsonResponseSchema"
                 }
               }
             }
@@ -1581,7 +1581,7 @@
             "content": {
               "application/ld\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/RadarProfiler200ResponseResponseLdJson"
+                  "$ref": "#/components/schemas/RadarProfiler200LdJsonResponseSchema"
                 }
               }
             }
@@ -1616,7 +1616,7 @@
             "content": {
               "application/ld\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Transmitters200ResponseResponseLdJson"
+                  "$ref": "#/components/schemas/Transmitters200LdJsonResponseSchema"
                 }
               }
             }
@@ -1645,7 +1645,7 @@
             "content": {
               "application/ld\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Transmitter200ResponseResponseLdJson"
+                  "$ref": "#/components/schemas/Transmitter200LdJsonResponseSchema"
                 }
               }
             }
@@ -1674,7 +1674,7 @@
             "content": {
               "application/ssml\u002Bxml": {
                 "schema": {
-                  "$ref": "#/components/schemas/AreaRadio200ResponseResponseSsmlXml"
+                  "$ref": "#/components/schemas/AreaRadio200SsmlXmlResponseSchema"
                 }
               }
             }
@@ -2380,7 +2380,7 @@
             "content": {
               "application/ld\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/TransmitterZone200ResponseResponseLdJson"
+                  "$ref": "#/components/schemas/TransmitterZone200LdJsonResponseSchema"
                 }
               }
             }
@@ -7791,7 +7791,7 @@
         },
         "description": "A value object representing an expected hazard."
       },
-      "AlertsActiveCount200Response": {
+      "AlertsActiveCount200LdJsonResponse": {
         "type": "object",
         "properties": {
           "total": {
@@ -7810,17 +7810,17 @@
             "description": "The total number of active alerts affecting marine zones"
           },
           "regions": {
-            "$ref": "#/components/schemas/AlertsActiveCount200ResponseRegions"
+            "$ref": "#/components/schemas/AlertsActiveCount200LdJsonResponseRegions"
           },
           "areas": {
-            "$ref": "#/components/schemas/AlertsActiveCount200ResponseAreas"
+            "$ref": "#/components/schemas/AlertsActiveCount200LdJsonResponseAreas"
           },
           "zones": {
-            "$ref": "#/components/schemas/AlertsActiveCount200ResponseZones"
+            "$ref": "#/components/schemas/AlertsActiveCount200LdJsonResponseZones"
           }
         }
       },
-      "AlertsTypes200Response": {
+      "AlertsTypes200LdJsonResponse": {
         "type": "object",
         "properties": {
           "eventTypes": {
@@ -7832,69 +7832,69 @@
           }
         }
       },
-      "Cwa200Response": {
+      "Cwa200NoaaUswxXmlResponse": {
         "type": "object"
       },
-      "Sigmet200Response": {
+      "Sigmet200NoaaUswxXmlResponse": {
         "type": "object"
       },
-      "Tafs200Response": {
+      "Tafs200LdJsonResponse": {
         "type": "object"
       },
-      "Taf200Response": {
+      "Taf200WmoIwxxmXmlResponse": {
         "type": "object"
       },
-      "OfficeBriefingDownload200Response": {
+      "OfficeBriefingDownload200PdfResponse": {
         "type": "string",
         "format": "binary"
       },
-      "OfficeWeatherstoryImage200Response": {
+      "OfficeWeatherstoryImage200MediaResponse": {
         "type": "string",
         "format": "binary"
       },
-      "PointRadio200Response": {
+      "PointRadio200SsmlXmlResponse": {
         "type": "object"
       },
-      "RadarServers200Response": {
+      "RadarServers200LdJsonResponse": {
         "type": "object"
       },
-      "RadarServer200Response": {
+      "RadarServer200LdJsonResponse": {
         "type": "object"
       },
-      "RadarSpgds200Response": {
+      "RadarSpgds200LdJsonResponse": {
         "type": "object"
       },
-      "RadarStations200Response": {
+      "RadarStations200GeoJsonResponse": {
         "type": "object"
       },
-      "RadarStations200ResponseResponseLdJson": {
+      "RadarStations200LdJsonResponse": {
         "type": "object"
       },
-      "RadarStation200Response": {
+      "RadarStation200GeoJsonResponse": {
         "type": "object"
       },
-      "RadarStation200ResponseResponseLdJson": {
+      "RadarStation200LdJsonResponse": {
         "type": "object"
       },
-      "RadarStationAlarms200Response": {
+      "RadarStationAlarms200LdJsonResponse": {
         "type": "object"
       },
-      "RadarQueue200Response": {
+      "RadarQueue200LdJsonResponse": {
         "type": "object"
       },
-      "RadarProfiler200Response": {
+      "RadarProfiler200LdJsonResponse": {
         "type": "object"
       },
-      "Transmitters200Response": {
+      "Transmitters200LdJsonResponse": {
         "type": "object"
       },
-      "Transmitter200Response": {
+      "Transmitter200LdJsonResponse": {
         "type": "object"
       },
-      "AreaRadio200Response": {
+      "AreaRadio200SsmlXmlResponse": {
         "type": "object"
       },
-      "TransmitterZone200Response": {
+      "TransmitterZone200LdJsonResponse": {
         "type": "object"
       },
       "StateTerritoryCodeWrapper": {
@@ -8081,16 +8081,16 @@
         "type": "object",
         "description": "Placeholder schema for path example refs"
       },
-      "AlertsSingle200Response": {
+      "AlertsSingle200CapXmlResponse": {
         "type": "object"
       },
-      "Cwa200ResponseResponseNoaaUswxXml": {
+      "Cwa200NoaaUswxXmlResponseSchema": {
         "type": "object"
       },
-      "Sigmet200ResponseResponseNoaaUswxXml": {
+      "Sigmet200NoaaUswxXmlResponseSchema": {
         "type": "object"
       },
-      "Glossary200Response": {
+      "Glossary200LdJsonResponse": {
         "type": "object",
         "properties": {
           "@context": {
@@ -8099,75 +8099,75 @@
           "glossary": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/Glossary200ResponseGlossaryItem"
+              "$ref": "#/components/schemas/Glossary200LdJsonResponseGlossaryItem"
             },
             "description": "A list of glossary terms"
           }
         }
       },
-      "Tafs200ResponseResponseLdJson": {
+      "Tafs200LdJsonResponseSchema": {
         "type": "object"
       },
-      "Taf200ResponseResponseWmoIwxxmXml": {
+      "Taf200WmoIwxxmXmlResponseSchema": {
         "type": "object"
       },
-      "OfficeBriefingDownload200ResponseResponsePdf": {
+      "OfficeBriefingDownload200PdfResponseSchema": {
         "type": "string",
         "format": "binary"
       },
-      "OfficeWeatherstory200Response": {
+      "OfficeWeatherstory200LdJsonResponse": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/OfficeWeatherStoryBody"
         }
       },
-      "OfficeWeatherstoryImage200ResponseResponseJson": {
+      "OfficeWeatherstoryImage200Response": {
         "type": "string",
         "format": "binary"
       },
-      "PointRadio200ResponseResponseSsmlXml": {
+      "PointRadio200SsmlXmlResponseSchema": {
         "type": "object"
       },
-      "RadarServers200ResponseResponseLdJson": {
+      "RadarServers200LdJsonResponseSchema": {
         "type": "object"
       },
-      "RadarServer200ResponseResponseLdJson": {
+      "RadarServer200LdJsonResponseSchema": {
         "type": "object"
       },
-      "RadarSpgds200ResponseResponseLdJson": {
+      "RadarSpgds200LdJsonResponseSchema": {
         "type": "object"
       },
-      "RadarStations200ResponseResponseGeoJson": {
+      "RadarStations200GeoJsonResponseSchema": {
         "type": "object"
       },
-      "RadarStations200ResponseResponseLdJson2": {
+      "RadarStations200LdJsonResponseSchema": {
         "type": "object"
       },
-      "RadarStation200ResponseResponseGeoJson": {
+      "RadarStation200GeoJsonResponseSchema": {
         "type": "object"
       },
-      "RadarStation200ResponseResponseLdJson2": {
+      "RadarStation200LdJsonResponseSchema": {
         "type": "object"
       },
-      "RadarStationAlarms200ResponseResponseLdJson": {
+      "RadarStationAlarms200LdJsonResponseSchema": {
         "type": "object"
       },
-      "RadarQueue200ResponseResponseLdJson": {
+      "RadarQueue200LdJsonResponseSchema": {
         "type": "object"
       },
-      "RadarProfiler200ResponseResponseLdJson": {
+      "RadarProfiler200LdJsonResponseSchema": {
         "type": "object"
       },
-      "Transmitters200ResponseResponseLdJson": {
+      "Transmitters200LdJsonResponseSchema": {
         "type": "object"
       },
-      "Transmitter200ResponseResponseLdJson": {
+      "Transmitter200LdJsonResponseSchema": {
         "type": "object"
       },
-      "AreaRadio200ResponseResponseSsmlXml": {
+      "AreaRadio200SsmlXmlResponseSchema": {
         "type": "object"
       },
-      "TransmitterZone200ResponseResponseLdJson": {
+      "TransmitterZone200LdJsonResponseSchema": {
         "type": "object"
       },
       "Gridpoint12HForecastResponseNoaaDwmlXmlContent": {
@@ -8248,7 +8248,7 @@
       "ZoneForecastGeoJsonProperties": {
         "type": "object"
       },
-      "AlertsActiveCount200ResponseRegions": {
+      "AlertsActiveCount200LdJsonResponseRegions": {
         "type": "object",
         "additionalProperties": {
           "minimum": 1,
@@ -8256,7 +8256,7 @@
         },
         "description": "Active alerts by marine region"
       },
-      "AlertsActiveCount200ResponseAreas": {
+      "AlertsActiveCount200LdJsonResponseAreas": {
         "type": "object",
         "additionalProperties": {
           "minimum": 1,
@@ -8264,7 +8264,7 @@
         },
         "description": "Active alerts by area (state/territory)"
       },
-      "AlertsActiveCount200ResponseZones": {
+      "AlertsActiveCount200LdJsonResponseZones": {
         "type": "object",
         "additionalProperties": {
           "minimum": 1,
@@ -8275,7 +8275,7 @@
       "JsonLdContextBranch1ValueItem": {
         "type": "object"
       },
-      "Glossary200ResponseGlossaryItem": {
+      "Glossary200LdJsonResponseGlossaryItem": {
         "type": "object",
         "properties": {
           "term": {

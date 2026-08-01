@@ -9,7 +9,7 @@ namespace Soenneker.Nws.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class Glossary200ResponseGlossaryItem : IAdditionalDataHolder, IParsable
+    public partial class Glossary200LdJsonResponseGlossaryItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -31,21 +31,21 @@ namespace Soenneker.Nws.OpenApiClient.Models
         public string Term { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Nws.OpenApiClient.Models.Glossary200ResponseGlossaryItem"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Nws.OpenApiClient.Models.Glossary200LdJsonResponseGlossaryItem"/> and sets the default values.
         /// </summary>
-        public Glossary200ResponseGlossaryItem()
+        public Glossary200LdJsonResponseGlossaryItem()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Nws.OpenApiClient.Models.Glossary200ResponseGlossaryItem"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Nws.OpenApiClient.Models.Glossary200LdJsonResponseGlossaryItem"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Nws.OpenApiClient.Models.Glossary200ResponseGlossaryItem CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Nws.OpenApiClient.Models.Glossary200LdJsonResponseGlossaryItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Nws.OpenApiClient.Models.Glossary200ResponseGlossaryItem();
+            return new global::Soenneker.Nws.OpenApiClient.Models.Glossary200LdJsonResponseGlossaryItem();
         }
         /// <summary>
         /// The deserialization information for the current model

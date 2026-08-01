@@ -9,43 +9,35 @@ namespace Soenneker.Nws.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class Glossary200Response : IAdditionalDataHolder, IParsable
+    public partial class AlertsTypes200LdJsonResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The Context property</summary>
+        /// <summary>A list of recognized event types</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Nws.OpenApiClient.Models.JsonLdContext? Context { get; set; }
+        public List<string>? EventTypes { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Nws.OpenApiClient.Models.JsonLdContext Context { get; set; }
-#endif
-        /// <summary>A list of glossary terms</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Soenneker.Nws.OpenApiClient.Models.Glossary200ResponseGlossaryItem>? Glossary { get; set; }
-#nullable restore
-#else
-        public List<global::Soenneker.Nws.OpenApiClient.Models.Glossary200ResponseGlossaryItem> Glossary { get; set; }
+        public List<string> EventTypes { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Nws.OpenApiClient.Models.Glossary200Response"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Nws.OpenApiClient.Models.AlertsTypes200LdJsonResponse"/> and sets the default values.
         /// </summary>
-        public Glossary200Response()
+        public AlertsTypes200LdJsonResponse()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Nws.OpenApiClient.Models.Glossary200Response"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Nws.OpenApiClient.Models.AlertsTypes200LdJsonResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Nws.OpenApiClient.Models.Glossary200Response CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Nws.OpenApiClient.Models.AlertsTypes200LdJsonResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Nws.OpenApiClient.Models.Glossary200Response();
+            return new global::Soenneker.Nws.OpenApiClient.Models.AlertsTypes200LdJsonResponse();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -55,8 +47,7 @@ namespace Soenneker.Nws.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "@context", n => { Context = n.GetObjectValue<global::Soenneker.Nws.OpenApiClient.Models.JsonLdContext>(global::Soenneker.Nws.OpenApiClient.Models.JsonLdContext.CreateFromDiscriminatorValue); } },
-                { "glossary", n => { Glossary = n.GetCollectionOfObjectValues<global::Soenneker.Nws.OpenApiClient.Models.Glossary200ResponseGlossaryItem>(global::Soenneker.Nws.OpenApiClient.Models.Glossary200ResponseGlossaryItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "eventTypes", n => { EventTypes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -66,8 +57,7 @@ namespace Soenneker.Nws.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Nws.OpenApiClient.Models.JsonLdContext>("@context", Context);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Nws.OpenApiClient.Models.Glossary200ResponseGlossaryItem>("glossary", Glossary);
+            writer.WriteCollectionOfPrimitiveValues<string>("eventTypes", EventTypes);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -9,7 +9,7 @@ namespace Soenneker.Nws.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class AlertsActiveCount200Response : IAdditionalDataHolder, IParsable
+    public partial class AlertsActiveCount200LdJsonResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -17,10 +17,10 @@ namespace Soenneker.Nws.OpenApiClient.Models
         /// <summary>Active alerts by area (state/territory)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Nws.OpenApiClient.Models.AlertsActiveCount200ResponseAreas? Areas { get; set; }
+        public global::Soenneker.Nws.OpenApiClient.Models.AlertsActiveCount200LdJsonResponseAreas? Areas { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Nws.OpenApiClient.Models.AlertsActiveCount200ResponseAreas Areas { get; set; }
+        public global::Soenneker.Nws.OpenApiClient.Models.AlertsActiveCount200LdJsonResponseAreas Areas { get; set; }
 #endif
         /// <summary>The total number of active alerts affecting land zones</summary>
         public int? Land { get; set; }
@@ -29,37 +29,37 @@ namespace Soenneker.Nws.OpenApiClient.Models
         /// <summary>Active alerts by marine region</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Nws.OpenApiClient.Models.AlertsActiveCount200ResponseRegions? Regions { get; set; }
+        public global::Soenneker.Nws.OpenApiClient.Models.AlertsActiveCount200LdJsonResponseRegions? Regions { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Nws.OpenApiClient.Models.AlertsActiveCount200ResponseRegions Regions { get; set; }
+        public global::Soenneker.Nws.OpenApiClient.Models.AlertsActiveCount200LdJsonResponseRegions Regions { get; set; }
 #endif
         /// <summary>The total number of active alerts</summary>
         public int? Total { get; set; }
         /// <summary>Active alerts by NWS public zone or county code</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Nws.OpenApiClient.Models.AlertsActiveCount200ResponseZones? Zones { get; set; }
+        public global::Soenneker.Nws.OpenApiClient.Models.AlertsActiveCount200LdJsonResponseZones? Zones { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Nws.OpenApiClient.Models.AlertsActiveCount200ResponseZones Zones { get; set; }
+        public global::Soenneker.Nws.OpenApiClient.Models.AlertsActiveCount200LdJsonResponseZones Zones { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Nws.OpenApiClient.Models.AlertsActiveCount200Response"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Nws.OpenApiClient.Models.AlertsActiveCount200LdJsonResponse"/> and sets the default values.
         /// </summary>
-        public AlertsActiveCount200Response()
+        public AlertsActiveCount200LdJsonResponse()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Nws.OpenApiClient.Models.AlertsActiveCount200Response"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Nws.OpenApiClient.Models.AlertsActiveCount200LdJsonResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Nws.OpenApiClient.Models.AlertsActiveCount200Response CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Nws.OpenApiClient.Models.AlertsActiveCount200LdJsonResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Nws.OpenApiClient.Models.AlertsActiveCount200Response();
+            return new global::Soenneker.Nws.OpenApiClient.Models.AlertsActiveCount200LdJsonResponse();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -69,12 +69,12 @@ namespace Soenneker.Nws.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "areas", n => { Areas = n.GetObjectValue<global::Soenneker.Nws.OpenApiClient.Models.AlertsActiveCount200ResponseAreas>(global::Soenneker.Nws.OpenApiClient.Models.AlertsActiveCount200ResponseAreas.CreateFromDiscriminatorValue); } },
+                { "areas", n => { Areas = n.GetObjectValue<global::Soenneker.Nws.OpenApiClient.Models.AlertsActiveCount200LdJsonResponseAreas>(global::Soenneker.Nws.OpenApiClient.Models.AlertsActiveCount200LdJsonResponseAreas.CreateFromDiscriminatorValue); } },
                 { "land", n => { Land = n.GetIntValue(); } },
                 { "marine", n => { Marine = n.GetIntValue(); } },
-                { "regions", n => { Regions = n.GetObjectValue<global::Soenneker.Nws.OpenApiClient.Models.AlertsActiveCount200ResponseRegions>(global::Soenneker.Nws.OpenApiClient.Models.AlertsActiveCount200ResponseRegions.CreateFromDiscriminatorValue); } },
+                { "regions", n => { Regions = n.GetObjectValue<global::Soenneker.Nws.OpenApiClient.Models.AlertsActiveCount200LdJsonResponseRegions>(global::Soenneker.Nws.OpenApiClient.Models.AlertsActiveCount200LdJsonResponseRegions.CreateFromDiscriminatorValue); } },
                 { "total", n => { Total = n.GetIntValue(); } },
-                { "zones", n => { Zones = n.GetObjectValue<global::Soenneker.Nws.OpenApiClient.Models.AlertsActiveCount200ResponseZones>(global::Soenneker.Nws.OpenApiClient.Models.AlertsActiveCount200ResponseZones.CreateFromDiscriminatorValue); } },
+                { "zones", n => { Zones = n.GetObjectValue<global::Soenneker.Nws.OpenApiClient.Models.AlertsActiveCount200LdJsonResponseZones>(global::Soenneker.Nws.OpenApiClient.Models.AlertsActiveCount200LdJsonResponseZones.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -84,12 +84,12 @@ namespace Soenneker.Nws.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Nws.OpenApiClient.Models.AlertsActiveCount200ResponseAreas>("areas", Areas);
+            writer.WriteObjectValue<global::Soenneker.Nws.OpenApiClient.Models.AlertsActiveCount200LdJsonResponseAreas>("areas", Areas);
             writer.WriteIntValue("land", Land);
             writer.WriteIntValue("marine", Marine);
-            writer.WriteObjectValue<global::Soenneker.Nws.OpenApiClient.Models.AlertsActiveCount200ResponseRegions>("regions", Regions);
+            writer.WriteObjectValue<global::Soenneker.Nws.OpenApiClient.Models.AlertsActiveCount200LdJsonResponseRegions>("regions", Regions);
             writer.WriteIntValue("total", Total);
-            writer.WriteObjectValue<global::Soenneker.Nws.OpenApiClient.Models.AlertsActiveCount200ResponseZones>("zones", Zones);
+            writer.WriteObjectValue<global::Soenneker.Nws.OpenApiClient.Models.AlertsActiveCount200LdJsonResponseZones>("zones", Zones);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
