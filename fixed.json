@@ -1,5 +1,5 @@
 {
-  "openapi": "3.0.4",
+  "openapi": "3.1.2",
   "info": {
     "title": "weather.gov API",
     "description": "weather.gov API",
@@ -27,59 +27,77 @@
             }
           },
           {
+            "description": "Start time",
             "$ref": "#/components/parameters/QueryStartTime"
           },
           {
+            "description": "End time",
             "$ref": "#/components/parameters/QueryEndTime"
           },
           {
+            "description": "Status (actual, exercise, system, test, draft)",
             "$ref": "#/components/parameters/AlertStatus"
           },
           {
+            "description": "Message type (alert, update, cancel)",
             "$ref": "#/components/parameters/AlertMessageType"
           },
           {
+            "description": "Event name",
             "$ref": "#/components/parameters/AlertEventName"
           },
           {
+            "description": "Event code",
             "$ref": "#/components/parameters/AlertCode"
           },
           {
+            "description": "\u0022State/territory code or marine area code\nThis parameter is incompatible with the following parameters: point, region, region_type, zone\n\u0022",
             "$ref": "#/components/parameters/AlertArea"
           },
           {
+            "description": "\u0022Point (latitude,longitude)\nThis parameter is incompatible with the following parameters: area, region, region_type, zone\n\u0022",
             "$ref": "#/components/parameters/AlertPoint"
           },
           {
+            "description": "\u0022Marine region code\nThis parameter is incompatible with the following parameters: area, point, region_type, zone\n\u0022",
             "$ref": "#/components/parameters/AlertRegion"
           },
           {
+            "description": "\u0022Region type (land or marine)\nThis parameter is incompatible with the following parameters: area, point, region, zone\n\u0022",
             "$ref": "#/components/parameters/AlertRegionType"
           },
           {
+            "description": "\u0022Zone ID (forecast or county)\nThis parameter is incompatible with the following parameters: area, point, region, region_type\n\u0022",
             "$ref": "#/components/parameters/AlertZone"
           },
           {
+            "description": "Urgency (immediate, expected, future, past, unknown)",
             "$ref": "#/components/parameters/AlertUrgency"
           },
           {
+            "description": "Severity (extreme, severe, moderate, minor, unknown)",
             "$ref": "#/components/parameters/AlertSeverity"
           },
           {
+            "description": "Certainty (observed, likely, possible, unlikely, unknown)",
             "$ref": "#/components/parameters/AlertCertainty"
           },
           {
+            "description": "Limit",
             "$ref": "#/components/parameters/Limit"
           },
           {
+            "description": "Pagination cursor",
             "$ref": "#/components/parameters/PaginationCursor"
           }
         ],
         "responses": {
           "200": {
+            "description": "A collection of alerts.",
             "$ref": "#/components/responses/AlertCollection"
           },
           "default": {
+            "description": "An error response.",
             "$ref": "#/components/responses/Error"
           }
         }
@@ -91,47 +109,61 @@
         "operationId": "AlertsActive",
         "parameters": [
           {
+            "description": "Status (actual, exercise, system, test, draft)",
             "$ref": "#/components/parameters/AlertStatus"
           },
           {
+            "description": "Message type (alert, update, cancel)",
             "$ref": "#/components/parameters/AlertMessageType"
           },
           {
+            "description": "Event name",
             "$ref": "#/components/parameters/AlertEventName"
           },
           {
+            "description": "Event code",
             "$ref": "#/components/parameters/AlertCode"
           },
           {
+            "description": "\u0022State/territory code or marine area code\nThis parameter is incompatible with the following parameters: point, region, region_type, zone\n\u0022",
             "$ref": "#/components/parameters/AlertArea"
           },
           {
+            "description": "\u0022Point (latitude,longitude)\nThis parameter is incompatible with the following parameters: area, region, region_type, zone\n\u0022",
             "$ref": "#/components/parameters/AlertPoint"
           },
           {
+            "description": "\u0022Marine region code\nThis parameter is incompatible with the following parameters: area, point, region_type, zone\n\u0022",
             "$ref": "#/components/parameters/AlertRegion"
           },
           {
+            "description": "\u0022Region type (land or marine)\nThis parameter is incompatible with the following parameters: area, point, region, zone\n\u0022",
             "$ref": "#/components/parameters/AlertRegionType"
           },
           {
+            "description": "\u0022Zone ID (forecast or county)\nThis parameter is incompatible with the following parameters: area, point, region, region_type\n\u0022",
             "$ref": "#/components/parameters/AlertZone"
           },
           {
+            "description": "Urgency (immediate, expected, future, past, unknown)",
             "$ref": "#/components/parameters/AlertUrgency"
           },
           {
+            "description": "Severity (extreme, severe, moderate, minor, unknown)",
             "$ref": "#/components/parameters/AlertSeverity"
           },
           {
+            "description": "Certainty (observed, likely, possible, unlikely, unknown)",
             "$ref": "#/components/parameters/AlertCertainty"
           }
         ],
         "responses": {
           "200": {
+            "description": "A collection of alerts.",
             "$ref": "#/components/responses/AlertCollection"
           },
           "default": {
+            "description": "An error response.",
             "$ref": "#/components/responses/Error"
           }
         }
@@ -153,6 +185,7 @@
             }
           },
           "default": {
+            "description": "An error response.",
             "$ref": "#/components/responses/Error"
           }
         }
@@ -164,9 +197,11 @@
         "operationId": "AlertsActiveZone",
         "responses": {
           "200": {
+            "description": "A collection of alerts.",
             "$ref": "#/components/responses/AlertCollection"
           },
           "default": {
+            "description": "An error response.",
             "$ref": "#/components/responses/Error"
           }
         }
@@ -183,9 +218,11 @@
         "operationId": "AlertsActiveArea",
         "responses": {
           "200": {
+            "description": "A collection of alerts.",
             "$ref": "#/components/responses/AlertCollection"
           },
           "default": {
+            "description": "An error response.",
             "$ref": "#/components/responses/Error"
           }
         }
@@ -208,9 +245,11 @@
         "operationId": "AlertsActiveRegion",
         "responses": {
           "200": {
+            "description": "A collection of alerts.",
             "$ref": "#/components/responses/AlertCollection"
           },
           "default": {
+            "description": "An error response.",
             "$ref": "#/components/responses/Error"
           }
         }
@@ -243,6 +282,7 @@
             }
           },
           "default": {
+            "description": "An error response.",
             "$ref": "#/components/responses/Error"
           }
         }
@@ -274,6 +314,7 @@
             }
           },
           "default": {
+            "description": "An error response.",
             "$ref": "#/components/responses/Error"
           }
         }
@@ -296,6 +337,7 @@
         "operationId": "Cwsu",
         "parameters": [
           {
+            "description": "NWS CWSU ID",
             "$ref": "#/components/parameters/NWSCenterWeatherServiceUnitId"
           }
         ],
@@ -311,6 +353,7 @@
             }
           },
           "default": {
+            "description": "An error response.",
             "$ref": "#/components/responses/Error"
           }
         }
@@ -322,6 +365,7 @@
         "operationId": "Cwas",
         "parameters": [
           {
+            "description": "NWS CWSU ID",
             "$ref": "#/components/parameters/NWSCenterWeatherServiceUnitId"
           }
         ],
@@ -337,6 +381,7 @@
             }
           },
           "default": {
+            "description": "An error response.",
             "$ref": "#/components/responses/Error"
           }
         }
@@ -348,9 +393,11 @@
         "operationId": "Cwa",
         "parameters": [
           {
+            "description": "NWS CWSU ID",
             "$ref": "#/components/parameters/NWSCenterWeatherServiceUnitId"
           },
           {
+            "description": "Date (YYYY-MM-DD format)",
             "$ref": "#/components/parameters/Date"
           },
           {
@@ -381,6 +428,7 @@
             }
           },
           "default": {
+            "description": "An error response.",
             "$ref": "#/components/responses/Error"
           }
         }
@@ -392,12 +440,15 @@
         "operationId": "SigmetQuery",
         "parameters": [
           {
+            "description": "Start time",
             "$ref": "#/components/parameters/QueryStartTime"
           },
           {
+            "description": "End time",
             "$ref": "#/components/parameters/QueryEndTime"
           },
           {
+            "description": "Date (YYYY-MM-DD format)",
             "$ref": "#/components/parameters/QueryDate"
           },
           {
@@ -429,6 +480,7 @@
             }
           },
           "default": {
+            "description": "An error response.",
             "$ref": "#/components/responses/Error"
           }
         }
@@ -440,6 +492,7 @@
         "operationId": "SigmetsByAtsu",
         "parameters": [
           {
+            "description": "ATSU identifier",
             "$ref": "#/components/parameters/ATSUIdentifier"
           }
         ],
@@ -455,6 +508,7 @@
             }
           },
           "default": {
+            "description": "An error response.",
             "$ref": "#/components/responses/Error"
           }
         }
@@ -466,9 +520,11 @@
         "operationId": "SigmetsByAtsuByDate",
         "parameters": [
           {
+            "description": "ATSU identifier",
             "$ref": "#/components/parameters/ATSUIdentifier"
           },
           {
+            "description": "Date (YYYY-MM-DD format)",
             "$ref": "#/components/parameters/Date"
           }
         ],
@@ -484,6 +540,7 @@
             }
           },
           "default": {
+            "description": "An error response.",
             "$ref": "#/components/responses/Error"
           }
         }
@@ -495,12 +552,15 @@
         "operationId": "Sigmet",
         "parameters": [
           {
+            "description": "ATSU identifier",
             "$ref": "#/components/parameters/ATSUIdentifier"
           },
           {
+            "description": "Date (YYYY-MM-DD format)",
             "$ref": "#/components/parameters/Date"
           },
           {
+            "description": "Time (HHMM format). This time is always specified in UTC (Zulu) time.",
             "$ref": "#/components/parameters/Time"
           }
         ],
@@ -521,6 +581,7 @@
             }
           },
           "default": {
+            "description": "An error response.",
             "$ref": "#/components/responses/Error"
           }
         }
@@ -542,6 +603,7 @@
             }
           },
           "default": {
+            "description": "An error response.",
             "$ref": "#/components/responses/Error"
           }
         }
@@ -568,6 +630,7 @@
             }
           },
           "default": {
+            "description": "An error response.",
             "$ref": "#/components/responses/Error"
           }
         }
@@ -590,17 +653,21 @@
         "operationId": "GridpointForecast",
         "parameters": [
           {
+            "description": "\u0022Enable future and experimental features (see documentation for more info):\n* forecast_temperature_qv: Represent temperature as QuantitativeValue\n* forecast_wind_speed_qv: Represent wind speed as QuantitativeValue\n\u0022",
             "$ref": "#/components/parameters/GridpointForecastFeatureFlags"
           },
           {
+            "description": "Use US customary or SI (metric) units in textual output",
             "$ref": "#/components/parameters/GridpointForecastUnits"
           }
         ],
         "responses": {
           "200": {
+            "description": "A forecast for a gridpoint.",
             "$ref": "#/components/responses/Gridpoint12hForecast"
           },
           "default": {
+            "description": "An error response.",
             "$ref": "#/components/responses/Error"
           }
         }
@@ -623,17 +690,21 @@
         "operationId": "GridpointForecastHourly",
         "parameters": [
           {
+            "description": "\u0022Enable future and experimental features (see documentation for more info):\n* forecast_temperature_qv: Represent temperature as QuantitativeValue\n* forecast_wind_speed_qv: Represent wind speed as QuantitativeValue\n\u0022",
             "$ref": "#/components/parameters/GridpointForecastFeatureFlags"
           },
           {
+            "description": "Use US customary or SI (metric) units in textual output",
             "$ref": "#/components/parameters/GridpointForecastUnits"
           }
         ],
         "responses": {
           "200": {
+            "description": "A forecast for a gridpoint.",
             "$ref": "#/components/responses/GridpointHourlyForecast"
           },
           "default": {
+            "description": "An error response.",
             "$ref": "#/components/responses/Error"
           }
         }
@@ -656,9 +727,11 @@
         "operationId": "GridpointStations",
         "responses": {
           "200": {
+            "description": "A collection of observation stations.",
             "$ref": "#/components/responses/ObservationStationCollection"
           },
           "default": {
+            "description": "An error response.",
             "$ref": "#/components/responses/Error"
           }
         }
@@ -684,12 +757,15 @@
         "operationId": "StationObservationList",
         "parameters": [
           {
+            "description": "Start time",
             "$ref": "#/components/parameters/QueryStartTime"
           },
           {
+            "description": "End time",
             "$ref": "#/components/parameters/QueryEndTime"
           },
           {
+            "description": "Pagination cursor",
             "$ref": "#/components/parameters/PaginationCursor"
           },
           {
@@ -705,9 +781,11 @@
         ],
         "responses": {
           "200": {
+            "description": "A collection of observation records.",
             "$ref": "#/components/responses/ObservationCollection"
           },
           "default": {
+            "description": "An error response.",
             "$ref": "#/components/responses/Error"
           }
         }
@@ -734,9 +812,11 @@
         ],
         "responses": {
           "200": {
+            "description": "An observation record.",
             "$ref": "#/components/responses/Observation"
           },
           "default": {
+            "description": "An error response.",
             "$ref": "#/components/responses/Error"
           }
         }
@@ -765,9 +845,11 @@
         ],
         "responses": {
           "200": {
+            "description": "An observation record.",
             "$ref": "#/components/responses/Observation"
           },
           "default": {
+            "description": "An error response.",
             "$ref": "#/components/responses/Error"
           }
         }
@@ -784,6 +866,7 @@
         "operationId": "Tafs",
         "parameters": [
           {
+            "description": "Observation station ID",
             "$ref": "#/components/parameters/ObservationStationId"
           }
         ],
@@ -799,6 +882,7 @@
             }
           },
           "default": {
+            "description": "An error response.",
             "$ref": "#/components/responses/Error"
           }
         }
@@ -810,12 +894,15 @@
         "operationId": "Taf",
         "parameters": [
           {
+            "description": "Observation station ID",
             "$ref": "#/components/parameters/ObservationStationId"
           },
           {
+            "description": "Date (YYYY-MM-DD format)",
             "$ref": "#/components/parameters/Date"
           },
           {
+            "description": "Time (HHMM format). This time is always specified in UTC (Zulu) time.",
             "$ref": "#/components/parameters/Time"
           }
         ],
@@ -831,6 +918,7 @@
             }
           },
           "default": {
+            "description": "An error response.",
             "$ref": "#/components/responses/Error"
           }
         }
@@ -866,17 +954,21 @@
             }
           },
           {
+            "description": "Limit",
             "$ref": "#/components/parameters/Limit"
           },
           {
+            "description": "Pagination cursor",
             "$ref": "#/components/parameters/PaginationCursor"
           }
         ],
         "responses": {
           "200": {
+            "description": "A collection of observation stations.",
             "$ref": "#/components/responses/ObservationStationCollection"
           },
           "default": {
+            "description": "An error response.",
             "$ref": "#/components/responses/Error"
           }
         }
@@ -903,6 +995,7 @@
             }
           },
           "default": {
+            "description": "An error response.",
             "$ref": "#/components/responses/Error"
           }
         }
@@ -929,6 +1022,7 @@
             }
           },
           "default": {
+            "description": "An error response.",
             "$ref": "#/components/responses/Error"
           }
         }
@@ -955,6 +1049,7 @@
             }
           },
           "default": {
+            "description": "An error response.",
             "$ref": "#/components/responses/Error"
           }
         }
@@ -971,6 +1066,7 @@
         "operationId": "OfficeBriefingDownloadLatest",
         "responses": {
           "default": {
+            "description": "An error response.",
             "$ref": "#/components/responses/Error"
           }
         }
@@ -997,6 +1093,7 @@
             }
           },
           "default": {
+            "description": "An error response.",
             "$ref": "#/components/responses/Error"
           }
         }
@@ -1032,6 +1129,7 @@
             }
           },
           "default": {
+            "description": "An error response.",
             "$ref": "#/components/responses/Error"
           }
         }
@@ -1067,6 +1165,7 @@
             }
           },
           "default": {
+            "description": "An error response.",
             "$ref": "#/components/responses/Error"
           }
         }
@@ -1093,6 +1192,7 @@
             }
           },
           "default": {
+            "description": "An error response.",
             "$ref": "#/components/responses/Error"
           }
         }
@@ -1119,6 +1219,7 @@
             }
           },
           "default": {
+            "description": "An error response.",
             "$ref": "#/components/responses/Error"
           }
         }
@@ -1159,6 +1260,7 @@
             }
           },
           "default": {
+            "description": "An error response.",
             "$ref": "#/components/responses/Error"
           }
         }
@@ -1191,6 +1293,7 @@
             }
           },
           "default": {
+            "description": "An error response.",
             "$ref": "#/components/responses/Error"
           }
         }
@@ -1230,6 +1333,7 @@
             }
           },
           "default": {
+            "description": "An error response.",
             "$ref": "#/components/responses/Error"
           }
         }
@@ -1261,6 +1365,7 @@
             }
           },
           "default": {
+            "description": "An error response.",
             "$ref": "#/components/responses/Error"
           }
         }
@@ -1303,6 +1408,7 @@
             }
           },
           "default": {
+            "description": "An error response.",
             "$ref": "#/components/responses/Error"
           }
         }
@@ -1360,6 +1466,7 @@
             }
           },
           "default": {
+            "description": "An error response.",
             "$ref": "#/components/responses/Error"
           }
         }
@@ -1404,6 +1511,7 @@
             }
           },
           "default": {
+            "description": "An error response.",
             "$ref": "#/components/responses/Error"
           }
         }
@@ -1436,6 +1544,7 @@
             }
           },
           "default": {
+            "description": "An error response.",
             "$ref": "#/components/responses/Error"
           }
         }
@@ -1537,6 +1646,7 @@
             }
           },
           "default": {
+            "description": "An error response.",
             "$ref": "#/components/responses/Error"
           }
         }
@@ -1587,6 +1697,7 @@
             }
           },
           "default": {
+            "description": "An error response.",
             "$ref": "#/components/responses/Error"
           }
         }
@@ -1622,6 +1733,7 @@
             }
           },
           "default": {
+            "description": "An error response.",
             "$ref": "#/components/responses/Error"
           }
         }
@@ -1651,6 +1763,7 @@
             }
           },
           "default": {
+            "description": "An error response.",
             "$ref": "#/components/responses/Error"
           }
         }
@@ -1680,6 +1793,7 @@
             }
           },
           "default": {
+            "description": "An error response.",
             "$ref": "#/components/responses/Error"
           }
         }
@@ -1787,6 +1901,7 @@
             }
           },
           "default": {
+            "description": "An error response.",
             "$ref": "#/components/responses/Error"
           }
         }
@@ -1808,6 +1923,7 @@
             }
           },
           "default": {
+            "description": "An error response.",
             "$ref": "#/components/responses/Error"
           }
         }
@@ -1829,6 +1945,7 @@
             }
           },
           "default": {
+            "description": "An error response.",
             "$ref": "#/components/responses/Error"
           }
         }
@@ -1850,6 +1967,7 @@
             }
           },
           "default": {
+            "description": "An error response.",
             "$ref": "#/components/responses/Error"
           }
         }
@@ -1882,6 +2000,7 @@
             }
           },
           "default": {
+            "description": "An error response.",
             "$ref": "#/components/responses/Error"
           }
         }
@@ -1914,6 +2033,7 @@
             }
           },
           "default": {
+            "description": "An error response.",
             "$ref": "#/components/responses/Error"
           }
         }
@@ -1946,6 +2066,7 @@
             }
           },
           "default": {
+            "description": "An error response.",
             "$ref": "#/components/responses/Error"
           }
         }
@@ -1978,6 +2099,7 @@
             }
           },
           "default": {
+            "description": "An error response.",
             "$ref": "#/components/responses/Error"
           }
         }
@@ -2019,6 +2141,7 @@
             }
           },
           "default": {
+            "description": "An error response.",
             "$ref": "#/components/responses/Error"
           }
         }
@@ -2151,6 +2274,7 @@
             }
           },
           "default": {
+            "description": "An error response.",
             "$ref": "#/components/responses/Error"
           }
         }
@@ -2263,6 +2387,7 @@
             }
           },
           "default": {
+            "description": "An error response.",
             "$ref": "#/components/responses/Error"
           }
         }
@@ -2311,6 +2436,7 @@
             }
           },
           "default": {
+            "description": "An error response.",
             "$ref": "#/components/responses/Error"
           }
         }
@@ -2351,6 +2477,7 @@
             }
           },
           "default": {
+            "description": "An error response.",
             "$ref": "#/components/responses/Error"
           }
         }
@@ -2386,6 +2513,7 @@
             }
           },
           "default": {
+            "description": "An error response.",
             "$ref": "#/components/responses/Error"
           }
         }
@@ -2456,6 +2584,7 @@
             }
           },
           "default": {
+            "description": "An error response.",
             "$ref": "#/components/responses/Error"
           }
         }
@@ -2472,9 +2601,11 @@
         "operationId": "ZoneStations",
         "responses": {
           "200": {
+            "description": "A collection of observation stations.",
             "$ref": "#/components/responses/ObservationStationCollection"
           },
           "default": {
+            "description": "An error response.",
             "$ref": "#/components/responses/Error"
           }
         }
@@ -2534,10 +2665,12 @@
             "format": "date-time"
           },
           "onset": {
-            "type": "string",
+            "type": [
+              "null",
+              "string"
+            ],
             "description": "The expected time of the beginning of the subject event of the alert message.",
-            "format": "date-time",
-            "nullable": true
+            "format": "date-time"
           },
           "expires": {
             "type": "string",
@@ -2545,10 +2678,12 @@
             "format": "date-time"
           },
           "ends": {
-            "type": "string",
+            "type": [
+              "null",
+              "string"
+            ],
             "description": "The expected end time of the subject event of the alert message.",
-            "format": "date-time",
-            "nullable": true
+            "format": "date-time"
           },
           "status": {
             "$ref": "#/components/schemas/AlertStatus"
@@ -2581,23 +2716,29 @@
             "description": "The text naming the originator of the alert message."
           },
           "headline": {
-            "type": "string",
-            "description": "The text headline of the alert message.",
-            "nullable": true
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "The text headline of the alert message."
           },
           "description": {
             "type": "string",
             "description": "The text describing the subject event of the alert message."
           },
           "instruction": {
-            "type": "string",
-            "description": "The text describing the recommended action to be taken by recipients of the alert message.\n",
-            "nullable": true
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "The text describing the recommended action to be taken by recipients of the alert message.\n"
           },
           "note": {
-            "type": "string",
-            "description": "The text note accompanying the alert message. Per CAP spec, this should accompany alerts with a status of \u0022Test\u0022.\n",
-            "nullable": true
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "The text note accompanying the alert message. Per CAP spec, this should accompany alerts with a status of \u0022Test\u0022.\n"
           },
           "response": {
             "$ref": "#/components/schemas/AlertResponse"
@@ -2639,6 +2780,7 @@
             "format": "date-time"
           },
           "pagination": {
+            "description": "Links for retrieving more data from paged data sets",
             "$ref": "#/components/schemas/PaginationInfo"
           }
         }
@@ -2672,6 +2814,7 @@
             "format": "date-time"
           },
           "pagination": {
+            "description": "Links for retrieving more data from paged data sets",
             "$ref": "#/components/schemas/PaginationInfo"
           }
         }
@@ -2689,6 +2832,7 @@
             "format": "date-time"
           },
           "pagination": {
+            "description": "Links for retrieving more data from paged data sets",
             "$ref": "#/components/schemas/PaginationInfo"
           },
           "@context": {
@@ -2724,6 +2868,7 @@
             "$ref": "#/components/schemas/AlertGeoJsonType"
           },
           "geometry": {
+            "description": "A GeoJSON geometry object. Please refer to IETF RFC 7946 for information on the GeoJSON format.",
             "$ref": "#/components/schemas/GeoJsonGeometry"
           },
           "properties": {
@@ -3026,76 +3171,76 @@
         "type": "object",
         "properties": {
           "sunrise": {
-            "type": "string",
+            "type": [
+              "null",
+              "string"
+            ],
             "description": "The timestamp of sunrise, defined as when the sun angle is 90\u00B035\u0027 from vertical.\n",
-            "format": "date-time",
-            "unrecognizedKeywords": {
-              "nullable": true
-            }
+            "format": "date-time"
           },
           "sunset": {
-            "type": "string",
+            "type": [
+              "null",
+              "string"
+            ],
             "description": "The timestamp of sunset, defined as when the sun angle is 90\u00B035\u0027 from vertical.\n",
-            "format": "date-time",
-            "unrecognizedKeywords": {
-              "nullable": true
-            }
+            "format": "date-time"
           },
           "transit": {
-            "type": "string",
+            "type": [
+              "null",
+              "string"
+            ],
             "description": "The timestamp when the sun reaches its zenith.\n",
-            "format": "date-time",
-            "unrecognizedKeywords": {
-              "nullable": true
-            }
+            "format": "date-time"
           },
           "civilTwilightBegin": {
-            "type": "string",
+            "type": [
+              "null",
+              "string"
+            ],
             "description": "The timestamp of the onset of civil twilight, defined as when the sun angle is 96\u00B0 from vertical. This is the beginning of civil dawn and lasts until sunrise.\n",
-            "format": "date-time",
-            "unrecognizedKeywords": {
-              "nullable": true
-            }
+            "format": "date-time"
           },
           "civilTwilightEnd": {
-            "type": "string",
+            "type": [
+              "null",
+              "string"
+            ],
             "description": "The timestamp of the end of civil twilight, defined as when the sun angle is 96\u00B0 from vertical. This is the end of civil dusk, which begins at sunset.\n",
-            "format": "date-time",
-            "unrecognizedKeywords": {
-              "nullable": true
-            }
+            "format": "date-time"
           },
           "nauticalTwilightBegin": {
-            "type": "string",
+            "type": [
+              "null",
+              "string"
+            ],
             "description": "The timestamp of the onset of nautical twilight, defined as when the sun angle is 102\u00B0 from vertical. This is the beginning of nautical dawn and lasts until the civil dawn.\n",
-            "format": "date-time",
-            "unrecognizedKeywords": {
-              "nullable": true
-            }
+            "format": "date-time"
           },
           "nauticalTwilightEnd": {
-            "type": "string",
+            "type": [
+              "null",
+              "string"
+            ],
             "description": "The timestamp of the end of nautical twilight, defined as when the sun angle is 102\u00B0 from vertical. This is the end of nautical dusk, which begins at the end of civil twilight.\n",
-            "format": "date-time",
-            "unrecognizedKeywords": {
-              "nullable": true
-            }
+            "format": "date-time"
           },
           "astronomicalTwilightBegin": {
-            "type": "string",
+            "type": [
+              "null",
+              "string"
+            ],
             "description": "The timestamp of the onset of astronomical twilight, defined as when the sun angle is 108\u00B0 from vertical. This is the beginning of astronomical dawn and lasts until the nautical dawn.\n",
-            "format": "date-time",
-            "unrecognizedKeywords": {
-              "nullable": true
-            }
+            "format": "date-time"
           },
           "astronomicalTwilightEnd": {
-            "type": "string",
+            "type": [
+              "null",
+              "string"
+            ],
             "description": "The timestamp of the end of astronomical twilight, defined as when the sun angle is 108\u00B0 from vertical. This is the end of astronomical dusk, which begins at the end of nautical twilight.\n",
-            "format": "date-time",
-            "unrecognizedKeywords": {
-              "nullable": true
-            }
+            "format": "date-time"
           }
         },
         "description": "An object representing sunrise, sunset, and twilight information for a location.\n"
@@ -3159,6 +3304,7 @@
             "$ref": "#/components/schemas/AlertGeoJsonType"
           },
           "geometry": {
+            "description": "A GeoJSON geometry object. Please refer to IETF RFC 7946 for information on the GeoJSON format.",
             "$ref": "#/components/schemas/GeoJsonGeometry"
           },
           "properties": {
@@ -3207,15 +3353,18 @@
         "type": "object",
         "properties": {
           "properties": {
+            "description": "An object representing a public alert message.\nUnless otherwise noted, the fields in this object correspond to the National Weather Service CAP v1.2 specification, which extends the OASIS Common Alerting Protocol (CAP) v1.2 specification and USA Integrated Public Alert and Warning System (IPAWS) Profile v1.0. Refer to this documentation for more complete information.\nhttp://docs.oasis-open.org/emergency/cap/v1.2/CAP-v1.2-os.html http://docs.oasis-open.org/emergency/cap/v1.2/ipaws-profile/v1.0/cs01/cap-v1.2-ipaws-profile-cs01.html https://vlab.noaa.gov/web/nws-common-alerting-protocol/cap-documentation\n",
             "$ref": "#/components/schemas/Alert"
           }
         }
       },
       "GeometryString": {
-        "type": "string",
+        "type": [
+          "null",
+          "string"
+        ],
         "description": "A geometry represented in Well-Known Text (WKT) format.",
-        "format": "wkt",
-        "nullable": true
+        "format": "wkt"
       },
       "GeoJsonBoundingBox": {
         "minItems": 4,
@@ -3258,9 +3407,7 @@
             "$ref": "#/components/schemas/GeoJsonGeometryGeoJsonMultiPolygon"
           },
           {
-            "enum": [
-              null
-            ]
+            "type": "null"
           }
         ],
         "properties": {
@@ -3301,6 +3448,7 @@
             "$ref": "#/components/schemas/AlertGeoJsonType"
           },
           "geometry": {
+            "description": "A GeoJSON geometry object. Please refer to IETF RFC 7946 for information on the GeoJSON format.",
             "$ref": "#/components/schemas/GeoJsonGeometry"
           },
           "properties": {
@@ -3368,6 +3516,7 @@
             "$ref": "#/components/schemas/JsonLdContext"
           },
           "geometry": {
+            "description": "A geometry represented in Well-Known Text (WKT) format.",
             "$ref": "#/components/schemas/GeometryString"
           },
           "@id": {
@@ -3385,6 +3534,7 @@
             "$ref": "#/components/schemas/Iso8601Interval"
           },
           "elevation": {
+            "description": "A structured value representing a measurement and its unit of measure. This object is a slightly modified version of the schema.org definition at https://schema.org/QuantitativeValue\n",
             "$ref": "#/components/schemas/QuantitativeValue"
           },
           "forecastOffice": {
@@ -3453,6 +3603,7 @@
             "$ref": "#/components/schemas/AlertGeoJsonType"
           },
           "geometry": {
+            "description": "A GeoJSON geometry object. Please refer to IETF RFC 7946 for information on the GeoJSON format.",
             "$ref": "#/components/schemas/GeoJsonGeometry"
           },
           "properties": {
@@ -3470,9 +3621,11 @@
             "$ref": "#/components/schemas/JsonLdContext"
           },
           "geometry": {
+            "description": "A geometry represented in Well-Known Text (WKT) format.",
             "$ref": "#/components/schemas/GeometryString"
           },
           "units": {
+            "description": "Denotes the units used in the textual portions of the forecast.",
             "$ref": "#/components/schemas/GridpointForecastUnits"
           },
           "forecastGenerator": {
@@ -3493,6 +3646,7 @@
             "$ref": "#/components/schemas/Iso8601Interval"
           },
           "elevation": {
+            "description": "A structured value representing a measurement and its unit of measure. This object is a slightly modified version of the schema.org definition at https://schema.org/QuantitativeValue\n",
             "$ref": "#/components/schemas/QuantitativeValue"
           },
           "periods": {
@@ -3513,9 +3667,11 @@
             "$ref": "#/components/schemas/JsonLdContext"
           },
           "geometry": {
+            "description": "A geometry represented in Well-Known Text (WKT) format.",
             "$ref": "#/components/schemas/GeometryString"
           },
           "units": {
+            "description": "Denotes the units used in the textual portions of the forecast.",
             "$ref": "#/components/schemas/GridpointForecastUnits"
           },
           "forecastGenerator": {
@@ -3536,6 +3692,7 @@
             "$ref": "#/components/schemas/Iso8601Interval"
           },
           "elevation": {
+            "description": "A structured value representing a measurement and its unit of measure. This object is a slightly modified version of the schema.org definition at https://schema.org/QuantitativeValue\n",
             "$ref": "#/components/schemas/QuantitativeValue"
           },
           "periods": {
@@ -3558,6 +3715,9 @@
             "description": "Sequential period number."
           },
           "name": {
+            "examples": [
+              "Tuesday Night"
+            ],
             "type": "string",
             "description": "A textual identifier for the period. This value will not be present for hourly forecasts.\n"
           },
@@ -3585,12 +3745,15 @@
             "$ref": "#/components/schemas/GridpointHourlyForecastPeriodTemperatureTrend"
           },
           "probabilityOfPrecipitation": {
+            "description": "Probability of precipitation for the period.",
             "$ref": "#/components/schemas/QuantitativeValue"
           },
           "dewpoint": {
+            "description": "Dewpoint. Only provided in hourly forecasts.\n",
             "$ref": "#/components/schemas/QuantitativeValue"
           },
           "relativeHumidity": {
+            "description": "Relative humidity. Only provided in hourly forecasts.\n",
             "$ref": "#/components/schemas/QuantitativeValue"
           },
           "windSpeed": {
@@ -3629,6 +3792,9 @@
             "description": "Sequential period number."
           },
           "name": {
+            "examples": [
+              "Tuesday Night"
+            ],
             "type": "string",
             "description": "A textual identifier for the period. This value will not be present for hourly forecasts.\n"
           },
@@ -3656,6 +3822,7 @@
             "$ref": "#/components/schemas/Gridpoint12HForecastPeriodTemperatureTrend"
           },
           "probabilityOfPrecipitation": {
+            "description": "Probability of precipitation for the period.",
             "$ref": "#/components/schemas/QuantitativeValue"
           },
           "windSpeed": {
@@ -3727,6 +3894,7 @@
             "$ref": "#/components/schemas/AlertGeoJsonType"
           },
           "geometry": {
+            "description": "A GeoJSON geometry object. Please refer to IETF RFC 7946 for information on the GeoJSON format.",
             "$ref": "#/components/schemas/GeoJsonGeometry"
           },
           "properties": {
@@ -3753,6 +3921,7 @@
             "$ref": "#/components/schemas/AlertGeoJsonType"
           },
           "geometry": {
+            "description": "A GeoJSON geometry object. Please refer to IETF RFC 7946 for information on the GeoJSON format.",
             "$ref": "#/components/schemas/GeoJsonGeometry"
           },
           "properties": {
@@ -3771,9 +3940,11 @@
             "$ref": "#/components/schemas/JsonLdContext"
           },
           "geometry": {
+            "description": "A geometry represented in Well-Known Text (WKT) format.",
             "$ref": "#/components/schemas/GeometryString"
           },
           "units": {
+            "description": "Denotes the units used in the textual portions of the forecast.",
             "$ref": "#/components/schemas/GridpointForecastUnits"
           },
           "forecastGenerator": {
@@ -3794,6 +3965,7 @@
             "$ref": "#/components/schemas/Iso8601Interval"
           },
           "elevation": {
+            "description": "A structured value representing a measurement and its unit of measure. This object is a slightly modified version of the schema.org definition at https://schema.org/QuantitativeValue\n",
             "$ref": "#/components/schemas/QuantitativeValue"
           },
           "periods": {
@@ -3816,9 +3988,11 @@
             "$ref": "#/components/schemas/JsonLdContext"
           },
           "geometry": {
+            "description": "A geometry represented in Well-Known Text (WKT) format.",
             "$ref": "#/components/schemas/GeometryString"
           },
           "units": {
+            "description": "Denotes the units used in the textual portions of the forecast.",
             "$ref": "#/components/schemas/GridpointForecastUnits"
           },
           "forecastGenerator": {
@@ -3839,6 +4013,7 @@
             "$ref": "#/components/schemas/Iso8601Interval"
           },
           "elevation": {
+            "description": "A structured value representing a measurement and its unit of measure. This object is a slightly modified version of the schema.org definition at https://schema.org/QuantitativeValue\n",
             "$ref": "#/components/schemas/QuantitativeValue"
           },
           "periods": {
@@ -3868,14 +4043,23 @@
         "type": "object",
         "oneOf": [
           {
+            "examples": [
+              "2007-03-01T13:00:00Z/2008-05-11T15:30:00Z"
+            ],
             "pattern": "^(\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(Z|[\u002B-]\\d{2}:?\\d{2}?)|NOW)\\/(\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(Z|[\u002B-]\\d{2}:?\\d{2}?)|NOW)$",
             "type": "string"
           },
           {
+            "examples": [
+              "2007-03-01T13:00:00Z/P1Y2M10DT2H30M"
+            ],
             "pattern": "^(\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(Z|[\u002B-]\\d{2}:?\\d{2}?)|NOW)\\/P(\\d\u002BY)?(\\d\u002BM)?(\\d\u002BD)?(T(\\d\u002BH)?(\\d\u002BM)?(\\d\u002BS)?)?$",
             "type": "string"
           },
           {
+            "examples": [
+              "P1Y2M10DT2H30M/2008-05-11T15:30:00Z"
+            ],
             "pattern": "^P(\\d\u002BY)?(\\d\u002BM)?(\\d\u002BD)?(T(\\d\u002BH)?(\\d\u002BM)?(\\d\u002BS)?)?\\/(\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(Z|[\u002B-]\\d{2}:?\\d{2}?)|NOW)$",
             "type": "string"
           }
@@ -5146,6 +5330,7 @@
             "$ref": "#/components/schemas/JsonLdContext"
           },
           "geometry": {
+            "description": "A geometry represented in Well-Known Text (WKT) format.",
             "$ref": "#/components/schemas/GeometryString"
           },
           "@id": {
@@ -5156,6 +5341,7 @@
             "$ref": "#/components/schemas/ObservationType"
           },
           "elevation": {
+            "description": "A structured value representing a measurement and its unit of measure. This object is a slightly modified version of the schema.org definition at https://schema.org/QuantitativeValue\n",
             "$ref": "#/components/schemas/QuantitativeValue"
           },
           "station": {
@@ -5179,9 +5365,11 @@
             "type": "string"
           },
           "icon": {
-            "type": "string",
+            "type": [
+              "null",
+              "string"
+            ],
             "format": "uri",
-            "nullable": true,
             "deprecated": true
           },
           "presentWeather": {
@@ -5191,59 +5379,77 @@
             }
           },
           "temperature": {
+            "description": "A structured value representing a measurement and its unit of measure. This object is a slightly modified version of the schema.org definition at https://schema.org/QuantitativeValue\n",
             "$ref": "#/components/schemas/QuantitativeValue"
           },
           "dewpoint": {
+            "description": "A structured value representing a measurement and its unit of measure. This object is a slightly modified version of the schema.org definition at https://schema.org/QuantitativeValue\n",
             "$ref": "#/components/schemas/QuantitativeValue"
           },
           "windDirection": {
+            "description": "A structured value representing a measurement and its unit of measure. This object is a slightly modified version of the schema.org definition at https://schema.org/QuantitativeValue\n",
             "$ref": "#/components/schemas/QuantitativeValue"
           },
           "windSpeed": {
+            "description": "A structured value representing a measurement and its unit of measure. This object is a slightly modified version of the schema.org definition at https://schema.org/QuantitativeValue\n",
             "$ref": "#/components/schemas/QuantitativeValue"
           },
           "windGust": {
+            "description": "A structured value representing a measurement and its unit of measure. This object is a slightly modified version of the schema.org definition at https://schema.org/QuantitativeValue\n",
             "$ref": "#/components/schemas/QuantitativeValue"
           },
           "barometricPressure": {
+            "description": "A structured value representing a measurement and its unit of measure. This object is a slightly modified version of the schema.org definition at https://schema.org/QuantitativeValue\n",
             "$ref": "#/components/schemas/QuantitativeValue"
           },
           "seaLevelPressure": {
+            "description": "A structured value representing a measurement and its unit of measure. This object is a slightly modified version of the schema.org definition at https://schema.org/QuantitativeValue\n",
             "$ref": "#/components/schemas/QuantitativeValue"
           },
           "visibility": {
+            "description": "A structured value representing a measurement and its unit of measure. This object is a slightly modified version of the schema.org definition at https://schema.org/QuantitativeValue\n",
             "$ref": "#/components/schemas/QuantitativeValue"
           },
           "maxTemperatureLast24Hours": {
+            "description": "A structured value representing a measurement and its unit of measure. This object is a slightly modified version of the schema.org definition at https://schema.org/QuantitativeValue\n",
             "$ref": "#/components/schemas/QuantitativeValue"
           },
           "minTemperatureLast24Hours": {
+            "description": "A structured value representing a measurement and its unit of measure. This object is a slightly modified version of the schema.org definition at https://schema.org/QuantitativeValue\n",
             "$ref": "#/components/schemas/QuantitativeValue"
           },
           "precipitationLastHour": {
+            "description": "A structured value representing a measurement and its unit of measure. This object is a slightly modified version of the schema.org definition at https://schema.org/QuantitativeValue\n",
             "$ref": "#/components/schemas/QuantitativeValue"
           },
           "precipitationLast3Hours": {
+            "description": "A structured value representing a measurement and its unit of measure. This object is a slightly modified version of the schema.org definition at https://schema.org/QuantitativeValue\n",
             "$ref": "#/components/schemas/QuantitativeValue"
           },
           "precipitationLast6Hours": {
+            "description": "A structured value representing a measurement and its unit of measure. This object is a slightly modified version of the schema.org definition at https://schema.org/QuantitativeValue\n",
             "$ref": "#/components/schemas/QuantitativeValue"
           },
           "relativeHumidity": {
+            "description": "A structured value representing a measurement and its unit of measure. This object is a slightly modified version of the schema.org definition at https://schema.org/QuantitativeValue\n",
             "$ref": "#/components/schemas/QuantitativeValue"
           },
           "windChill": {
+            "description": "A structured value representing a measurement and its unit of measure. This object is a slightly modified version of the schema.org definition at https://schema.org/QuantitativeValue\n",
             "$ref": "#/components/schemas/QuantitativeValue"
           },
           "heatIndex": {
+            "description": "A structured value representing a measurement and its unit of measure. This object is a slightly modified version of the schema.org definition at https://schema.org/QuantitativeValue\n",
             "$ref": "#/components/schemas/QuantitativeValue"
           },
           "cloudLayers": {
-            "type": "array",
+            "type": [
+              "null",
+              "array"
+            ],
             "items": {
               "$ref": "#/components/schemas/ObservationCloudLayersItem"
-            },
-            "nullable": true
+            }
           }
         },
         "additionalProperties": false
@@ -5267,6 +5473,7 @@
             "$ref": "#/components/schemas/AlertGeoJsonType"
           },
           "geometry": {
+            "description": "A GeoJSON geometry object. Please refer to IETF RFC 7946 for information on the GeoJSON format.",
             "$ref": "#/components/schemas/GeoJsonGeometry"
           },
           "properties": {
@@ -5297,6 +5504,7 @@
             }
           },
           "pagination": {
+            "description": "Links for retrieving more data from paged data sets",
             "$ref": "#/components/schemas/PaginationInfo"
           }
         }
@@ -5314,6 +5522,7 @@
             }
           },
           "pagination": {
+            "description": "Links for retrieving more data from paged data sets",
             "$ref": "#/components/schemas/PaginationInfo"
           }
         },
@@ -5326,6 +5535,7 @@
             "$ref": "#/components/schemas/JsonLdContext"
           },
           "geometry": {
+            "description": "A geometry represented in Well-Known Text (WKT) format.",
             "$ref": "#/components/schemas/GeometryString"
           },
           "@id": {
@@ -5336,6 +5546,7 @@
             "$ref": "#/components/schemas/ObservationStationType"
           },
           "elevation": {
+            "description": "A structured value representing a measurement and its unit of measure. This object is a slightly modified version of the schema.org definition at https://schema.org/QuantitativeValue\n",
             "$ref": "#/components/schemas/QuantitativeValue"
           },
           "stationIdentifier": {
@@ -5372,9 +5583,11 @@
             "format": "uri"
           },
           "distance": {
+            "description": "A structured value representing a measurement and its unit of measure. This object is a slightly modified version of the schema.org definition at https://schema.org/QuantitativeValue\n",
             "$ref": "#/components/schemas/QuantitativeValue"
           },
           "bearing": {
+            "description": "A structured value representing a measurement and its unit of measure. This object is a slightly modified version of the schema.org definition at https://schema.org/QuantitativeValue\n",
             "$ref": "#/components/schemas/QuantitativeValue"
           }
         },
@@ -5399,6 +5612,7 @@
             "$ref": "#/components/schemas/AlertGeoJsonType"
           },
           "geometry": {
+            "description": "A GeoJSON geometry object. Please refer to IETF RFC 7946 for information on the GeoJSON format.",
             "$ref": "#/components/schemas/GeoJsonGeometry"
           },
           "properties": {
@@ -5417,6 +5631,7 @@
             "$ref": "#/components/schemas/JsonLdContext"
           },
           "geometry": {
+            "description": "A geometry represented in Well-Known Text (WKT) format.",
             "$ref": "#/components/schemas/GeometryString"
           },
           "@id": {
@@ -5427,6 +5642,7 @@
             "$ref": "#/components/schemas/ObservationStationType"
           },
           "elevation": {
+            "description": "A structured value representing a measurement and its unit of measure. This object is a slightly modified version of the schema.org definition at https://schema.org/QuantitativeValue\n",
             "$ref": "#/components/schemas/QuantitativeValue"
           },
           "stationIdentifier": {
@@ -5463,9 +5679,11 @@
             "format": "uri"
           },
           "distance": {
+            "description": "A structured value representing a measurement and its unit of measure. This object is a slightly modified version of the schema.org definition at https://schema.org/QuantitativeValue\n",
             "$ref": "#/components/schemas/QuantitativeValue"
           },
           "bearing": {
+            "description": "A structured value representing a measurement and its unit of measure. This object is a slightly modified version of the schema.org definition at https://schema.org/QuantitativeValue\n",
             "$ref": "#/components/schemas/QuantitativeValue"
           }
         }
@@ -5497,6 +5715,7 @@
             }
           },
           "pagination": {
+            "description": "Links for retrieving more data from paged data sets",
             "$ref": "#/components/schemas/PaginationInfo"
           }
         }
@@ -5521,6 +5740,7 @@
             }
           },
           "pagination": {
+            "description": "Links for retrieving more data from paged data sets",
             "$ref": "#/components/schemas/PaginationInfo"
           }
         },
@@ -5637,8 +5857,10 @@
             "type": "string"
           },
           "summary": {
-            "type": "string",
-            "nullable": true
+            "type": [
+              "null",
+              "string"
+            ]
           },
           "content": {
             "type": "string"
@@ -5755,6 +5977,7 @@
             "$ref": "#/components/schemas/JsonLdContext"
           },
           "geometry": {
+            "description": "A geometry represented in Well-Known Text (WKT) format.",
             "$ref": "#/components/schemas/GeometryString"
           },
           "@id": {
@@ -5823,6 +6046,7 @@
             "type": "string"
           },
           "astronomicalData": {
+            "description": "An object representing sunrise, sunset, and twilight information for a location.\n",
             "$ref": "#/components/schemas/AstronomicalData"
           },
           "nwr": {
@@ -5849,6 +6073,7 @@
             "$ref": "#/components/schemas/AlertGeoJsonType"
           },
           "geometry": {
+            "description": "A GeoJSON geometry object. Please refer to IETF RFC 7946 for information on the GeoJSON format.",
             "$ref": "#/components/schemas/GeoJsonGeometry"
           },
           "properties": {
@@ -5867,6 +6092,7 @@
             "$ref": "#/components/schemas/JsonLdContext"
           },
           "geometry": {
+            "description": "A geometry represented in Well-Known Text (WKT) format.",
             "$ref": "#/components/schemas/GeometryString"
           },
           "@id": {
@@ -5935,6 +6161,7 @@
             "type": "string"
           },
           "astronomicalData": {
+            "description": "An object representing sunrise, sunset, and twilight information for a location.\n",
             "$ref": "#/components/schemas/AstronomicalData"
           },
           "nwr": {
@@ -5957,31 +6184,49 @@
         "type": "object",
         "properties": {
           "type": {
+            "examples": [
+              "urn:noaa:nws:api:UnexpectedProblem"
+            ],
             "type": "string",
             "description": "A URI reference (RFC 3986) that identifies the problem type. This is only an identifier and is not necessarily a resolvable URL.\n",
             "format": "uri",
             "default": "about:blank"
           },
           "title": {
+            "examples": [
+              "Unexpected Problem"
+            ],
             "type": "string",
             "description": "A short, human-readable summary of the problem type."
           },
           "status": {
+            "examples": [
+              500
+            ],
             "maximum": 999,
             "minimum": 100,
             "type": "number",
             "description": "The HTTP status code (RFC 7231, Section 6) generated by the origin server for this occurrence of the problem.\n"
           },
           "detail": {
+            "examples": [
+              "An unexpected problem has occurred."
+            ],
             "type": "string",
             "description": "A human-readable explanation specific to this occurrence of the problem."
           },
           "instance": {
+            "examples": [
+              "urn:noaa:nws:api:request:493c3a1d-f87e-407f-ae2c-24483f5aab63"
+            ],
             "type": "string",
             "description": "A URI reference (RFC 3986) that identifies the specific occurrence of the problem. This is only an identifier and is not necessarily a resolvable URL.\n",
             "format": "uri"
           },
           "correlationId": {
+            "examples": [
+              "493c3a1d-f87e-407f-ae2c-24483f5aab63"
+            ],
             "type": "string",
             "description": "A unique identifier for the request, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n"
           }
@@ -5992,9 +6237,11 @@
         "type": "object",
         "properties": {
           "value": {
-            "type": "number",
-            "description": "A measured value",
-            "nullable": true
+            "type": [
+              "null",
+              "number"
+            ],
+            "description": "A measured value"
           },
           "maxValue": {
             "type": "number",
@@ -6037,9 +6284,11 @@
             "type": "string"
           },
           "distance": {
+            "description": "A structured value representing a measurement and its unit of measure. This object is a slightly modified version of the schema.org definition at https://schema.org/QuantitativeValue\n",
             "$ref": "#/components/schemas/QuantitativeValue"
           },
           "bearing": {
+            "description": "A structured value representing a measurement and its unit of measure. This object is a slightly modified version of the schema.org definition at https://schema.org/QuantitativeValue\n",
             "$ref": "#/components/schemas/QuantitativeValue"
           }
         }
@@ -6063,6 +6312,7 @@
             "$ref": "#/components/schemas/AlertGeoJsonType"
           },
           "geometry": {
+            "description": "A GeoJSON geometry object. Please refer to IETF RFC 7946 for information on the GeoJSON format.",
             "$ref": "#/components/schemas/GeoJsonGeometry"
           },
           "properties": {
@@ -6083,12 +6333,15 @@
             "type": "string"
           },
           "distance": {
+            "description": "A structured value representing a measurement and its unit of measure. This object is a slightly modified version of the schema.org definition at https://schema.org/QuantitativeValue\n",
             "$ref": "#/components/schemas/QuantitativeValue"
           },
           "bearing": {
+            "description": "A structured value representing a measurement and its unit of measure. This object is a slightly modified version of the schema.org definition at https://schema.org/QuantitativeValue\n",
             "$ref": "#/components/schemas/QuantitativeValue"
           },
           "geometry": {
+            "description": "A geometry represented in Well-Known Text (WKT) format.",
             "$ref": "#/components/schemas/GeometryString"
           }
         }
@@ -6105,8 +6358,10 @@
             "format": "date-time"
           },
           "fir": {
-            "type": "string",
-            "nullable": true
+            "type": [
+              "null",
+              "string"
+            ]
           },
           "atsu": {
             "pattern": "^[A-Z]{3,4}$",
@@ -6114,13 +6369,17 @@
             "description": "ATSU Identifier"
           },
           "sequence": {
-            "type": "string",
-            "nullable": true
+            "type": [
+              "null",
+              "string"
+            ]
           },
           "phenomenon": {
-            "type": "string",
-            "format": "uri",
-            "nullable": true
+            "type": [
+              "null",
+              "string"
+            ],
+            "format": "uri"
           },
           "start": {
             "type": "string",
@@ -6173,6 +6432,7 @@
             "$ref": "#/components/schemas/AlertGeoJsonType"
           },
           "geometry": {
+            "description": "A GeoJSON geometry object. Please refer to IETF RFC 7946 for information on the GeoJSON format.",
             "$ref": "#/components/schemas/GeoJsonGeometry"
           },
           "properties": {
@@ -6580,6 +6840,7 @@
             "$ref": "#/components/schemas/JsonLdContext"
           },
           "geometry": {
+            "description": "A geometry represented in Well-Known Text (WKT) format.",
             "$ref": "#/components/schemas/GeometryString"
           },
           "@id": {
@@ -6651,8 +6912,10 @@
             }
           },
           "radarStation": {
-            "type": "string",
-            "nullable": true
+            "type": [
+              "null",
+              "string"
+            ]
           }
         },
         "additionalProperties": false
@@ -6676,6 +6939,7 @@
             "$ref": "#/components/schemas/AlertGeoJsonType"
           },
           "geometry": {
+            "description": "A GeoJSON geometry object. Please refer to IETF RFC 7946 for information on the GeoJSON format.",
             "$ref": "#/components/schemas/GeoJsonGeometry"
           },
           "properties": {
@@ -6729,6 +6993,7 @@
             "$ref": "#/components/schemas/JsonLdContext"
           },
           "geometry": {
+            "description": "A geometry represented in Well-Known Text (WKT) format.",
             "$ref": "#/components/schemas/GeometryString"
           },
           "zone": {
@@ -6771,6 +7036,7 @@
             "$ref": "#/components/schemas/AlertGeoJsonType"
           },
           "geometry": {
+            "description": "A GeoJSON geometry object. Please refer to IETF RFC 7946 for information on the GeoJSON format.",
             "$ref": "#/components/schemas/GeoJsonGeometry"
           },
           "properties": {
@@ -7038,9 +7304,7 @@
             "$ref": "#/components/schemas/GridpointHourlyForecastPeriodWindGustBranch2"
           },
           {
-            "enum": [
-              null
-            ]
+            "type": "null"
           }
         ],
         "properties": {
@@ -7127,9 +7391,7 @@
             "$ref": "#/components/schemas/Gridpoint12HForecastPeriodWindGustBranch2"
           },
           {
-            "enum": [
-              null
-            ]
+            "type": "null"
           }
         ],
         "properties": {
@@ -7159,6 +7421,7 @@
         "type": "object",
         "properties": {
           "properties": {
+            "description": "An hourly forecast for a 2.5km grid square.",
             "$ref": "#/components/schemas/GridpointHourlyForecast"
           }
         }
@@ -7174,6 +7437,7 @@
             "$ref": "#/components/schemas/JsonLdContext"
           },
           "geometry": {
+            "description": "A geometry represented in Well-Known Text (WKT) format.",
             "$ref": "#/components/schemas/GeometryString"
           }
         }
@@ -7189,6 +7453,7 @@
             "$ref": "#/components/schemas/JsonLdContext"
           },
           "geometry": {
+            "description": "A geometry represented in Well-Known Text (WKT) format.",
             "$ref": "#/components/schemas/GeometryString"
           }
         }
@@ -7211,6 +7476,7 @@
             }
           },
           "pagination": {
+            "description": "Links for retrieving more data from paged data sets",
             "$ref": "#/components/schemas/PaginationInfo"
           }
         }
@@ -7234,6 +7500,7 @@
             "$ref": "#/components/schemas/JsonLdContext"
           },
           "geometry": {
+            "description": "A geometry represented in Well-Known Text (WKT) format.",
             "$ref": "#/components/schemas/GeometryString"
           }
         }
@@ -7255,6 +7522,7 @@
             }
           },
           "pagination": {
+            "description": "Links for retrieving more data from paged data sets",
             "$ref": "#/components/schemas/PaginationInfo"
           }
         }
@@ -7321,6 +7589,7 @@
             "$ref": "#/components/schemas/JsonLdContext"
           },
           "geometry": {
+            "description": "A geometry represented in Well-Known Text (WKT) format.",
             "$ref": "#/components/schemas/GeometryString"
           }
         }
@@ -7340,6 +7609,7 @@
         "type": "object",
         "properties": {
           "geometry": {
+            "description": "A geometry represented in Well-Known Text (WKT) format.",
             "$ref": "#/components/schemas/GeometryString"
           }
         }
@@ -7373,9 +7643,7 @@
             "$ref": "#/components/schemas/ZoneBodyStateWrapper"
           },
           {
-            "enum": [
-              null
-            ]
+            "type": "null"
           }
         ]
       },
@@ -7547,8 +7815,10 @@
             "$ref": "#/components/schemas/Iso8601Interval"
           },
           "value": {
-            "type": "number",
-            "nullable": true
+            "type": [
+              "null",
+              "number"
+            ]
           }
         },
         "additionalProperties": false
@@ -7557,6 +7827,7 @@
         "type": "object",
         "properties": {
           "properties": {
+            "description": "An object representing a public alert message.\nUnless otherwise noted, the fields in this object correspond to the National Weather Service CAP v1.2 specification, which extends the OASIS Common Alerting Protocol (CAP) v1.2 specification and USA Integrated Public Alert and Warning System (IPAWS) Profile v1.0. Refer to this documentation for more complete information.\nhttp://docs.oasis-open.org/emergency/cap/v1.2/CAP-v1.2-os.html http://docs.oasis-open.org/emergency/cap/v1.2/ipaws-profile/v1.0/cs01/cap-v1.2-ipaws-profile-cs01.html https://vlab.noaa.gov/web/nws-common-alerting-protocol/cap-documentation\n",
             "$ref": "#/components/schemas/Alert"
           }
         }
@@ -7569,6 +7840,7 @@
         "type": "object",
         "properties": {
           "base": {
+            "description": "A structured value representing a measurement and its unit of measure. This object is a slightly modified version of the schema.org definition at https://schema.org/QuantitativeValue\n",
             "$ref": "#/components/schemas/QuantitativeValue"
           },
           "amount": {
@@ -7602,25 +7874,31 @@
         "type": "object",
         "properties": {
           "transmitter": {
-            "type": "string",
-            "description": "Transmitter callsign",
-            "nullable": true
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Transmitter callsign"
           },
           "sameCode": {
             "type": "string",
             "description": "The SAME code of this point\u0027s county"
           },
           "areaBroadcast": {
-            "type": "string",
+            "type": [
+              "null",
+              "string"
+            ],
             "description": "A link to the area NWR broadcast from this transmitter",
-            "format": "uri",
-            "nullable": true
+            "format": "uri"
           },
           "pointBroadcast": {
-            "type": "string",
+            "type": [
+              "null",
+              "string"
+            ],
             "description": "A link to the local NWR broadcast for this point",
-            "format": "uri",
-            "nullable": true
+            "format": "uri"
           }
         },
         "description": "NOAA Weather Radio metadata for this point"
@@ -7644,8 +7922,10 @@
       "TextProductLocationCollectionLocations": {
         "type": "object",
         "additionalProperties": {
-          "type": "string",
-          "nullable": true
+          "type": [
+            "null",
+            "string"
+          ]
         }
       },
       "ZoneForecastBodyPeriodsItem": {
@@ -7661,6 +7941,9 @@
             "description": "A sequential identifier number."
           },
           "name": {
+            "examples": [
+              "This Afternoon"
+            ],
             "type": "string",
             "description": "A textual description of the period."
           },
@@ -7753,6 +8036,7 @@
             "$ref": "#/components/schemas/GridpointBodyWeatherValuesItemValueItemIntensity"
           },
           "visibility": {
+            "description": "A structured value representing a measurement and its unit of measure. This object is a slightly modified version of the schema.org definition at https://schema.org/QuantitativeValue\n",
             "$ref": "#/components/schemas/QuantitativeValue"
           },
           "attributes": {
@@ -7784,9 +8068,11 @@
             "description": "Significance code. This value will correspond to a P-VTEC significance code as defined in NWS Directive 10-1703.\nThis will most frequently be \u0022A\u0022 for a watch or \u0022Y\u0022 for an advisory.\n"
           },
           "event_number": {
-            "type": "integer",
-            "description": "Event number. If this hazard refers to a national or regional center product (such as a Storm Prediction Center convective watch), this value will be the sequence number of that product.\n",
-            "nullable": true
+            "type": [
+              "null",
+              "integer"
+            ],
+            "description": "Event number. If this hazard refers to a national or regional center product (such as a Storm Prediction Center convective watch), this value will be the sequence number of that product.\n"
           }
         },
         "description": "A value object representing an expected hazard."
@@ -8238,8 +8524,10 @@
       "TextProductLocationCollectionLocationsProperty": {
         "type": "object",
         "additionalProperties": {
-          "type": "string",
-          "nullable": true
+          "type": [
+            "null",
+            "string"
+          ]
         }
       },
       "ZoneGeoJsonProperties": {
@@ -8410,10 +8698,12 @@
           "rising",
           "falling"
         ],
-        "type": "string",
+        "type": [
+          "null",
+          "string"
+        ],
         "additionalProperties": false,
         "description": "If not null, indicates a non-diurnal temperature trend for the period (either rising temperature overnight, or falling temperature during the day)\n",
-        "nullable": true,
         "x-ms-enum": {
           "name": "GridpointHourlyForecastPeriodTemperatureTrend",
           "modelAsString": false,
@@ -8521,10 +8811,12 @@
           "rising",
           "falling"
         ],
-        "type": "string",
+        "type": [
+          "null",
+          "string"
+        ],
         "additionalProperties": false,
         "description": "If not null, indicates a non-diurnal temperature trend for the period (either rising temperature overnight, or falling temperature during the day)\n",
-        "nullable": true,
         "x-ms-enum": {
           "name": "Gridpoint12HForecastPeriodTemperatureTrend",
           "modelAsString": false,
@@ -8622,9 +8914,11 @@
           "light",
           "heavy"
         ],
-        "type": "string",
+        "type": [
+          "null",
+          "string"
+        ],
         "additionalProperties": false,
-        "nullable": true,
         "x-ms-enum": {
           "name": "MetarPhenomenonIntensity",
           "modelAsString": false,
@@ -8650,9 +8944,11 @@
           "partial",
           "showers"
         ],
-        "type": "string",
+        "type": [
+          "null",
+          "string"
+        ],
         "additionalProperties": false,
-        "nullable": true,
         "x-ms-enum": {
           "name": "MetarPhenomenonModifier",
           "modelAsString": false,
@@ -8990,9 +9286,11 @@
           "slight_chance",
           "widespread"
         ],
-        "type": "string",
+        "type": [
+          "null",
+          "string"
+        ],
         "additionalProperties": false,
-        "nullable": true,
         "x-ms-enum": {
           "name": "GridpointBodyWeatherValuesItemValueItemCoverage",
           "modelAsString": false,
@@ -9090,9 +9388,11 @@
           "volcanic_ash",
           "water_spouts"
         ],
-        "type": "string",
+        "type": [
+          "null",
+          "string"
+        ],
         "additionalProperties": false,
-        "nullable": true,
         "x-ms-enum": {
           "name": "GridpointBodyWeatherValuesItemValueItemWeather",
           "modelAsString": false,
@@ -9199,9 +9499,11 @@
           "moderate",
           "heavy"
         ],
-        "type": "string",
+        "type": [
+          "null",
+          "string"
+        ],
         "additionalProperties": false,
-        "nullable": true,
         "x-ms-enum": {
           "name": "GridpointBodyWeatherValuesItemValueItemIntensity",
           "modelAsString": false,
