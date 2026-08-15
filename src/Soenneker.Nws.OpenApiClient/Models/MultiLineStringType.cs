@@ -5,12 +5,12 @@ namespace Soenneker.Nws.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public enum GeoJsonGeometryGeoJsonMultiPolygonType
+    public enum MultiLineStringType
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "MultiPolygon")]
+        [EnumMember(Value = "MultiLineString")]
         #pragma warning disable CS1591
-        MultiPolygon,
+        MultiLineString,
         #pragma warning restore CS1591
     }
 }

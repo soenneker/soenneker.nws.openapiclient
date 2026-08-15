@@ -31,7 +31,7 @@ namespace Soenneker.Nws.OpenApiClient.Models
         public UntypedNode Coordinates { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.Nws.OpenApiClient.Models.GeoJsonGeometryGeoJsonMultiPointType? Type { get; set; }
+        public global::Soenneker.Nws.OpenApiClient.Models.MultiPointType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Nws.OpenApiClient.Models.GeoJsonGeometryGeoJsonMultiPoint"/> and sets the default values.
         /// </summary>
@@ -59,7 +59,7 @@ namespace Soenneker.Nws.OpenApiClient.Models
             {
                 { "bbox", n => { Bbox = n.GetCollectionOfPrimitiveValues<double?>()?.AsList(); } },
                 { "coordinates", n => { Coordinates = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Nws.OpenApiClient.Models.GeoJsonGeometryGeoJsonMultiPointType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Nws.OpenApiClient.Models.MultiPointType>(); } },
             };
         }
         /// <summary>
@@ -71,7 +71,7 @@ namespace Soenneker.Nws.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<double?>("bbox", Bbox);
             writer.WriteObjectValue<UntypedNode>("coordinates", Coordinates);
-            writer.WriteEnumValue<global::Soenneker.Nws.OpenApiClient.Models.GeoJsonGeometryGeoJsonMultiPointType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Nws.OpenApiClient.Models.MultiPointType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

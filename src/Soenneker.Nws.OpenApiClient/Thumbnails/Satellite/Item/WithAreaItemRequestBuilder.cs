@@ -9,43 +9,45 @@ using System.IO;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Soenneker.Nws.OpenApiClient.Offices.Item.Briefing.Download.Latest
+namespace Soenneker.Nws.OpenApiClient.Thumbnails.Satellite.Item
 {
     /// <summary>
-    /// Builds and executes requests for operations under \offices\{officeId}\briefing\download\latest
+    /// Builds and executes requests for operations under \thumbnails\satellite\{area}
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class LatestRequestBuilder : BaseRequestBuilder
+    public partial class WithAreaItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Nws.OpenApiClient.Offices.Item.Briefing.Download.Latest.LatestRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Nws.OpenApiClient.Thumbnails.Satellite.Item.WithAreaItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public LatestRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/offices/{officeId}/briefing/download/latest", pathParameters)
+        public WithAreaItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/thumbnails/satellite/{area}", pathParameters)
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Nws.OpenApiClient.Offices.Item.Briefing.Download.Latest.LatestRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Nws.OpenApiClient.Thumbnails.Satellite.Item.WithAreaItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public LatestRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/offices/{officeId}/briefing/download/latest", rawUrl)
+        public WithAreaItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/thumbnails/satellite/{area}", rawUrl)
         {
         }
         /// <summary>
-        /// Returns the latest briefing for an office
+        /// Returns a thumbnail image for a satellite region. Image services in API are deprecated.
         /// </summary>
+        /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Nws.OpenApiClient.Models.ProblemDetail">When receiving a 4XX or 5XX status code</exception>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -53,13 +55,14 @@ namespace Soenneker.Nws.OpenApiClient.Offices.Item.Briefing.Download.Latest
             {
                 { "XXX", global::Soenneker.Nws.OpenApiClient.Models.ProblemDetail.CreateFromDiscriminatorValue },
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns the latest briefing for an office
+        /// Returns a thumbnail image for a satellite region. Image services in API are deprecated.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -71,17 +74,18 @@ namespace Soenneker.Nws.OpenApiClient.Offices.Item.Briefing.Download.Latest
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "application/problem+json");
+            requestInfo.Headers.TryAdd("Accept", "image/jpeg, application/problem+json");
             return requestInfo;
         }
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Nws.OpenApiClient.Offices.Item.Briefing.Download.Latest.LatestRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Nws.OpenApiClient.Thumbnails.Satellite.Item.WithAreaItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public global::Soenneker.Nws.OpenApiClient.Offices.Item.Briefing.Download.Latest.LatestRequestBuilder WithUrl(string rawUrl)
+        [Obsolete("")]
+        public global::Soenneker.Nws.OpenApiClient.Thumbnails.Satellite.Item.WithAreaItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Soenneker.Nws.OpenApiClient.Offices.Item.Briefing.Download.Latest.LatestRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Soenneker.Nws.OpenApiClient.Thumbnails.Satellite.Item.WithAreaItemRequestBuilder(rawUrl, RequestAdapter);
         }
     }
 }

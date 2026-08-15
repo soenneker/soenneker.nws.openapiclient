@@ -5,12 +5,12 @@ namespace Soenneker.Nws.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public enum OfficeBodyType
+    public enum MultiPointType
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "GovernmentOrganization")]
+        [EnumMember(Value = "MultiPoint")]
         #pragma warning disable CS1591
-        GovernmentOrganization,
+        MultiPoint,
         #pragma warning restore CS1591
     }
 }

@@ -9,11 +9,9 @@ namespace Soenneker.Nws.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class CenterWeatherAdvisoryCollectionGeoJson : IAdditionalDataHolder, IParsable
+    public partial class IconsSummary200LdJsonResponse : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The Context property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -22,32 +20,23 @@ namespace Soenneker.Nws.OpenApiClient.Models
 #else
         public global::Soenneker.Nws.OpenApiClient.Models.JsonLdContext Context { get; set; }
 #endif
-        /// <summary>The features property</summary>
+        /// <summary>The icons property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Nws.OpenApiClient.Models.GeoJsonFeature>? Features { get; set; }
+        public global::Soenneker.Nws.OpenApiClient.Models.IconsSummary200LdJsonResponseIcons? Icons { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Nws.OpenApiClient.Models.GeoJsonFeature> Features { get; set; }
+        public global::Soenneker.Nws.OpenApiClient.Models.IconsSummary200LdJsonResponseIcons Icons { get; set; }
 #endif
-        /// <summary>The type property</summary>
-        public global::Soenneker.Nws.OpenApiClient.Models.FeatureCollectionType? Type { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Nws.OpenApiClient.Models.CenterWeatherAdvisoryCollectionGeoJson"/> and sets the default values.
-        /// </summary>
-        public CenterWeatherAdvisoryCollectionGeoJson()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Nws.OpenApiClient.Models.CenterWeatherAdvisoryCollectionGeoJson"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Nws.OpenApiClient.Models.IconsSummary200LdJsonResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Nws.OpenApiClient.Models.CenterWeatherAdvisoryCollectionGeoJson CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Nws.OpenApiClient.Models.IconsSummary200LdJsonResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Nws.OpenApiClient.Models.CenterWeatherAdvisoryCollectionGeoJson();
+            return new global::Soenneker.Nws.OpenApiClient.Models.IconsSummary200LdJsonResponse();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -58,8 +47,7 @@ namespace Soenneker.Nws.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "@context", n => { Context = n.GetObjectValue<global::Soenneker.Nws.OpenApiClient.Models.JsonLdContext>(global::Soenneker.Nws.OpenApiClient.Models.JsonLdContext.CreateFromDiscriminatorValue); } },
-                { "features", n => { Features = n.GetCollectionOfObjectValues<global::Soenneker.Nws.OpenApiClient.Models.GeoJsonFeature>(global::Soenneker.Nws.OpenApiClient.Models.GeoJsonFeature.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Nws.OpenApiClient.Models.FeatureCollectionType>(); } },
+                { "icons", n => { Icons = n.GetObjectValue<global::Soenneker.Nws.OpenApiClient.Models.IconsSummary200LdJsonResponseIcons>(global::Soenneker.Nws.OpenApiClient.Models.IconsSummary200LdJsonResponseIcons.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -70,9 +58,7 @@ namespace Soenneker.Nws.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Nws.OpenApiClient.Models.JsonLdContext>("@context", Context);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Nws.OpenApiClient.Models.GeoJsonFeature>("features", Features);
-            writer.WriteEnumValue<global::Soenneker.Nws.OpenApiClient.Models.FeatureCollectionType>("type", Type);
-            writer.WriteAdditionalData(AdditionalData);
+            writer.WriteObjectValue<global::Soenneker.Nws.OpenApiClient.Models.IconsSummary200LdJsonResponseIcons>("icons", Icons);
         }
     }
 }

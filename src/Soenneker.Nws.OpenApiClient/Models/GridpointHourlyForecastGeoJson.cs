@@ -47,7 +47,7 @@ namespace Soenneker.Nws.OpenApiClient.Models
         public global::Soenneker.Nws.OpenApiClient.Models.GridpointHourlyForecastGeoJsonProperties Properties { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.Nws.OpenApiClient.Models.AlertGeoJsonType? Type { get; set; }
+        public global::Soenneker.Nws.OpenApiClient.Models.FeatureType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Nws.OpenApiClient.Models.GridpointHourlyForecastGeoJson"/> and sets the default values.
         /// </summary>
@@ -77,7 +77,7 @@ namespace Soenneker.Nws.OpenApiClient.Models
                 { "geometry", n => { Geometry = n.GetObjectValue<global::Soenneker.Nws.OpenApiClient.Models.GeoJsonGeometry>(global::Soenneker.Nws.OpenApiClient.Models.GeoJsonGeometry.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "properties", n => { Properties = n.GetObjectValue<global::Soenneker.Nws.OpenApiClient.Models.GridpointHourlyForecastGeoJsonProperties>(global::Soenneker.Nws.OpenApiClient.Models.GridpointHourlyForecastGeoJsonProperties.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Nws.OpenApiClient.Models.AlertGeoJsonType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Nws.OpenApiClient.Models.FeatureType>(); } },
             };
         }
         /// <summary>
@@ -91,7 +91,7 @@ namespace Soenneker.Nws.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Nws.OpenApiClient.Models.GeoJsonGeometry>("geometry", Geometry);
             writer.WriteStringValue("id", Id);
             writer.WriteObjectValue<global::Soenneker.Nws.OpenApiClient.Models.GridpointHourlyForecastGeoJsonProperties>("properties", Properties);
-            writer.WriteEnumValue<global::Soenneker.Nws.OpenApiClient.Models.AlertGeoJsonType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Nws.OpenApiClient.Models.FeatureType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

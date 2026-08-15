@@ -51,23 +51,23 @@
             "$ref": "#/components/parameters/AlertCode"
           },
           {
-            "description": "\u0022State/territory code or marine area code\nThis parameter is incompatible with the following parameters: point, region, region_type, zone\n\u0022",
+            "description": "State/territory code or marine area code\nThis parameter is incompatible with the following parameters: point, region, region_type, zone\n",
             "$ref": "#/components/parameters/AlertArea"
           },
           {
-            "description": "\u0022Point (latitude,longitude)\nThis parameter is incompatible with the following parameters: area, region, region_type, zone\n\u0022",
+            "description": "Point (latitude,longitude)\nThis parameter is incompatible with the following parameters: area, region, region_type, zone\n",
             "$ref": "#/components/parameters/AlertPoint"
           },
           {
-            "description": "\u0022Marine region code\nThis parameter is incompatible with the following parameters: area, point, region_type, zone\n\u0022",
+            "description": "Marine region code\nThis parameter is incompatible with the following parameters: area, point, region_type, zone\n",
             "$ref": "#/components/parameters/AlertRegion"
           },
           {
-            "description": "\u0022Region type (land or marine)\nThis parameter is incompatible with the following parameters: area, point, region, zone\n\u0022",
+            "description": "Region type (land or marine)\nThis parameter is incompatible with the following parameters: area, point, region, zone\n",
             "$ref": "#/components/parameters/AlertRegionType"
           },
           {
-            "description": "\u0022Zone ID (forecast or county)\nThis parameter is incompatible with the following parameters: area, point, region, region_type\n\u0022",
+            "description": "Zone ID (forecast or county)\nThis parameter is incompatible with the following parameters: area, point, region, region_type\n",
             "$ref": "#/components/parameters/AlertZone"
           },
           {
@@ -95,6 +95,9 @@
           "200": {
             "description": "A collection of alerts.",
             "$ref": "#/components/responses/AlertCollection"
+          },
+          "301": {
+            "description": "Certain common queries may be redirected to discrete URLs"
           },
           "default": {
             "description": "An error response.",
@@ -125,23 +128,23 @@
             "$ref": "#/components/parameters/AlertCode"
           },
           {
-            "description": "\u0022State/territory code or marine area code\nThis parameter is incompatible with the following parameters: point, region, region_type, zone\n\u0022",
+            "description": "State/territory code or marine area code\nThis parameter is incompatible with the following parameters: point, region, region_type, zone\n",
             "$ref": "#/components/parameters/AlertArea"
           },
           {
-            "description": "\u0022Point (latitude,longitude)\nThis parameter is incompatible with the following parameters: area, region, region_type, zone\n\u0022",
+            "description": "Point (latitude,longitude)\nThis parameter is incompatible with the following parameters: area, region, region_type, zone\n",
             "$ref": "#/components/parameters/AlertPoint"
           },
           {
-            "description": "\u0022Marine region code\nThis parameter is incompatible with the following parameters: area, point, region_type, zone\n\u0022",
+            "description": "Marine region code\nThis parameter is incompatible with the following parameters: area, point, region_type, zone\n",
             "$ref": "#/components/parameters/AlertRegion"
           },
           {
-            "description": "\u0022Region type (land or marine)\nThis parameter is incompatible with the following parameters: area, point, region, zone\n\u0022",
+            "description": "Region type (land or marine)\nThis parameter is incompatible with the following parameters: area, point, region, zone\n",
             "$ref": "#/components/parameters/AlertRegionType"
           },
           {
-            "description": "\u0022Zone ID (forecast or county)\nThis parameter is incompatible with the following parameters: area, point, region, region_type\n\u0022",
+            "description": "Zone ID (forecast or county)\nThis parameter is incompatible with the following parameters: area, point, region, region_type\n",
             "$ref": "#/components/parameters/AlertZone"
           },
           {
@@ -162,6 +165,9 @@
             "description": "A collection of alerts.",
             "$ref": "#/components/responses/AlertCollection"
           },
+          "301": {
+            "description": "Certain common queries may be redirected to discrete URLs"
+          },
           "default": {
             "description": "An error response.",
             "$ref": "#/components/responses/Error"
@@ -176,6 +182,17 @@
         "responses": {
           "200": {
             "description": "A data structure showing the counts of active alerts broken down by various categories",
+            "headers": {
+              "X-Correlation-Id": {
+                "$ref": "#/components/headers/CorrelationId"
+              },
+              "X-Request-Id": {
+                "$ref": "#/components/headers/RequestId"
+              },
+              "X-Server-Id": {
+                "$ref": "#/components/headers/ServerId"
+              }
+            },
             "content": {
               "application/ld\u002Bjson": {
                 "schema": {
@@ -273,6 +290,17 @@
         "responses": {
           "200": {
             "description": "A list of recognized event types",
+            "headers": {
+              "X-Correlation-Id": {
+                "$ref": "#/components/headers/CorrelationId"
+              },
+              "X-Request-Id": {
+                "$ref": "#/components/headers/RequestId"
+              },
+              "X-Server-Id": {
+                "$ref": "#/components/headers/ServerId"
+              }
+            },
             "content": {
               "application/ld\u002Bjson": {
                 "schema": {
@@ -295,6 +323,17 @@
         "responses": {
           "200": {
             "description": "An alert record",
+            "headers": {
+              "X-Correlation-Id": {
+                "$ref": "#/components/headers/CorrelationId"
+              },
+              "X-Request-Id": {
+                "$ref": "#/components/headers/RequestId"
+              },
+              "X-Server-Id": {
+                "$ref": "#/components/headers/ServerId"
+              }
+            },
             "content": {
               "application/geo\u002Bjson": {
                 "schema": {
@@ -594,6 +633,17 @@
         "responses": {
           "200": {
             "description": "A set of glossary terms",
+            "headers": {
+              "X-Correlation-Id": {
+                "$ref": "#/components/headers/CorrelationId"
+              },
+              "X-Request-Id": {
+                "$ref": "#/components/headers/RequestId"
+              },
+              "X-Server-Id": {
+                "$ref": "#/components/headers/ServerId"
+              }
+            },
             "content": {
               "application/ld\u002Bjson": {
                 "schema": {
@@ -616,6 +666,17 @@
         "responses": {
           "200": {
             "description": "Gridpoint forecast data",
+            "headers": {
+              "X-Correlation-Id": {
+                "$ref": "#/components/headers/CorrelationId"
+              },
+              "X-Request-Id": {
+                "$ref": "#/components/headers/RequestId"
+              },
+              "X-Server-Id": {
+                "$ref": "#/components/headers/ServerId"
+              }
+            },
             "content": {
               "application/geo\u002Bjson": {
                 "schema": {
@@ -653,7 +714,7 @@
         "operationId": "GridpointForecast",
         "parameters": [
           {
-            "description": "\u0022Enable future and experimental features (see documentation for more info):\n* forecast_temperature_qv: Represent temperature as QuantitativeValue\n* forecast_wind_speed_qv: Represent wind speed as QuantitativeValue\n\u0022",
+            "description": "Enable future and experimental features (see documentation for more info):\n* forecast_temperature_qv: Represent temperature as QuantitativeValue\n* forecast_wind_speed_qv: Represent wind speed as QuantitativeValue\n",
             "$ref": "#/components/parameters/GridpointForecastFeatureFlags"
           },
           {
@@ -690,7 +751,7 @@
         "operationId": "GridpointForecastHourly",
         "parameters": [
           {
-            "description": "\u0022Enable future and experimental features (see documentation for more info):\n* forecast_temperature_qv: Represent temperature as QuantitativeValue\n* forecast_wind_speed_qv: Represent wind speed as QuantitativeValue\n\u0022",
+            "description": "Enable future and experimental features (see documentation for more info):\n* forecast_temperature_qv: Represent temperature as QuantitativeValue\n* forecast_wind_speed_qv: Represent wind speed as QuantitativeValue\n",
             "$ref": "#/components/parameters/GridpointForecastFeatureFlags"
           },
           {
@@ -748,6 +809,276 @@
         },
         {
           "$ref": "#/components/parameters/Limit"
+        }
+      ]
+    },
+    "/icons/{set}/{timeOfDay}/{first}": {
+      "get": {
+        "description": "Returns a forecast icon. Icon services in API are deprecated.",
+        "operationId": "Icons",
+        "responses": {
+          "200": {
+            "description": "success",
+            "headers": {
+              "X-Correlation-Id": {
+                "$ref": "#/components/headers/CorrelationId"
+              },
+              "X-Request-Id": {
+                "$ref": "#/components/headers/RequestId"
+              },
+              "X-Server-Id": {
+                "$ref": "#/components/headers/ServerId"
+              }
+            },
+            "content": {
+              "image/png": {
+                "schema": {
+                  "$ref": "#/components/schemas/Icons200PngResponseSchema"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "An error response.",
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "deprecated": true
+      },
+      "parameters": [
+        {
+          "name": "set",
+          "in": "path",
+          "description": ".",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "timeOfDay",
+          "in": "path",
+          "description": ".",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "first",
+          "in": "path",
+          "description": ".",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "size",
+          "in": "query",
+          "description": "Font size",
+          "schema": {
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/IconsSetTimeOfDayFirstSizeAnyOf1"
+              },
+              {
+                "maximum": 500,
+                "minimum": 10,
+                "type": "integer"
+              }
+            ]
+          }
+        },
+        {
+          "name": "fontsize",
+          "in": "query",
+          "description": "Font size",
+          "schema": {
+            "maximum": 24,
+            "minimum": 2,
+            "type": "integer"
+          }
+        }
+      ]
+    },
+    "/icons/{set}/{timeOfDay}/{first}/{second}": {
+      "get": {
+        "description": "Returns a forecast icon. Icon services in API are deprecated.",
+        "operationId": "IconsDualCondition",
+        "responses": {
+          "200": {
+            "description": "success",
+            "headers": {
+              "X-Correlation-Id": {
+                "$ref": "#/components/headers/CorrelationId"
+              },
+              "X-Request-Id": {
+                "$ref": "#/components/headers/RequestId"
+              },
+              "X-Server-Id": {
+                "$ref": "#/components/headers/ServerId"
+              }
+            },
+            "content": {
+              "image/png": {
+                "schema": {
+                  "$ref": "#/components/schemas/IconsDualCondition200PngResponseSchema"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "An error response.",
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "deprecated": true
+      },
+      "parameters": [
+        {
+          "name": "set",
+          "in": "path",
+          "description": ".",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "timeOfDay",
+          "in": "path",
+          "description": ".",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "first",
+          "in": "path",
+          "description": ".",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "second",
+          "in": "path",
+          "description": ".",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "size",
+          "in": "query",
+          "description": "Font size",
+          "schema": {
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/IconsSetTimeOfDayFirstSecondSizeAnyOf1"
+              },
+              {
+                "maximum": 500,
+                "minimum": 10,
+                "type": "integer"
+              }
+            ]
+          }
+        },
+        {
+          "name": "fontsize",
+          "in": "query",
+          "description": "Font size",
+          "schema": {
+            "maximum": 24,
+            "minimum": 2,
+            "type": "integer"
+          }
+        }
+      ]
+    },
+    "/icons": {
+      "get": {
+        "description": "Returns a list of icon codes and textual descriptions. Icon services in API are deprecated.",
+        "operationId": "IconsSummary",
+        "responses": {
+          "200": {
+            "description": "success",
+            "headers": {
+              "X-Correlation-Id": {
+                "$ref": "#/components/headers/CorrelationId"
+              },
+              "X-Request-Id": {
+                "$ref": "#/components/headers/RequestId"
+              },
+              "X-Server-Id": {
+                "$ref": "#/components/headers/ServerId"
+              }
+            },
+            "content": {
+              "application/ld\u002Bjson": {
+                "schema": {
+                  "$ref": "#/components/schemas/IconsSummary200LdJsonResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "An error response.",
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "deprecated": true
+      }
+    },
+    "/thumbnails/satellite/{area}": {
+      "get": {
+        "description": "Returns a thumbnail image for a satellite region. Image services in API are deprecated.",
+        "operationId": "SatelliteThumbnails",
+        "responses": {
+          "200": {
+            "description": "An image file",
+            "headers": {
+              "X-Correlation-Id": {
+                "$ref": "#/components/headers/CorrelationId"
+              },
+              "X-Request-Id": {
+                "$ref": "#/components/headers/RequestId"
+              },
+              "X-Server-Id": {
+                "$ref": "#/components/headers/ServerId"
+              }
+            },
+            "content": {
+              "image/jpeg": {
+                "schema": {
+                  "$ref": "#/components/schemas/SatelliteThumbnails200JpegResponseSchema"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "An error response.",
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "deprecated": true
+      },
+      "parameters": [
+        {
+          "name": "area",
+          "in": "path",
+          "description": ".",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/ThumbnailsSatelliteAreaArea"
+          }
         }
       ]
     },
@@ -981,6 +1312,17 @@
         "responses": {
           "200": {
             "description": "success",
+            "headers": {
+              "X-Correlation-Id": {
+                "$ref": "#/components/headers/CorrelationId"
+              },
+              "X-Request-Id": {
+                "$ref": "#/components/headers/RequestId"
+              },
+              "X-Server-Id": {
+                "$ref": "#/components/headers/ServerId"
+              }
+            },
             "content": {
               "application/geo\u002Bjson": {
                 "schema": {
@@ -1013,6 +1355,17 @@
         "responses": {
           "200": {
             "description": "success",
+            "headers": {
+              "X-Correlation-Id": {
+                "$ref": "#/components/headers/CorrelationId"
+              },
+              "X-Request-Id": {
+                "$ref": "#/components/headers/RequestId"
+              },
+              "X-Server-Id": {
+                "$ref": "#/components/headers/ServerId"
+              }
+            },
             "content": {
               "application/ld\u002Bjson": {
                 "schema": {
@@ -1040,6 +1393,17 @@
         "responses": {
           "200": {
             "description": "success",
+            "headers": {
+              "X-Correlation-Id": {
+                "$ref": "#/components/headers/CorrelationId"
+              },
+              "X-Request-Id": {
+                "$ref": "#/components/headers/RequestId"
+              },
+              "X-Server-Id": {
+                "$ref": "#/components/headers/ServerId"
+              }
+            },
             "content": {
               "application/ld\u002Bjson": {
                 "schema": {
@@ -1065,6 +1429,20 @@
         "description": "Returns the latest briefing for an office",
         "operationId": "OfficeBriefingDownloadLatest",
         "responses": {
+          "302": {
+            "description": "success",
+            "headers": {
+              "X-Correlation-Id": {
+                "$ref": "#/components/headers/CorrelationId"
+              },
+              "X-Request-Id": {
+                "$ref": "#/components/headers/RequestId"
+              },
+              "X-Server-Id": {
+                "$ref": "#/components/headers/ServerId"
+              }
+            }
+          },
           "default": {
             "description": "An error response.",
             "$ref": "#/components/responses/Error"
@@ -1084,6 +1462,17 @@
         "responses": {
           "200": {
             "description": "success",
+            "headers": {
+              "X-Correlation-Id": {
+                "$ref": "#/components/headers/CorrelationId"
+              },
+              "X-Request-Id": {
+                "$ref": "#/components/headers/RequestId"
+              },
+              "X-Server-Id": {
+                "$ref": "#/components/headers/ServerId"
+              }
+            },
             "content": {
               "application/pdf": {
                 "schema": {
@@ -1120,6 +1509,17 @@
         "responses": {
           "200": {
             "description": "success",
+            "headers": {
+              "X-Correlation-Id": {
+                "$ref": "#/components/headers/CorrelationId"
+              },
+              "X-Request-Id": {
+                "$ref": "#/components/headers/RequestId"
+              },
+              "X-Server-Id": {
+                "$ref": "#/components/headers/ServerId"
+              }
+            },
             "content": {
               "application/ld\u002Bjson": {
                 "schema": {
@@ -1156,6 +1556,17 @@
         "responses": {
           "200": {
             "description": "success",
+            "headers": {
+              "X-Correlation-Id": {
+                "$ref": "#/components/headers/CorrelationId"
+              },
+              "X-Request-Id": {
+                "$ref": "#/components/headers/RequestId"
+              },
+              "X-Server-Id": {
+                "$ref": "#/components/headers/ServerId"
+              }
+            },
             "content": {
               "application/ld\u002Bjson": {
                 "schema": {
@@ -1183,6 +1594,17 @@
         "responses": {
           "200": {
             "description": "success",
+            "headers": {
+              "X-Correlation-Id": {
+                "$ref": "#/components/headers/CorrelationId"
+              },
+              "X-Request-Id": {
+                "$ref": "#/components/headers/RequestId"
+              },
+              "X-Server-Id": {
+                "$ref": "#/components/headers/ServerId"
+              }
+            },
             "content": {
               "application/ld\u002Bjson": {
                 "schema": {
@@ -1210,6 +1632,17 @@
         "responses": {
           "200": {
             "description": "success",
+            "headers": {
+              "X-Correlation-Id": {
+                "$ref": "#/components/headers/CorrelationId"
+              },
+              "X-Request-Id": {
+                "$ref": "#/components/headers/RequestId"
+              },
+              "X-Server-Id": {
+                "$ref": "#/components/headers/ServerId"
+              }
+            },
             "content": {
               "application/json": {
                 "schema": {
@@ -1246,6 +1679,17 @@
         "responses": {
           "200": {
             "description": "success",
+            "headers": {
+              "X-Correlation-Id": {
+                "$ref": "#/components/headers/CorrelationId"
+              },
+              "X-Request-Id": {
+                "$ref": "#/components/headers/RequestId"
+              },
+              "X-Server-Id": {
+                "$ref": "#/components/headers/ServerId"
+              }
+            },
             "content": {
               "application/geo\u002Bjson": {
                 "schema": {
@@ -1284,6 +1728,17 @@
         "responses": {
           "200": {
             "description": "success",
+            "headers": {
+              "X-Correlation-Id": {
+                "$ref": "#/components/headers/CorrelationId"
+              },
+              "X-Request-Id": {
+                "$ref": "#/components/headers/RequestId"
+              },
+              "X-Server-Id": {
+                "$ref": "#/components/headers/ServerId"
+              }
+            },
             "content": {
               "application/ssml\u002Bxml": {
                 "schema": {
@@ -1297,6 +1752,30 @@
             "$ref": "#/components/responses/Error"
           }
         }
+      },
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/Latitude"
+        },
+        {
+          "$ref": "#/components/parameters/Longitude"
+        }
+      ]
+    },
+    "/points/{latitude},{longitude}/stations": {
+      "get": {
+        "description": "Returns a list of observation stations for a given point",
+        "operationId": "PointStations",
+        "responses": {
+          "301": {
+            "description": "redirect to gridpoint stations"
+          },
+          "default": {
+            "description": "An error response.",
+            "$ref": "#/components/responses/Error"
+          }
+        },
+        "deprecated": true
       },
       "parameters": [
         {
@@ -1324,6 +1803,20 @@
         "responses": {
           "200": {
             "description": "success",
+            "headers": {
+              "X-Correlation-Id": {
+                "$ref": "#/components/headers/CorrelationId"
+              },
+              "X-Request-Id": {
+                "$ref": "#/components/headers/RequestId"
+              },
+              "X-Server-Id": {
+                "$ref": "#/components/headers/ServerId"
+              },
+              "X-Api-Key": {
+                "$ref": "#/components/headers/X-Api-Key"
+              }
+            },
             "content": {
               "application/ld\u002Bjson": {
                 "schema": {
@@ -1356,6 +1849,17 @@
         "responses": {
           "200": {
             "description": "success",
+            "headers": {
+              "X-Correlation-Id": {
+                "$ref": "#/components/headers/CorrelationId"
+              },
+              "X-Request-Id": {
+                "$ref": "#/components/headers/RequestId"
+              },
+              "X-Server-Id": {
+                "$ref": "#/components/headers/ServerId"
+              }
+            },
             "content": {
               "application/ld\u002Bjson": {
                 "schema": {
@@ -1399,6 +1903,17 @@
         "responses": {
           "200": {
             "description": "success",
+            "headers": {
+              "X-Correlation-Id": {
+                "$ref": "#/components/headers/CorrelationId"
+              },
+              "X-Request-Id": {
+                "$ref": "#/components/headers/RequestId"
+              },
+              "X-Server-Id": {
+                "$ref": "#/components/headers/ServerId"
+              }
+            },
             "content": {
               "application/ld\u002Bjson": {
                 "schema": {
@@ -1452,6 +1967,17 @@
         "responses": {
           "200": {
             "description": "success",
+            "headers": {
+              "X-Correlation-Id": {
+                "$ref": "#/components/headers/CorrelationId"
+              },
+              "X-Request-Id": {
+                "$ref": "#/components/headers/RequestId"
+              },
+              "X-Server-Id": {
+                "$ref": "#/components/headers/ServerId"
+              }
+            },
             "content": {
               "application/geo\u002Bjson": {
                 "schema": {
@@ -1497,6 +2023,17 @@
         "responses": {
           "200": {
             "description": "success",
+            "headers": {
+              "X-Correlation-Id": {
+                "$ref": "#/components/headers/CorrelationId"
+              },
+              "X-Request-Id": {
+                "$ref": "#/components/headers/RequestId"
+              },
+              "X-Server-Id": {
+                "$ref": "#/components/headers/ServerId"
+              }
+            },
             "content": {
               "application/geo\u002Bjson": {
                 "schema": {
@@ -1535,6 +2072,17 @@
         "responses": {
           "200": {
             "description": "success",
+            "headers": {
+              "X-Correlation-Id": {
+                "$ref": "#/components/headers/CorrelationId"
+              },
+              "X-Request-Id": {
+                "$ref": "#/components/headers/RequestId"
+              },
+              "X-Server-Id": {
+                "$ref": "#/components/headers/ServerId"
+              }
+            },
             "content": {
               "application/ld\u002Bjson": {
                 "schema": {
@@ -1637,6 +2185,17 @@
         "responses": {
           "200": {
             "description": "success",
+            "headers": {
+              "X-Correlation-Id": {
+                "$ref": "#/components/headers/CorrelationId"
+              },
+              "X-Request-Id": {
+                "$ref": "#/components/headers/RequestId"
+              },
+              "X-Server-Id": {
+                "$ref": "#/components/headers/ServerId"
+              }
+            },
             "content": {
               "application/ld\u002Bjson": {
                 "schema": {
@@ -1688,6 +2247,17 @@
         "responses": {
           "200": {
             "description": "success",
+            "headers": {
+              "X-Correlation-Id": {
+                "$ref": "#/components/headers/CorrelationId"
+              },
+              "X-Request-Id": {
+                "$ref": "#/components/headers/RequestId"
+              },
+              "X-Server-Id": {
+                "$ref": "#/components/headers/ServerId"
+              }
+            },
             "content": {
               "application/ld\u002Bjson": {
                 "schema": {
@@ -1724,6 +2294,17 @@
         "responses": {
           "200": {
             "description": "success",
+            "headers": {
+              "X-Correlation-Id": {
+                "$ref": "#/components/headers/CorrelationId"
+              },
+              "X-Request-Id": {
+                "$ref": "#/components/headers/RequestId"
+              },
+              "X-Server-Id": {
+                "$ref": "#/components/headers/ServerId"
+              }
+            },
             "content": {
               "application/ld\u002Bjson": {
                 "schema": {
@@ -1754,6 +2335,17 @@
         "responses": {
           "200": {
             "description": "success",
+            "headers": {
+              "X-Correlation-Id": {
+                "$ref": "#/components/headers/CorrelationId"
+              },
+              "X-Request-Id": {
+                "$ref": "#/components/headers/RequestId"
+              },
+              "X-Server-Id": {
+                "$ref": "#/components/headers/ServerId"
+              }
+            },
             "content": {
               "application/ld\u002Bjson": {
                 "schema": {
@@ -1784,6 +2376,17 @@
         "responses": {
           "200": {
             "description": "success",
+            "headers": {
+              "X-Correlation-Id": {
+                "$ref": "#/components/headers/CorrelationId"
+              },
+              "X-Request-Id": {
+                "$ref": "#/components/headers/RequestId"
+              },
+              "X-Server-Id": {
+                "$ref": "#/components/headers/ServerId"
+              }
+            },
             "content": {
               "application/ssml\u002Bxml": {
                 "schema": {
@@ -1892,6 +2495,17 @@
         "responses": {
           "200": {
             "description": "success",
+            "headers": {
+              "X-Correlation-Id": {
+                "$ref": "#/components/headers/CorrelationId"
+              },
+              "X-Request-Id": {
+                "$ref": "#/components/headers/RequestId"
+              },
+              "X-Server-Id": {
+                "$ref": "#/components/headers/ServerId"
+              }
+            },
             "content": {
               "application/ld\u002Bjson": {
                 "schema": {
@@ -1914,6 +2528,17 @@
         "responses": {
           "200": {
             "description": "success",
+            "headers": {
+              "X-Correlation-Id": {
+                "$ref": "#/components/headers/CorrelationId"
+              },
+              "X-Request-Id": {
+                "$ref": "#/components/headers/RequestId"
+              },
+              "X-Server-Id": {
+                "$ref": "#/components/headers/ServerId"
+              }
+            },
             "content": {
               "application/ld\u002Bjson": {
                 "schema": {
@@ -1936,6 +2561,17 @@
         "responses": {
           "200": {
             "description": "success",
+            "headers": {
+              "X-Correlation-Id": {
+                "$ref": "#/components/headers/CorrelationId"
+              },
+              "X-Request-Id": {
+                "$ref": "#/components/headers/RequestId"
+              },
+              "X-Server-Id": {
+                "$ref": "#/components/headers/ServerId"
+              }
+            },
             "content": {
               "application/ld\u002Bjson": {
                 "schema": {
@@ -1958,6 +2594,17 @@
         "responses": {
           "200": {
             "description": "success",
+            "headers": {
+              "X-Correlation-Id": {
+                "$ref": "#/components/headers/CorrelationId"
+              },
+              "X-Request-Id": {
+                "$ref": "#/components/headers/RequestId"
+              },
+              "X-Server-Id": {
+                "$ref": "#/components/headers/ServerId"
+              }
+            },
             "content": {
               "application/ld\u002Bjson": {
                 "schema": {
@@ -1991,6 +2638,17 @@
         "responses": {
           "200": {
             "description": "success",
+            "headers": {
+              "X-Correlation-Id": {
+                "$ref": "#/components/headers/CorrelationId"
+              },
+              "X-Request-Id": {
+                "$ref": "#/components/headers/RequestId"
+              },
+              "X-Server-Id": {
+                "$ref": "#/components/headers/ServerId"
+              }
+            },
             "content": {
               "application/ld\u002Bjson": {
                 "schema": {
@@ -2024,6 +2682,17 @@
         "responses": {
           "200": {
             "description": "success",
+            "headers": {
+              "X-Correlation-Id": {
+                "$ref": "#/components/headers/CorrelationId"
+              },
+              "X-Request-Id": {
+                "$ref": "#/components/headers/RequestId"
+              },
+              "X-Server-Id": {
+                "$ref": "#/components/headers/ServerId"
+              }
+            },
             "content": {
               "application/ld\u002Bjson": {
                 "schema": {
@@ -2057,6 +2726,17 @@
         "responses": {
           "200": {
             "description": "success",
+            "headers": {
+              "X-Correlation-Id": {
+                "$ref": "#/components/headers/CorrelationId"
+              },
+              "X-Request-Id": {
+                "$ref": "#/components/headers/RequestId"
+              },
+              "X-Server-Id": {
+                "$ref": "#/components/headers/ServerId"
+              }
+            },
             "content": {
               "application/ld\u002Bjson": {
                 "schema": {
@@ -2090,6 +2770,17 @@
         "responses": {
           "200": {
             "description": "success",
+            "headers": {
+              "X-Correlation-Id": {
+                "$ref": "#/components/headers/CorrelationId"
+              },
+              "X-Request-Id": {
+                "$ref": "#/components/headers/RequestId"
+              },
+              "X-Server-Id": {
+                "$ref": "#/components/headers/ServerId"
+              }
+            },
             "content": {
               "application/ld\u002Bjson": {
                 "schema": {
@@ -2132,6 +2823,17 @@
         "responses": {
           "200": {
             "description": "success",
+            "headers": {
+              "X-Correlation-Id": {
+                "$ref": "#/components/headers/CorrelationId"
+              },
+              "X-Request-Id": {
+                "$ref": "#/components/headers/RequestId"
+              },
+              "X-Server-Id": {
+                "$ref": "#/components/headers/ServerId"
+              }
+            },
             "content": {
               "application/ld\u002Bjson": {
                 "schema": {
@@ -2260,6 +2962,17 @@
         "responses": {
           "200": {
             "description": "success",
+            "headers": {
+              "X-Correlation-Id": {
+                "$ref": "#/components/headers/CorrelationId"
+              },
+              "X-Request-Id": {
+                "$ref": "#/components/headers/RequestId"
+              },
+              "X-Server-Id": {
+                "$ref": "#/components/headers/ServerId"
+              }
+            },
             "content": {
               "application/geo\u002Bjson": {
                 "schema": {
@@ -2373,6 +3086,17 @@
         "responses": {
           "200": {
             "description": "success",
+            "headers": {
+              "X-Correlation-Id": {
+                "$ref": "#/components/headers/CorrelationId"
+              },
+              "X-Request-Id": {
+                "$ref": "#/components/headers/RequestId"
+              },
+              "X-Server-Id": {
+                "$ref": "#/components/headers/ServerId"
+              }
+            },
             "content": {
               "application/geo\u002Bjson": {
                 "schema": {
@@ -2422,6 +3146,17 @@
         "responses": {
           "200": {
             "description": "success",
+            "headers": {
+              "X-Correlation-Id": {
+                "$ref": "#/components/headers/CorrelationId"
+              },
+              "X-Request-Id": {
+                "$ref": "#/components/headers/RequestId"
+              },
+              "X-Server-Id": {
+                "$ref": "#/components/headers/ServerId"
+              }
+            },
             "content": {
               "application/geo\u002Bjson": {
                 "schema": {
@@ -2463,6 +3198,17 @@
         "responses": {
           "200": {
             "description": "success",
+            "headers": {
+              "X-Correlation-Id": {
+                "$ref": "#/components/headers/CorrelationId"
+              },
+              "X-Request-Id": {
+                "$ref": "#/components/headers/RequestId"
+              },
+              "X-Server-Id": {
+                "$ref": "#/components/headers/ServerId"
+              }
+            },
             "content": {
               "application/geo\u002Bjson": {
                 "schema": {
@@ -2504,6 +3250,17 @@
         "responses": {
           "200": {
             "description": "success",
+            "headers": {
+              "X-Correlation-Id": {
+                "$ref": "#/components/headers/CorrelationId"
+              },
+              "X-Request-Id": {
+                "$ref": "#/components/headers/RequestId"
+              },
+              "X-Server-Id": {
+                "$ref": "#/components/headers/ServerId"
+              }
+            },
             "content": {
               "application/ld\u002Bjson": {
                 "schema": {
@@ -2525,7 +3282,7 @@
           "description": "Must be value \u0027county\u0027.",
           "required": true,
           "schema": {
-            "$ref": "#/components/schemas/ZonesTypeZoneIdRadioType"
+            "$ref": "#/components/schemas/CountyType"
           }
         },
         {
@@ -2570,6 +3327,17 @@
         "responses": {
           "200": {
             "description": "success",
+            "headers": {
+              "X-Correlation-Id": {
+                "$ref": "#/components/headers/CorrelationId"
+              },
+              "X-Request-Id": {
+                "$ref": "#/components/headers/RequestId"
+              },
+              "X-Server-Id": {
+                "$ref": "#/components/headers/ServerId"
+              }
+            },
             "content": {
               "application/geo\u002Bjson": {
                 "schema": {
@@ -2796,7 +3564,7 @@
             "$ref": "#/components/schemas/JsonLdContext"
           },
           "type": {
-            "$ref": "#/components/schemas/AlertCollectionGeoJsonType"
+            "$ref": "#/components/schemas/FeatureCollectionType"
           },
           "features": {
             "type": "array",
@@ -2865,7 +3633,7 @@
             "format": "uri"
           },
           "type": {
-            "$ref": "#/components/schemas/AlertGeoJsonType"
+            "$ref": "#/components/schemas/FeatureType"
           },
           "geometry": {
             "description": "A GeoJSON geometry object. Please refer to IETF RFC 7946 for information on the GeoJSON format.",
@@ -2896,7 +3664,7 @@
         "type": "object",
         "properties": {
           "type": {
-            "$ref": "#/components/schemas/GeoJsonGeometryGeoJsonPointType"
+            "$ref": "#/components/schemas/PointType"
           },
           "coordinates": {
             "minItems": 2,
@@ -3275,7 +4043,7 @@
             "$ref": "#/components/schemas/JsonLdContext"
           },
           "type": {
-            "$ref": "#/components/schemas/AlertCollectionGeoJsonType"
+            "$ref": "#/components/schemas/FeatureCollectionType"
           },
           "features": {
             "type": "array",
@@ -3301,7 +4069,7 @@
             "format": "uri"
           },
           "type": {
-            "$ref": "#/components/schemas/AlertGeoJsonType"
+            "$ref": "#/components/schemas/FeatureType"
           },
           "geometry": {
             "description": "A GeoJSON geometry object. Please refer to IETF RFC 7946 for information on the GeoJSON format.",
@@ -3383,9 +4151,6 @@
         "description": "A GeoJSON coordinate. Please refer to IETF RFC 7946 for information on the GeoJSON format."
       },
       "GeoJsonGeometry": {
-        "required": [
-          "type"
-        ],
         "type": "object",
         "oneOf": [
           {
@@ -3411,23 +4176,24 @@
           }
         ],
         "properties": {
-          "type": {
-            "type": "string",
-            "description": "Union discriminator"
+          "coordinates": {
+            "minItems": 2,
+            "type": "array",
+            "items": {
+              "type": "number"
+            },
+            "description": "A GeoJSON coordinate. Please refer to IETF RFC 7946 for information on the GeoJSON format."
+          },
+          "bbox": {
+            "minItems": 4,
+            "type": "array",
+            "items": {
+              "type": "number"
+            },
+            "description": "A GeoJSON bounding box. Please refer to IETF RFC 7946 for information on the GeoJSON format."
           }
         },
-        "description": "A GeoJSON geometry object. Please refer to IETF RFC 7946 for information on the GeoJSON format.",
-        "discriminator": {
-          "propertyName": "type",
-          "mapping": {
-            "GeoJsonGeometryGeoJsonPoint": "#/components/schemas/GeoJsonGeometryGeoJsonPoint",
-            "GeoJsonGeometryGeoJsonLineString": "#/components/schemas/GeoJsonGeometryGeoJsonLineString",
-            "GeoJsonGeometryGeoJsonPolygon": "#/components/schemas/GeoJsonGeometryGeoJsonPolygon",
-            "GeoJsonGeometryGeoJsonMultiPoint": "#/components/schemas/GeoJsonGeometryGeoJsonMultiPoint",
-            "GeoJsonGeometryGeoJsonMultiLineString": "#/components/schemas/GeoJsonGeometryGeoJsonMultiLineString",
-            "GeoJsonGeometryGeoJsonMultiPolygon": "#/components/schemas/GeoJsonGeometryGeoJsonMultiPolygon"
-          }
-        }
+        "description": "A GeoJSON geometry object. Please refer to IETF RFC 7946 for information on the GeoJSON format."
       },
       "GeoJsonFeature": {
         "required": [
@@ -3445,7 +4211,7 @@
             "format": "uri"
           },
           "type": {
-            "$ref": "#/components/schemas/AlertGeoJsonType"
+            "$ref": "#/components/schemas/FeatureType"
           },
           "geometry": {
             "description": "A GeoJSON geometry object. Please refer to IETF RFC 7946 for information on the GeoJSON format.",
@@ -3469,7 +4235,7 @@
             "$ref": "#/components/schemas/JsonLdContext"
           },
           "type": {
-            "$ref": "#/components/schemas/AlertCollectionGeoJsonType"
+            "$ref": "#/components/schemas/FeatureCollectionType"
           },
           "features": {
             "type": "array",
@@ -3524,7 +4290,7 @@
             "format": "uri"
           },
           "@type": {
-            "$ref": "#/components/schemas/GridpointBodyType"
+            "$ref": "#/components/schemas/WxColonGridpointType"
           },
           "updateTime": {
             "type": "string",
@@ -3562,7 +4328,7 @@
         "additionalProperties": {
           "$ref": "#/components/schemas/GridpointQuantitativeValueLayer"
         },
-        "description": "\u0022Raw forecast data for a 2.5km grid square.\nThis is a list of all potential data layers that may appear. Some layers may not be present in all areas.\n* temperature\n* dewpoint\n* maxTemperature\n* minTemperature\n* relativeHumidity\n* apparentTemperature\n* heatIndex\n* windChill\n* wetBulbGlobeTemperature\n* skyCover\n* windDirection\n* windSpeed\n* windGust\n* weather\n* hazards: Watch and advisory products in effect\n* heatRisk\n* probabilityOfPrecipitation\n* quantitativePrecipitation\n* iceAccumulation\n* snowfallAmount\n* snowLevel\n* ceilingHeight\n* visibility\n* transportWindSpeed\n* transportWindDirection\n* mixingHeight\n* hainesIndex\n* lightningActivityLevel\n* twentyFootWindSpeed\n* twentyFootWindDirection\n* waveHeight\n* wavePeriod\n* waveDirection\n* primarySwellHeight\n* primarySwellDirection\n* secondarySwellHeight\n* secondarySwellDirection\n* wavePeriod2\n* windWaveHeight\n* dispersionIndex\n* pressure: Barometric pressure\n* probabilityOfTropicalStormWinds\n* probabilityOfHurricaneWinds\n* potentialOf15mphWinds\n* potentialOf25mphWinds\n* potentialOf35mphWinds\n* potentialOf45mphWinds\n* potentialOf20mphWindGusts\n* potentialOf30mphWindGusts\n* potentialOf40mphWindGusts\n* potentialOf50mphWindGusts\n* potentialOf60mphWindGusts\n* grasslandFireDangerIndex\n* probabilityOfThunder\n* davisStabilityIndex\n* atmosphericDispersionIndex\n* lowVisibilityOccurrenceRiskIndex\n* stability\n* redFlagThreatIndex\n\u0022"
+        "description": "Raw forecast data for a 2.5km grid square.\nThis is a list of all potential data layers that may appear. Some layers may not be present in all areas.\n* temperature\n* dewpoint\n* maxTemperature\n* minTemperature\n* relativeHumidity\n* apparentTemperature\n* heatIndex\n* windChill\n* wetBulbGlobeTemperature\n* skyCover\n* windDirection\n* windSpeed\n* windGust\n* weather\n* hazards: Watch and advisory products in effect\n* heatRisk\n* probabilityOfPrecipitation\n* quantitativePrecipitation\n* iceAccumulation\n* snowfallAmount\n* snowLevel\n* ceilingHeight\n* visibility\n* transportWindSpeed\n* transportWindDirection\n* mixingHeight\n* hainesIndex\n* lightningActivityLevel\n* twentyFootWindSpeed\n* twentyFootWindDirection\n* waveHeight\n* wavePeriod\n* waveDirection\n* primarySwellHeight\n* primarySwellDirection\n* secondarySwellHeight\n* secondarySwellDirection\n* wavePeriod2\n* windWaveHeight\n* dispersionIndex\n* pressure: Barometric pressure\n* probabilityOfTropicalStormWinds\n* probabilityOfHurricaneWinds\n* potentialOf15mphWinds\n* potentialOf25mphWinds\n* potentialOf35mphWinds\n* potentialOf45mphWinds\n* potentialOf20mphWindGusts\n* potentialOf30mphWindGusts\n* potentialOf40mphWindGusts\n* potentialOf50mphWindGusts\n* potentialOf60mphWindGusts\n* grasslandFireDangerIndex\n* probabilityOfThunder\n* davisStabilityIndex\n* atmosphericDispersionIndex\n* lowVisibilityOccurrenceRiskIndex\n* stability\n* redFlagThreatIndex\n"
       },
       "GridpointQuantitativeValueLayer": {
         "required": [
@@ -3600,7 +4366,7 @@
             "format": "uri"
           },
           "type": {
-            "$ref": "#/components/schemas/AlertGeoJsonType"
+            "$ref": "#/components/schemas/FeatureType"
           },
           "geometry": {
             "description": "A GeoJSON geometry object. Please refer to IETF RFC 7946 for information on the GeoJSON format.",
@@ -3891,7 +4657,7 @@
             "format": "uri"
           },
           "type": {
-            "$ref": "#/components/schemas/AlertGeoJsonType"
+            "$ref": "#/components/schemas/FeatureType"
           },
           "geometry": {
             "description": "A GeoJSON geometry object. Please refer to IETF RFC 7946 for information on the GeoJSON format.",
@@ -3918,7 +4684,7 @@
             "format": "uri"
           },
           "type": {
-            "$ref": "#/components/schemas/AlertGeoJsonType"
+            "$ref": "#/components/schemas/FeatureType"
           },
           "geometry": {
             "description": "A GeoJSON geometry object. Please refer to IETF RFC 7946 for information on the GeoJSON format.",
@@ -4067,9 +4833,6 @@
         "description": "A time interval in ISO 8601 format. This can be one of:\n\n    1. Start and end time\n    2. Start time and duration\n    3. Duration and end time\nThe string \u0022NOW\u0022 can also be used in place of a start/end time.\n"
       },
       "JsonLdContext": {
-        "required": [
-          "type"
-        ],
         "type": "object",
         "anyOf": [
           {
@@ -4080,15 +4843,11 @@
           }
         ],
         "properties": {
-          "type": {
-            "type": "string",
-            "description": "Union discriminator"
-          }
-        },
-        "discriminator": {
-          "propertyName": "type",
-          "mapping": {
-            "JsonLdContext_1": "#/components/schemas/JsonLdContextBranch1"
+          "value": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/JsonLdContextBranch1ValueItem"
+            }
           }
         }
       },
@@ -4103,7 +4862,7 @@
         ],
         "type": "string",
         "additionalProperties": false,
-        "description": "\u0022Land region code. These correspond to the six NWS regional headquarters:\n* AR: Alaska Region\n* CR: Central Region\n* ER: Eastern Region\n* PR: Pacific Region\n* SR: Southern Region\n* WR: Western Region\n\u0022",
+        "description": "Land region code. These correspond to the six NWS regional headquarters:\n* AR: Alaska Region\n* CR: Central Region\n* ER: Eastern Region\n* PR: Pacific Region\n* SR: Southern Region\n* WR: Western Region\n",
         "x-ms-enum": {
           "name": "LandRegionCode",
           "modelAsString": false,
@@ -4155,7 +4914,7 @@
         ],
         "type": "string",
         "additionalProperties": false,
-        "description": "\u0022Marine area code as defined in NWS Directive 10-302:\n* AM: Western North Atlantic Ocean and along U.S. East Coast south of Currituck Beach Light NC following the coastline into Gulf of Mexico to Ocean Reef FL including the Caribbean\n* AN: Western North Atlantic Ocean and along U.S. East Coast from Canadian border south to Currituck Beach Light NC\n* GM: Gulf of Mexico and along the U.S. Gulf Coast from the Mexican border to Ocean Reef FL\n* LC: Lake St. Clair\n* LE: Lake Erie\n* LH: Lake Huron\n* LM: Lake Michigan\n* LO: Lake Ontario\n* LS: Lake Superior\n* PH: Central Pacific Ocean including Hawaiian waters\n* PK: North Pacific Ocean near Alaska and along Alaska coastline including the Bering Sea and the Gulf of Alaska\n* PM: Western Pacific Ocean including Mariana Island waters\n* PS: South Central Pacific Ocean including American Samoa waters\n* PZ: Eastern North Pacific Ocean and along U.S. West Coast from Canadian border to Mexican border\n* SL: St. Lawrence River above St. Regis\n\u0022",
+        "description": "Marine area code as defined in NWS Directive 10-302:\n* AM: Western North Atlantic Ocean and along U.S. East Coast south of Currituck Beach Light NC following the coastline into Gulf of Mexico to Ocean Reef FL including the Caribbean\n* AN: Western North Atlantic Ocean and along U.S. East Coast from Canadian border south to Currituck Beach Light NC\n* GM: Gulf of Mexico and along the U.S. Gulf Coast from the Mexican border to Ocean Reef FL\n* LC: Lake St. Clair\n* LE: Lake Erie\n* LH: Lake Huron\n* LM: Lake Michigan\n* LO: Lake Ontario\n* LS: Lake Superior\n* PH: Central Pacific Ocean including Hawaiian waters\n* PK: North Pacific Ocean near Alaska and along Alaska coastline including the Bering Sea and the Gulf of Alaska\n* PM: Western Pacific Ocean including Mariana Island waters\n* PS: South Central Pacific Ocean including American Samoa waters\n* PZ: Eastern North Pacific Ocean and along U.S. West Coast from Canadian border to Mexican border\n* SL: St. Lawrence River above St. Regis\n",
         "x-ms-enum": {
           "name": "MarineAreaCode",
           "modelAsString": false,
@@ -4234,7 +4993,7 @@
         ],
         "type": "string",
         "additionalProperties": false,
-        "description": "\u0022Marine region code. These are groups of marine areas combined.\n* AL: Alaska waters (PK)\n* AT: Atlantic Ocean (AM, AN)\n* GL: Great Lakes (LC, LE, LH, LM, LO, LS, SL)\n* GM: Gulf of Mexico (GM)\n* PA: Eastern Pacific Ocean and U.S. West Coast (PZ)\n* PI: Central and Western Pacific (PH, PM, PS)\n\u0022",
+        "description": "Marine region code. These are groups of marine areas combined.\n* AL: Alaska waters (PK)\n* AT: Atlantic Ocean (AM, AN)\n* GL: Great Lakes (LC, LE, LH, LM, LO, LS, SL)\n* GM: Gulf of Mexico (GM)\n* PA: Eastern Pacific Ocean and U.S. West Coast (PZ)\n* PI: Central and Western Pacific (PH, PM, PS)\n",
         "x-ms-enum": {
           "name": "MarineRegionCode",
           "modelAsString": false,
@@ -5338,7 +6097,7 @@
             "format": "uri"
           },
           "@type": {
-            "$ref": "#/components/schemas/ObservationType"
+            "$ref": "#/components/schemas/WxColonObservationStationType"
           },
           "elevation": {
             "description": "A structured value representing a measurement and its unit of measure. This object is a slightly modified version of the schema.org definition at https://schema.org/QuantitativeValue\n",
@@ -5470,7 +6229,7 @@
             "format": "uri"
           },
           "type": {
-            "$ref": "#/components/schemas/AlertGeoJsonType"
+            "$ref": "#/components/schemas/FeatureType"
           },
           "geometry": {
             "description": "A GeoJSON geometry object. Please refer to IETF RFC 7946 for information on the GeoJSON format.",
@@ -5495,7 +6254,7 @@
             "$ref": "#/components/schemas/JsonLdContext"
           },
           "type": {
-            "$ref": "#/components/schemas/AlertCollectionGeoJsonType"
+            "$ref": "#/components/schemas/FeatureCollectionType"
           },
           "features": {
             "type": "array",
@@ -5543,7 +6302,7 @@
             "format": "uri"
           },
           "@type": {
-            "$ref": "#/components/schemas/ObservationStationType"
+            "$ref": "#/components/schemas/WxColonObservationStationType"
           },
           "elevation": {
             "description": "A structured value representing a measurement and its unit of measure. This object is a slightly modified version of the schema.org definition at https://schema.org/QuantitativeValue\n",
@@ -5609,7 +6368,7 @@
             "format": "uri"
           },
           "type": {
-            "$ref": "#/components/schemas/AlertGeoJsonType"
+            "$ref": "#/components/schemas/FeatureType"
           },
           "geometry": {
             "description": "A GeoJSON geometry object. Please refer to IETF RFC 7946 for information on the GeoJSON format.",
@@ -5639,7 +6398,7 @@
             "format": "uri"
           },
           "@type": {
-            "$ref": "#/components/schemas/ObservationStationType"
+            "$ref": "#/components/schemas/WxColonObservationStationType"
           },
           "elevation": {
             "description": "A structured value representing a measurement and its unit of measure. This object is a slightly modified version of the schema.org definition at https://schema.org/QuantitativeValue\n",
@@ -5699,7 +6458,7 @@
             "$ref": "#/components/schemas/JsonLdContext"
           },
           "type": {
-            "$ref": "#/components/schemas/AlertCollectionGeoJsonType"
+            "$ref": "#/components/schemas/FeatureCollectionType"
           },
           "features": {
             "type": "array",
@@ -5753,7 +6512,7 @@
             "$ref": "#/components/schemas/JsonLdContext"
           },
           "@type": {
-            "$ref": "#/components/schemas/OfficeBodyType"
+            "$ref": "#/components/schemas/GovernmentOrganizationType"
           },
           "@id": {
             "type": "string",
@@ -5985,13 +6744,13 @@
             "format": "uri"
           },
           "@type": {
-            "$ref": "#/components/schemas/PointBodyType"
+            "$ref": "#/components/schemas/WxColonPointType"
           },
           "cwa": {
             "$ref": "#/components/schemas/NwsForecastOfficeId"
           },
           "type": {
-            "$ref": "#/components/schemas/PointBodyTypeEnum"
+            "$ref": "#/components/schemas/PointBodyType"
           },
           "forecastOffice": {
             "type": "string",
@@ -6070,7 +6829,7 @@
             "format": "uri"
           },
           "type": {
-            "$ref": "#/components/schemas/AlertGeoJsonType"
+            "$ref": "#/components/schemas/FeatureType"
           },
           "geometry": {
             "description": "A GeoJSON geometry object. Please refer to IETF RFC 7946 for information on the GeoJSON format.",
@@ -6100,13 +6859,13 @@
             "format": "uri"
           },
           "@type": {
-            "$ref": "#/components/schemas/PointBodyType"
+            "$ref": "#/components/schemas/WxColonPointType"
           },
           "cwa": {
             "$ref": "#/components/schemas/NwsForecastOfficeId"
           },
           "type": {
-            "$ref": "#/components/schemas/PointBodyTypeEnum"
+            "$ref": "#/components/schemas/PointBodyType"
           },
           "forecastOffice": {
             "type": "string",
@@ -6309,7 +7068,7 @@
             "format": "uri"
           },
           "type": {
-            "$ref": "#/components/schemas/AlertGeoJsonType"
+            "$ref": "#/components/schemas/FeatureType"
           },
           "geometry": {
             "description": "A GeoJSON geometry object. Please refer to IETF RFC 7946 for information on the GeoJSON format.",
@@ -6403,7 +7162,7 @@
             "$ref": "#/components/schemas/JsonLdContext"
           },
           "type": {
-            "$ref": "#/components/schemas/AlertCollectionGeoJsonType"
+            "$ref": "#/components/schemas/FeatureCollectionType"
           },
           "features": {
             "type": "array",
@@ -6429,7 +7188,7 @@
             "format": "uri"
           },
           "type": {
-            "$ref": "#/components/schemas/AlertGeoJsonType"
+            "$ref": "#/components/schemas/FeatureType"
           },
           "geometry": {
             "description": "A GeoJSON geometry object. Please refer to IETF RFC 7946 for information on the GeoJSON format.",
@@ -6848,7 +7607,7 @@
             "format": "uri"
           },
           "@type": {
-            "$ref": "#/components/schemas/ZoneBodyType"
+            "$ref": "#/components/schemas/WxColonZoneType"
           },
           "id": {
             "pattern": "^(A[KLMNRSZ]|C[AOT]|D[CE]|F[LM]|G[AMU]|I[ADLN]|K[SY]|L[ACEHMOS]|M[ADEHINOPST]|N[CDEHJMVY]|O[HKR]|P[AHKMRSWZ]|S[CDL]|T[NX]|UT|V[AIT]|W[AIVY]|[HR]I)[CZ]\\d{3}$",
@@ -6936,7 +7695,7 @@
             "format": "uri"
           },
           "type": {
-            "$ref": "#/components/schemas/AlertGeoJsonType"
+            "$ref": "#/components/schemas/FeatureType"
           },
           "geometry": {
             "description": "A GeoJSON geometry object. Please refer to IETF RFC 7946 for information on the GeoJSON format.",
@@ -6961,7 +7720,7 @@
             "$ref": "#/components/schemas/JsonLdContext"
           },
           "type": {
-            "$ref": "#/components/schemas/AlertCollectionGeoJsonType"
+            "$ref": "#/components/schemas/FeatureCollectionType"
           },
           "features": {
             "type": "array",
@@ -7033,7 +7792,7 @@
             "format": "uri"
           },
           "type": {
-            "$ref": "#/components/schemas/AlertGeoJsonType"
+            "$ref": "#/components/schemas/FeatureType"
           },
           "geometry": {
             "description": "A GeoJSON geometry object. Please refer to IETF RFC 7946 for information on the GeoJSON format.",
@@ -7056,7 +7815,7 @@
         "type": "object",
         "properties": {
           "type": {
-            "$ref": "#/components/schemas/GeoJsonGeometryGeoJsonLineStringType"
+            "$ref": "#/components/schemas/LineStringType"
           },
           "coordinates": {
             "minItems": 2,
@@ -7090,7 +7849,7 @@
         "type": "object",
         "properties": {
           "type": {
-            "$ref": "#/components/schemas/GeoJsonGeometryGeoJsonPolygonType"
+            "$ref": "#/components/schemas/PolygonType"
           },
           "coordinates": {
             "type": "array",
@@ -7127,7 +7886,7 @@
         "type": "object",
         "properties": {
           "type": {
-            "$ref": "#/components/schemas/GeoJsonGeometryGeoJsonMultiPointType"
+            "$ref": "#/components/schemas/MultiPointType"
           },
           "coordinates": {
             "type": "array",
@@ -7159,7 +7918,7 @@
         "type": "object",
         "properties": {
           "type": {
-            "$ref": "#/components/schemas/GeoJsonGeometryGeoJsonMultiLineStringType"
+            "$ref": "#/components/schemas/MultiLineStringType"
           },
           "coordinates": {
             "type": "array",
@@ -7196,7 +7955,7 @@
         "type": "object",
         "properties": {
           "type": {
-            "$ref": "#/components/schemas/GeoJsonGeometryGeoJsonMultiPolygonType"
+            "$ref": "#/components/schemas/MultiPolygonType"
           },
           "coordinates": {
             "type": "array",
@@ -7236,9 +7995,6 @@
         }
       },
       "GridpointHourlyForecastPeriodTemperature": {
-        "required": [
-          "type"
-        ],
         "type": "object",
         "oneOf": [
           {
@@ -7249,24 +8005,26 @@
           }
         ],
         "properties": {
-          "type": {
+          "maxValue": {
+            "type": "number",
+            "description": "The maximum value of a range of measured values"
+          },
+          "minValue": {
+            "type": "number",
+            "description": "The minimum value of a range of measured values"
+          },
+          "unitCode": {
+            "pattern": "^((wmo|uc|wmoUnit|nwsUnit):)?.*$",
             "type": "string",
-            "description": "Union discriminator"
+            "description": "A string denoting a unit of measure, expressed in the format \u0022{unit}\u0022 or \u0022{namespace}:{unit}\u0022.\nUnits with the namespace \u0022wmo\u0022 or \u0022wmoUnit\u0022 are defined in the World Meteorological Organization Codes Registry at http://codes.wmo.int/common/unit and should be canonically resolvable to http://codes.wmo.int/common/unit/{unit}.\nUnits with the namespace \u0022nwsUnit\u0022 are currently custom and do not align to any standard.\nUnits with no namespace or the namespace \u0022uc\u0022 are compliant with the Unified Code for Units of Measure syntax defined at https://unitsofmeasure.org/. This also aligns with recent versions of the Geographic Markup Language (GML) standard, the IWXXM standard, and OGC Observations and Measurements v2.0 (ISO/DIS 19156).\nNamespaced units are considered deprecated. We will be aligning API to use the same standards as GML/IWXXM in the future.\n"
+          },
+          "qualityControl": {
+            "$ref": "#/components/schemas/QuantitativeValueQualityControl"
           }
         },
-        "description": "High/low temperature for the period, depending on whether the period is day or night.\nThis property as an integer value is deprecated. Future versions will express this value as a quantitative value object. To make use of the future standard format now, set the \u0022forecast_temperature_qv\u0022 feature flag on the request.\n",
-        "discriminator": {
-          "propertyName": "type",
-          "mapping": {
-            "QuantitativeValue": "#/components/schemas/QuantitativeValue",
-            "GridpointHourlyForecastPeriodTemperature_2": "#/components/schemas/GridpointHourlyForecastPeriodTemperatureBranch2"
-          }
-        }
+        "description": "High/low temperature for the period, depending on whether the period is day or night.\nThis property as an integer value is deprecated. Future versions will express this value as a quantitative value object. To make use of the future standard format now, set the \u0022forecast_temperature_qv\u0022 feature flag on the request.\n"
       },
       "GridpointHourlyForecastPeriodWindSpeed": {
-        "required": [
-          "type"
-        ],
         "type": "object",
         "oneOf": [
           {
@@ -7277,24 +8035,26 @@
           }
         ],
         "properties": {
-          "type": {
+          "maxValue": {
+            "type": "number",
+            "description": "The maximum value of a range of measured values"
+          },
+          "minValue": {
+            "type": "number",
+            "description": "The minimum value of a range of measured values"
+          },
+          "unitCode": {
+            "pattern": "^((wmo|uc|wmoUnit|nwsUnit):)?.*$",
             "type": "string",
-            "description": "Union discriminator"
+            "description": "A string denoting a unit of measure, expressed in the format \u0022{unit}\u0022 or \u0022{namespace}:{unit}\u0022.\nUnits with the namespace \u0022wmo\u0022 or \u0022wmoUnit\u0022 are defined in the World Meteorological Organization Codes Registry at http://codes.wmo.int/common/unit and should be canonically resolvable to http://codes.wmo.int/common/unit/{unit}.\nUnits with the namespace \u0022nwsUnit\u0022 are currently custom and do not align to any standard.\nUnits with no namespace or the namespace \u0022uc\u0022 are compliant with the Unified Code for Units of Measure syntax defined at https://unitsofmeasure.org/. This also aligns with recent versions of the Geographic Markup Language (GML) standard, the IWXXM standard, and OGC Observations and Measurements v2.0 (ISO/DIS 19156).\nNamespaced units are considered deprecated. We will be aligning API to use the same standards as GML/IWXXM in the future.\n"
+          },
+          "qualityControl": {
+            "$ref": "#/components/schemas/QuantitativeValueQualityControl"
           }
         },
-        "description": "Wind speed for the period.\nThis property as an string value is deprecated. Future versions will express this value as a quantitative value object. To make use of the future standard format now, set the \u0022forecast_wind_speed_qv\u0022 feature flag on the request.\n",
-        "discriminator": {
-          "propertyName": "type",
-          "mapping": {
-            "QuantitativeValue": "#/components/schemas/QuantitativeValue",
-            "GridpointHourlyForecastPeriodWindSpeed_2": "#/components/schemas/GridpointHourlyForecastPeriodWindSpeedBranch2"
-          }
-        }
+        "description": "Wind speed for the period.\nThis property as an string value is deprecated. Future versions will express this value as a quantitative value object. To make use of the future standard format now, set the \u0022forecast_wind_speed_qv\u0022 feature flag on the request.\n"
       },
       "GridpointHourlyForecastPeriodWindGust": {
-        "required": [
-          "type"
-        ],
         "type": "object",
         "oneOf": [
           {
@@ -7308,24 +8068,26 @@
           }
         ],
         "properties": {
-          "type": {
+          "maxValue": {
+            "type": "number",
+            "description": "The maximum value of a range of measured values"
+          },
+          "minValue": {
+            "type": "number",
+            "description": "The minimum value of a range of measured values"
+          },
+          "unitCode": {
+            "pattern": "^((wmo|uc|wmoUnit|nwsUnit):)?.*$",
             "type": "string",
-            "description": "Union discriminator"
+            "description": "A string denoting a unit of measure, expressed in the format \u0022{unit}\u0022 or \u0022{namespace}:{unit}\u0022.\nUnits with the namespace \u0022wmo\u0022 or \u0022wmoUnit\u0022 are defined in the World Meteorological Organization Codes Registry at http://codes.wmo.int/common/unit and should be canonically resolvable to http://codes.wmo.int/common/unit/{unit}.\nUnits with the namespace \u0022nwsUnit\u0022 are currently custom and do not align to any standard.\nUnits with no namespace or the namespace \u0022uc\u0022 are compliant with the Unified Code for Units of Measure syntax defined at https://unitsofmeasure.org/. This also aligns with recent versions of the Geographic Markup Language (GML) standard, the IWXXM standard, and OGC Observations and Measurements v2.0 (ISO/DIS 19156).\nNamespaced units are considered deprecated. We will be aligning API to use the same standards as GML/IWXXM in the future.\n"
+          },
+          "qualityControl": {
+            "$ref": "#/components/schemas/QuantitativeValueQualityControl"
           }
         },
-        "description": "Peak wind gust for the period.\nThis property as an string value is deprecated. Future versions will express this value as a quantitative value object. To make use of the future standard format now, set the \u0022forecast_wind_speed_qv\u0022 feature flag on the request.\n",
-        "discriminator": {
-          "propertyName": "type",
-          "mapping": {
-            "QuantitativeValue": "#/components/schemas/QuantitativeValue",
-            "GridpointHourlyForecastPeriodWindGust_2": "#/components/schemas/GridpointHourlyForecastPeriodWindGustBranch2"
-          }
-        }
+        "description": "Peak wind gust for the period.\nThis property as an string value is deprecated. Future versions will express this value as a quantitative value object. To make use of the future standard format now, set the \u0022forecast_wind_speed_qv\u0022 feature flag on the request.\n"
       },
       "Gridpoint12HForecastPeriodTemperature": {
-        "required": [
-          "type"
-        ],
         "type": "object",
         "oneOf": [
           {
@@ -7336,24 +8098,26 @@
           }
         ],
         "properties": {
-          "type": {
+          "maxValue": {
+            "type": "number",
+            "description": "The maximum value of a range of measured values"
+          },
+          "minValue": {
+            "type": "number",
+            "description": "The minimum value of a range of measured values"
+          },
+          "unitCode": {
+            "pattern": "^((wmo|uc|wmoUnit|nwsUnit):)?.*$",
             "type": "string",
-            "description": "Union discriminator"
+            "description": "A string denoting a unit of measure, expressed in the format \u0022{unit}\u0022 or \u0022{namespace}:{unit}\u0022.\nUnits with the namespace \u0022wmo\u0022 or \u0022wmoUnit\u0022 are defined in the World Meteorological Organization Codes Registry at http://codes.wmo.int/common/unit and should be canonically resolvable to http://codes.wmo.int/common/unit/{unit}.\nUnits with the namespace \u0022nwsUnit\u0022 are currently custom and do not align to any standard.\nUnits with no namespace or the namespace \u0022uc\u0022 are compliant with the Unified Code for Units of Measure syntax defined at https://unitsofmeasure.org/. This also aligns with recent versions of the Geographic Markup Language (GML) standard, the IWXXM standard, and OGC Observations and Measurements v2.0 (ISO/DIS 19156).\nNamespaced units are considered deprecated. We will be aligning API to use the same standards as GML/IWXXM in the future.\n"
+          },
+          "qualityControl": {
+            "$ref": "#/components/schemas/QuantitativeValueQualityControl"
           }
         },
-        "description": "High/low temperature for the period, depending on whether the period is day or night.\nThis property as an integer value is deprecated. Future versions will express this value as a quantitative value object. To make use of the future standard format now, set the \u0022forecast_temperature_qv\u0022 feature flag on the request.\n",
-        "discriminator": {
-          "propertyName": "type",
-          "mapping": {
-            "QuantitativeValue": "#/components/schemas/QuantitativeValue",
-            "Gridpoint12HForecastPeriodTemperature_2": "#/components/schemas/Gridpoint12HForecastPeriodTemperatureBranch2"
-          }
-        }
+        "description": "High/low temperature for the period, depending on whether the period is day or night.\nThis property as an integer value is deprecated. Future versions will express this value as a quantitative value object. To make use of the future standard format now, set the \u0022forecast_temperature_qv\u0022 feature flag on the request.\n"
       },
       "Gridpoint12HForecastPeriodWindSpeed": {
-        "required": [
-          "type"
-        ],
         "type": "object",
         "oneOf": [
           {
@@ -7364,24 +8128,26 @@
           }
         ],
         "properties": {
-          "type": {
+          "maxValue": {
+            "type": "number",
+            "description": "The maximum value of a range of measured values"
+          },
+          "minValue": {
+            "type": "number",
+            "description": "The minimum value of a range of measured values"
+          },
+          "unitCode": {
+            "pattern": "^((wmo|uc|wmoUnit|nwsUnit):)?.*$",
             "type": "string",
-            "description": "Union discriminator"
+            "description": "A string denoting a unit of measure, expressed in the format \u0022{unit}\u0022 or \u0022{namespace}:{unit}\u0022.\nUnits with the namespace \u0022wmo\u0022 or \u0022wmoUnit\u0022 are defined in the World Meteorological Organization Codes Registry at http://codes.wmo.int/common/unit and should be canonically resolvable to http://codes.wmo.int/common/unit/{unit}.\nUnits with the namespace \u0022nwsUnit\u0022 are currently custom and do not align to any standard.\nUnits with no namespace or the namespace \u0022uc\u0022 are compliant with the Unified Code for Units of Measure syntax defined at https://unitsofmeasure.org/. This also aligns with recent versions of the Geographic Markup Language (GML) standard, the IWXXM standard, and OGC Observations and Measurements v2.0 (ISO/DIS 19156).\nNamespaced units are considered deprecated. We will be aligning API to use the same standards as GML/IWXXM in the future.\n"
+          },
+          "qualityControl": {
+            "$ref": "#/components/schemas/QuantitativeValueQualityControl"
           }
         },
-        "description": "Wind speed for the period.\nThis property as an string value is deprecated. Future versions will express this value as a quantitative value object. To make use of the future standard format now, set the \u0022forecast_wind_speed_qv\u0022 feature flag on the request.\n",
-        "discriminator": {
-          "propertyName": "type",
-          "mapping": {
-            "QuantitativeValue": "#/components/schemas/QuantitativeValue",
-            "Gridpoint12HForecastPeriodWindSpeed_2": "#/components/schemas/Gridpoint12HForecastPeriodWindSpeedBranch2"
-          }
-        }
+        "description": "Wind speed for the period.\nThis property as an string value is deprecated. Future versions will express this value as a quantitative value object. To make use of the future standard format now, set the \u0022forecast_wind_speed_qv\u0022 feature flag on the request.\n"
       },
       "Gridpoint12HForecastPeriodWindGust": {
-        "required": [
-          "type"
-        ],
         "type": "object",
         "oneOf": [
           {
@@ -7395,19 +8161,24 @@
           }
         ],
         "properties": {
-          "type": {
+          "maxValue": {
+            "type": "number",
+            "description": "The maximum value of a range of measured values"
+          },
+          "minValue": {
+            "type": "number",
+            "description": "The minimum value of a range of measured values"
+          },
+          "unitCode": {
+            "pattern": "^((wmo|uc|wmoUnit|nwsUnit):)?.*$",
             "type": "string",
-            "description": "Union discriminator"
+            "description": "A string denoting a unit of measure, expressed in the format \u0022{unit}\u0022 or \u0022{namespace}:{unit}\u0022.\nUnits with the namespace \u0022wmo\u0022 or \u0022wmoUnit\u0022 are defined in the World Meteorological Organization Codes Registry at http://codes.wmo.int/common/unit and should be canonically resolvable to http://codes.wmo.int/common/unit/{unit}.\nUnits with the namespace \u0022nwsUnit\u0022 are currently custom and do not align to any standard.\nUnits with no namespace or the namespace \u0022uc\u0022 are compliant with the Unified Code for Units of Measure syntax defined at https://unitsofmeasure.org/. This also aligns with recent versions of the Geographic Markup Language (GML) standard, the IWXXM standard, and OGC Observations and Measurements v2.0 (ISO/DIS 19156).\nNamespaced units are considered deprecated. We will be aligning API to use the same standards as GML/IWXXM in the future.\n"
+          },
+          "qualityControl": {
+            "$ref": "#/components/schemas/QuantitativeValueQualityControl"
           }
         },
-        "description": "Peak wind gust for the period.\nThis property as an string value is deprecated. Future versions will express this value as a quantitative value object. To make use of the future standard format now, set the \u0022forecast_wind_speed_qv\u0022 feature flag on the request.\n",
-        "discriminator": {
-          "propertyName": "type",
-          "mapping": {
-            "QuantitativeValue": "#/components/schemas/QuantitativeValue",
-            "Gridpoint12HForecastPeriodWindGust_2": "#/components/schemas/Gridpoint12HForecastPeriodWindGustBranch2"
-          }
-        }
+        "description": "Peak wind gust for the period.\nThis property as an string value is deprecated. Future versions will express this value as a quantitative value object. To make use of the future standard format now, set the \u0022forecast_wind_speed_qv\u0022 feature flag on the request.\n"
       },
       "Gridpoint12HForecastGeoJsonAllOf2": {
         "type": "object",
@@ -7543,9 +8314,6 @@
         }
       },
       "PointBodyRelativeLocation": {
-        "required": [
-          "type"
-        ],
         "type": "object",
         "oneOf": [
           {
@@ -7556,17 +8324,32 @@
           }
         ],
         "properties": {
-          "type": {
-            "title": "type",
+          "@context": {
+            "$ref": "#/components/schemas/JsonLdContext"
+          },
+          "id": {
             "type": "string",
-            "description": "Union discriminator"
-          }
-        },
-        "discriminator": {
-          "propertyName": "type",
-          "mapping": {
-            "RelativeLocationGeoJson": "#/components/schemas/RelativeLocationGeoJson",
-            "RelativeLocationJsonLd": "#/components/schemas/RelativeLocationJsonLd"
+            "format": "uri"
+          },
+          "type": {
+            "$ref": "#/components/schemas/FeatureType"
+          },
+          "properties": {
+            "$ref": "#/components/schemas/RelativeLocationGeoJsonProperties"
+          },
+          "city": {
+            "type": "string"
+          },
+          "state": {
+            "type": "string"
+          },
+          "distance": {
+            "description": "A structured value representing a measurement and its unit of measure. This object is a slightly modified version of the schema.org definition at https://schema.org/QuantitativeValue\n",
+            "$ref": "#/components/schemas/QuantitativeValue"
+          },
+          "bearing": {
+            "description": "A structured value representing a measurement and its unit of measure. This object is a slightly modified version of the schema.org definition at https://schema.org/QuantitativeValue\n",
+            "$ref": "#/components/schemas/QuantitativeValue"
           }
         }
       },
@@ -7853,7 +8636,7 @@
         "type": "object",
         "properties": {
           "@type": {
-            "$ref": "#/components/schemas/OfficeBodyAddressType"
+            "$ref": "#/components/schemas/PostalAddressType"
           },
           "streetAddress": {
             "type": "string"
@@ -8124,6 +8907,33 @@
       "Sigmet200NoaaUswxXmlResponse": {
         "type": "object"
       },
+      "Icons200PngResponse": {
+        "type": "string",
+        "format": "binary"
+      },
+      "IconsDualCondition200PngResponse": {
+        "type": "string",
+        "format": "binary"
+      },
+      "IconsSummary200LdJsonResponse": {
+        "required": [
+          "icons"
+        ],
+        "type": "object",
+        "properties": {
+          "@context": {
+            "$ref": "#/components/schemas/JsonLdContext"
+          },
+          "icons": {
+            "$ref": "#/components/schemas/IconsSummary200LdJsonResponseIcons"
+          }
+        },
+        "additionalProperties": false
+      },
+      "SatelliteThumbnails200JpegResponse": {
+        "type": "string",
+        "format": "binary"
+      },
       "Tafs200LdJsonResponse": {
         "type": "object"
       },
@@ -8278,10 +9088,13 @@
         "type": "object",
         "properties": {
           "value": {
-            "type": "string",
-            "additionalProperties": false
+            "$ref": "#/components/schemas/ZoneBodyStateWrapperValue"
           }
         }
+      },
+      "ExamplePayload": {
+        "type": "object",
+        "description": "Placeholder schema for path example refs"
       },
       "JsonLdContextBranch1": {
         "required": [
@@ -8363,10 +9176,6 @@
           }
         }
       },
-      "ExamplePayload": {
-        "type": "object",
-        "description": "Placeholder schema for path example refs"
-      },
       "AlertsSingle200CapXmlResponse": {
         "type": "object"
       },
@@ -8390,6 +9199,18 @@
             "description": "A list of glossary terms"
           }
         }
+      },
+      "Icons200PngResponseSchema": {
+        "type": "string",
+        "format": "binary"
+      },
+      "IconsDualCondition200PngResponseSchema": {
+        "type": "string",
+        "format": "binary"
+      },
+      "SatelliteThumbnails200JpegResponseSchema": {
+        "type": "string",
+        "format": "binary"
       },
       "Tafs200LdJsonResponseSchema": {
         "type": "object"
@@ -8560,6 +9381,12 @@
         },
         "description": "Active alerts by NWS public zone or county code"
       },
+      "IconsSummary200LdJsonResponseIcons": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/IconsSummary200LdJsonResponseIconsAdditionalProperties"
+        }
+      },
       "JsonLdContextBranch1ValueItem": {
         "type": "object"
       },
@@ -8575,6 +9402,18 @@
             "description": "A definition for the term"
           }
         }
+      },
+      "IconsSummary200LdJsonResponseIconsAdditionalProperties": {
+        "required": [
+          "description"
+        ],
+        "type": "object",
+        "properties": {
+          "description": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
       },
       "AlertCategory": {
         "enum": [
@@ -8645,35 +9484,35 @@
           ]
         }
       },
-      "AlertCollectionGeoJsonType": {
+      "FeatureCollectionType": {
         "enum": [
           "FeatureCollection"
         ],
         "type": "string",
         "additionalProperties": false
       },
-      "AlertGeoJsonType": {
+      "FeatureType": {
         "enum": [
           "Feature"
         ],
         "type": "string",
         "additionalProperties": false
       },
-      "GeoJsonGeometryGeoJsonPointType": {
+      "PointType": {
         "enum": [
           "Point"
         ],
         "type": "string",
         "additionalProperties": false
       },
-      "GridpointBodyType": {
+      "WxColonGridpointType": {
         "enum": [
           "wx:Gridpoint"
         ],
         "type": "string",
         "additionalProperties": false,
         "x-ms-enum": {
-          "name": "GridpointBodyType",
+          "name": "WxColonGridpointType",
           "modelAsString": false,
           "values": [
             {
@@ -9111,14 +9950,14 @@
           ]
         }
       },
-      "ObservationType": {
+      "WxColonObservationStationType": {
         "enum": [
           "wx:ObservationStation"
         ],
         "type": "string",
         "additionalProperties": false,
         "x-ms-enum": {
-          "name": "ObservationType",
+          "name": "WxColonObservationStationType",
           "modelAsString": false,
           "values": [
             {
@@ -9128,38 +9967,21 @@
           ]
         }
       },
-      "ObservationStationType": {
-        "enum": [
-          "wx:ObservationStation"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "x-ms-enum": {
-          "name": "ObservationStationType",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "wx:ObservationStation",
-              "name": "WxColonObservationStation"
-            }
-          ]
-        }
-      },
-      "OfficeBodyType": {
+      "GovernmentOrganizationType": {
         "enum": [
           "GovernmentOrganization"
         ],
         "type": "string",
         "additionalProperties": false
       },
-      "PointBodyType": {
+      "WxColonPointType": {
         "enum": [
           "wx:Point"
         ],
         "type": "string",
         "additionalProperties": false,
         "x-ms-enum": {
-          "name": "PointBodyType",
+          "name": "WxColonPointType",
           "modelAsString": false,
           "values": [
             {
@@ -9169,7 +9991,7 @@
           ]
         }
       },
-      "PointBodyTypeEnum": {
+      "PointBodyType": {
         "enum": [
           "land",
           "marine"
@@ -9178,7 +10000,7 @@
         "additionalProperties": false,
         "description": "Whether the specific point is on land or marine",
         "x-ms-enum": {
-          "name": "PointBodyTypeEnum",
+          "name": "PointBodyType",
           "modelAsString": false,
           "values": [
             {
@@ -9208,14 +10030,14 @@
         "additionalProperties": false,
         "description": "For values in observation records, the quality control flag from the MADIS system. The definitions of these flags can be found at https://madis.ncep.noaa.gov/madis_sfc_qc_notes.shtml\n"
       },
-      "ZoneBodyType": {
+      "WxColonZoneType": {
         "enum": [
           "wx:Zone"
         ],
         "type": "string",
         "additionalProperties": false,
         "x-ms-enum": {
-          "name": "ZoneBodyType",
+          "name": "WxColonZoneType",
           "modelAsString": false,
           "values": [
             {
@@ -9225,42 +10047,42 @@
           ]
         }
       },
-      "GeoJsonGeometryGeoJsonLineStringType": {
+      "LineStringType": {
         "enum": [
           "LineString"
         ],
         "type": "string",
         "additionalProperties": false
       },
-      "GeoJsonGeometryGeoJsonPolygonType": {
+      "PolygonType": {
         "enum": [
           "Polygon"
         ],
         "type": "string",
         "additionalProperties": false
       },
-      "GeoJsonGeometryGeoJsonMultiPointType": {
+      "MultiPointType": {
         "enum": [
           "MultiPoint"
         ],
         "type": "string",
         "additionalProperties": false
       },
-      "GeoJsonGeometryGeoJsonMultiLineStringType": {
+      "MultiLineStringType": {
         "enum": [
           "MultiLineString"
         ],
         "type": "string",
         "additionalProperties": false
       },
-      "GeoJsonGeometryGeoJsonMultiPolygonType": {
+      "MultiPolygonType": {
         "enum": [
           "MultiPolygon"
         ],
         "type": "string",
         "additionalProperties": false
       },
-      "OfficeBodyAddressType": {
+      "PostalAddressType": {
         "enum": [
           "PostalAddress"
         ],
@@ -9579,6 +10401,13 @@
           ]
         }
       },
+      "ZoneBodyStateWrapperValue": {
+        "enum": [
+          ""
+        ],
+        "type": "string",
+        "additionalProperties": false
+      },
       "AlertMessageTypeItem": {
         "enum": [
           "alert",
@@ -9687,6 +10516,107 @@
           ]
         }
       },
+      "IconsSetTimeOfDayFirstSizeAnyOf1": {
+        "enum": [
+          "small",
+          "medium",
+          "large"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "IconsSetTimeOfDayFirstSizeAnyOf1",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "small",
+              "name": "Small"
+            },
+            {
+              "value": "medium",
+              "name": "Medium"
+            },
+            {
+              "value": "large",
+              "name": "Large"
+            }
+          ]
+        }
+      },
+      "IconsSetTimeOfDayFirstSecondSizeAnyOf1": {
+        "enum": [
+          "small",
+          "medium",
+          "large"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "IconsSetTimeOfDayFirstSecondSizeAnyOf1",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "small",
+              "name": "Small"
+            },
+            {
+              "value": "medium",
+              "name": "Medium"
+            },
+            {
+              "value": "large",
+              "name": "Large"
+            }
+          ]
+        }
+      },
+      "ThumbnailsSatelliteAreaArea": {
+        "enum": [
+          "a",
+          "e",
+          "g",
+          "h",
+          "p",
+          "s",
+          "w"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "ThumbnailsSatelliteAreaArea",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "a",
+              "name": "A"
+            },
+            {
+              "value": "e",
+              "name": "E"
+            },
+            {
+              "value": "g",
+              "name": "G"
+            },
+            {
+              "value": "h",
+              "name": "H"
+            },
+            {
+              "value": "p",
+              "name": "P"
+            },
+            {
+              "value": "s",
+              "name": "S"
+            },
+            {
+              "value": "w",
+              "name": "W"
+            }
+          ]
+        }
+      },
       "RadarQueuesHostHost": {
         "enum": [
           "rds",
@@ -9709,14 +10639,14 @@
           ]
         }
       },
-      "ZonesTypeZoneIdRadioType": {
+      "CountyType": {
         "enum": [
           "county"
         ],
         "type": "string",
         "additionalProperties": false,
         "x-ms-enum": {
-          "name": "ZonesTypeZoneIdRadioType",
+          "name": "CountyType",
           "modelAsString": false,
           "values": [
             {
@@ -9935,7 +10865,7 @@
       "AlertArea": {
         "name": "area",
         "in": "query",
-        "description": "\u0022State/territory code or marine area code\nThis parameter is incompatible with the following parameters: point, region, region_type, zone\n\u0022",
+        "description": "State/territory code or marine area code\nThis parameter is incompatible with the following parameters: point, region, region_type, zone\n",
         "explode": false,
         "schema": {
           "type": "array",
@@ -9997,7 +10927,7 @@
       "AlertPoint": {
         "name": "point",
         "in": "query",
-        "description": "\u0022Point (latitude,longitude)\nThis parameter is incompatible with the following parameters: area, region, region_type, zone\n\u0022",
+        "description": "Point (latitude,longitude)\nThis parameter is incompatible with the following parameters: area, region, region_type, zone\n",
         "schema": {
           "type": "string"
         }
@@ -10005,7 +10935,7 @@
       "AlertRegion": {
         "name": "region",
         "in": "query",
-        "description": "\u0022Marine region code\nThis parameter is incompatible with the following parameters: area, point, region_type, zone\n\u0022",
+        "description": "Marine region code\nThis parameter is incompatible with the following parameters: area, point, region_type, zone\n",
         "explode": false,
         "schema": {
           "type": "array",
@@ -10017,7 +10947,7 @@
       "AlertRegionType": {
         "name": "region_type",
         "in": "query",
-        "description": "\u0022Region type (land or marine)\nThis parameter is incompatible with the following parameters: area, point, region, zone\n\u0022",
+        "description": "Region type (land or marine)\nThis parameter is incompatible with the following parameters: area, point, region, zone\n",
         "schema": {
           "$ref": "#/components/schemas/AlertRegionType"
         }
@@ -10061,7 +10991,7 @@
       "AlertZone": {
         "name": "zone",
         "in": "query",
-        "description": "\u0022Zone ID (forecast or county)\nThis parameter is incompatible with the following parameters: area, point, region, region_type\n\u0022",
+        "description": "Zone ID (forecast or county)\nThis parameter is incompatible with the following parameters: area, point, region, region_type\n",
         "explode": false,
         "schema": {
           "type": "array",
@@ -10102,7 +11032,7 @@
       "GridpointForecastFeatureFlags": {
         "name": "Feature-Flags",
         "in": "header",
-        "description": "\u0022Enable future and experimental features (see documentation for more info):\n* forecast_temperature_qv: Represent temperature as QuantitativeValue\n* forecast_wind_speed_qv: Represent wind speed as QuantitativeValue\n\u0022",
+        "description": "Enable future and experimental features (see documentation for more info):\n* forecast_temperature_qv: Represent temperature as QuantitativeValue\n* forecast_wind_speed_qv: Represent wind speed as QuantitativeValue\n",
         "schema": {
           "type": "array",
           "items": {
@@ -10309,12 +11239,6 @@
         "description": "We are testing including a more traditional API Key system on certain endpoints.  This is due to a large change in the weather.gov site.\nThe API remains open and free to use and there are no limits imposed based on the X-Api-Key string.\n",
         "name": "API-Key",
         "in": "header"
-      },
-      "assets_jwt": {
-        "type": "http",
-        "description": "JWT used for assets upload",
-        "scheme": "bearer",
-        "bearerFormat": "JWT"
       }
     }
   },

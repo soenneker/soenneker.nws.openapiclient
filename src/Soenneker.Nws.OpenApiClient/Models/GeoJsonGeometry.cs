@@ -77,7 +77,7 @@ namespace Soenneker.Nws.OpenApiClient.Models
         public static global::Soenneker.Nws.OpenApiClient.Models.GeoJsonGeometry CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Nws.OpenApiClient.Models.GeoJsonGeometry();
             if("GeoJsonGeometryGeoJsonLineString".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
