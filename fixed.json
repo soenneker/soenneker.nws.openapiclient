@@ -878,7 +878,6 @@
           "in": "query",
           "description": "Font size",
           "schema": {
-            "type": "object",
             "anyOf": [
               {
                 "$ref": "#/components/schemas/IconsSetTimeOfDayFirstSizeAnyOf1"
@@ -978,7 +977,6 @@
           "in": "query",
           "description": "Font size",
           "schema": {
-            "type": "object",
             "anyOf": [
               {
                 "$ref": "#/components/schemas/IconsSetTimeOfDayFirstSecondSizeAnyOf1"
