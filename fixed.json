@@ -1642,9 +1642,9 @@
               }
             },
             "content": {
-              "application/json": {
+              "image/*": {
                 "schema": {
-                  "$ref": "#/components/schemas/OfficeWeatherstoryImage200Response"
+                  "$ref": "#/components/schemas/OfficeWeatherstoryImage200MediaResponseSchema"
                 }
               }
             }
@@ -9226,7 +9226,7 @@
           "$ref": "#/components/schemas/OfficeWeatherStoryBody"
         }
       },
-      "OfficeWeatherstoryImage200Response": {
+      "OfficeWeatherstoryImage200MediaResponseSchema": {
         "type": "string",
         "format": "binary"
       },
