@@ -350,6 +350,10 @@
                   "$ref": "#/components/schemas/AlertsSingle200CapXmlResponse"
                 }
               }
+            },
+            "x-url-content-negotiation-extensions": {
+              "json": "application/geo\u002Bjson",
+              "cap": "application/cap\u002Bxml"
             }
           },
           "default": {
@@ -10685,6 +10689,10 @@
               "$ref": "#/components/schemas/AlertAtomFeed"
             }
           }
+        },
+        "x-url-content-negotiation-extensions": {
+          "json": "application/geo\u002Bjson",
+          "atom": "application/atom\u002Bxml"
         }
       },
       "Error": {
