@@ -114,15 +114,8 @@ namespace Soenneker.Nws.OpenApiClient.Aviation.Sigmets
             public string Atsu { get; set; }
 #endif
             /// <summary>Date (YYYY-MM-DD format)</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("date")]
-            public string? Date { get; set; }
-#nullable restore
-#else
-            [QueryParameter("date")]
-            public string Date { get; set; }
-#endif
+            public Date? Date { get; set; }
             /// <summary>End time</summary>
             [QueryParameter("end")]
             public DateTimeOffset? End { get; set; }

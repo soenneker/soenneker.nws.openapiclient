@@ -21,7 +21,7 @@ namespace Soenneker.Nws.OpenApiClient.Stations.Item.Tafs
         /// <summary>Gets an item from the Soenneker.Nws.OpenApiClient.stations.item.tafs.item collection</summary>
         /// <param name="position">Date (YYYY-MM-DD format)</param>
         /// <returns>A <see cref="global::Soenneker.Nws.OpenApiClient.Stations.Item.Tafs.Item.WithDateItemRequestBuilder"/></returns>
-        public global::Soenneker.Nws.OpenApiClient.Stations.Item.Tafs.Item.WithDateItemRequestBuilder this[string position]
+        public global::Soenneker.Nws.OpenApiClient.Stations.Item.Tafs.Item.WithDateItemRequestBuilder this[Date position]
         {
             get
             {

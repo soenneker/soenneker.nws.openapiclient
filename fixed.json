@@ -369,7 +369,8 @@
           "description": "Alert identifier",
           "required": true,
           "schema": {
-            "type": "string"
+            "type": "string",
+            "description": "The identifier of the alert message."
           }
         }
       ]
@@ -499,7 +500,9 @@
             "in": "query",
             "description": "ATSU identifier",
             "schema": {
-              "type": "string"
+              "pattern": "^[A-Z]{3,4}$",
+              "type": "string",
+              "description": "ATSU Identifier"
             }
           },
           {
@@ -2242,7 +2245,9 @@
             "in": "query",
             "description": "Averaging interval",
             "schema": {
-              "type": "boolean"
+              "pattern": "^P(\\d\u002BY)?(\\d\u002BM)?(\\d\u002BD)?(T(\\d\u002BH)?(\\d\u002BM)?(\\d\u002BS)?)?$",
+              "type": "string",
+              "description": "A time duration in ISO 8601 format."
             }
           }
         ],
@@ -2931,6 +2936,7 @@
             "in": "query",
             "description": "Point (latitude,longitude)",
             "schema": {
+              "pattern": "^(-?\\d\u002B(?:\\.\\d\u002B)?),(-?\\d\u002B(?:\\.\\d\u002B)?)$",
               "type": "string"
             }
           },
@@ -3055,6 +3061,7 @@
             "in": "query",
             "description": "Point (latitude,longitude)",
             "schema": {
+              "pattern": "^(-?\\d\u002B(?:\\.\\d\u002B)?),(-?\\d\u002B(?:\\.\\d\u002B)?)$",
               "type": "string"
             }
           },
@@ -3657,34 +3664,9 @@
           }
         }
       },
-      "GeoJsonGeometryGeoJsonPoint": {
-        "title": "GeoJSON Point",
-        "required": [
-          "type",
-          "coordinates"
-        ],
-        "type": "object",
-        "properties": {
-          "type": {
-            "$ref": "#/components/schemas/PointType"
-          },
-          "coordinates": {
-            "minItems": 2,
-            "type": "array",
-            "items": {
-              "type": "number"
-            },
-            "description": "A GeoJSON coordinate. Please refer to IETF RFC 7946 for information on the GeoJSON format."
-          },
-          "bbox": {
-            "minItems": 4,
-            "type": "array",
-            "items": {
-              "type": "number"
-            },
-            "description": "A GeoJSON bounding box. Please refer to IETF RFC 7946 for information on the GeoJSON format."
-          }
-        }
+      "AlertId": {
+        "type": "string",
+        "description": "The identifier of the alert message."
       },
       "AlertCertainty": {
         "enum": [
@@ -4015,24 +3997,14 @@
         },
         "description": "An object representing sunrise, sunset, and twilight information for a location.\n"
       },
-      "CenterWeatherAdvisoryGeoJsonAllOf2": {
-        "type": "object",
-        "properties": {
-          "properties": {
-            "$ref": "#/components/schemas/CenterWeatherAdvisory"
-          }
-        }
+      "AtsuIdentifier": {
+        "pattern": "^[A-Z]{3,4}$",
+        "type": "string",
+        "description": "ATSU Identifier"
       },
-      "CenterWeatherAdvisoryCollectionGeoJsonAllOf2": {
-        "type": "object",
-        "properties": {
-          "features": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/CenterWeatherAdvisoryCollectionGeoJsonAllOf2FeaturesItem"
-            }
-          }
-        }
+      "BinaryFile": {
+        "type": "string",
+        "format": "binary"
       },
       "CenterWeatherAdvisoryCollectionGeoJson": {
         "required": [
@@ -4119,14 +4091,10 @@
       "CenterWeatherServiceUnitJsonLd": {
         "$ref": "#/components/schemas/OfficeBody"
       },
-      "AlertGeoJsonAllOf2": {
-        "type": "object",
-        "properties": {
-          "properties": {
-            "description": "An object representing a public alert message.\nUnless otherwise noted, the fields in this object correspond to the National Weather Service CAP v1.2 specification, which extends the OASIS Common Alerting Protocol (CAP) v1.2 specification and USA Integrated Public Alert and Warning System (IPAWS) Profile v1.0. Refer to this documentation for more complete information.\nhttp://docs.oasis-open.org/emergency/cap/v1.2/CAP-v1.2-os.html http://docs.oasis-open.org/emergency/cap/v1.2/ipaws-profile/v1.0/cs01/cap-v1.2-ipaws-profile-cs01.html https://vlab.noaa.gov/web/nws-common-alerting-protocol/cap-documentation\n",
-            "$ref": "#/components/schemas/Alert"
-          }
-        }
+      "Date": {
+        "type": "string",
+        "description": "Date (in YYYY-MM-DD format).",
+        "format": "date"
       },
       "GeometryString": {
         "type": [
@@ -4793,19 +4761,13 @@
           }
         }
       },
-      "AlertCollectionJsonLdAllOf2": {
-        "type": "object",
-        "properties": {
-          "@context": {
-            "$ref": "#/components/schemas/JsonLdContext"
-          },
-          "@graph": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Alert"
-            }
-          }
-        }
+      "Iso8601Duration": {
+        "examples": [
+          "P2DT12H"
+        ],
+        "pattern": "^P(\\d\u002BY)?(\\d\u002BM)?(\\d\u002BD)?(T(\\d\u002BH)?(\\d\u002BM)?(\\d\u002BS)?)?$",
+        "type": "string",
+        "description": "A time duration in ISO 8601 format."
       },
       "Iso8601Interval": {
         "type": "object",
@@ -6021,16 +5983,10 @@
           ]
         }
       },
-      "AlertCollectionGeoJsonAllOf2": {
-        "type": "object",
-        "properties": {
-          "features": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/AlertCollectionGeoJsonAllOf2FeaturesItem"
-            }
-          }
-        }
+      "NwsZoneId": {
+        "pattern": "^(A[KLMNRSZ]|C[AOT]|D[CE]|F[LM]|G[AMU]|I[ADLN]|K[SY]|L[ACEHMOS]|M[ADEHINOPST]|N[CDEHJMVY]|O[HKR]|P[AHKMRSWZ]|S[CDL]|T[NX]|UT|V[AIT]|W[AIVY]|[HR]I)[CZ]\\d{3}$",
+        "type": "string",
+        "description": "UGC identifier for a NWS forecast zone or county.\nThe first two letters will correspond to either a state code or marine area code (see #/components/schemas/StateTerritoryCode and #/components/schemas/MarineAreaCode for lists of valid letter combinations).\nThe third letter will be Z for public/fire zone or C for county.\n"
       },
       "NwsZoneType": {
         "enum": [
@@ -6930,8 +6886,9 @@
           }
         }
       },
-      "ObservationResponseNoaaObsXml": {
-        "type": "object"
+      "PointString": {
+        "pattern": "^(-?\\d\u002B(?:\\.\\d\u002B)?),(-?\\d\u002B(?:\\.\\d\u002B)?)$",
+        "type": "string"
       },
       "ProblemDetail": {
         "required": [
@@ -7201,8 +7158,8 @@
           }
         }
       },
-      "ObservationResponseNoaaUswxXml": {
-        "type": "object"
+      "SigmetSequenceNumber": {
+        "type": "string"
       },
       "StateTerritoryCode": {
         "enum": [
@@ -7588,11 +7545,15 @@
         },
         "additionalProperties": false
       },
-      "GridpointHourlyForecastResponseNoaaDwmlXml": {
-        "type": "object"
+      "Time": {
+        "pattern": "^([01][0-9]|2[0-3])[0-5][0-9]$",
+        "type": "string",
+        "description": "A time (in HHMM format). This is always specified in UTC (Zulu) time."
       },
-      "Gridpoint12HForecastResponseNoaaDwmlXml": {
-        "type": "object"
+      "UnitOfMeasure": {
+        "pattern": "^((wmo|uc|wmoUnit|nwsUnit):)?.*$",
+        "type": "string",
+        "description": "A string denoting a unit of measure, expressed in the format \u0022{unit}\u0022 or \u0022{namespace}:{unit}\u0022.\nUnits with the namespace \u0022wmo\u0022 or \u0022wmoUnit\u0022 are defined in the World Meteorological Organization Codes Registry at http://codes.wmo.int/common/unit and should be canonically resolvable to http://codes.wmo.int/common/unit/{unit}.\nUnits with the namespace \u0022nwsUnit\u0022 are currently custom and do not align to any standard.\nUnits with no namespace or the namespace \u0022uc\u0022 are compliant with the Unified Code for Units of Measure syntax defined at https://unitsofmeasure.org/. This also aligns with recent versions of the Geographic Markup Language (GML) standard, the IWXXM standard, and OGC Observations and Measurements v2.0 (ISO/DIS 19156).\nNamespaced units are considered deprecated. We will be aligning API to use the same standards as GML/IWXXM in the future.\n"
       },
       "ZoneBody": {
         "type": "object",
@@ -7807,6 +7768,100 @@
       },
       "ZoneForecastJsonLd": {
         "$ref": "#/components/schemas/ZoneForecastBody"
+      },
+      "Gridpoint12HForecastResponseNoaaDwmlXml": {
+        "type": "object"
+      },
+      "GridpointHourlyForecastResponseNoaaDwmlXml": {
+        "type": "object"
+      },
+      "ObservationResponseNoaaUswxXml": {
+        "type": "object"
+      },
+      "ObservationResponseNoaaObsXml": {
+        "type": "object"
+      },
+      "AlertCollectionGeoJsonAllOf2": {
+        "type": "object",
+        "properties": {
+          "features": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AlertCollectionGeoJsonAllOf2FeaturesItem"
+            }
+          }
+        }
+      },
+      "AlertCollectionJsonLdAllOf2": {
+        "type": "object",
+        "properties": {
+          "@context": {
+            "$ref": "#/components/schemas/JsonLdContext"
+          },
+          "@graph": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Alert"
+            }
+          }
+        }
+      },
+      "AlertGeoJsonAllOf2": {
+        "type": "object",
+        "properties": {
+          "properties": {
+            "description": "An object representing a public alert message.\nUnless otherwise noted, the fields in this object correspond to the National Weather Service CAP v1.2 specification, which extends the OASIS Common Alerting Protocol (CAP) v1.2 specification and USA Integrated Public Alert and Warning System (IPAWS) Profile v1.0. Refer to this documentation for more complete information.\nhttp://docs.oasis-open.org/emergency/cap/v1.2/CAP-v1.2-os.html http://docs.oasis-open.org/emergency/cap/v1.2/ipaws-profile/v1.0/cs01/cap-v1.2-ipaws-profile-cs01.html https://vlab.noaa.gov/web/nws-common-alerting-protocol/cap-documentation\n",
+            "$ref": "#/components/schemas/Alert"
+          }
+        }
+      },
+      "CenterWeatherAdvisoryCollectionGeoJsonAllOf2": {
+        "type": "object",
+        "properties": {
+          "features": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CenterWeatherAdvisoryCollectionGeoJsonAllOf2FeaturesItem"
+            }
+          }
+        }
+      },
+      "CenterWeatherAdvisoryGeoJsonAllOf2": {
+        "type": "object",
+        "properties": {
+          "properties": {
+            "$ref": "#/components/schemas/CenterWeatherAdvisory"
+          }
+        }
+      },
+      "GeoJsonGeometryGeoJsonPoint": {
+        "title": "GeoJSON Point",
+        "required": [
+          "type",
+          "coordinates"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/PointType"
+          },
+          "coordinates": {
+            "minItems": 2,
+            "type": "array",
+            "items": {
+              "type": "number"
+            },
+            "description": "A GeoJSON coordinate. Please refer to IETF RFC 7946 for information on the GeoJSON format."
+          },
+          "bbox": {
+            "minItems": 4,
+            "type": "array",
+            "items": {
+              "type": "number"
+            },
+            "description": "A GeoJSON bounding box. Please refer to IETF RFC 7946 for information on the GeoJSON format."
+          }
+        }
       },
       "GeoJsonGeometryGeoJsonLineString": {
         "title": "GeoJSON LineString",
@@ -8550,14 +8605,6 @@
           "namespace": "http://www.w3.org/2005/Atom"
         }
       },
-      "CenterWeatherAdvisoryCollectionGeoJsonAllOf2FeaturesItem": {
-        "type": "object",
-        "properties": {
-          "properties": {
-            "$ref": "#/components/schemas/CenterWeatherAdvisory"
-          }
-        }
-      },
       "GeoJsonFeatureProperties": {
         "type": "object"
       },
@@ -8607,15 +8654,6 @@
           }
         },
         "additionalProperties": false
-      },
-      "AlertCollectionGeoJsonAllOf2FeaturesItem": {
-        "type": "object",
-        "properties": {
-          "properties": {
-            "description": "An object representing a public alert message.\nUnless otherwise noted, the fields in this object correspond to the National Weather Service CAP v1.2 specification, which extends the OASIS Common Alerting Protocol (CAP) v1.2 specification and USA Integrated Public Alert and Warning System (IPAWS) Profile v1.0. Refer to this documentation for more complete information.\nhttp://docs.oasis-open.org/emergency/cap/v1.2/CAP-v1.2-os.html http://docs.oasis-open.org/emergency/cap/v1.2/ipaws-profile/v1.0/cs01/cap-v1.2-ipaws-profile-cs01.html https://vlab.noaa.gov/web/nws-common-alerting-protocol/cap-documentation\n",
-            "$ref": "#/components/schemas/Alert"
-          }
-        }
       },
       "ObservationCloudLayersItem": {
         "required": [
@@ -8738,6 +8776,23 @@
           }
         },
         "additionalProperties": false
+      },
+      "AlertCollectionGeoJsonAllOf2FeaturesItem": {
+        "type": "object",
+        "properties": {
+          "properties": {
+            "description": "An object representing a public alert message.\nUnless otherwise noted, the fields in this object correspond to the National Weather Service CAP v1.2 specification, which extends the OASIS Common Alerting Protocol (CAP) v1.2 specification and USA Integrated Public Alert and Warning System (IPAWS) Profile v1.0. Refer to this documentation for more complete information.\nhttp://docs.oasis-open.org/emergency/cap/v1.2/CAP-v1.2-os.html http://docs.oasis-open.org/emergency/cap/v1.2/ipaws-profile/v1.0/cs01/cap-v1.2-ipaws-profile-cs01.html https://vlab.noaa.gov/web/nws-common-alerting-protocol/cap-documentation\n",
+            "$ref": "#/components/schemas/Alert"
+          }
+        }
+      },
+      "CenterWeatherAdvisoryCollectionGeoJsonAllOf2FeaturesItem": {
+        "type": "object",
+        "properties": {
+          "properties": {
+            "$ref": "#/components/schemas/CenterWeatherAdvisory"
+          }
+        }
       },
       "ObservationCollectionGeoJsonAllOf2FeaturesItem": {
         "type": "object",
@@ -9500,13 +9555,6 @@
         "type": "string",
         "additionalProperties": false
       },
-      "PointType": {
-        "enum": [
-          "Point"
-        ],
-        "type": "string",
-        "additionalProperties": false
-      },
       "WxColonGridpointType": {
         "enum": [
           "wx:Gridpoint"
@@ -10048,6 +10096,13 @@
             }
           ]
         }
+      },
+      "PointType": {
+        "enum": [
+          "Point"
+        ],
+        "type": "string",
+        "additionalProperties": false
       },
       "LineStringType": {
         "enum": [
@@ -10935,6 +10990,7 @@
         "in": "query",
         "description": "Point (latitude,longitude)\nThis parameter is incompatible with the following parameters: area, region, region_type, zone\n",
         "schema": {
+          "pattern": "^(-?\\d\u002B(?:\\.\\d\u002B)?),(-?\\d\u002B(?:\\.\\d\u002B)?)$",
           "type": "string"
         }
       },
@@ -11014,7 +11070,9 @@
         "description": "ATSU identifier",
         "required": true,
         "schema": {
-          "type": "string"
+          "pattern": "^[A-Z]{3,4}$",
+          "type": "string",
+          "description": "ATSU Identifier"
         }
       },
       "CallSign": {
@@ -11032,7 +11090,9 @@
         "description": "Date (YYYY-MM-DD format)",
         "required": true,
         "schema": {
-          "type": "string"
+          "type": "string",
+          "description": "Date (in YYYY-MM-DD format).",
+          "format": "date"
         }
       },
       "GridpointForecastFeatureFlags": {
@@ -11142,7 +11202,9 @@
         "description": "NWS public zone/county identifier",
         "required": true,
         "schema": {
-          "type": "string"
+          "pattern": "^(A[KLMNRSZ]|C[AOT]|D[CE]|F[LM]|G[AMU]|I[ADLN]|K[SY]|L[ACEHMOS]|M[ADEHINOPST]|N[CDEHJMVY]|O[HKR]|P[AHKMRSWZ]|S[CDL]|T[NX]|UT|V[AIT]|W[AIVY]|[HR]I)[CZ]\\d{3}$",
+          "type": "string",
+          "description": "UGC identifier for a NWS forecast zone or county.\nThe first two letters will correspond to either a state code or marine area code (see #/components/schemas/StateTerritoryCode and #/components/schemas/MarineAreaCode for lists of valid letter combinations).\nThe third letter will be Z for public/fire zone or C for county.\n"
         }
       },
       "ObservationStationId": {
@@ -11167,7 +11229,9 @@
         "in": "query",
         "description": "Date (YYYY-MM-DD format)",
         "schema": {
-          "type": "string"
+          "type": "string",
+          "description": "Date (in YYYY-MM-DD format).",
+          "format": "date"
         }
       },
       "QueryStartTime": {
@@ -11203,7 +11267,9 @@
         "description": "Time (HHMM format). This time is always specified in UTC (Zulu) time.",
         "required": true,
         "schema": {
-          "type": "string"
+          "pattern": "^([01][0-9]|2[0-3])[0-5][0-9]$",
+          "type": "string",
+          "description": "A time (in HHMM format). This is always specified in UTC (Zulu) time."
         }
       }
     },

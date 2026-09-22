@@ -91,8 +91,15 @@ namespace Soenneker.Nws.OpenApiClient.Radar.Profilers.Item
         public partial class WithStationItemRequestBuilderGetQueryParameters 
         {
             /// <summary>Averaging interval</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("interval")]
-            public bool? Interval { get; set; }
+            public string? Interval { get; set; }
+#nullable restore
+#else
+            [QueryParameter("interval")]
+            public string Interval { get; set; }
+#endif
             /// <summary>Time interval</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
