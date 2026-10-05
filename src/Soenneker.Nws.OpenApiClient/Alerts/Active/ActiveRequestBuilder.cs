@@ -60,17 +60,17 @@ namespace Soenneker.Nws.OpenApiClient.Alerts.Active
         /// <summary>
         /// Returns all currently active alerts
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Nws.OpenApiClient.Models.AlertCollectionGeoJson"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Nws.OpenApiClient.Models.ActiveAlertCollectionGeoJson"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Nws.OpenApiClient.Models.ProblemDetail">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Nws.OpenApiClient.Models.AlertCollectionGeoJson?> GetAsync(Action<RequestConfiguration<global::Soenneker.Nws.OpenApiClient.Alerts.Active.ActiveRequestBuilder.ActiveRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Nws.OpenApiClient.Models.ActiveAlertCollectionGeoJson?> GetAsync(Action<RequestConfiguration<global::Soenneker.Nws.OpenApiClient.Alerts.Active.ActiveRequestBuilder.ActiveRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Nws.OpenApiClient.Models.AlertCollectionGeoJson> GetAsync(Action<RequestConfiguration<global::Soenneker.Nws.OpenApiClient.Alerts.Active.ActiveRequestBuilder.ActiveRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Nws.OpenApiClient.Models.ActiveAlertCollectionGeoJson> GetAsync(Action<RequestConfiguration<global::Soenneker.Nws.OpenApiClient.Alerts.Active.ActiveRequestBuilder.ActiveRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -78,7 +78,7 @@ namespace Soenneker.Nws.OpenApiClient.Alerts.Active
             {
                 { "XXX", global::Soenneker.Nws.OpenApiClient.Models.ProblemDetail.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Nws.OpenApiClient.Models.AlertCollectionGeoJson>(requestInfo, global::Soenneker.Nws.OpenApiClient.Models.AlertCollectionGeoJson.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Nws.OpenApiClient.Models.ActiveAlertCollectionGeoJson>(requestInfo, global::Soenneker.Nws.OpenApiClient.Models.ActiveAlertCollectionGeoJson.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns all currently active alerts

@@ -3,7 +3,7 @@
   "info": {
     "title": "weather.gov API",
     "description": "weather.gov API",
-    "version": "3.11.0"
+    "version": "3.12.1"
   },
   "servers": [
     {
@@ -162,8 +162,8 @@
         ],
         "responses": {
           "200": {
-            "description": "A collection of alerts.",
-            "$ref": "#/components/responses/AlertCollection"
+            "description": "A collection of active alerts.",
+            "$ref": "#/components/responses/ActiveAlertCollection"
           },
           "301": {
             "description": "Certain common queries may be redirected to discrete URLs"
@@ -214,8 +214,8 @@
         "operationId": "AlertsActiveZone",
         "responses": {
           "200": {
-            "description": "A collection of alerts.",
-            "$ref": "#/components/responses/AlertCollection"
+            "description": "A collection of active alerts.",
+            "$ref": "#/components/responses/ActiveAlertCollection"
           },
           "default": {
             "description": "An error response.",
@@ -235,8 +235,8 @@
         "operationId": "AlertsActiveArea",
         "responses": {
           "200": {
-            "description": "A collection of alerts.",
-            "$ref": "#/components/responses/AlertCollection"
+            "description": "A collection of active alerts.",
+            "$ref": "#/components/responses/ActiveAlertCollection"
           },
           "default": {
             "description": "An error response.",
@@ -262,8 +262,8 @@
         "operationId": "AlertsActiveRegion",
         "responses": {
           "200": {
-            "description": "A collection of alerts.",
-            "$ref": "#/components/responses/AlertCollection"
+            "description": "A collection of active alerts.",
+            "$ref": "#/components/responses/ActiveAlertCollection"
           },
           "default": {
             "description": "An error response.",
@@ -3544,6 +3544,20 @@
         },
         "description": "An object representing a public alert message.\nUnless otherwise noted, the fields in this object correspond to the National Weather Service CAP v1.2 specification, which extends the OASIS Common Alerting Protocol (CAP) v1.2 specification and USA Integrated Public Alert and Warning System (IPAWS) Profile v1.0. Refer to this documentation for more complete information.\nhttp://docs.oasis-open.org/emergency/cap/v1.2/CAP-v1.2-os.html http://docs.oasis-open.org/emergency/cap/v1.2/ipaws-profile/v1.0/cs01/cap-v1.2-ipaws-profile-cs01.html https://vlab.noaa.gov/web/nws-common-alerting-protocol/cap-documentation\n"
       },
+      "ActiveAlertCollection": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "description": "A title describing the alert collection"
+          },
+          "updated": {
+            "type": "string",
+            "description": "The last time a change occurred to this collection",
+            "format": "date-time"
+          }
+        }
+      },
       "AlertCollection": {
         "type": "object",
         "properties": {
@@ -3559,6 +3573,36 @@
           "pagination": {
             "description": "Links for retrieving more data from paged data sets",
             "$ref": "#/components/schemas/PaginationInfo"
+          }
+        }
+      },
+      "ActiveAlertCollectionGeoJson": {
+        "required": [
+          "type",
+          "features"
+        ],
+        "type": "object",
+        "properties": {
+          "@context": {
+            "$ref": "#/components/schemas/JsonLdContext"
+          },
+          "type": {
+            "$ref": "#/components/schemas/FeatureCollectionType"
+          },
+          "features": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GeoJsonFeature"
+            }
+          },
+          "title": {
+            "type": "string",
+            "description": "A title describing the alert collection"
+          },
+          "updated": {
+            "type": "string",
+            "description": "The last time a change occurred to this collection",
+            "format": "date-time"
           }
         }
       },
@@ -3593,6 +3637,29 @@
           "pagination": {
             "description": "Links for retrieving more data from paged data sets",
             "$ref": "#/components/schemas/PaginationInfo"
+          }
+        }
+      },
+      "ActiveAlertCollectionJsonLd": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "description": "A title describing the alert collection"
+          },
+          "updated": {
+            "type": "string",
+            "description": "The last time a change occurred to this collection",
+            "format": "date-time"
+          },
+          "@context": {
+            "$ref": "#/components/schemas/JsonLdContext"
+          },
+          "@graph": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Alert"
+            }
           }
         }
       },
@@ -7781,6 +7848,17 @@
       "ObservationResponseNoaaObsXml": {
         "type": "object"
       },
+      "ActiveAlertCollectionGeoJsonAllOf2": {
+        "type": "object",
+        "properties": {
+          "features": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ActiveAlertCollectionGeoJsonAllOf2FeaturesItem"
+            }
+          }
+        }
+      },
       "AlertCollectionGeoJsonAllOf2": {
         "type": "object",
         "properties": {
@@ -7788,6 +7866,20 @@
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/AlertCollectionGeoJsonAllOf2FeaturesItem"
+            }
+          }
+        }
+      },
+      "ActiveAlertCollectionJsonLdAllOf2": {
+        "type": "object",
+        "properties": {
+          "@context": {
+            "$ref": "#/components/schemas/JsonLdContext"
+          },
+          "@graph": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Alert"
             }
           }
         }
@@ -8776,6 +8868,15 @@
           }
         },
         "additionalProperties": false
+      },
+      "ActiveAlertCollectionGeoJsonAllOf2FeaturesItem": {
+        "type": "object",
+        "properties": {
+          "properties": {
+            "description": "An object representing a public alert message.\nUnless otherwise noted, the fields in this object correspond to the National Weather Service CAP v1.2 specification, which extends the OASIS Common Alerting Protocol (CAP) v1.2 specification and USA Integrated Public Alert and Warning System (IPAWS) Profile v1.0. Refer to this documentation for more complete information.\nhttp://docs.oasis-open.org/emergency/cap/v1.2/CAP-v1.2-os.html http://docs.oasis-open.org/emergency/cap/v1.2/ipaws-profile/v1.0/cs01/cap-v1.2-ipaws-profile-cs01.html https://vlab.noaa.gov/web/nws-common-alerting-protocol/cap-documentation\n",
+            "$ref": "#/components/schemas/Alert"
+          }
+        }
       },
       "AlertCollectionGeoJsonAllOf2FeaturesItem": {
         "type": "object",
@@ -10715,6 +10816,37 @@
       }
     },
     "responses": {
+      "ActiveAlertCollection": {
+        "description": "A collection of active alerts.",
+        "headers": {
+          "X-Correlation-Id": {
+            "$ref": "#/components/headers/CorrelationId"
+          },
+          "X-Request-Id": {
+            "$ref": "#/components/headers/RequestId"
+          },
+          "X-Server-Id": {
+            "$ref": "#/components/headers/ServerId"
+          }
+        },
+        "content": {
+          "application/geo\u002Bjson": {
+            "schema": {
+              "$ref": "#/components/schemas/ActiveAlertCollectionGeoJson"
+            }
+          },
+          "application/ld\u002Bjson": {
+            "schema": {
+              "$ref": "#/components/schemas/ActiveAlertCollectionJsonLd"
+            }
+          },
+          "application/atom\u002Bxml": {
+            "schema": {
+              "$ref": "#/components/schemas/AlertAtomFeed"
+            }
+          }
+        }
+      },
       "AlertCollection": {
         "description": "A collection of alerts.",
         "headers": {
