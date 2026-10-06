@@ -3,7 +3,7 @@
   "info": {
     "title": "weather.gov API",
     "description": "weather.gov API",
-    "version": "3.12.1"
+    "version": "3.12.2"
   },
   "servers": [
     {
@@ -10845,6 +10845,10 @@
               "$ref": "#/components/schemas/AlertAtomFeed"
             }
           }
+        },
+        "x-url-content-negotiation-extensions": {
+          "json": "application/geo\u002Bjson",
+          "atom": "application/atom\u002Bxml"
         }
       },
       "AlertCollection": {
