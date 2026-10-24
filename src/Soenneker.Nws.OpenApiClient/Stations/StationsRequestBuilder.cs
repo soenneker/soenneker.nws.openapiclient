@@ -130,11 +130,11 @@ namespace Soenneker.Nws.OpenApiClient.Stations
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("state")]
-            public string[]? State { get; set; }
+            public global::Soenneker.Nws.OpenApiClient.Models.AreaCode[]? State { get; set; }
 #nullable restore
 #else
             [QueryParameter("state")]
-            public string[] State { get; set; }
+            public global::Soenneker.Nws.OpenApiClient.Models.AreaCode[] State { get; set; }
 #endif
         }
     }

@@ -107,11 +107,11 @@ namespace Soenneker.Nws.OpenApiClient.Zones.Item
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("area")]
-            public string[]? Area { get; set; }
+            public global::Soenneker.Nws.OpenApiClient.Models.AreaCode[]? Area { get; set; }
 #nullable restore
 #else
             [QueryParameter("area")]
-            public string[] Area { get; set; }
+            public global::Soenneker.Nws.OpenApiClient.Models.AreaCode[] Area { get; set; }
 #endif
             /// <summary>Effective date/time</summary>
             [QueryParameter("effective")]
@@ -146,11 +146,11 @@ namespace Soenneker.Nws.OpenApiClient.Zones.Item
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("region")]
-            public string[]? Region { get; set; }
+            public global::Soenneker.Nws.OpenApiClient.Models.RegionCode[]? Region { get; set; }
 #nullable restore
 #else
             [QueryParameter("region")]
-            public string[] Region { get; set; }
+            public global::Soenneker.Nws.OpenApiClient.Models.RegionCode[] Region { get; set; }
 #endif
             /// <summary>Zone type</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

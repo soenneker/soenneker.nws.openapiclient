@@ -17,18 +17,18 @@ namespace Soenneker.Nws.OpenApiClient.Models
         /// <summary>The Context property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Nws.OpenApiClient.Models.JsonLdContext? Context { get; set; }
+        public UntypedNode? Context { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Nws.OpenApiClient.Models.JsonLdContext Context { get; set; }
+        public UntypedNode Context { get; set; }
 #endif
         /// <summary>The features property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Nws.OpenApiClient.Models.GeoJsonFeature>? Features { get; set; }
+        public global::Soenneker.Nws.OpenApiClient.Models.AlertCollectionGeoJsonFeatures? Features { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Nws.OpenApiClient.Models.GeoJsonFeature> Features { get; set; }
+        public global::Soenneker.Nws.OpenApiClient.Models.AlertCollectionGeoJsonFeatures Features { get; set; }
 #endif
         /// <summary>Links for retrieving more data from paged data sets</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -75,8 +75,8 @@ namespace Soenneker.Nws.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "@context", n => { Context = n.GetObjectValue<global::Soenneker.Nws.OpenApiClient.Models.JsonLdContext>(global::Soenneker.Nws.OpenApiClient.Models.JsonLdContext.CreateFromDiscriminatorValue); } },
-                { "features", n => { Features = n.GetCollectionOfObjectValues<global::Soenneker.Nws.OpenApiClient.Models.GeoJsonFeature>(global::Soenneker.Nws.OpenApiClient.Models.GeoJsonFeature.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "@context", n => { Context = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "features", n => { Features = n.GetObjectValue<global::Soenneker.Nws.OpenApiClient.Models.AlertCollectionGeoJsonFeatures>(global::Soenneker.Nws.OpenApiClient.Models.AlertCollectionGeoJsonFeatures.CreateFromDiscriminatorValue); } },
                 { "pagination", n => { Pagination = n.GetObjectValue<global::Soenneker.Nws.OpenApiClient.Models.PaginationInfo>(global::Soenneker.Nws.OpenApiClient.Models.PaginationInfo.CreateFromDiscriminatorValue); } },
                 { "title", n => { Title = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Nws.OpenApiClient.Models.FeatureCollectionType>(); } },
@@ -90,8 +90,8 @@ namespace Soenneker.Nws.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Nws.OpenApiClient.Models.JsonLdContext>("@context", Context);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Nws.OpenApiClient.Models.GeoJsonFeature>("features", Features);
+            writer.WriteObjectValue<UntypedNode>("@context", Context);
+            writer.WriteObjectValue<global::Soenneker.Nws.OpenApiClient.Models.AlertCollectionGeoJsonFeatures>("features", Features);
             writer.WriteObjectValue<global::Soenneker.Nws.OpenApiClient.Models.PaginationInfo>("pagination", Pagination);
             writer.WriteStringValue("title", Title);
             writer.WriteEnumValue<global::Soenneker.Nws.OpenApiClient.Models.FeatureCollectionType>("type", Type);

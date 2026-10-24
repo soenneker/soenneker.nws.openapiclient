@@ -118,11 +118,11 @@ namespace Soenneker.Nws.OpenApiClient.Alerts.Active
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("area")]
-            public string[]? Area { get; set; }
+            public global::Soenneker.Nws.OpenApiClient.Models.AreaCode[]? Area { get; set; }
 #nullable restore
 #else
             [QueryParameter("area")]
-            public string[] Area { get; set; }
+            public global::Soenneker.Nws.OpenApiClient.Models.AreaCode[] Area { get; set; }
 #endif
             /// <summary>Certainty (observed, likely, possible, unlikely, unknown)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

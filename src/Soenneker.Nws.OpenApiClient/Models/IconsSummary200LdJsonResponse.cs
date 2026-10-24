@@ -15,10 +15,10 @@ namespace Soenneker.Nws.OpenApiClient.Models
         /// <summary>The Context property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Nws.OpenApiClient.Models.JsonLdContext? Context { get; set; }
+        public UntypedNode? Context { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Nws.OpenApiClient.Models.JsonLdContext Context { get; set; }
+        public UntypedNode Context { get; set; }
 #endif
         /// <summary>The icons property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -46,7 +46,7 @@ namespace Soenneker.Nws.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "@context", n => { Context = n.GetObjectValue<global::Soenneker.Nws.OpenApiClient.Models.JsonLdContext>(global::Soenneker.Nws.OpenApiClient.Models.JsonLdContext.CreateFromDiscriminatorValue); } },
+                { "@context", n => { Context = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "icons", n => { Icons = n.GetObjectValue<global::Soenneker.Nws.OpenApiClient.Models.IconsSummary200LdJsonResponseIcons>(global::Soenneker.Nws.OpenApiClient.Models.IconsSummary200LdJsonResponseIcons.CreateFromDiscriminatorValue); } },
             };
         }
@@ -57,7 +57,7 @@ namespace Soenneker.Nws.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Nws.OpenApiClient.Models.JsonLdContext>("@context", Context);
+            writer.WriteObjectValue<UntypedNode>("@context", Context);
             writer.WriteObjectValue<global::Soenneker.Nws.OpenApiClient.Models.IconsSummary200LdJsonResponseIcons>("icons", Icons);
         }
     }

@@ -225,7 +225,15 @@
       },
       "parameters": [
         {
-          "$ref": "#/components/parameters/NWSZoneId"
+          "name": "zoneId",
+          "in": "path",
+          "description": "NWS public zone/county identifier",
+          "required": true,
+          "schema": {
+            "pattern": "^(A[KLMNRSZ]|C[AOT]|D[CE]|F[LM]|G[AMU]|I[ADLN]|K[SY]|L[ACEHMOS]|M[ADEHINOPST]|N[CDEHJMVY]|O[HKR]|P[AHKMRSWZ]|S[CDL]|T[NX]|UT|V[AIT]|W[AIVY]|[HR]I)[CZ]\\d{3}$",
+            "type": "string",
+            "description": "UGC identifier for a NWS forecast zone or county.\nThe first two letters will correspond to either a state code or marine area code (see #/components/schemas/StateTerritoryCode and #/components/schemas/MarineAreaCode for lists of valid letter combinations).\nThe third letter will be Z for public/fire zone or C for county.\n"
+          }
         }
       ]
     },
@@ -381,8 +389,13 @@
         "operationId": "Cwsu",
         "parameters": [
           {
+            "name": "cwsuId",
+            "in": "path",
             "description": "NWS CWSU ID",
-            "$ref": "#/components/parameters/NWSCenterWeatherServiceUnitId"
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/NwsCenterWeatherServiceUnitId"
+            }
           }
         ],
         "responses": {
@@ -409,8 +422,13 @@
         "operationId": "Cwas",
         "parameters": [
           {
+            "name": "cwsuId",
+            "in": "path",
             "description": "NWS CWSU ID",
-            "$ref": "#/components/parameters/NWSCenterWeatherServiceUnitId"
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/NwsCenterWeatherServiceUnitId"
+            }
           }
         ],
         "responses": {
@@ -437,12 +455,24 @@
         "operationId": "Cwa",
         "parameters": [
           {
+            "name": "cwsuId",
+            "in": "path",
             "description": "NWS CWSU ID",
-            "$ref": "#/components/parameters/NWSCenterWeatherServiceUnitId"
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/NwsCenterWeatherServiceUnitId"
+            }
           },
           {
+            "name": "date",
+            "in": "path",
             "description": "Date (YYYY-MM-DD format)",
-            "$ref": "#/components/parameters/Date"
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "Date (in YYYY-MM-DD format).",
+              "format": "date"
+            }
           },
           {
             "name": "sequence",
@@ -538,8 +568,15 @@
         "operationId": "SigmetsByAtsu",
         "parameters": [
           {
+            "name": "atsu",
+            "in": "path",
             "description": "ATSU identifier",
-            "$ref": "#/components/parameters/ATSUIdentifier"
+            "required": true,
+            "schema": {
+              "pattern": "^[A-Z]{3,4}$",
+              "type": "string",
+              "description": "ATSU Identifier"
+            }
           }
         ],
         "responses": {
@@ -566,12 +603,26 @@
         "operationId": "SigmetsByAtsuByDate",
         "parameters": [
           {
+            "name": "atsu",
+            "in": "path",
             "description": "ATSU identifier",
-            "$ref": "#/components/parameters/ATSUIdentifier"
+            "required": true,
+            "schema": {
+              "pattern": "^[A-Z]{3,4}$",
+              "type": "string",
+              "description": "ATSU Identifier"
+            }
           },
           {
+            "name": "date",
+            "in": "path",
             "description": "Date (YYYY-MM-DD format)",
-            "$ref": "#/components/parameters/Date"
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "Date (in YYYY-MM-DD format).",
+              "format": "date"
+            }
           }
         ],
         "responses": {
@@ -598,16 +649,37 @@
         "operationId": "Sigmet",
         "parameters": [
           {
+            "name": "atsu",
+            "in": "path",
             "description": "ATSU identifier",
-            "$ref": "#/components/parameters/ATSUIdentifier"
+            "required": true,
+            "schema": {
+              "pattern": "^[A-Z]{3,4}$",
+              "type": "string",
+              "description": "ATSU Identifier"
+            }
           },
           {
+            "name": "date",
+            "in": "path",
             "description": "Date (YYYY-MM-DD format)",
-            "$ref": "#/components/parameters/Date"
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "Date (in YYYY-MM-DD format).",
+              "format": "date"
+            }
           },
           {
+            "name": "time",
+            "in": "path",
             "description": "Time (HHMM format). This time is always specified in UTC (Zulu) time.",
-            "$ref": "#/components/parameters/Time"
+            "required": true,
+            "schema": {
+              "pattern": "^([01][0-9]|2[0-3])[0-5][0-9]$",
+              "type": "string",
+              "description": "A time (in HHMM format). This is always specified in UTC (Zulu) time."
+            }
           }
         ],
         "responses": {
@@ -705,13 +777,33 @@
       },
       "parameters": [
         {
-          "$ref": "#/components/parameters/GridpointWFO"
+          "name": "wfo",
+          "in": "path",
+          "description": "Forecast office ID",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/NwsForecastOfficeId"
+          }
         },
         {
-          "$ref": "#/components/parameters/GridpointX"
+          "name": "x",
+          "in": "path",
+          "description": "Forecast grid X coordinate",
+          "required": true,
+          "schema": {
+            "minimum": 0,
+            "type": "integer"
+          }
         },
         {
-          "$ref": "#/components/parameters/GridpointY"
+          "name": "y",
+          "in": "path",
+          "description": "Forecast grid Y coordinate",
+          "required": true,
+          "schema": {
+            "minimum": 0,
+            "type": "integer"
+          }
         }
       ]
     },
@@ -742,13 +834,33 @@
       },
       "parameters": [
         {
-          "$ref": "#/components/parameters/GridpointWFO"
+          "name": "wfo",
+          "in": "path",
+          "description": "Forecast office ID",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/NwsForecastOfficeId"
+          }
         },
         {
-          "$ref": "#/components/parameters/GridpointX"
+          "name": "x",
+          "in": "path",
+          "description": "Forecast grid X coordinate",
+          "required": true,
+          "schema": {
+            "minimum": 0,
+            "type": "integer"
+          }
         },
         {
-          "$ref": "#/components/parameters/GridpointY"
+          "name": "y",
+          "in": "path",
+          "description": "Forecast grid Y coordinate",
+          "required": true,
+          "schema": {
+            "minimum": 0,
+            "type": "integer"
+          }
         }
       ]
     },
@@ -779,13 +891,33 @@
       },
       "parameters": [
         {
-          "$ref": "#/components/parameters/GridpointWFO"
+          "name": "wfo",
+          "in": "path",
+          "description": "Forecast office ID",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/NwsForecastOfficeId"
+          }
         },
         {
-          "$ref": "#/components/parameters/GridpointX"
+          "name": "x",
+          "in": "path",
+          "description": "Forecast grid X coordinate",
+          "required": true,
+          "schema": {
+            "minimum": 0,
+            "type": "integer"
+          }
         },
         {
-          "$ref": "#/components/parameters/GridpointY"
+          "name": "y",
+          "in": "path",
+          "description": "Forecast grid Y coordinate",
+          "required": true,
+          "schema": {
+            "minimum": 0,
+            "type": "integer"
+          }
         }
       ]
     },
@@ -806,13 +938,33 @@
       },
       "parameters": [
         {
-          "$ref": "#/components/parameters/GridpointWFO"
+          "name": "wfo",
+          "in": "path",
+          "description": "Forecast office ID",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/NwsForecastOfficeId"
+          }
         },
         {
-          "$ref": "#/components/parameters/GridpointX"
+          "name": "x",
+          "in": "path",
+          "description": "Forecast grid X coordinate",
+          "required": true,
+          "schema": {
+            "minimum": 0,
+            "type": "integer"
+          }
         },
         {
-          "$ref": "#/components/parameters/GridpointY"
+          "name": "y",
+          "in": "path",
+          "description": "Forecast grid Y coordinate",
+          "required": true,
+          "schema": {
+            "minimum": 0,
+            "type": "integer"
+          }
         },
         {
           "$ref": "#/components/parameters/Limit"
@@ -1128,7 +1280,13 @@
       },
       "parameters": [
         {
-          "$ref": "#/components/parameters/ObservationStationId"
+          "name": "stationId",
+          "in": "path",
+          "description": "Observation station ID",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
         }
       ]
     },
@@ -1159,7 +1317,13 @@
       },
       "parameters": [
         {
-          "$ref": "#/components/parameters/ObservationStationId"
+          "name": "stationId",
+          "in": "path",
+          "description": "Observation station ID",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
         }
       ]
     },
@@ -1192,7 +1356,13 @@
       },
       "parameters": [
         {
-          "$ref": "#/components/parameters/ObservationStationId"
+          "name": "stationId",
+          "in": "path",
+          "description": "Observation station ID",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
         }
       ]
     },
@@ -1202,8 +1372,13 @@
         "operationId": "Tafs",
         "parameters": [
           {
+            "name": "stationId",
+            "in": "path",
             "description": "Observation station ID",
-            "$ref": "#/components/parameters/ObservationStationId"
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -1230,16 +1405,35 @@
         "operationId": "Taf",
         "parameters": [
           {
+            "name": "stationId",
+            "in": "path",
             "description": "Observation station ID",
-            "$ref": "#/components/parameters/ObservationStationId"
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           },
           {
+            "name": "date",
+            "in": "path",
             "description": "Date (YYYY-MM-DD format)",
-            "$ref": "#/components/parameters/Date"
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "Date (in YYYY-MM-DD format).",
+              "format": "date"
+            }
           },
           {
+            "name": "time",
+            "in": "path",
             "description": "Time (HHMM format). This time is always specified in UTC (Zulu) time.",
-            "$ref": "#/components/parameters/Time"
+            "required": true,
+            "schema": {
+              "pattern": "^([01][0-9]|2[0-3])[0-5][0-9]$",
+              "type": "string",
+              "description": "A time (in HHMM format). This is always specified in UTC (Zulu) time."
+            }
           }
         ],
         "responses": {
@@ -1349,7 +1543,13 @@
       },
       "parameters": [
         {
-          "$ref": "#/components/parameters/ObservationStationId"
+          "name": "stationId",
+          "in": "path",
+          "description": "Observation station ID",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
         }
       ]
     },
@@ -1387,7 +1587,13 @@
       },
       "parameters": [
         {
-          "$ref": "#/components/parameters/NWSOfficeId"
+          "name": "officeId",
+          "in": "path",
+          "description": "NWS office ID",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/NwsOfficeId"
+          }
         }
       ]
     },
@@ -1425,7 +1631,13 @@
       },
       "parameters": [
         {
-          "$ref": "#/components/parameters/NWSOfficeId"
+          "name": "officeId",
+          "in": "path",
+          "description": "NWS office ID",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/NwsOfficeId"
+          }
         }
       ]
     },
@@ -1456,7 +1668,13 @@
       },
       "parameters": [
         {
-          "$ref": "#/components/parameters/NWSOfficeId"
+          "name": "officeId",
+          "in": "path",
+          "description": "NWS office ID",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/NwsOfficeId"
+          }
         }
       ]
     },
@@ -1494,7 +1712,13 @@
       },
       "parameters": [
         {
-          "$ref": "#/components/parameters/NWSOfficeId"
+          "name": "officeId",
+          "in": "path",
+          "description": "NWS office ID",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/NwsOfficeId"
+          }
         },
         {
           "name": "briefingId",
@@ -1541,7 +1765,13 @@
       },
       "parameters": [
         {
-          "$ref": "#/components/parameters/NWSOfficeId"
+          "name": "officeId",
+          "in": "path",
+          "description": "NWS office ID",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/NwsOfficeId"
+          }
         },
         {
           "name": "headlineId",
@@ -1588,7 +1818,13 @@
       },
       "parameters": [
         {
-          "$ref": "#/components/parameters/NWSOfficeId"
+          "name": "officeId",
+          "in": "path",
+          "description": "NWS office ID",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/NwsOfficeId"
+          }
         }
       ]
     },
@@ -1626,7 +1862,13 @@
       },
       "parameters": [
         {
-          "$ref": "#/components/parameters/NWSOfficeId"
+          "name": "officeId",
+          "in": "path",
+          "description": "NWS office ID",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/NwsOfficeId"
+          }
         }
       ]
     },
@@ -1664,7 +1906,13 @@
       },
       "parameters": [
         {
-          "$ref": "#/components/parameters/NWSOfficeId"
+          "name": "officeId",
+          "in": "path",
+          "description": "NWS office ID",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/NwsOfficeId"
+          }
         },
         {
           "name": "imageId",
@@ -1716,10 +1964,28 @@
       },
       "parameters": [
         {
-          "$ref": "#/components/parameters/Latitude"
+          "name": "latitude",
+          "in": "path",
+          "description": "Latitude",
+          "required": true,
+          "schema": {
+            "multipleOf": 0.0001,
+            "maximum": 90,
+            "minimum": -90,
+            "type": "number"
+          }
         },
         {
-          "$ref": "#/components/parameters/Longitude"
+          "name": "longitude",
+          "in": "path",
+          "description": "Longitude",
+          "required": true,
+          "schema": {
+            "multipleOf": 0.0001,
+            "maximum": 180,
+            "minimum": -180,
+            "type": "number"
+          }
         }
       ]
     },
@@ -1760,10 +2026,28 @@
       },
       "parameters": [
         {
-          "$ref": "#/components/parameters/Latitude"
+          "name": "latitude",
+          "in": "path",
+          "description": "Latitude",
+          "required": true,
+          "schema": {
+            "multipleOf": 0.0001,
+            "maximum": 90,
+            "minimum": -90,
+            "type": "number"
+          }
         },
         {
-          "$ref": "#/components/parameters/Longitude"
+          "name": "longitude",
+          "in": "path",
+          "description": "Longitude",
+          "required": true,
+          "schema": {
+            "multipleOf": 0.0001,
+            "maximum": 180,
+            "minimum": -180,
+            "type": "number"
+          }
         }
       ]
     },
@@ -1784,10 +2068,28 @@
       },
       "parameters": [
         {
-          "$ref": "#/components/parameters/Latitude"
+          "name": "latitude",
+          "in": "path",
+          "description": "Latitude",
+          "required": true,
+          "schema": {
+            "multipleOf": 0.0001,
+            "maximum": 90,
+            "minimum": -90,
+            "type": "number"
+          }
         },
         {
-          "$ref": "#/components/parameters/Longitude"
+          "name": "longitude",
+          "in": "path",
+          "description": "Longitude",
+          "required": true,
+          "schema": {
+            "multipleOf": 0.0001,
+            "maximum": 180,
+            "minimum": -180,
+            "type": "number"
+          }
         }
       ]
     },
@@ -2245,6 +2547,9 @@
             "in": "query",
             "description": "Averaging interval",
             "schema": {
+              "examples": [
+                "P2DT12H"
+              ],
               "pattern": "^P(\\d\u002BY)?(\\d\u002BM)?(\\d\u002BD)?(T(\\d\u002BH)?(\\d\u002BM)?(\\d\u002BS)?)?$",
               "type": "string",
               "description": "A time duration in ISO 8601 format."
@@ -2369,7 +2674,13 @@
       },
       "parameters": [
         {
-          "$ref": "#/components/parameters/CallSign"
+          "name": "callSign",
+          "in": "path",
+          "description": "The call sign identifier for a NOAA transmitter station.",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
         }
       ]
     },
@@ -2410,7 +2721,13 @@
       },
       "parameters": [
         {
-          "$ref": "#/components/parameters/CallSign"
+          "name": "callSign",
+          "in": "path",
+          "description": "The call sign identifier for a NOAA transmitter station.",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
         }
       ]
     },
@@ -3196,7 +3513,15 @@
           }
         },
         {
-          "$ref": "#/components/parameters/NWSZoneId"
+          "name": "zoneId",
+          "in": "path",
+          "description": "NWS public zone/county identifier",
+          "required": true,
+          "schema": {
+            "pattern": "^(A[KLMNRSZ]|C[AOT]|D[CE]|F[LM]|G[AMU]|I[ADLN]|K[SY]|L[ACEHMOS]|M[ADEHINOPST]|N[CDEHJMVY]|O[HKR]|P[AHKMRSWZ]|S[CDL]|T[NX]|UT|V[AIT]|W[AIVY]|[HR]I)[CZ]\\d{3}$",
+            "type": "string",
+            "description": "UGC identifier for a NWS forecast zone or county.\nThe first two letters will correspond to either a state code or marine area code (see #/components/schemas/StateTerritoryCode and #/components/schemas/MarineAreaCode for lists of valid letter combinations).\nThe third letter will be Z for public/fire zone or C for county.\n"
+          }
         }
       ]
     },
@@ -3248,7 +3573,15 @@
           }
         },
         {
-          "$ref": "#/components/parameters/NWSZoneId"
+          "name": "zoneId",
+          "in": "path",
+          "description": "NWS public zone/county identifier",
+          "required": true,
+          "schema": {
+            "pattern": "^(A[KLMNRSZ]|C[AOT]|D[CE]|F[LM]|G[AMU]|I[ADLN]|K[SY]|L[ACEHMOS]|M[ADEHINOPST]|N[CDEHJMVY]|O[HKR]|P[AHKMRSWZ]|S[CDL]|T[NX]|UT|V[AIT]|W[AIVY]|[HR]I)[CZ]\\d{3}$",
+            "type": "string",
+            "description": "UGC identifier for a NWS forecast zone or county.\nThe first two letters will correspond to either a state code or marine area code (see #/components/schemas/StateTerritoryCode and #/components/schemas/MarineAreaCode for lists of valid letter combinations).\nThe third letter will be Z for public/fire zone or C for county.\n"
+          }
         }
       ]
     },
@@ -3295,7 +3628,15 @@
           }
         },
         {
-          "$ref": "#/components/parameters/NWSZoneId"
+          "name": "zoneId",
+          "in": "path",
+          "description": "NWS public zone/county identifier",
+          "required": true,
+          "schema": {
+            "pattern": "^(A[KLMNRSZ]|C[AOT]|D[CE]|F[LM]|G[AMU]|I[ADLN]|K[SY]|L[ACEHMOS]|M[ADEHINOPST]|N[CDEHJMVY]|O[HKR]|P[AHKMRSWZ]|S[CDL]|T[NX]|UT|V[AIT]|W[AIVY]|[HR]I)[CZ]\\d{3}$",
+            "type": "string",
+            "description": "UGC identifier for a NWS forecast zone or county.\nThe first two letters will correspond to either a state code or marine area code (see #/components/schemas/StateTerritoryCode and #/components/schemas/MarineAreaCode for lists of valid letter combinations).\nThe third letter will be Z for public/fire zone or C for county.\n"
+          }
         }
       ]
     },
@@ -3368,7 +3709,15 @@
       },
       "parameters": [
         {
-          "$ref": "#/components/parameters/NWSZoneId"
+          "name": "zoneId",
+          "in": "path",
+          "description": "NWS public zone/county identifier",
+          "required": true,
+          "schema": {
+            "pattern": "^(A[KLMNRSZ]|C[AOT]|D[CE]|F[LM]|G[AMU]|I[ADLN]|K[SY]|L[ACEHMOS]|M[ADEHINOPST]|N[CDEHJMVY]|O[HKR]|P[AHKMRSWZ]|S[CDL]|T[NX]|UT|V[AIT]|W[AIVY]|[HR]I)[CZ]\\d{3}$",
+            "type": "string",
+            "description": "UGC identifier for a NWS forecast zone or county.\nThe first two letters will correspond to either a state code or marine area code (see #/components/schemas/StateTerritoryCode and #/components/schemas/MarineAreaCode for lists of valid letter combinations).\nThe third letter will be Z for public/fire zone or C for county.\n"
+          }
         }
       ]
     },
@@ -3389,7 +3738,15 @@
       },
       "parameters": [
         {
-          "$ref": "#/components/parameters/NWSZoneId"
+          "name": "zoneId",
+          "in": "path",
+          "description": "NWS public zone/county identifier",
+          "required": true,
+          "schema": {
+            "pattern": "^(A[KLMNRSZ]|C[AOT]|D[CE]|F[LM]|G[AMU]|I[ADLN]|K[SY]|L[ACEHMOS]|M[ADEHINOPST]|N[CDEHJMVY]|O[HKR]|P[AHKMRSWZ]|S[CDL]|T[NX]|UT|V[AIT]|W[AIVY]|[HR]I)[CZ]\\d{3}$",
+            "type": "string",
+            "description": "UGC identifier for a NWS forecast zone or county.\nThe first two letters will correspond to either a state code or marine area code (see #/components/schemas/StateTerritoryCode and #/components/schemas/MarineAreaCode for lists of valid letter combinations).\nThe third letter will be Z for public/fire zone or C for county.\n"
+          }
         },
         {
           "$ref": "#/components/parameters/Limit"
@@ -3590,10 +3947,7 @@
             "$ref": "#/components/schemas/FeatureCollectionType"
           },
           "features": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/GeoJsonFeature"
-            }
+            "$ref": "#/components/schemas/ActiveAlertCollectionGeoJsonFeatures"
           },
           "title": {
             "type": "string",
@@ -3620,10 +3974,7 @@
             "$ref": "#/components/schemas/FeatureCollectionType"
           },
           "features": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/GeoJsonFeature"
-            }
+            "$ref": "#/components/schemas/AlertCollectionGeoJsonFeatures"
           },
           "title": {
             "type": "string",
@@ -3694,29 +4045,16 @@
         "type": "object"
       },
       "AlertGeoJson": {
-        "required": [
-          "type",
-          "geometry",
-          "properties"
-        ],
         "type": "object",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/GeoJsonFeature"
+          }
+        ],
         "properties": {
-          "@context": {
-            "$ref": "#/components/schemas/JsonLdContext"
-          },
-          "id": {
-            "type": "string",
-            "format": "uri"
-          },
-          "type": {
-            "$ref": "#/components/schemas/FeatureType"
-          },
-          "geometry": {
-            "description": "A GeoJSON geometry object. Please refer to IETF RFC 7946 for information on the GeoJSON format.",
-            "$ref": "#/components/schemas/GeoJsonGeometry"
-          },
           "properties": {
-            "$ref": "#/components/schemas/AlertGeoJsonProperties"
+            "description": "An object representing a public alert message.\nUnless otherwise noted, the fields in this object correspond to the National Weather Service CAP v1.2 specification, which extends the OASIS Common Alerting Protocol (CAP) v1.2 specification and USA Integrated Public Alert and Warning System (IPAWS) Profile v1.0. Refer to this documentation for more complete information.\nhttp://docs.oasis-open.org/emergency/cap/v1.2/CAP-v1.2-os.html http://docs.oasis-open.org/emergency/cap/v1.2/ipaws-profile/v1.0/cs01/cap-v1.2-ipaws-profile-cs01.html https://vlab.noaa.gov/web/nws-common-alerting-protocol/cap-documentation\n",
+            "$ref": "#/components/schemas/Alert"
           }
         }
       },
@@ -3743,8 +4081,7 @@
           "Unlikely",
           "Unknown"
         ],
-        "type": "string",
-        "additionalProperties": false
+        "type": "string"
       },
       "AlertMessageType": {
         "enum": [
@@ -3754,8 +4091,7 @@
           "Ack",
           "Error"
         ],
-        "type": "string",
-        "additionalProperties": false
+        "type": "string"
       },
       "AlertSeverity": {
         "enum": [
@@ -3765,8 +4101,7 @@
           "Minor",
           "Unknown"
         ],
-        "type": "string",
-        "additionalProperties": false
+        "type": "string"
       },
       "AlertStatus": {
         "enum": [
@@ -3776,8 +4111,7 @@
           "Test",
           "Draft"
         ],
-        "type": "string",
-        "additionalProperties": false
+        "type": "string"
       },
       "AlertUrgency": {
         "enum": [
@@ -3787,8 +4121,7 @@
           "Past",
           "Unknown"
         ],
-        "type": "string",
-        "additionalProperties": false
+        "type": "string"
       },
       "AlertAtomEntry": {
         "type": "object",
@@ -3975,16 +4308,386 @@
         }
       },
       "AreaCode": {
-        "type": "object",
-        "oneOf": [
-          {
-            "$ref": "#/components/schemas/StateTerritoryCodeWrapper"
-          },
-          {
-            "$ref": "#/components/schemas/MarineAreaCodeWrapper"
-          }
+        "description": "State/territory codes and marine area codes",
+        "enum": [
+          "AL",
+          "AK",
+          "AS",
+          "AR",
+          "AZ",
+          "CA",
+          "CO",
+          "CT",
+          "DE",
+          "DC",
+          "FL",
+          "GA",
+          "GU",
+          "HI",
+          "ID",
+          "IL",
+          "IN",
+          "IA",
+          "KS",
+          "KY",
+          "LA",
+          "ME",
+          "MD",
+          "MA",
+          "MI",
+          "MN",
+          "MS",
+          "MO",
+          "MT",
+          "NE",
+          "NV",
+          "NH",
+          "NJ",
+          "NM",
+          "NY",
+          "NC",
+          "ND",
+          "OH",
+          "OK",
+          "OR",
+          "PA",
+          "PR",
+          "RI",
+          "SC",
+          "SD",
+          "TN",
+          "TX",
+          "UT",
+          "VT",
+          "VI",
+          "VA",
+          "WA",
+          "WV",
+          "WI",
+          "WY",
+          "MP",
+          "PW",
+          "FM",
+          "MH",
+          "AM",
+          "AN",
+          "GM",
+          "LC",
+          "LE",
+          "LH",
+          "LM",
+          "LO",
+          "LS",
+          "PH",
+          "PK",
+          "PM",
+          "PS",
+          "PZ",
+          "SL"
         ],
-        "description": "State/territory codes and marine area codes"
+        "type": "string",
+        "x-ms-enum": {
+          "name": "AreaCode",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "AL",
+              "name": "Al"
+            },
+            {
+              "value": "AK",
+              "name": "Ak"
+            },
+            {
+              "value": "AS",
+              "name": "AsValue"
+            },
+            {
+              "value": "AR",
+              "name": "Ar"
+            },
+            {
+              "value": "AZ",
+              "name": "Az"
+            },
+            {
+              "value": "CA",
+              "name": "Ca"
+            },
+            {
+              "value": "CO",
+              "name": "Co"
+            },
+            {
+              "value": "CT",
+              "name": "Ct"
+            },
+            {
+              "value": "DE",
+              "name": "De"
+            },
+            {
+              "value": "DC",
+              "name": "Dc"
+            },
+            {
+              "value": "FL",
+              "name": "Fl"
+            },
+            {
+              "value": "GA",
+              "name": "Ga"
+            },
+            {
+              "value": "GU",
+              "name": "Gu"
+            },
+            {
+              "value": "HI",
+              "name": "Hi"
+            },
+            {
+              "value": "ID",
+              "name": "Id"
+            },
+            {
+              "value": "IL",
+              "name": "Il"
+            },
+            {
+              "value": "IN",
+              "name": "InValue"
+            },
+            {
+              "value": "IA",
+              "name": "Ia"
+            },
+            {
+              "value": "KS",
+              "name": "Ks"
+            },
+            {
+              "value": "KY",
+              "name": "Ky"
+            },
+            {
+              "value": "LA",
+              "name": "La"
+            },
+            {
+              "value": "ME",
+              "name": "Me"
+            },
+            {
+              "value": "MD",
+              "name": "Md"
+            },
+            {
+              "value": "MA",
+              "name": "Ma"
+            },
+            {
+              "value": "MI",
+              "name": "Mi"
+            },
+            {
+              "value": "MN",
+              "name": "Mn"
+            },
+            {
+              "value": "MS",
+              "name": "Ms"
+            },
+            {
+              "value": "MO",
+              "name": "Mo"
+            },
+            {
+              "value": "MT",
+              "name": "Mt"
+            },
+            {
+              "value": "NE",
+              "name": "Ne"
+            },
+            {
+              "value": "NV",
+              "name": "Nv"
+            },
+            {
+              "value": "NH",
+              "name": "Nh"
+            },
+            {
+              "value": "NJ",
+              "name": "Nj"
+            },
+            {
+              "value": "NM",
+              "name": "Nm"
+            },
+            {
+              "value": "NY",
+              "name": "Ny"
+            },
+            {
+              "value": "NC",
+              "name": "Nc"
+            },
+            {
+              "value": "ND",
+              "name": "Nd"
+            },
+            {
+              "value": "OH",
+              "name": "Oh"
+            },
+            {
+              "value": "OK",
+              "name": "Ok"
+            },
+            {
+              "value": "OR",
+              "name": "Or"
+            },
+            {
+              "value": "PA",
+              "name": "Pa"
+            },
+            {
+              "value": "PR",
+              "name": "Pr"
+            },
+            {
+              "value": "RI",
+              "name": "Ri"
+            },
+            {
+              "value": "SC",
+              "name": "Sc"
+            },
+            {
+              "value": "SD",
+              "name": "Sd"
+            },
+            {
+              "value": "TN",
+              "name": "Tn"
+            },
+            {
+              "value": "TX",
+              "name": "Tx"
+            },
+            {
+              "value": "UT",
+              "name": "Ut"
+            },
+            {
+              "value": "VT",
+              "name": "Vt"
+            },
+            {
+              "value": "VI",
+              "name": "Vi"
+            },
+            {
+              "value": "VA",
+              "name": "Va"
+            },
+            {
+              "value": "WA",
+              "name": "Wa"
+            },
+            {
+              "value": "WV",
+              "name": "Wv"
+            },
+            {
+              "value": "WI",
+              "name": "Wi"
+            },
+            {
+              "value": "WY",
+              "name": "Wy"
+            },
+            {
+              "value": "MP",
+              "name": "Mp"
+            },
+            {
+              "value": "PW",
+              "name": "Pw"
+            },
+            {
+              "value": "FM",
+              "name": "Fm"
+            },
+            {
+              "value": "MH",
+              "name": "Mh"
+            },
+            {
+              "value": "AM",
+              "name": "Am"
+            },
+            {
+              "value": "AN",
+              "name": "An"
+            },
+            {
+              "value": "GM",
+              "name": "Gm"
+            },
+            {
+              "value": "LC",
+              "name": "Lc"
+            },
+            {
+              "value": "LE",
+              "name": "Le"
+            },
+            {
+              "value": "LH",
+              "name": "Lh"
+            },
+            {
+              "value": "LM",
+              "name": "Lm"
+            },
+            {
+              "value": "LO",
+              "name": "Lo"
+            },
+            {
+              "value": "LS",
+              "name": "Ls"
+            },
+            {
+              "value": "PH",
+              "name": "Ph"
+            },
+            {
+              "value": "PK",
+              "name": "Pk"
+            },
+            {
+              "value": "PM",
+              "name": "Pm"
+            },
+            {
+              "value": "PS",
+              "name": "Ps"
+            },
+            {
+              "value": "PZ",
+              "name": "Pz"
+            },
+            {
+              "value": "SL",
+              "name": "Sl"
+            }
+          ]
+        }
       },
       "AstronomicalData": {
         "type": "object",
@@ -4087,37 +4790,20 @@
             "$ref": "#/components/schemas/FeatureCollectionType"
           },
           "features": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/GeoJsonFeature"
-            }
+            "$ref": "#/components/schemas/CenterWeatherAdvisoryCollectionGeoJsonFeatures"
           }
         }
       },
       "CenterWeatherAdvisoryGeoJson": {
-        "required": [
-          "type",
-          "geometry",
-          "properties"
-        ],
         "type": "object",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/GeoJsonFeature"
+          }
+        ],
         "properties": {
-          "@context": {
-            "$ref": "#/components/schemas/JsonLdContext"
-          },
-          "id": {
-            "type": "string",
-            "format": "uri"
-          },
-          "type": {
-            "$ref": "#/components/schemas/FeatureType"
-          },
-          "geometry": {
-            "description": "A GeoJSON geometry object. Please refer to IETF RFC 7946 for information on the GeoJSON format.",
-            "$ref": "#/components/schemas/GeoJsonGeometry"
-          },
           "properties": {
-            "$ref": "#/components/schemas/CenterWeatherAdvisoryGeoJsonProperties"
+            "$ref": "#/components/schemas/CenterWeatherAdvisory"
           }
         }
       },
@@ -4188,7 +4874,6 @@
         "description": "A GeoJSON coordinate. Please refer to IETF RFC 7946 for information on the GeoJSON format."
       },
       "GeoJsonGeometry": {
-        "type": "object",
         "oneOf": [
           {
             "$ref": "#/components/schemas/GeoJsonGeometryGeoJsonPoint"
@@ -4212,24 +4897,6 @@
             "type": "null"
           }
         ],
-        "properties": {
-          "coordinates": {
-            "minItems": 2,
-            "type": "array",
-            "items": {
-              "type": "number"
-            },
-            "description": "A GeoJSON coordinate. Please refer to IETF RFC 7946 for information on the GeoJSON format."
-          },
-          "bbox": {
-            "minItems": 4,
-            "type": "array",
-            "items": {
-              "type": "number"
-            },
-            "description": "A GeoJSON bounding box. Please refer to IETF RFC 7946 for information on the GeoJSON format."
-          }
-        },
         "description": "A GeoJSON geometry object. Please refer to IETF RFC 7946 for information on the GeoJSON format."
       },
       "GeoJsonFeature": {
@@ -4388,29 +5055,15 @@
         "description": "A gridpoint layer consisting of quantitative values (numeric values with associated units of measure).\n"
       },
       "GridpointGeoJson": {
-        "required": [
-          "type",
-          "geometry",
-          "properties"
-        ],
         "type": "object",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/GeoJsonFeature"
+          }
+        ],
         "properties": {
-          "@context": {
-            "$ref": "#/components/schemas/JsonLdContext"
-          },
-          "id": {
-            "type": "string",
-            "format": "uri"
-          },
-          "type": {
-            "$ref": "#/components/schemas/FeatureType"
-          },
-          "geometry": {
-            "description": "A GeoJSON geometry object. Please refer to IETF RFC 7946 for information on the GeoJSON format.",
-            "$ref": "#/components/schemas/GeoJsonGeometry"
-          },
           "properties": {
-            "$ref": "#/components/schemas/GridpointGeoJsonProperties"
+            "$ref": "#/components/schemas/GridpointBody"
           }
         }
       },
@@ -4661,7 +5314,6 @@
           "si"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "Denotes the units used in the textual portions of the forecast.",
         "x-ms-enum": {
           "name": "GridpointForecastUnits",
@@ -4679,56 +5331,29 @@
         }
       },
       "Gridpoint12HForecastGeoJson": {
-        "required": [
-          "type",
-          "geometry",
-          "properties"
-        ],
         "type": "object",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/GeoJsonFeature"
+          }
+        ],
         "properties": {
-          "@context": {
-            "$ref": "#/components/schemas/JsonLdContext"
-          },
-          "id": {
-            "type": "string",
-            "format": "uri"
-          },
-          "type": {
-            "$ref": "#/components/schemas/FeatureType"
-          },
-          "geometry": {
-            "description": "A GeoJSON geometry object. Please refer to IETF RFC 7946 for information on the GeoJSON format.",
-            "$ref": "#/components/schemas/GeoJsonGeometry"
-          },
           "properties": {
-            "$ref": "#/components/schemas/Gridpoint12HForecastGeoJsonProperties"
+            "$ref": "#/components/schemas/Gridpoint12HForecast"
           }
         }
       },
       "GridpointHourlyForecastGeoJson": {
-        "required": [
-          "type",
-          "geometry",
-          "properties"
-        ],
         "type": "object",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/GeoJsonFeature"
+          }
+        ],
         "properties": {
-          "@context": {
-            "$ref": "#/components/schemas/JsonLdContext"
-          },
-          "id": {
-            "type": "string",
-            "format": "uri"
-          },
-          "type": {
-            "$ref": "#/components/schemas/FeatureType"
-          },
-          "geometry": {
-            "description": "A GeoJSON geometry object. Please refer to IETF RFC 7946 for information on the GeoJSON format.",
-            "$ref": "#/components/schemas/GeoJsonGeometry"
-          },
           "properties": {
-            "$ref": "#/components/schemas/GridpointHourlyForecastGeoJsonProperties"
+            "description": "An hourly forecast for a 2.5km grid square.",
+            "$ref": "#/components/schemas/GridpointHourlyForecast"
           }
         }
       },
@@ -4738,6 +5363,11 @@
           "geometry"
         ],
         "type": "object",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Gridpoint12HForecast"
+          }
+        ],
         "properties": {
           "@context": {
             "$ref": "#/components/schemas/JsonLdContext"
@@ -4745,38 +5375,6 @@
           "geometry": {
             "description": "A geometry represented in Well-Known Text (WKT) format.",
             "$ref": "#/components/schemas/GeometryString"
-          },
-          "units": {
-            "description": "Denotes the units used in the textual portions of the forecast.",
-            "$ref": "#/components/schemas/GridpointForecastUnits"
-          },
-          "forecastGenerator": {
-            "type": "string",
-            "description": "The internal generator class used to create the forecast text (used for NWS debugging)."
-          },
-          "generatedAt": {
-            "type": "string",
-            "description": "The time this forecast data was generated.",
-            "format": "date-time"
-          },
-          "updateTime": {
-            "type": "string",
-            "description": "The last update time of the data this forecast was generated from.",
-            "format": "date-time"
-          },
-          "validTimes": {
-            "$ref": "#/components/schemas/Iso8601Interval"
-          },
-          "elevation": {
-            "description": "A structured value representing a measurement and its unit of measure. This object is a slightly modified version of the schema.org definition at https://schema.org/QuantitativeValue\n",
-            "$ref": "#/components/schemas/QuantitativeValue"
-          },
-          "periods": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Gridpoint12HForecastPeriod"
-            },
-            "description": "An array of forecast periods."
           }
         }
       },
@@ -4786,6 +5384,11 @@
           "geometry"
         ],
         "type": "object",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/GridpointHourlyForecast"
+          }
+        ],
         "properties": {
           "@context": {
             "$ref": "#/components/schemas/JsonLdContext"
@@ -4793,38 +5396,6 @@
           "geometry": {
             "description": "A geometry represented in Well-Known Text (WKT) format.",
             "$ref": "#/components/schemas/GeometryString"
-          },
-          "units": {
-            "description": "Denotes the units used in the textual portions of the forecast.",
-            "$ref": "#/components/schemas/GridpointForecastUnits"
-          },
-          "forecastGenerator": {
-            "type": "string",
-            "description": "The internal generator class used to create the forecast text (used for NWS debugging)."
-          },
-          "generatedAt": {
-            "type": "string",
-            "description": "The time this forecast data was generated.",
-            "format": "date-time"
-          },
-          "updateTime": {
-            "type": "string",
-            "description": "The last update time of the data this forecast was generated from.",
-            "format": "date-time"
-          },
-          "validTimes": {
-            "$ref": "#/components/schemas/Iso8601Interval"
-          },
-          "elevation": {
-            "description": "A structured value representing a measurement and its unit of measure. This object is a slightly modified version of the schema.org definition at https://schema.org/QuantitativeValue\n",
-            "$ref": "#/components/schemas/QuantitativeValue"
-          },
-          "periods": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/GridpointHourlyForecastPeriod"
-            },
-            "description": "An array of forecast periods."
           }
         }
       },
@@ -4837,7 +5408,6 @@
         "description": "A time duration in ISO 8601 format."
       },
       "Iso8601Interval": {
-        "type": "object",
         "oneOf": [
           {
             "examples": [
@@ -4864,23 +5434,15 @@
         "description": "A time interval in ISO 8601 format. This can be one of:\n\n    1. Start and end time\n    2. Start time and duration\n    3. Duration and end time\nThe string \u0022NOW\u0022 can also be used in place of a start/end time.\n"
       },
       "JsonLdContext": {
-        "type": "object",
         "anyOf": [
           {
-            "$ref": "#/components/schemas/JsonLdContextBranch1"
+            "type": "array",
+            "items": {}
           },
           {
             "type": "object"
           }
-        ],
-        "properties": {
-          "value": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/JsonLdContextBranch1ValueItem"
-            }
-          }
-        }
+        ]
       },
       "LandRegionCode": {
         "enum": [
@@ -4892,7 +5454,6 @@
           "WR"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "Land region code. These correspond to the six NWS regional headquarters:\n* AR: Alaska Region\n* CR: Central Region\n* ER: Eastern Region\n* PR: Pacific Region\n* SR: Southern Region\n* WR: Western Region\n",
         "x-ms-enum": {
           "name": "LandRegionCode",
@@ -4944,7 +5505,6 @@
           "SL"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "Marine area code as defined in NWS Directive 10-302:\n* AM: Western North Atlantic Ocean and along U.S. East Coast south of Currituck Beach Light NC following the coastline into Gulf of Mexico to Ocean Reef FL including the Caribbean\n* AN: Western North Atlantic Ocean and along U.S. East Coast from Canadian border south to Currituck Beach Light NC\n* GM: Gulf of Mexico and along the U.S. Gulf Coast from the Mexican border to Ocean Reef FL\n* LC: Lake St. Clair\n* LE: Lake Erie\n* LH: Lake Huron\n* LM: Lake Michigan\n* LO: Lake Ontario\n* LS: Lake Superior\n* PH: Central Pacific Ocean including Hawaiian waters\n* PK: North Pacific Ocean near Alaska and along Alaska coastline including the Bering Sea and the Gulf of Alaska\n* PM: Western Pacific Ocean including Mariana Island waters\n* PS: South Central Pacific Ocean including American Samoa waters\n* PZ: Eastern North Pacific Ocean and along U.S. West Coast from Canadian border to Mexican border\n* SL: St. Lawrence River above St. Regis\n",
         "x-ms-enum": {
           "name": "MarineAreaCode",
@@ -5023,7 +5583,6 @@
           "PI"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "Marine region code. These are groups of marine areas combined.\n* AL: Alaska waters (PK)\n* AT: Atlantic Ocean (AM, AN)\n* GL: Great Lakes (LC, LE, LH, LM, LO, LS, SL)\n* GM: Gulf of Mexico (GM)\n* PA: Eastern Pacific Ocean and U.S. West Coast (PZ)\n* PI: Central and Western Pacific (PH, PM, PS)\n",
         "x-ms-enum": {
           "name": "MarineRegionCode",
@@ -5095,7 +5654,6 @@
           "VV"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "MetarSkyCoverage",
           "modelAsString": false,
@@ -5157,7 +5715,6 @@
           "ZTL"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "Three-letter identifier for a Center Weather Service Unit (CWSU).",
         "x-ms-enum": {
           "name": "NwsCenterWeatherServiceUnitId",
@@ -5434,7 +5991,6 @@
           "ONP"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "Three-letter identifier for a NWS office.",
         "x-ms-enum": {
           "name": "NwsForecastOfficeId",
@@ -5980,7 +6536,6 @@
           "NWS"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "Three-letter identifier for NWS National HQ.",
         "x-ms-enum": {
           "name": "NwsNationalHqId",
@@ -5994,18 +6549,715 @@
         }
       },
       "NwsOfficeId": {
-        "type": "object",
-        "oneOf": [
-          {
-            "$ref": "#/components/schemas/NwsForecastOfficeIdWrapper"
-          },
-          {
-            "$ref": "#/components/schemas/NwsRegionalHqIdWrapper"
-          },
-          {
-            "$ref": "#/components/schemas/NwsNationalHqIdWrapper"
-          }
-        ]
+        "enum": [
+          "AKQ",
+          "ALY",
+          "BGM",
+          "BOX",
+          "BTV",
+          "BUF",
+          "CAE",
+          "CAR",
+          "CHS",
+          "CLE",
+          "CTP",
+          "GSP",
+          "GYX",
+          "ILM",
+          "ILN",
+          "LWX",
+          "MHX",
+          "OKX",
+          "PBZ",
+          "PHI",
+          "RAH",
+          "RLX",
+          "RNK",
+          "ABQ",
+          "AMA",
+          "BMX",
+          "BRO",
+          "CRP",
+          "EPZ",
+          "EWX",
+          "FFC",
+          "FWD",
+          "HGX",
+          "HUN",
+          "JAN",
+          "JAX",
+          "KEY",
+          "LCH",
+          "LIX",
+          "LUB",
+          "LZK",
+          "MAF",
+          "MEG",
+          "MFL",
+          "MLB",
+          "MOB",
+          "MRX",
+          "OHX",
+          "OUN",
+          "SHV",
+          "SJT",
+          "SJU",
+          "TAE",
+          "TBW",
+          "TSA",
+          "ABR",
+          "APX",
+          "ARX",
+          "BIS",
+          "BOU",
+          "CYS",
+          "DDC",
+          "DLH",
+          "DMX",
+          "DTX",
+          "DVN",
+          "EAX",
+          "FGF",
+          "FSD",
+          "GID",
+          "GJT",
+          "GLD",
+          "GRB",
+          "GRR",
+          "ICT",
+          "ILX",
+          "IND",
+          "IWX",
+          "JKL",
+          "LBF",
+          "LMK",
+          "LOT",
+          "LSX",
+          "MKX",
+          "MPX",
+          "MQT",
+          "OAX",
+          "PAH",
+          "PUB",
+          "RIW",
+          "SGF",
+          "TOP",
+          "UNR",
+          "BOI",
+          "BYZ",
+          "EKA",
+          "FGZ",
+          "GGW",
+          "HNX",
+          "LKN",
+          "LOX",
+          "MFR",
+          "MSO",
+          "MTR",
+          "OTX",
+          "PDT",
+          "PIH",
+          "PQR",
+          "PSR",
+          "REV",
+          "SEW",
+          "SGX",
+          "SLC",
+          "STO",
+          "TFX",
+          "TWC",
+          "VEF",
+          "AER",
+          "AFC",
+          "AFG",
+          "AJK",
+          "ALU",
+          "GUM",
+          "HPA",
+          "HFO",
+          "PPG",
+          "PQE",
+          "PQW",
+          "STU",
+          "NH1",
+          "NH2",
+          "ONA",
+          "ONP",
+          "ARH",
+          "CRH",
+          "ERH",
+          "PRH",
+          "SRH",
+          "WRH",
+          "NWS"
+        ],
+        "type": "string",
+        "x-ms-enum": {
+          "name": "NwsOfficeId",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "AKQ",
+              "name": "Akq"
+            },
+            {
+              "value": "ALY",
+              "name": "Aly"
+            },
+            {
+              "value": "BGM",
+              "name": "Bgm"
+            },
+            {
+              "value": "BOX",
+              "name": "Box"
+            },
+            {
+              "value": "BTV",
+              "name": "Btv"
+            },
+            {
+              "value": "BUF",
+              "name": "Buf"
+            },
+            {
+              "value": "CAE",
+              "name": "Cae"
+            },
+            {
+              "value": "CAR",
+              "name": "Car"
+            },
+            {
+              "value": "CHS",
+              "name": "Chs"
+            },
+            {
+              "value": "CLE",
+              "name": "Cle"
+            },
+            {
+              "value": "CTP",
+              "name": "Ctp"
+            },
+            {
+              "value": "GSP",
+              "name": "Gsp"
+            },
+            {
+              "value": "GYX",
+              "name": "Gyx"
+            },
+            {
+              "value": "ILM",
+              "name": "Ilm"
+            },
+            {
+              "value": "ILN",
+              "name": "Iln"
+            },
+            {
+              "value": "LWX",
+              "name": "Lwx"
+            },
+            {
+              "value": "MHX",
+              "name": "Mhx"
+            },
+            {
+              "value": "OKX",
+              "name": "Okx"
+            },
+            {
+              "value": "PBZ",
+              "name": "Pbz"
+            },
+            {
+              "value": "PHI",
+              "name": "Phi"
+            },
+            {
+              "value": "RAH",
+              "name": "Rah"
+            },
+            {
+              "value": "RLX",
+              "name": "Rlx"
+            },
+            {
+              "value": "RNK",
+              "name": "Rnk"
+            },
+            {
+              "value": "ABQ",
+              "name": "Abq"
+            },
+            {
+              "value": "AMA",
+              "name": "Ama"
+            },
+            {
+              "value": "BMX",
+              "name": "Bmx"
+            },
+            {
+              "value": "BRO",
+              "name": "Bro"
+            },
+            {
+              "value": "CRP",
+              "name": "Crp"
+            },
+            {
+              "value": "EPZ",
+              "name": "Epz"
+            },
+            {
+              "value": "EWX",
+              "name": "Ewx"
+            },
+            {
+              "value": "FFC",
+              "name": "Ffc"
+            },
+            {
+              "value": "FWD",
+              "name": "Fwd"
+            },
+            {
+              "value": "HGX",
+              "name": "Hgx"
+            },
+            {
+              "value": "HUN",
+              "name": "Hun"
+            },
+            {
+              "value": "JAN",
+              "name": "Jan"
+            },
+            {
+              "value": "JAX",
+              "name": "Jax"
+            },
+            {
+              "value": "KEY",
+              "name": "Key"
+            },
+            {
+              "value": "LCH",
+              "name": "Lch"
+            },
+            {
+              "value": "LIX",
+              "name": "Lix"
+            },
+            {
+              "value": "LUB",
+              "name": "Lub"
+            },
+            {
+              "value": "LZK",
+              "name": "Lzk"
+            },
+            {
+              "value": "MAF",
+              "name": "Maf"
+            },
+            {
+              "value": "MEG",
+              "name": "Meg"
+            },
+            {
+              "value": "MFL",
+              "name": "Mfl"
+            },
+            {
+              "value": "MLB",
+              "name": "Mlb"
+            },
+            {
+              "value": "MOB",
+              "name": "Mob"
+            },
+            {
+              "value": "MRX",
+              "name": "Mrx"
+            },
+            {
+              "value": "OHX",
+              "name": "Ohx"
+            },
+            {
+              "value": "OUN",
+              "name": "Oun"
+            },
+            {
+              "value": "SHV",
+              "name": "Shv"
+            },
+            {
+              "value": "SJT",
+              "name": "Sjt"
+            },
+            {
+              "value": "SJU",
+              "name": "Sju"
+            },
+            {
+              "value": "TAE",
+              "name": "Tae"
+            },
+            {
+              "value": "TBW",
+              "name": "Tbw"
+            },
+            {
+              "value": "TSA",
+              "name": "Tsa"
+            },
+            {
+              "value": "ABR",
+              "name": "Abr"
+            },
+            {
+              "value": "APX",
+              "name": "Apx"
+            },
+            {
+              "value": "ARX",
+              "name": "Arx"
+            },
+            {
+              "value": "BIS",
+              "name": "Bis"
+            },
+            {
+              "value": "BOU",
+              "name": "Bou"
+            },
+            {
+              "value": "CYS",
+              "name": "Cys"
+            },
+            {
+              "value": "DDC",
+              "name": "Ddc"
+            },
+            {
+              "value": "DLH",
+              "name": "Dlh"
+            },
+            {
+              "value": "DMX",
+              "name": "Dmx"
+            },
+            {
+              "value": "DTX",
+              "name": "Dtx"
+            },
+            {
+              "value": "DVN",
+              "name": "Dvn"
+            },
+            {
+              "value": "EAX",
+              "name": "Eax"
+            },
+            {
+              "value": "FGF",
+              "name": "Fgf"
+            },
+            {
+              "value": "FSD",
+              "name": "Fsd"
+            },
+            {
+              "value": "GID",
+              "name": "Gid"
+            },
+            {
+              "value": "GJT",
+              "name": "Gjt"
+            },
+            {
+              "value": "GLD",
+              "name": "Gld"
+            },
+            {
+              "value": "GRB",
+              "name": "Grb"
+            },
+            {
+              "value": "GRR",
+              "name": "Grr"
+            },
+            {
+              "value": "ICT",
+              "name": "Ict"
+            },
+            {
+              "value": "ILX",
+              "name": "Ilx"
+            },
+            {
+              "value": "IND",
+              "name": "Ind"
+            },
+            {
+              "value": "IWX",
+              "name": "Iwx"
+            },
+            {
+              "value": "JKL",
+              "name": "Jkl"
+            },
+            {
+              "value": "LBF",
+              "name": "Lbf"
+            },
+            {
+              "value": "LMK",
+              "name": "Lmk"
+            },
+            {
+              "value": "LOT",
+              "name": "Lot"
+            },
+            {
+              "value": "LSX",
+              "name": "Lsx"
+            },
+            {
+              "value": "MKX",
+              "name": "Mkx"
+            },
+            {
+              "value": "MPX",
+              "name": "Mpx"
+            },
+            {
+              "value": "MQT",
+              "name": "Mqt"
+            },
+            {
+              "value": "OAX",
+              "name": "Oax"
+            },
+            {
+              "value": "PAH",
+              "name": "Pah"
+            },
+            {
+              "value": "PUB",
+              "name": "Pub"
+            },
+            {
+              "value": "RIW",
+              "name": "Riw"
+            },
+            {
+              "value": "SGF",
+              "name": "Sgf"
+            },
+            {
+              "value": "TOP",
+              "name": "Top"
+            },
+            {
+              "value": "UNR",
+              "name": "Unr"
+            },
+            {
+              "value": "BOI",
+              "name": "Boi"
+            },
+            {
+              "value": "BYZ",
+              "name": "Byz"
+            },
+            {
+              "value": "EKA",
+              "name": "Eka"
+            },
+            {
+              "value": "FGZ",
+              "name": "Fgz"
+            },
+            {
+              "value": "GGW",
+              "name": "Ggw"
+            },
+            {
+              "value": "HNX",
+              "name": "Hnx"
+            },
+            {
+              "value": "LKN",
+              "name": "Lkn"
+            },
+            {
+              "value": "LOX",
+              "name": "Lox"
+            },
+            {
+              "value": "MFR",
+              "name": "Mfr"
+            },
+            {
+              "value": "MSO",
+              "name": "Mso"
+            },
+            {
+              "value": "MTR",
+              "name": "Mtr"
+            },
+            {
+              "value": "OTX",
+              "name": "Otx"
+            },
+            {
+              "value": "PDT",
+              "name": "Pdt"
+            },
+            {
+              "value": "PIH",
+              "name": "Pih"
+            },
+            {
+              "value": "PQR",
+              "name": "Pqr"
+            },
+            {
+              "value": "PSR",
+              "name": "Psr"
+            },
+            {
+              "value": "REV",
+              "name": "Rev"
+            },
+            {
+              "value": "SEW",
+              "name": "Sew"
+            },
+            {
+              "value": "SGX",
+              "name": "Sgx"
+            },
+            {
+              "value": "SLC",
+              "name": "Slc"
+            },
+            {
+              "value": "STO",
+              "name": "Sto"
+            },
+            {
+              "value": "TFX",
+              "name": "Tfx"
+            },
+            {
+              "value": "TWC",
+              "name": "Twc"
+            },
+            {
+              "value": "VEF",
+              "name": "Vef"
+            },
+            {
+              "value": "AER",
+              "name": "Aer"
+            },
+            {
+              "value": "AFC",
+              "name": "Afc"
+            },
+            {
+              "value": "AFG",
+              "name": "Afg"
+            },
+            {
+              "value": "AJK",
+              "name": "Ajk"
+            },
+            {
+              "value": "ALU",
+              "name": "Alu"
+            },
+            {
+              "value": "GUM",
+              "name": "Gum"
+            },
+            {
+              "value": "HPA",
+              "name": "Hpa"
+            },
+            {
+              "value": "HFO",
+              "name": "Hfo"
+            },
+            {
+              "value": "PPG",
+              "name": "Ppg"
+            },
+            {
+              "value": "PQE",
+              "name": "Pqe"
+            },
+            {
+              "value": "PQW",
+              "name": "Pqw"
+            },
+            {
+              "value": "STU",
+              "name": "Stu"
+            },
+            {
+              "value": "NH1",
+              "name": "Nh1"
+            },
+            {
+              "value": "NH2",
+              "name": "Nh2"
+            },
+            {
+              "value": "ONA",
+              "name": "Ona"
+            },
+            {
+              "value": "ONP",
+              "name": "Onp"
+            },
+            {
+              "value": "ARH",
+              "name": "Arh"
+            },
+            {
+              "value": "CRH",
+              "name": "Crh"
+            },
+            {
+              "value": "ERH",
+              "name": "Erh"
+            },
+            {
+              "value": "PRH",
+              "name": "Prh"
+            },
+            {
+              "value": "SRH",
+              "name": "Srh"
+            },
+            {
+              "value": "WRH",
+              "name": "Wrh"
+            },
+            {
+              "value": "NWS",
+              "name": "Nws"
+            }
+          ]
+        }
       },
       "NwsRegionalHqId": {
         "enum": [
@@ -6017,7 +7269,6 @@
           "WRH"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "Three-letter identifier for a NWS Regional HQ.",
         "x-ms-enum": {
           "name": "NwsRegionalHqId",
@@ -6067,7 +7318,6 @@
           "county"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "NwsZoneType",
           "modelAsString": false,
@@ -6239,29 +7489,15 @@
         "additionalProperties": false
       },
       "ObservationGeoJson": {
-        "required": [
-          "type",
-          "geometry",
-          "properties"
-        ],
         "type": "object",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/GeoJsonFeature"
+          }
+        ],
         "properties": {
-          "@context": {
-            "$ref": "#/components/schemas/JsonLdContext"
-          },
-          "id": {
-            "type": "string",
-            "format": "uri"
-          },
-          "type": {
-            "$ref": "#/components/schemas/FeatureType"
-          },
-          "geometry": {
-            "description": "A GeoJSON geometry object. Please refer to IETF RFC 7946 for information on the GeoJSON format.",
-            "$ref": "#/components/schemas/GeoJsonGeometry"
-          },
           "properties": {
-            "$ref": "#/components/schemas/ObservationGeoJsonProperties"
+            "$ref": "#/components/schemas/Observation"
           }
         }
       },
@@ -6282,10 +7518,7 @@
             "$ref": "#/components/schemas/FeatureCollectionType"
           },
           "features": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/GeoJsonFeature"
-            }
+            "$ref": "#/components/schemas/ObservationCollectionGeoJsonFeatures"
           },
           "pagination": {
             "description": "Links for retrieving more data from paged data sets",
@@ -6378,29 +7611,15 @@
         "additionalProperties": false
       },
       "ObservationStationGeoJson": {
-        "required": [
-          "type",
-          "geometry",
-          "properties"
-        ],
         "type": "object",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/GeoJsonFeature"
+          }
+        ],
         "properties": {
-          "@context": {
-            "$ref": "#/components/schemas/JsonLdContext"
-          },
-          "id": {
-            "type": "string",
-            "format": "uri"
-          },
-          "type": {
-            "$ref": "#/components/schemas/FeatureType"
-          },
-          "geometry": {
-            "description": "A GeoJSON geometry object. Please refer to IETF RFC 7946 for information on the GeoJSON format.",
-            "$ref": "#/components/schemas/GeoJsonGeometry"
-          },
           "properties": {
-            "$ref": "#/components/schemas/ObservationStationGeoJsonProperties"
+            "$ref": "#/components/schemas/ObservationStation"
           }
         }
       },
@@ -6410,6 +7629,11 @@
           "geometry"
         ],
         "type": "object",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/ObservationStation"
+          }
+        ],
         "properties": {
           "@context": {
             "$ref": "#/components/schemas/JsonLdContext"
@@ -6417,58 +7641,6 @@
           "geometry": {
             "description": "A geometry represented in Well-Known Text (WKT) format.",
             "$ref": "#/components/schemas/GeometryString"
-          },
-          "@id": {
-            "type": "string",
-            "format": "uri"
-          },
-          "@type": {
-            "$ref": "#/components/schemas/WxColonObservationStationType"
-          },
-          "elevation": {
-            "description": "A structured value representing a measurement and its unit of measure. This object is a slightly modified version of the schema.org definition at https://schema.org/QuantitativeValue\n",
-            "$ref": "#/components/schemas/QuantitativeValue"
-          },
-          "stationIdentifier": {
-            "type": "string"
-          },
-          "name": {
-            "type": "string"
-          },
-          "timeZone": {
-            "type": "string",
-            "format": "iana-time-zone-identifier"
-          },
-          "provider": {
-            "type": "string",
-            "description": "The data provider for this station. E.g., \u0022ASOS,\u0022 \u0022MesoWest,\u0022 etc."
-          },
-          "subProvider": {
-            "type": "string",
-            "description": "The sub-provider of for this station. E.g., \u0022FAA,\u0022 \u0022DOT,\u0022 etc."
-          },
-          "forecast": {
-            "type": "string",
-            "description": "A link to the NWS public forecast zone containing this station.",
-            "format": "uri"
-          },
-          "county": {
-            "type": "string",
-            "description": "A link to the NWS county zone containing this station.",
-            "format": "uri"
-          },
-          "fireWeatherZone": {
-            "type": "string",
-            "description": "A link to the NWS fire weather forecast zone containing this station.",
-            "format": "uri"
-          },
-          "distance": {
-            "description": "A structured value representing a measurement and its unit of measure. This object is a slightly modified version of the schema.org definition at https://schema.org/QuantitativeValue\n",
-            "$ref": "#/components/schemas/QuantitativeValue"
-          },
-          "bearing": {
-            "description": "A structured value representing a measurement and its unit of measure. This object is a slightly modified version of the schema.org definition at https://schema.org/QuantitativeValue\n",
-            "$ref": "#/components/schemas/QuantitativeValue"
           }
         }
       },
@@ -6486,10 +7658,7 @@
             "$ref": "#/components/schemas/FeatureCollectionType"
           },
           "features": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/GeoJsonFeature"
-            }
+            "$ref": "#/components/schemas/ObservationStationCollectionGeoJsonFeatures"
           },
           "observationStations": {
             "type": "array",
@@ -6839,29 +8008,15 @@
         }
       },
       "PointGeoJson": {
-        "required": [
-          "type",
-          "geometry",
-          "properties"
-        ],
         "type": "object",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/GeoJsonFeature"
+          }
+        ],
         "properties": {
-          "@context": {
-            "$ref": "#/components/schemas/JsonLdContext"
-          },
-          "id": {
-            "type": "string",
-            "format": "uri"
-          },
-          "type": {
-            "$ref": "#/components/schemas/FeatureType"
-          },
-          "geometry": {
-            "description": "A GeoJSON geometry object. Please refer to IETF RFC 7946 for information on the GeoJSON format.",
-            "$ref": "#/components/schemas/GeoJsonGeometry"
-          },
           "properties": {
-            "$ref": "#/components/schemas/PointGeoJsonProperties"
+            "$ref": "#/components/schemas/PointBody"
           }
         }
       },
@@ -7049,15 +8204,75 @@
         "description": "A structured value representing a measurement and its unit of measure. This object is a slightly modified version of the schema.org definition at https://schema.org/QuantitativeValue\n"
       },
       "RegionCode": {
-        "type": "object",
-        "oneOf": [
-          {
-            "$ref": "#/components/schemas/LandRegionCodeWrapper"
-          },
-          {
-            "$ref": "#/components/schemas/MarineRegionCodeWrapper"
-          }
-        ]
+        "enum": [
+          "AR",
+          "CR",
+          "ER",
+          "PR",
+          "SR",
+          "WR",
+          "AL",
+          "AT",
+          "GL",
+          "GM",
+          "PA",
+          "PI"
+        ],
+        "type": "string",
+        "x-ms-enum": {
+          "name": "RegionCode",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "AR",
+              "name": "Ar"
+            },
+            {
+              "value": "CR",
+              "name": "Cr"
+            },
+            {
+              "value": "ER",
+              "name": "Er"
+            },
+            {
+              "value": "PR",
+              "name": "Pr"
+            },
+            {
+              "value": "SR",
+              "name": "Sr"
+            },
+            {
+              "value": "WR",
+              "name": "Wr"
+            },
+            {
+              "value": "AL",
+              "name": "Al"
+            },
+            {
+              "value": "AT",
+              "name": "At"
+            },
+            {
+              "value": "GL",
+              "name": "Gl"
+            },
+            {
+              "value": "GM",
+              "name": "Gm"
+            },
+            {
+              "value": "PA",
+              "name": "Pa"
+            },
+            {
+              "value": "PI",
+              "name": "Pi"
+            }
+          ]
+        }
       },
       "RelativeLocation": {
         "type": "object",
@@ -7079,29 +8294,15 @@
         }
       },
       "RelativeLocationGeoJson": {
-        "required": [
-          "type",
-          "geometry",
-          "properties"
-        ],
         "type": "object",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/GeoJsonFeature"
+          }
+        ],
         "properties": {
-          "@context": {
-            "$ref": "#/components/schemas/JsonLdContext"
-          },
-          "id": {
-            "type": "string",
-            "format": "uri"
-          },
-          "type": {
-            "$ref": "#/components/schemas/FeatureType"
-          },
-          "geometry": {
-            "description": "A GeoJSON geometry object. Please refer to IETF RFC 7946 for information on the GeoJSON format.",
-            "$ref": "#/components/schemas/GeoJsonGeometry"
-          },
           "properties": {
-            "$ref": "#/components/schemas/RelativeLocationGeoJsonProperties"
+            "$ref": "#/components/schemas/RelativeLocation"
           }
         }
       },
@@ -7191,37 +8392,20 @@
             "$ref": "#/components/schemas/FeatureCollectionType"
           },
           "features": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/GeoJsonFeature"
-            }
+            "$ref": "#/components/schemas/SigmetCollectionGeoJsonFeatures"
           }
         }
       },
       "SigmetGeoJson": {
-        "required": [
-          "type",
-          "geometry",
-          "properties"
-        ],
         "type": "object",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/GeoJsonFeature"
+          }
+        ],
         "properties": {
-          "@context": {
-            "$ref": "#/components/schemas/JsonLdContext"
-          },
-          "id": {
-            "type": "string",
-            "format": "uri"
-          },
-          "type": {
-            "$ref": "#/components/schemas/FeatureType"
-          },
-          "geometry": {
-            "description": "A GeoJSON geometry object. Please refer to IETF RFC 7946 for information on the GeoJSON format.",
-            "$ref": "#/components/schemas/GeoJsonGeometry"
-          },
           "properties": {
-            "$ref": "#/components/schemas/SigmetGeoJsonProperties"
+            "$ref": "#/components/schemas/SigmetBody"
           }
         }
       },
@@ -7291,7 +8475,6 @@
           "MH"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "StateTerritoryCode",
           "modelAsString": false,
@@ -7710,29 +8893,15 @@
         "additionalProperties": false
       },
       "ZoneGeoJson": {
-        "required": [
-          "type",
-          "geometry",
-          "properties"
-        ],
         "type": "object",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/GeoJsonFeature"
+          }
+        ],
         "properties": {
-          "@context": {
-            "$ref": "#/components/schemas/JsonLdContext"
-          },
-          "id": {
-            "type": "string",
-            "format": "uri"
-          },
-          "type": {
-            "$ref": "#/components/schemas/FeatureType"
-          },
-          "geometry": {
-            "description": "A GeoJSON geometry object. Please refer to IETF RFC 7946 for information on the GeoJSON format.",
-            "$ref": "#/components/schemas/GeoJsonGeometry"
-          },
           "properties": {
-            "$ref": "#/components/schemas/ZoneGeoJsonProperties"
+            "$ref": "#/components/schemas/ZoneBody"
           }
         }
       },
@@ -7753,10 +8922,7 @@
             "$ref": "#/components/schemas/FeatureCollectionType"
           },
           "features": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/GeoJsonFeature"
-            }
+            "$ref": "#/components/schemas/ZoneCollectionGeoJsonFeatures"
           }
         }
       },
@@ -7807,47 +8973,25 @@
         "description": "An object representing a zone area forecast."
       },
       "ZoneForecastGeoJson": {
-        "required": [
-          "type",
-          "geometry",
-          "properties"
-        ],
         "type": "object",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/GeoJsonFeature"
+          }
+        ],
         "properties": {
-          "@context": {
-            "$ref": "#/components/schemas/JsonLdContext"
-          },
-          "id": {
-            "type": "string",
-            "format": "uri"
-          },
-          "type": {
-            "$ref": "#/components/schemas/FeatureType"
-          },
-          "geometry": {
-            "description": "A GeoJSON geometry object. Please refer to IETF RFC 7946 for information on the GeoJSON format.",
-            "$ref": "#/components/schemas/GeoJsonGeometry"
-          },
           "properties": {
-            "$ref": "#/components/schemas/ZoneForecastGeoJsonProperties"
+            "$ref": "#/components/schemas/ZoneForecastBody"
           }
         }
       },
       "ZoneForecastJsonLd": {
         "$ref": "#/components/schemas/ZoneForecastBody"
       },
-      "Gridpoint12HForecastResponseNoaaDwmlXml": {
-        "type": "object"
-      },
-      "GridpointHourlyForecastResponseNoaaDwmlXml": {
-        "type": "object"
-      },
-      "ObservationResponseNoaaUswxXml": {
-        "type": "object"
-      },
-      "ObservationResponseNoaaObsXml": {
-        "type": "object"
-      },
+      "Gridpoint12HForecastResponseNoaaDwmlXml": {},
+      "GridpointHourlyForecastResponseNoaaDwmlXml": {},
+      "ObservationResponseNoaaUswxXml": {},
+      "ObservationResponseNoaaObsXml": {},
       "ActiveAlertCollectionGeoJsonAllOf2": {
         "type": "object",
         "properties": {
@@ -8144,189 +9288,75 @@
         }
       },
       "GridpointHourlyForecastPeriodTemperature": {
-        "type": "object",
         "oneOf": [
           {
             "$ref": "#/components/schemas/QuantitativeValue"
           },
           {
-            "$ref": "#/components/schemas/GridpointHourlyForecastPeriodTemperatureBranch2"
+            "type": "integer"
           }
         ],
-        "properties": {
-          "maxValue": {
-            "type": "number",
-            "description": "The maximum value of a range of measured values"
-          },
-          "minValue": {
-            "type": "number",
-            "description": "The minimum value of a range of measured values"
-          },
-          "unitCode": {
-            "pattern": "^((wmo|uc|wmoUnit|nwsUnit):)?.*$",
-            "type": "string",
-            "description": "A string denoting a unit of measure, expressed in the format \u0022{unit}\u0022 or \u0022{namespace}:{unit}\u0022.\nUnits with the namespace \u0022wmo\u0022 or \u0022wmoUnit\u0022 are defined in the World Meteorological Organization Codes Registry at http://codes.wmo.int/common/unit and should be canonically resolvable to http://codes.wmo.int/common/unit/{unit}.\nUnits with the namespace \u0022nwsUnit\u0022 are currently custom and do not align to any standard.\nUnits with no namespace or the namespace \u0022uc\u0022 are compliant with the Unified Code for Units of Measure syntax defined at https://unitsofmeasure.org/. This also aligns with recent versions of the Geographic Markup Language (GML) standard, the IWXXM standard, and OGC Observations and Measurements v2.0 (ISO/DIS 19156).\nNamespaced units are considered deprecated. We will be aligning API to use the same standards as GML/IWXXM in the future.\n"
-          },
-          "qualityControl": {
-            "$ref": "#/components/schemas/QuantitativeValueQualityControl"
-          }
-        },
         "description": "High/low temperature for the period, depending on whether the period is day or night.\nThis property as an integer value is deprecated. Future versions will express this value as a quantitative value object. To make use of the future standard format now, set the \u0022forecast_temperature_qv\u0022 feature flag on the request.\n"
       },
       "GridpointHourlyForecastPeriodWindSpeed": {
-        "type": "object",
         "oneOf": [
           {
             "$ref": "#/components/schemas/QuantitativeValue"
           },
           {
-            "$ref": "#/components/schemas/GridpointHourlyForecastPeriodWindSpeedBranch2"
+            "type": "string"
           }
         ],
-        "properties": {
-          "maxValue": {
-            "type": "number",
-            "description": "The maximum value of a range of measured values"
-          },
-          "minValue": {
-            "type": "number",
-            "description": "The minimum value of a range of measured values"
-          },
-          "unitCode": {
-            "pattern": "^((wmo|uc|wmoUnit|nwsUnit):)?.*$",
-            "type": "string",
-            "description": "A string denoting a unit of measure, expressed in the format \u0022{unit}\u0022 or \u0022{namespace}:{unit}\u0022.\nUnits with the namespace \u0022wmo\u0022 or \u0022wmoUnit\u0022 are defined in the World Meteorological Organization Codes Registry at http://codes.wmo.int/common/unit and should be canonically resolvable to http://codes.wmo.int/common/unit/{unit}.\nUnits with the namespace \u0022nwsUnit\u0022 are currently custom and do not align to any standard.\nUnits with no namespace or the namespace \u0022uc\u0022 are compliant with the Unified Code for Units of Measure syntax defined at https://unitsofmeasure.org/. This also aligns with recent versions of the Geographic Markup Language (GML) standard, the IWXXM standard, and OGC Observations and Measurements v2.0 (ISO/DIS 19156).\nNamespaced units are considered deprecated. We will be aligning API to use the same standards as GML/IWXXM in the future.\n"
-          },
-          "qualityControl": {
-            "$ref": "#/components/schemas/QuantitativeValueQualityControl"
-          }
-        },
         "description": "Wind speed for the period.\nThis property as an string value is deprecated. Future versions will express this value as a quantitative value object. To make use of the future standard format now, set the \u0022forecast_wind_speed_qv\u0022 feature flag on the request.\n"
       },
       "GridpointHourlyForecastPeriodWindGust": {
-        "type": "object",
         "oneOf": [
           {
             "$ref": "#/components/schemas/QuantitativeValue"
           },
           {
-            "$ref": "#/components/schemas/GridpointHourlyForecastPeriodWindGustBranch2"
+            "type": "string"
           },
           {
             "type": "null"
           }
         ],
-        "properties": {
-          "maxValue": {
-            "type": "number",
-            "description": "The maximum value of a range of measured values"
-          },
-          "minValue": {
-            "type": "number",
-            "description": "The minimum value of a range of measured values"
-          },
-          "unitCode": {
-            "pattern": "^((wmo|uc|wmoUnit|nwsUnit):)?.*$",
-            "type": "string",
-            "description": "A string denoting a unit of measure, expressed in the format \u0022{unit}\u0022 or \u0022{namespace}:{unit}\u0022.\nUnits with the namespace \u0022wmo\u0022 or \u0022wmoUnit\u0022 are defined in the World Meteorological Organization Codes Registry at http://codes.wmo.int/common/unit and should be canonically resolvable to http://codes.wmo.int/common/unit/{unit}.\nUnits with the namespace \u0022nwsUnit\u0022 are currently custom and do not align to any standard.\nUnits with no namespace or the namespace \u0022uc\u0022 are compliant with the Unified Code for Units of Measure syntax defined at https://unitsofmeasure.org/. This also aligns with recent versions of the Geographic Markup Language (GML) standard, the IWXXM standard, and OGC Observations and Measurements v2.0 (ISO/DIS 19156).\nNamespaced units are considered deprecated. We will be aligning API to use the same standards as GML/IWXXM in the future.\n"
-          },
-          "qualityControl": {
-            "$ref": "#/components/schemas/QuantitativeValueQualityControl"
-          }
-        },
         "description": "Peak wind gust for the period.\nThis property as an string value is deprecated. Future versions will express this value as a quantitative value object. To make use of the future standard format now, set the \u0022forecast_wind_speed_qv\u0022 feature flag on the request.\n"
       },
       "Gridpoint12HForecastPeriodTemperature": {
-        "type": "object",
         "oneOf": [
           {
             "$ref": "#/components/schemas/QuantitativeValue"
           },
           {
-            "$ref": "#/components/schemas/Gridpoint12HForecastPeriodTemperatureBranch2"
+            "type": "integer"
           }
         ],
-        "properties": {
-          "maxValue": {
-            "type": "number",
-            "description": "The maximum value of a range of measured values"
-          },
-          "minValue": {
-            "type": "number",
-            "description": "The minimum value of a range of measured values"
-          },
-          "unitCode": {
-            "pattern": "^((wmo|uc|wmoUnit|nwsUnit):)?.*$",
-            "type": "string",
-            "description": "A string denoting a unit of measure, expressed in the format \u0022{unit}\u0022 or \u0022{namespace}:{unit}\u0022.\nUnits with the namespace \u0022wmo\u0022 or \u0022wmoUnit\u0022 are defined in the World Meteorological Organization Codes Registry at http://codes.wmo.int/common/unit and should be canonically resolvable to http://codes.wmo.int/common/unit/{unit}.\nUnits with the namespace \u0022nwsUnit\u0022 are currently custom and do not align to any standard.\nUnits with no namespace or the namespace \u0022uc\u0022 are compliant with the Unified Code for Units of Measure syntax defined at https://unitsofmeasure.org/. This also aligns with recent versions of the Geographic Markup Language (GML) standard, the IWXXM standard, and OGC Observations and Measurements v2.0 (ISO/DIS 19156).\nNamespaced units are considered deprecated. We will be aligning API to use the same standards as GML/IWXXM in the future.\n"
-          },
-          "qualityControl": {
-            "$ref": "#/components/schemas/QuantitativeValueQualityControl"
-          }
-        },
         "description": "High/low temperature for the period, depending on whether the period is day or night.\nThis property as an integer value is deprecated. Future versions will express this value as a quantitative value object. To make use of the future standard format now, set the \u0022forecast_temperature_qv\u0022 feature flag on the request.\n"
       },
       "Gridpoint12HForecastPeriodWindSpeed": {
-        "type": "object",
         "oneOf": [
           {
             "$ref": "#/components/schemas/QuantitativeValue"
           },
           {
-            "$ref": "#/components/schemas/Gridpoint12HForecastPeriodWindSpeedBranch2"
+            "type": "string"
           }
         ],
-        "properties": {
-          "maxValue": {
-            "type": "number",
-            "description": "The maximum value of a range of measured values"
-          },
-          "minValue": {
-            "type": "number",
-            "description": "The minimum value of a range of measured values"
-          },
-          "unitCode": {
-            "pattern": "^((wmo|uc|wmoUnit|nwsUnit):)?.*$",
-            "type": "string",
-            "description": "A string denoting a unit of measure, expressed in the format \u0022{unit}\u0022 or \u0022{namespace}:{unit}\u0022.\nUnits with the namespace \u0022wmo\u0022 or \u0022wmoUnit\u0022 are defined in the World Meteorological Organization Codes Registry at http://codes.wmo.int/common/unit and should be canonically resolvable to http://codes.wmo.int/common/unit/{unit}.\nUnits with the namespace \u0022nwsUnit\u0022 are currently custom and do not align to any standard.\nUnits with no namespace or the namespace \u0022uc\u0022 are compliant with the Unified Code for Units of Measure syntax defined at https://unitsofmeasure.org/. This also aligns with recent versions of the Geographic Markup Language (GML) standard, the IWXXM standard, and OGC Observations and Measurements v2.0 (ISO/DIS 19156).\nNamespaced units are considered deprecated. We will be aligning API to use the same standards as GML/IWXXM in the future.\n"
-          },
-          "qualityControl": {
-            "$ref": "#/components/schemas/QuantitativeValueQualityControl"
-          }
-        },
         "description": "Wind speed for the period.\nThis property as an string value is deprecated. Future versions will express this value as a quantitative value object. To make use of the future standard format now, set the \u0022forecast_wind_speed_qv\u0022 feature flag on the request.\n"
       },
       "Gridpoint12HForecastPeriodWindGust": {
-        "type": "object",
         "oneOf": [
           {
             "$ref": "#/components/schemas/QuantitativeValue"
           },
           {
-            "$ref": "#/components/schemas/Gridpoint12HForecastPeriodWindGustBranch2"
+            "type": "string"
           },
           {
             "type": "null"
           }
         ],
-        "properties": {
-          "maxValue": {
-            "type": "number",
-            "description": "The maximum value of a range of measured values"
-          },
-          "minValue": {
-            "type": "number",
-            "description": "The minimum value of a range of measured values"
-          },
-          "unitCode": {
-            "pattern": "^((wmo|uc|wmoUnit|nwsUnit):)?.*$",
-            "type": "string",
-            "description": "A string denoting a unit of measure, expressed in the format \u0022{unit}\u0022 or \u0022{namespace}:{unit}\u0022.\nUnits with the namespace \u0022wmo\u0022 or \u0022wmoUnit\u0022 are defined in the World Meteorological Organization Codes Registry at http://codes.wmo.int/common/unit and should be canonically resolvable to http://codes.wmo.int/common/unit/{unit}.\nUnits with the namespace \u0022nwsUnit\u0022 are currently custom and do not align to any standard.\nUnits with no namespace or the namespace \u0022uc\u0022 are compliant with the Unified Code for Units of Measure syntax defined at https://unitsofmeasure.org/. This also aligns with recent versions of the Geographic Markup Language (GML) standard, the IWXXM standard, and OGC Observations and Measurements v2.0 (ISO/DIS 19156).\nNamespaced units are considered deprecated. We will be aligning API to use the same standards as GML/IWXXM in the future.\n"
-          },
-          "qualityControl": {
-            "$ref": "#/components/schemas/QuantitativeValueQualityControl"
-          }
-        },
         "description": "Peak wind gust for the period.\nThis property as an string value is deprecated. Future versions will express this value as a quantitative value object. To make use of the future standard format now, set the \u0022forecast_wind_speed_qv\u0022 feature flag on the request.\n"
       },
       "Gridpoint12HForecastGeoJsonAllOf2": {
@@ -8463,7 +9493,6 @@
         }
       },
       "PointBodyRelativeLocation": {
-        "type": "object",
         "oneOf": [
           {
             "$ref": "#/components/schemas/RelativeLocationGeoJson"
@@ -8471,36 +9500,7 @@
           {
             "$ref": "#/components/schemas/RelativeLocationJsonLd"
           }
-        ],
-        "properties": {
-          "@context": {
-            "$ref": "#/components/schemas/JsonLdContext"
-          },
-          "id": {
-            "type": "string",
-            "format": "uri"
-          },
-          "type": {
-            "$ref": "#/components/schemas/FeatureType"
-          },
-          "properties": {
-            "$ref": "#/components/schemas/RelativeLocationGeoJsonProperties"
-          },
-          "city": {
-            "type": "string"
-          },
-          "state": {
-            "type": "string"
-          },
-          "distance": {
-            "description": "A structured value representing a measurement and its unit of measure. This object is a slightly modified version of the schema.org definition at https://schema.org/QuantitativeValue\n",
-            "$ref": "#/components/schemas/QuantitativeValue"
-          },
-          "bearing": {
-            "description": "A structured value representing a measurement and its unit of measure. This object is a slightly modified version of the schema.org definition at https://schema.org/QuantitativeValue\n",
-            "$ref": "#/components/schemas/QuantitativeValue"
-          }
-        }
+        ]
       },
       "PointGeoJsonAllOf2": {
         "type": "object",
@@ -8566,13 +9566,15 @@
         }
       },
       "ZoneBodyState": {
-        "type": "object",
         "oneOf": [
           {
-            "$ref": "#/components/schemas/StateTerritoryCodeWrapper2"
+            "$ref": "#/components/schemas/StateTerritoryCode"
           },
           {
-            "$ref": "#/components/schemas/ZoneBodyStateWrapper"
+            "enum": [
+              ""
+            ],
+            "type": "string"
           },
           {
             "type": "null"
@@ -8656,9 +9658,7 @@
         "type": "object",
         "additionalProperties": {
           "type": "array",
-          "items": {
-            "type": "object"
-          }
+          "items": {}
         },
         "description": "System-specific additional parameters associated with the alert message.\nThe keys in this object correspond to parameter definitions in the NWS CAP specification.\n"
       },
@@ -8666,9 +9666,7 @@
         "type": "object",
         "additionalProperties": {
           "type": "array",
-          "items": {
-            "type": "object"
-          }
+          "items": {}
         },
         "description": "System-specific code identifiying the event type of the alert message The keys in this object correspond to eventCode definitions in the NWS CAP specification.\n"
       },
@@ -9059,12 +10057,8 @@
           }
         }
       },
-      "Cwa200NoaaUswxXmlResponse": {
-        "type": "object"
-      },
-      "Sigmet200NoaaUswxXmlResponse": {
-        "type": "object"
-      },
+      "Cwa200NoaaUswxXmlResponse": {},
+      "Sigmet200NoaaUswxXmlResponse": {},
       "Icons200PngResponse": {
         "type": "string",
         "format": "binary"
@@ -9092,12 +10086,8 @@
         "type": "string",
         "format": "binary"
       },
-      "Tafs200LdJsonResponse": {
-        "type": "object"
-      },
-      "Taf200WmoIwxxmXmlResponse": {
-        "type": "object"
-      },
+      "Tafs200LdJsonResponse": {},
+      "Taf200WmoIwxxmXmlResponse": {},
       "OfficeBriefingDownload200PdfResponse": {
         "type": "string",
         "format": "binary"
@@ -9106,243 +10096,30 @@
         "type": "string",
         "format": "binary"
       },
-      "PointRadio200SsmlXmlResponse": {
-        "type": "object"
-      },
-      "RadarServers200LdJsonResponse": {
-        "type": "object"
-      },
-      "RadarServer200LdJsonResponse": {
-        "type": "object"
-      },
-      "RadarSpgds200LdJsonResponse": {
-        "type": "object"
-      },
-      "RadarStations200GeoJsonResponse": {
-        "type": "object"
-      },
-      "RadarStations200LdJsonResponse": {
-        "type": "object"
-      },
-      "RadarStation200GeoJsonResponse": {
-        "type": "object"
-      },
-      "RadarStation200LdJsonResponse": {
-        "type": "object"
-      },
-      "RadarStationAlarms200LdJsonResponse": {
-        "type": "object"
-      },
-      "RadarQueue200LdJsonResponse": {
-        "type": "object"
-      },
-      "RadarProfiler200LdJsonResponse": {
-        "type": "object"
-      },
-      "Transmitters200LdJsonResponse": {
-        "type": "object"
-      },
-      "Transmitter200LdJsonResponse": {
-        "type": "object"
-      },
-      "AreaRadio200SsmlXmlResponse": {
-        "type": "object"
-      },
-      "TransmitterZone200LdJsonResponse": {
-        "type": "object"
-      },
-      "StateTerritoryCodeWrapper": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "$ref": "#/components/schemas/StateTerritoryCode"
-          }
-        }
-      },
-      "MarineAreaCodeWrapper": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "$ref": "#/components/schemas/MarineAreaCode"
-          }
-        }
-      },
-      "NwsForecastOfficeIdWrapper": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "$ref": "#/components/schemas/NwsForecastOfficeId"
-          }
-        }
-      },
-      "NwsRegionalHqIdWrapper": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "$ref": "#/components/schemas/NwsRegionalHqId"
-          }
-        }
-      },
-      "NwsNationalHqIdWrapper": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "$ref": "#/components/schemas/NwsNationalHqId"
-          }
-        }
-      },
-      "LandRegionCodeWrapper": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "$ref": "#/components/schemas/LandRegionCode"
-          }
-        }
-      },
-      "MarineRegionCodeWrapper": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "$ref": "#/components/schemas/MarineRegionCode"
-          }
-        }
-      },
-      "StateTerritoryCodeWrapper2": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "$ref": "#/components/schemas/StateTerritoryCode"
-          }
-        }
-      },
-      "ZoneBodyStateWrapper": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "$ref": "#/components/schemas/ZoneBodyStateWrapperValue"
-          }
-        }
-      },
+      "PointRadio200SsmlXmlResponse": {},
+      "RadarServers200LdJsonResponse": {},
+      "RadarServer200LdJsonResponse": {},
+      "RadarSpgds200LdJsonResponse": {},
+      "RadarStations200GeoJsonResponse": {},
+      "RadarStations200LdJsonResponse": {},
+      "RadarStation200GeoJsonResponse": {},
+      "RadarStation200LdJsonResponse": {},
+      "RadarStationAlarms200LdJsonResponse": {},
+      "RadarQueue200LdJsonResponse": {},
+      "RadarProfiler200LdJsonResponse": {},
+      "Transmitters200LdJsonResponse": {},
+      "Transmitter200LdJsonResponse": {},
+      "AreaRadio200SsmlXmlResponse": {},
+      "TransmitterZone200LdJsonResponse": {},
       "ExamplePayload": {
         "type": "object",
         "description": "Placeholder schema for path example refs"
       },
-      "JsonLdContextBranch1": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/JsonLdContextBranch1ValueItem"
-            }
-          }
-        }
-      },
-      "GridpointHourlyForecastPeriodTemperatureBranch2": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "integer"
-          }
-        }
-      },
-      "GridpointHourlyForecastPeriodWindSpeedBranch2": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "string"
-          }
-        }
-      },
-      "GridpointHourlyForecastPeriodWindGustBranch2": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "string"
-          }
-        }
-      },
-      "Gridpoint12HForecastPeriodTemperatureBranch2": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "integer"
-          }
-        }
-      },
-      "Gridpoint12HForecastPeriodWindSpeedBranch2": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "string"
-          }
-        }
-      },
-      "Gridpoint12HForecastPeriodWindGustBranch2": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "string"
-          }
-        }
-      },
       "AlertsSingle200CapXmlResponse": {
         "type": "object"
       },
-      "Cwa200NoaaUswxXmlResponseSchema": {
-        "type": "object"
-      },
-      "Sigmet200NoaaUswxXmlResponseSchema": {
-        "type": "object"
-      },
+      "Cwa200NoaaUswxXmlResponseSchema": {},
+      "Sigmet200NoaaUswxXmlResponseSchema": {},
       "Glossary200LdJsonResponse": {
         "type": "object",
         "properties": {
@@ -9370,12 +10147,8 @@
         "type": "string",
         "format": "binary"
       },
-      "Tafs200LdJsonResponseSchema": {
-        "type": "object"
-      },
-      "Taf200WmoIwxxmXmlResponseSchema": {
-        "type": "object"
-      },
+      "Tafs200LdJsonResponseSchema": {},
+      "Taf200WmoIwxxmXmlResponseSchema": {},
       "OfficeBriefingDownload200PdfResponseSchema": {
         "type": "string",
         "format": "binary"
@@ -9390,70 +10163,142 @@
         "type": "string",
         "format": "binary"
       },
-      "PointRadio200SsmlXmlResponseSchema": {
-        "type": "object"
+      "PointRadio200SsmlXmlResponseSchema": {},
+      "RadarServers200LdJsonResponseSchema": {},
+      "RadarServer200LdJsonResponseSchema": {},
+      "RadarSpgds200LdJsonResponseSchema": {},
+      "RadarStations200GeoJsonResponseSchema": {},
+      "RadarStations200LdJsonResponseSchema": {},
+      "RadarStation200GeoJsonResponseSchema": {},
+      "RadarStation200LdJsonResponseSchema": {},
+      "RadarStationAlarms200LdJsonResponseSchema": {},
+      "RadarQueue200LdJsonResponseSchema": {},
+      "RadarProfiler200LdJsonResponseSchema": {},
+      "Transmitters200LdJsonResponseSchema": {},
+      "Transmitter200LdJsonResponseSchema": {},
+      "AreaRadio200SsmlXmlResponseSchema": {},
+      "TransmitterZone200LdJsonResponseSchema": {},
+      "Gridpoint12HForecastResponseNoaaDwmlXmlContent": {},
+      "GridpointHourlyForecastResponseNoaaDwmlXmlContent": {},
+      "ObservationResponseNoaaUswxXmlContent": {},
+      "ObservationResponseNoaaObsXmlContent": {},
+      "ActiveAlertCollectionGeoJsonFeatures": {
+        "allOf": [
+          {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GeoJsonFeature"
+            }
+          },
+          {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ActiveAlertCollectionGeoJsonAllOf2FeaturesItem"
+            }
+          }
+        ]
       },
-      "RadarServers200LdJsonResponseSchema": {
-        "type": "object"
+      "AlertCollectionGeoJsonFeatures": {
+        "allOf": [
+          {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GeoJsonFeature"
+            }
+          },
+          {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AlertCollectionGeoJsonAllOf2FeaturesItem"
+            }
+          }
+        ]
       },
-      "RadarServer200LdJsonResponseSchema": {
-        "type": "object"
+      "CenterWeatherAdvisoryCollectionGeoJsonFeatures": {
+        "allOf": [
+          {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GeoJsonFeature"
+            }
+          },
+          {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CenterWeatherAdvisoryCollectionGeoJsonAllOf2FeaturesItem"
+            }
+          }
+        ]
       },
-      "RadarSpgds200LdJsonResponseSchema": {
-        "type": "object"
+      "ObservationCollectionGeoJsonFeatures": {
+        "allOf": [
+          {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GeoJsonFeature"
+            }
+          },
+          {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ObservationCollectionGeoJsonAllOf2FeaturesItem"
+            }
+          }
+        ]
       },
-      "RadarStations200GeoJsonResponseSchema": {
-        "type": "object"
+      "ObservationStationCollectionGeoJsonFeatures": {
+        "allOf": [
+          {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GeoJsonFeature"
+            }
+          },
+          {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ObservationStationCollectionGeoJsonAllOf2FeaturesItem"
+            }
+          }
+        ]
       },
-      "RadarStations200LdJsonResponseSchema": {
-        "type": "object"
+      "SigmetCollectionGeoJsonFeatures": {
+        "allOf": [
+          {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GeoJsonFeature"
+            }
+          },
+          {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SigmetGeoJson"
+            }
+          }
+        ]
       },
-      "RadarStation200GeoJsonResponseSchema": {
-        "type": "object"
-      },
-      "RadarStation200LdJsonResponseSchema": {
-        "type": "object"
-      },
-      "RadarStationAlarms200LdJsonResponseSchema": {
-        "type": "object"
-      },
-      "RadarQueue200LdJsonResponseSchema": {
-        "type": "object"
-      },
-      "RadarProfiler200LdJsonResponseSchema": {
-        "type": "object"
-      },
-      "Transmitters200LdJsonResponseSchema": {
-        "type": "object"
-      },
-      "Transmitter200LdJsonResponseSchema": {
-        "type": "object"
-      },
-      "AreaRadio200SsmlXmlResponseSchema": {
-        "type": "object"
-      },
-      "TransmitterZone200LdJsonResponseSchema": {
-        "type": "object"
-      },
-      "Gridpoint12HForecastResponseNoaaDwmlXmlContent": {
-        "type": "object"
-      },
-      "GridpointHourlyForecastResponseNoaaDwmlXmlContent": {
-        "type": "object"
-      },
-      "ObservationResponseNoaaUswxXmlContent": {
-        "type": "object"
-      },
-      "ObservationResponseNoaaObsXmlContent": {
-        "type": "object"
+      "ZoneCollectionGeoJsonFeatures": {
+        "allOf": [
+          {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GeoJsonFeature"
+            }
+          },
+          {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ZoneCollectionGeoJsonAllOf2FeaturesItem"
+            }
+          }
+        ]
       },
       "AlertParametersProperty": {
         "type": "object",
         "additionalProperties": {
           "type": "array",
-          "items": {
-            "type": "object"
-          }
+          "items": {}
         },
         "description": "System-specific additional parameters associated with the alert message.\nThe keys in this object correspond to parameter definitions in the NWS CAP specification.\n"
       },
@@ -9461,43 +10306,11 @@
         "type": "object",
         "additionalProperties": {
           "type": "array",
-          "items": {
-            "type": "object"
-          }
+          "items": {}
         },
         "description": "System-specific code identifiying the event type of the alert message The keys in this object correspond to eventCode definitions in the NWS CAP specification.\n"
       },
-      "AlertGeoJsonProperties": {
-        "type": "object"
-      },
-      "CenterWeatherAdvisoryGeoJsonProperties": {
-        "type": "object"
-      },
       "GeoJsonFeaturePropertiesProperty": {
-        "type": "object"
-      },
-      "GridpointGeoJsonProperties": {
-        "type": "object"
-      },
-      "Gridpoint12HForecastGeoJsonProperties": {
-        "type": "object"
-      },
-      "GridpointHourlyForecastGeoJsonProperties": {
-        "type": "object"
-      },
-      "ObservationGeoJsonProperties": {
-        "type": "object"
-      },
-      "ObservationStationGeoJsonProperties": {
-        "type": "object"
-      },
-      "PointGeoJsonProperties": {
-        "type": "object"
-      },
-      "RelativeLocationGeoJsonProperties": {
-        "type": "object"
-      },
-      "SigmetGeoJsonProperties": {
         "type": "object"
       },
       "TextProductLocationCollectionLocationsProperty": {
@@ -9508,12 +10321,6 @@
             "string"
           ]
         }
-      },
-      "ZoneGeoJsonProperties": {
-        "type": "object"
-      },
-      "ZoneForecastGeoJsonProperties": {
-        "type": "object"
       },
       "AlertsActiveCount200LdJsonResponseRegions": {
         "type": "object",
@@ -9544,9 +10351,6 @@
         "additionalProperties": {
           "$ref": "#/components/schemas/IconsSummary200LdJsonResponseIconsAdditionalProperties"
         }
-      },
-      "JsonLdContextBranch1ValueItem": {
-        "type": "object"
       },
       "Glossary200LdJsonResponseGlossaryItem": {
         "type": "object",
@@ -9589,7 +10393,6 @@
           "Other"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "The code denoting the category of the subject event of the alert message.",
         "x-ms-enum": {
           "name": "AlertCategory",
@@ -9615,7 +10418,6 @@
           "None"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "The code denoting the type of action recommended for the target audience.\nThis corresponds to responseType in the CAP specification.\n"
       },
       "AlertScope": {
@@ -9625,7 +10427,6 @@
           "Private"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "The code denoting the intended distribution of the alert message.",
         "x-ms-enum": {
           "name": "AlertScope",
@@ -9646,22 +10447,19 @@
         "enum": [
           "FeatureCollection"
         ],
-        "type": "string",
-        "additionalProperties": false
+        "type": "string"
       },
       "FeatureType": {
         "enum": [
           "Feature"
         ],
-        "type": "string",
-        "additionalProperties": false
+        "type": "string"
       },
       "WxColonGridpointType": {
         "enum": [
           "wx:Gridpoint"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "WxColonGridpointType",
           "modelAsString": false,
@@ -9679,7 +10477,6 @@
           "C"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "The unit of the temperature value (Fahrenheit or Celsius).\nThis property is deprecated. Future versions will indicate the unit within the quantitative value object for the temperature property. To make use of the future standard format now, set the \u0022forecast_temperature_qv\u0022 feature flag on the request.\n",
         "deprecated": true
       },
@@ -9692,7 +10489,6 @@
           "null",
           "string"
         ],
-        "additionalProperties": false,
         "description": "If not null, indicates a non-diurnal temperature trend for the period (either rising temperature overnight, or falling temperature during the day)\n",
         "x-ms-enum": {
           "name": "GridpointHourlyForecastPeriodTemperatureTrend",
@@ -9729,7 +10525,6 @@
           "NNW"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "The prevailing direction of the wind for the period, using a 16-point compass.",
         "x-ms-enum": {
           "name": "GridpointHourlyForecastPeriodWindDirection",
@@ -9792,7 +10587,6 @@
           "C"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "The unit of the temperature value (Fahrenheit or Celsius).\nThis property is deprecated. Future versions will indicate the unit within the quantitative value object for the temperature property. To make use of the future standard format now, set the \u0022forecast_temperature_qv\u0022 feature flag on the request.\n",
         "deprecated": true
       },
@@ -9805,7 +10599,6 @@
           "null",
           "string"
         ],
-        "additionalProperties": false,
         "description": "If not null, indicates a non-diurnal temperature trend for the period (either rising temperature overnight, or falling temperature during the day)\n",
         "x-ms-enum": {
           "name": "Gridpoint12HForecastPeriodTemperatureTrend",
@@ -9842,7 +10635,6 @@
           "NNW"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "The prevailing direction of the wind for the period, using a 16-point compass.",
         "x-ms-enum": {
           "name": "Gridpoint12HForecastPeriodWindDirection",
@@ -9908,7 +10700,6 @@
           "null",
           "string"
         ],
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "MetarPhenomenonIntensity",
           "modelAsString": false,
@@ -9938,7 +10729,6 @@
           "null",
           "string"
         ],
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "MetarPhenomenonModifier",
           "modelAsString": false,
@@ -10001,7 +10791,6 @@
           "volcanic_ash"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "MetarPhenomenonWeather",
           "modelAsString": false,
@@ -10106,7 +10895,6 @@
           "wx:ObservationStation"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "WxColonObservationStationType",
           "modelAsString": false,
@@ -10122,15 +10910,13 @@
         "enum": [
           "GovernmentOrganization"
         ],
-        "type": "string",
-        "additionalProperties": false
+        "type": "string"
       },
       "WxColonPointType": {
         "enum": [
           "wx:Point"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "WxColonPointType",
           "modelAsString": false,
@@ -10148,7 +10934,6 @@
           "marine"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "Whether the specific point is on land or marine",
         "x-ms-enum": {
           "name": "PointBodyType",
@@ -10178,7 +10963,6 @@
           "T"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "For values in observation records, the quality control flag from the MADIS system. The definitions of these flags can be found at https://madis.ncep.noaa.gov/madis_sfc_qc_notes.shtml\n"
       },
       "WxColonZoneType": {
@@ -10186,7 +10970,6 @@
           "wx:Zone"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "WxColonZoneType",
           "modelAsString": false,
@@ -10202,50 +10985,49 @@
         "enum": [
           "Point"
         ],
-        "type": "string",
-        "additionalProperties": false
+        "type": "string"
       },
       "LineStringType": {
         "enum": [
           "LineString"
         ],
-        "type": "string",
-        "additionalProperties": false
+        "type": "string"
       },
       "PolygonType": {
         "enum": [
           "Polygon"
         ],
-        "type": "string",
-        "additionalProperties": false
+        "type": "string"
       },
       "MultiPointType": {
         "enum": [
           "MultiPoint"
         ],
-        "type": "string",
-        "additionalProperties": false
+        "type": "string"
       },
       "MultiLineStringType": {
         "enum": [
           "MultiLineString"
         ],
-        "type": "string",
-        "additionalProperties": false
+        "type": "string"
       },
       "MultiPolygonType": {
         "enum": [
           "MultiPolygon"
         ],
-        "type": "string",
-        "additionalProperties": false
+        "type": "string"
+      },
+      "ZoneBodyStateOneOf2": {
+        "enum": [
+          ""
+        ],
+        "type": "string"
       },
       "PostalAddressType": {
         "enum": [
           "PostalAddress"
         ],
-        "type": "string",
-        "additionalProperties": false
+        "type": "string"
       },
       "GridpointBodyWeatherValuesItemValueItemCoverage": {
         "enum": [
@@ -10270,7 +11052,6 @@
           "null",
           "string"
         ],
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "GridpointBodyWeatherValuesItemValueItemCoverage",
           "modelAsString": false,
@@ -10372,7 +11153,6 @@
           "null",
           "string"
         ],
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "GridpointBodyWeatherValuesItemValueItemWeather",
           "modelAsString": false,
@@ -10483,7 +11263,6 @@
           "null",
           "string"
         ],
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "GridpointBodyWeatherValuesItemValueItemIntensity",
           "modelAsString": false,
@@ -10519,7 +11298,6 @@
           "tornadoes"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "GridpointBodyWeatherValuesItemValueItemAttributesItem",
           "modelAsString": false,
@@ -10559,13 +11337,6 @@
           ]
         }
       },
-      "ZoneBodyStateWrapperValue": {
-        "enum": [
-          ""
-        ],
-        "type": "string",
-        "additionalProperties": false
-      },
       "AlertMessageTypeItem": {
         "enum": [
           "alert",
@@ -10573,7 +11344,6 @@
           "cancel"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "AlertMessageTypeItem",
           "modelAsString": false,
@@ -10599,7 +11369,6 @@
           "marine"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "AlertRegionType",
           "modelAsString": false,
@@ -10624,7 +11393,6 @@
           "draft"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "AlertStatusItem",
           "modelAsString": false,
@@ -10658,7 +11426,6 @@
           "forecast_wind_speed_qv"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "GridpointForecastFeatureFlagsItem",
           "modelAsString": false,
@@ -10681,7 +11448,6 @@
           "large"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "IconsSetTimeOfDayFirstSizeAnyOf1",
           "modelAsString": false,
@@ -10708,7 +11474,6 @@
           "large"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "IconsSetTimeOfDayFirstSecondSizeAnyOf1",
           "modelAsString": false,
@@ -10739,7 +11504,6 @@
           "w"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "ThumbnailsSatelliteAreaArea",
           "modelAsString": false,
@@ -10781,7 +11545,6 @@
           "tds"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "RadarQueuesHostHost",
           "modelAsString": false,
@@ -10802,7 +11565,6 @@
           "county"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "CountyType",
           "modelAsString": false,

@@ -39,10 +39,10 @@ namespace Soenneker.Nws.OpenApiClient.Models
         /// <summary>The Context property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Nws.OpenApiClient.Models.JsonLdContext? Context { get; set; }
+        public UntypedNode? Context { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Nws.OpenApiClient.Models.JsonLdContext Context { get; set; }
+        public UntypedNode Context { get; set; }
 #endif
         /// <summary>The email property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -155,7 +155,7 @@ namespace Soenneker.Nws.OpenApiClient.Models
                 { "address", n => { Address = n.GetObjectValue<global::Soenneker.Nws.OpenApiClient.Models.OfficeBodyAddress>(global::Soenneker.Nws.OpenApiClient.Models.OfficeBodyAddress.CreateFromDiscriminatorValue); } },
                 { "approvedObservationStations", n => { ApprovedObservationStations = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "id", n => { CenterWeatherServiceUnitJsonLdId = n.GetStringValue(); } },
-                { "@context", n => { Context = n.GetObjectValue<global::Soenneker.Nws.OpenApiClient.Models.JsonLdContext>(global::Soenneker.Nws.OpenApiClient.Models.JsonLdContext.CreateFromDiscriminatorValue); } },
+                { "@context", n => { Context = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "email", n => { Email = n.GetStringValue(); } },
                 { "faxNumber", n => { FaxNumber = n.GetStringValue(); } },
                 { "@id", n => { Id = n.GetStringValue(); } },
@@ -180,7 +180,7 @@ namespace Soenneker.Nws.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Nws.OpenApiClient.Models.OfficeBodyAddress>("address", Address);
             writer.WriteCollectionOfPrimitiveValues<string>("approvedObservationStations", ApprovedObservationStations);
             writer.WriteStringValue("id", CenterWeatherServiceUnitJsonLdId);
-            writer.WriteObjectValue<global::Soenneker.Nws.OpenApiClient.Models.JsonLdContext>("@context", Context);
+            writer.WriteObjectValue<UntypedNode>("@context", Context);
             writer.WriteStringValue("email", Email);
             writer.WriteStringValue("faxNumber", FaxNumber);
             writer.WriteStringValue("@id", Id);
