@@ -11,41 +11,62 @@ namespace Soenneker.Nws.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class OfficeBodyAddress : IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("addressLocality") is { } nullNodeAddressLocality && nullNodeAddressLocality.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AddressLocality = null;
+            if (parseNode.GetChildNode("addressRegion") is { } nullNodeAddressRegion && nullNodeAddressRegion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AddressRegion = null;
+            if (parseNode.GetChildNode("postalCode") is { } nullNodePostalCode && nullNodePostalCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PostalCode = null;
+            if (parseNode.GetChildNode("streetAddress") is { } nullNodeStreetAddress && nullNodeStreetAddress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StreetAddress = null;
+            if (parseNode.GetChildNode("@type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+        }
+
         /// <summary>The addressLocality property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AddressLocality { get; set; }
+        public string? AddressLocality { get => _explicitNullValueAddressLocality; set { _explicitNullValueAddressLocality = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("addressLocality"); else _explicitNullProperties?.Remove("addressLocality"); } }
+        private string? _explicitNullValueAddressLocality = default!;
 #nullable restore
 #else
-        public string AddressLocality { get; set; }
+        public string AddressLocality { get => _explicitNullValueAddressLocality; set { _explicitNullValueAddressLocality = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("addressLocality"); else _explicitNullProperties?.Remove("addressLocality"); } }
+        private string _explicitNullValueAddressLocality = default!;
 #endif
         /// <summary>The addressRegion property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AddressRegion { get; set; }
+        public string? AddressRegion { get => _explicitNullValueAddressRegion; set { _explicitNullValueAddressRegion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("addressRegion"); else _explicitNullProperties?.Remove("addressRegion"); } }
+        private string? _explicitNullValueAddressRegion = default!;
 #nullable restore
 #else
-        public string AddressRegion { get; set; }
+        public string AddressRegion { get => _explicitNullValueAddressRegion; set { _explicitNullValueAddressRegion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("addressRegion"); else _explicitNullProperties?.Remove("addressRegion"); } }
+        private string _explicitNullValueAddressRegion = default!;
 #endif
         /// <summary>The postalCode property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PostalCode { get; set; }
+        public string? PostalCode { get => _explicitNullValuePostalCode; set { _explicitNullValuePostalCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("postalCode"); else _explicitNullProperties?.Remove("postalCode"); } }
+        private string? _explicitNullValuePostalCode = default!;
 #nullable restore
 #else
-        public string PostalCode { get; set; }
+        public string PostalCode { get => _explicitNullValuePostalCode; set { _explicitNullValuePostalCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("postalCode"); else _explicitNullProperties?.Remove("postalCode"); } }
+        private string _explicitNullValuePostalCode = default!;
 #endif
         /// <summary>The streetAddress property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? StreetAddress { get; set; }
+        public string? StreetAddress { get => _explicitNullValueStreetAddress; set { _explicitNullValueStreetAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("streetAddress"); else _explicitNullProperties?.Remove("streetAddress"); } }
+        private string? _explicitNullValueStreetAddress = default!;
 #nullable restore
 #else
-        public string StreetAddress { get; set; }
+        public string StreetAddress { get => _explicitNullValueStreetAddress; set { _explicitNullValueStreetAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("streetAddress"); else _explicitNullProperties?.Remove("streetAddress"); } }
+        private string _explicitNullValueStreetAddress = default!;
 #endif
         /// <summary>The Type property</summary>
-        public global::Soenneker.Nws.OpenApiClient.Models.PostalAddressType? Type { get; set; }
+        public global::Soenneker.Nws.OpenApiClient.Models.PostalAddressType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("@type"); else _explicitNullProperties?.Remove("@type"); } }
+        private global::Soenneker.Nws.OpenApiClient.Models.PostalAddressType? _explicitNullValueType = default!;
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -54,7 +75,7 @@ namespace Soenneker.Nws.OpenApiClient.Models
         public static global::Soenneker.Nws.OpenApiClient.Models.OfficeBodyAddress CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Nws.OpenApiClient.Models.OfficeBodyAddress();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Nws.OpenApiClient.Models.OfficeBodyAddress(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -82,7 +103,8 @@ namespace Soenneker.Nws.OpenApiClient.Models
             writer.WriteStringValue("addressRegion", AddressRegion);
             writer.WriteStringValue("postalCode", PostalCode);
             writer.WriteStringValue("streetAddress", StreetAddress);
-            writer.WriteEnumValue<global::Soenneker.Nws.OpenApiClient.Models.PostalAddressType>("@type", Type);
+            writer.WriteEnumValue<global::Soenneker.Nws.OpenApiClient.Models.PostalAddressType>("@type", Type);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

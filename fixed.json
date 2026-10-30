@@ -94,7 +94,50 @@
         "responses": {
           "200": {
             "description": "A collection of alerts.",
-            "$ref": "#/components/responses/AlertCollection"
+            "headers": {
+              "X-Correlation-Id": {
+                "$ref": "#/components/headers/CorrelationId"
+              },
+              "X-Request-Id": {
+                "$ref": "#/components/headers/RequestId"
+              },
+              "X-Server-Id": {
+                "$ref": "#/components/headers/ServerId"
+              }
+            },
+            "content": {
+              "application/geo\u002Bjson": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                },
+                "x-client-original-success-schema": {
+                  "$ref": "#/components/schemas/AlertCollectionGeoJson"
+                }
+              },
+              "application/ld\u002Bjson": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                },
+                "x-client-original-success-schema": {
+                  "$ref": "#/components/schemas/AlertCollectionJsonLd"
+                }
+              },
+              "application/atom\u002Bxml": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                },
+                "x-client-original-success-schema": {
+                  "$ref": "#/components/schemas/AlertAtomFeed"
+                }
+              }
+            },
+            "x-url-content-negotiation-extensions": {
+              "json": "application/geo\u002Bjson",
+              "atom": "application/atom\u002Bxml"
+            }
           },
           "301": {
             "description": "Certain common queries may be redirected to discrete URLs"
@@ -163,7 +206,50 @@
         "responses": {
           "200": {
             "description": "A collection of active alerts.",
-            "$ref": "#/components/responses/ActiveAlertCollection"
+            "headers": {
+              "X-Correlation-Id": {
+                "$ref": "#/components/headers/CorrelationId"
+              },
+              "X-Request-Id": {
+                "$ref": "#/components/headers/RequestId"
+              },
+              "X-Server-Id": {
+                "$ref": "#/components/headers/ServerId"
+              }
+            },
+            "content": {
+              "application/geo\u002Bjson": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                },
+                "x-client-original-success-schema": {
+                  "$ref": "#/components/schemas/ActiveAlertCollectionGeoJson"
+                }
+              },
+              "application/ld\u002Bjson": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                },
+                "x-client-original-success-schema": {
+                  "$ref": "#/components/schemas/ActiveAlertCollectionJsonLd"
+                }
+              },
+              "application/atom\u002Bxml": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                },
+                "x-client-original-success-schema": {
+                  "$ref": "#/components/schemas/AlertAtomFeed"
+                }
+              }
+            },
+            "x-url-content-negotiation-extensions": {
+              "json": "application/geo\u002Bjson",
+              "atom": "application/atom\u002Bxml"
+            }
           },
           "301": {
             "description": "Certain common queries may be redirected to discrete URLs"
@@ -215,7 +301,50 @@
         "responses": {
           "200": {
             "description": "A collection of active alerts.",
-            "$ref": "#/components/responses/ActiveAlertCollection"
+            "headers": {
+              "X-Correlation-Id": {
+                "$ref": "#/components/headers/CorrelationId"
+              },
+              "X-Request-Id": {
+                "$ref": "#/components/headers/RequestId"
+              },
+              "X-Server-Id": {
+                "$ref": "#/components/headers/ServerId"
+              }
+            },
+            "content": {
+              "application/geo\u002Bjson": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                },
+                "x-client-original-success-schema": {
+                  "$ref": "#/components/schemas/ActiveAlertCollectionGeoJson"
+                }
+              },
+              "application/ld\u002Bjson": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                },
+                "x-client-original-success-schema": {
+                  "$ref": "#/components/schemas/ActiveAlertCollectionJsonLd"
+                }
+              },
+              "application/atom\u002Bxml": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                },
+                "x-client-original-success-schema": {
+                  "$ref": "#/components/schemas/AlertAtomFeed"
+                }
+              }
+            },
+            "x-url-content-negotiation-extensions": {
+              "json": "application/geo\u002Bjson",
+              "atom": "application/atom\u002Bxml"
+            }
           },
           "default": {
             "description": "An error response.",
@@ -244,7 +373,50 @@
         "responses": {
           "200": {
             "description": "A collection of active alerts.",
-            "$ref": "#/components/responses/ActiveAlertCollection"
+            "headers": {
+              "X-Correlation-Id": {
+                "$ref": "#/components/headers/CorrelationId"
+              },
+              "X-Request-Id": {
+                "$ref": "#/components/headers/RequestId"
+              },
+              "X-Server-Id": {
+                "$ref": "#/components/headers/ServerId"
+              }
+            },
+            "content": {
+              "application/geo\u002Bjson": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                },
+                "x-client-original-success-schema": {
+                  "$ref": "#/components/schemas/ActiveAlertCollectionGeoJson"
+                }
+              },
+              "application/ld\u002Bjson": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                },
+                "x-client-original-success-schema": {
+                  "$ref": "#/components/schemas/ActiveAlertCollectionJsonLd"
+                }
+              },
+              "application/atom\u002Bxml": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                },
+                "x-client-original-success-schema": {
+                  "$ref": "#/components/schemas/AlertAtomFeed"
+                }
+              }
+            },
+            "x-url-content-negotiation-extensions": {
+              "json": "application/geo\u002Bjson",
+              "atom": "application/atom\u002Bxml"
+            }
           },
           "default": {
             "description": "An error response.",
@@ -271,7 +443,50 @@
         "responses": {
           "200": {
             "description": "A collection of active alerts.",
-            "$ref": "#/components/responses/ActiveAlertCollection"
+            "headers": {
+              "X-Correlation-Id": {
+                "$ref": "#/components/headers/CorrelationId"
+              },
+              "X-Request-Id": {
+                "$ref": "#/components/headers/RequestId"
+              },
+              "X-Server-Id": {
+                "$ref": "#/components/headers/ServerId"
+              }
+            },
+            "content": {
+              "application/geo\u002Bjson": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                },
+                "x-client-original-success-schema": {
+                  "$ref": "#/components/schemas/ActiveAlertCollectionGeoJson"
+                }
+              },
+              "application/ld\u002Bjson": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                },
+                "x-client-original-success-schema": {
+                  "$ref": "#/components/schemas/ActiveAlertCollectionJsonLd"
+                }
+              },
+              "application/atom\u002Bxml": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                },
+                "x-client-original-success-schema": {
+                  "$ref": "#/components/schemas/AlertAtomFeed"
+                }
+              }
+            },
+            "x-url-content-negotiation-extensions": {
+              "json": "application/geo\u002Bjson",
+              "atom": "application/atom\u002Bxml"
+            }
           },
           "default": {
             "description": "An error response.",
@@ -345,16 +560,28 @@
             "content": {
               "application/geo\u002Bjson": {
                 "schema": {
+                  "type": "string",
+                  "format": "binary"
+                },
+                "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/AlertGeoJson"
                 }
               },
               "application/ld\u002Bjson": {
                 "schema": {
+                  "type": "string",
+                  "format": "binary"
+                },
+                "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/AlertJsonLd"
                 }
               },
               "application/cap\u002Bxml": {
                 "schema": {
+                  "type": "string",
+                  "format": "binary"
+                },
+                "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/AlertsSingle200CapXmlResponse"
                 }
               }
@@ -491,11 +718,19 @@
             "content": {
               "application/geo\u002Bjson": {
                 "schema": {
+                  "type": "string",
+                  "format": "binary"
+                },
+                "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/CenterWeatherAdvisoryGeoJson"
                 }
               },
               "application/vnd.noaa.uswx\u002Bxml": {
                 "schema": {
+                  "type": "string",
+                  "format": "binary"
+                },
+                "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/Cwa200NoaaUswxXmlResponseSchema"
                 }
               }
@@ -688,11 +923,19 @@
             "content": {
               "application/geo\u002Bjson": {
                 "schema": {
+                  "type": "string",
+                  "format": "binary"
+                },
+                "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/SigmetGeoJson"
                 }
               },
               "application/vnd.noaa.uswx\u002Bxml": {
                 "schema": {
+                  "type": "string",
+                  "format": "binary"
+                },
+                "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/Sigmet200NoaaUswxXmlResponseSchema"
                 }
               }
@@ -759,11 +1002,17 @@
             "content": {
               "application/geo\u002Bjson": {
                 "schema": {
+                  "$ref": "#/components/schemas/GridpointSuccessResponse"
+                },
+                "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/GridpointGeoJson"
                 }
               },
               "application/ld\u002Bjson": {
                 "schema": {
+                  "$ref": "#/components/schemas/GridpointSuccessResponse"
+                },
+                "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/GridpointJsonLd"
                 }
               }
@@ -824,7 +1073,46 @@
         "responses": {
           "200": {
             "description": "A forecast for a gridpoint.",
-            "$ref": "#/components/responses/Gridpoint12hForecast"
+            "headers": {
+              "X-Correlation-Id": {
+                "$ref": "#/components/headers/CorrelationId"
+              },
+              "X-Request-Id": {
+                "$ref": "#/components/headers/RequestId"
+              },
+              "X-Server-Id": {
+                "$ref": "#/components/headers/ServerId"
+              }
+            },
+            "content": {
+              "application/geo\u002Bjson": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                },
+                "x-client-original-success-schema": {
+                  "$ref": "#/components/schemas/Gridpoint12HForecastGeoJson"
+                }
+              },
+              "application/ld\u002Bjson": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                },
+                "x-client-original-success-schema": {
+                  "$ref": "#/components/schemas/Gridpoint12HForecastJsonLd"
+                }
+              },
+              "application/vnd.noaa.dwml\u002Bxml": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                },
+                "x-client-original-success-schema": {
+                  "$ref": "#/components/schemas/Gridpoint12HForecastResponseNoaaDwmlXmlContent"
+                }
+              }
+            }
           },
           "default": {
             "description": "An error response.",
@@ -881,7 +1169,46 @@
         "responses": {
           "200": {
             "description": "A forecast for a gridpoint.",
-            "$ref": "#/components/responses/GridpointHourlyForecast"
+            "headers": {
+              "X-Correlation-Id": {
+                "$ref": "#/components/headers/CorrelationId"
+              },
+              "X-Request-Id": {
+                "$ref": "#/components/headers/RequestId"
+              },
+              "X-Server-Id": {
+                "$ref": "#/components/headers/ServerId"
+              }
+            },
+            "content": {
+              "application/geo\u002Bjson": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                },
+                "x-client-original-success-schema": {
+                  "$ref": "#/components/schemas/GridpointHourlyForecastGeoJson"
+                }
+              },
+              "application/ld\u002Bjson": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                },
+                "x-client-original-success-schema": {
+                  "$ref": "#/components/schemas/GridpointHourlyForecastJsonLd"
+                }
+              },
+              "application/vnd.noaa.dwml\u002Bxml": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                },
+                "x-client-original-success-schema": {
+                  "$ref": "#/components/schemas/GridpointHourlyForecastResponseNoaaDwmlXmlContent"
+                }
+              }
+            }
           },
           "default": {
             "description": "An error response.",
@@ -928,7 +1255,35 @@
         "responses": {
           "200": {
             "description": "A collection of observation stations.",
-            "$ref": "#/components/responses/ObservationStationCollection"
+            "headers": {
+              "X-Correlation-Id": {
+                "$ref": "#/components/headers/CorrelationId"
+              },
+              "X-Request-Id": {
+                "$ref": "#/components/headers/RequestId"
+              },
+              "X-Server-Id": {
+                "$ref": "#/components/headers/ServerId"
+              }
+            },
+            "content": {
+              "application/geo\u002Bjson": {
+                "schema": {
+                  "$ref": "#/components/schemas/GridpointStationsSuccessResponse"
+                },
+                "x-client-original-success-schema": {
+                  "$ref": "#/components/schemas/ObservationStationCollectionGeoJson"
+                }
+              },
+              "application/ld\u002Bjson": {
+                "schema": {
+                  "$ref": "#/components/schemas/GridpointStationsSuccessResponse"
+                },
+                "x-client-original-success-schema": {
+                  "$ref": "#/components/schemas/ObservationStationCollectionJsonLd"
+                }
+              }
+            }
           },
           "default": {
             "description": "An error response.",
@@ -1270,7 +1625,35 @@
         "responses": {
           "200": {
             "description": "A collection of observation records.",
-            "$ref": "#/components/responses/ObservationCollection"
+            "headers": {
+              "X-Correlation-Id": {
+                "$ref": "#/components/headers/CorrelationId"
+              },
+              "X-Request-Id": {
+                "$ref": "#/components/headers/RequestId"
+              },
+              "X-Server-Id": {
+                "$ref": "#/components/headers/ServerId"
+              }
+            },
+            "content": {
+              "application/geo\u002Bjson": {
+                "schema": {
+                  "$ref": "#/components/schemas/StationObservationListSuccessResponse"
+                },
+                "x-client-original-success-schema": {
+                  "$ref": "#/components/schemas/ObservationCollectionGeoJson"
+                }
+              },
+              "application/ld\u002Bjson": {
+                "schema": {
+                  "$ref": "#/components/schemas/StationObservationListSuccessResponse"
+                },
+                "x-client-original-success-schema": {
+                  "$ref": "#/components/schemas/ObservationCollectionJsonLd"
+                }
+              }
+            }
           },
           "default": {
             "description": "An error response.",
@@ -1307,7 +1690,55 @@
         "responses": {
           "200": {
             "description": "An observation record.",
-            "$ref": "#/components/responses/Observation"
+            "headers": {
+              "X-Correlation-Id": {
+                "$ref": "#/components/headers/CorrelationId"
+              },
+              "X-Request-Id": {
+                "$ref": "#/components/headers/RequestId"
+              },
+              "X-Server-Id": {
+                "$ref": "#/components/headers/ServerId"
+              }
+            },
+            "content": {
+              "application/geo\u002Bjson": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                },
+                "x-client-original-success-schema": {
+                  "$ref": "#/components/schemas/ObservationGeoJson"
+                }
+              },
+              "application/ld\u002Bjson": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                },
+                "x-client-original-success-schema": {
+                  "$ref": "#/components/schemas/ObservationJsonLd"
+                }
+              },
+              "application/vnd.noaa.uswx\u002Bxml": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                },
+                "x-client-original-success-schema": {
+                  "$ref": "#/components/schemas/ObservationResponseNoaaUswxXmlContent"
+                }
+              },
+              "application/vnd.noaa.obs\u002Bxml": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                },
+                "x-client-original-success-schema": {
+                  "$ref": "#/components/schemas/ObservationResponseNoaaObsXmlContent"
+                }
+              }
+            }
           },
           "default": {
             "description": "An error response.",
@@ -1346,7 +1777,55 @@
         "responses": {
           "200": {
             "description": "An observation record.",
-            "$ref": "#/components/responses/Observation"
+            "headers": {
+              "X-Correlation-Id": {
+                "$ref": "#/components/headers/CorrelationId"
+              },
+              "X-Request-Id": {
+                "$ref": "#/components/headers/RequestId"
+              },
+              "X-Server-Id": {
+                "$ref": "#/components/headers/ServerId"
+              }
+            },
+            "content": {
+              "application/geo\u002Bjson": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                },
+                "x-client-original-success-schema": {
+                  "$ref": "#/components/schemas/ObservationGeoJson"
+                }
+              },
+              "application/ld\u002Bjson": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                },
+                "x-client-original-success-schema": {
+                  "$ref": "#/components/schemas/ObservationJsonLd"
+                }
+              },
+              "application/vnd.noaa.uswx\u002Bxml": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                },
+                "x-client-original-success-schema": {
+                  "$ref": "#/components/schemas/ObservationResponseNoaaUswxXmlContent"
+                }
+              },
+              "application/vnd.noaa.obs\u002Bxml": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                },
+                "x-client-original-success-schema": {
+                  "$ref": "#/components/schemas/ObservationResponseNoaaObsXmlContent"
+                }
+              }
+            }
           },
           "default": {
             "description": "An error response.",
@@ -1495,7 +1974,35 @@
         "responses": {
           "200": {
             "description": "A collection of observation stations.",
-            "$ref": "#/components/responses/ObservationStationCollection"
+            "headers": {
+              "X-Correlation-Id": {
+                "$ref": "#/components/headers/CorrelationId"
+              },
+              "X-Request-Id": {
+                "$ref": "#/components/headers/RequestId"
+              },
+              "X-Server-Id": {
+                "$ref": "#/components/headers/ServerId"
+              }
+            },
+            "content": {
+              "application/geo\u002Bjson": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObsStationsSuccessResponse"
+                },
+                "x-client-original-success-schema": {
+                  "$ref": "#/components/schemas/ObservationStationCollectionGeoJson"
+                }
+              },
+              "application/ld\u002Bjson": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObsStationsSuccessResponse"
+                },
+                "x-client-original-success-schema": {
+                  "$ref": "#/components/schemas/ObservationStationCollectionJsonLd"
+                }
+              }
+            }
           },
           "default": {
             "description": "An error response.",
@@ -1525,11 +2032,17 @@
             "content": {
               "application/geo\u002Bjson": {
                 "schema": {
+                  "$ref": "#/components/schemas/ObsStationSuccessResponse"
+                },
+                "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/ObservationStationGeoJson"
                 }
               },
               "application/ld\u002Bjson": {
                 "schema": {
+                  "$ref": "#/components/schemas/ObsStationSuccessResponse"
+                },
+                "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/ObservationStationJsonLd"
                 }
               }
@@ -1946,11 +2459,17 @@
             "content": {
               "application/geo\u002Bjson": {
                 "schema": {
+                  "$ref": "#/components/schemas/PointSuccessResponse"
+                },
+                "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/PointGeoJson"
                 }
               },
               "application/ld\u002Bjson": {
                 "schema": {
+                  "$ref": "#/components/schemas/PointSuccessResponse"
+                },
+                "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/PointJsonLd"
                 }
               }
@@ -2288,11 +2807,17 @@
             "content": {
               "application/geo\u002Bjson": {
                 "schema": {
+                  "$ref": "#/components/schemas/RadarStationsSuccessResponse"
+                },
+                "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/RadarStations200GeoJsonResponseSchema"
                 }
               },
               "application/ld\u002Bjson": {
                 "schema": {
+                  "$ref": "#/components/schemas/RadarStationsSuccessResponse"
+                },
+                "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/RadarStations200LdJsonResponseSchema"
                 }
               }
@@ -2344,11 +2869,17 @@
             "content": {
               "application/geo\u002Bjson": {
                 "schema": {
+                  "$ref": "#/components/schemas/RadarStationSuccessResponse"
+                },
+                "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/RadarStation200GeoJsonResponseSchema"
                 }
               },
               "application/ld\u002Bjson": {
                 "schema": {
+                  "$ref": "#/components/schemas/RadarStationSuccessResponse"
+                },
+                "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/RadarStation200LdJsonResponseSchema"
                 }
               }
@@ -3301,11 +3832,17 @@
             "content": {
               "application/geo\u002Bjson": {
                 "schema": {
+                  "$ref": "#/components/schemas/ZoneListSuccessResponse"
+                },
+                "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/ZoneCollectionGeoJson"
                 }
               },
               "application/ld\u002Bjson": {
                 "schema": {
+                  "$ref": "#/components/schemas/ZoneListSuccessResponse"
+                },
+                "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/ZoneCollectionJsonLd"
                 }
               }
@@ -3426,11 +3963,17 @@
             "content": {
               "application/geo\u002Bjson": {
                 "schema": {
+                  "$ref": "#/components/schemas/ZoneListTypeSuccessResponse"
+                },
+                "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/ZoneCollectionGeoJson"
                 }
               },
               "application/ld\u002Bjson": {
                 "schema": {
+                  "$ref": "#/components/schemas/ZoneListTypeSuccessResponse"
+                },
+                "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/ZoneCollectionJsonLd"
                 }
               }
@@ -3486,11 +4029,17 @@
             "content": {
               "application/geo\u002Bjson": {
                 "schema": {
+                  "$ref": "#/components/schemas/ZoneSuccessResponse"
+                },
+                "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/ZoneGeoJson"
                 }
               },
               "application/ld\u002Bjson": {
                 "schema": {
+                  "$ref": "#/components/schemas/ZoneSuccessResponse"
+                },
+                "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/ZoneJsonLd"
                 }
               }
@@ -3546,11 +4095,17 @@
             "content": {
               "application/geo\u002Bjson": {
                 "schema": {
+                  "$ref": "#/components/schemas/ZoneForecastSuccessResponse"
+                },
+                "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/ZoneForecastGeoJson"
                 }
               },
               "application/ld\u002Bjson": {
                 "schema": {
+                  "$ref": "#/components/schemas/ZoneForecastSuccessResponse"
+                },
+                "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/ZoneForecastJsonLd"
                 }
               }
@@ -3691,11 +4246,17 @@
             "content": {
               "application/geo\u002Bjson": {
                 "schema": {
+                  "$ref": "#/components/schemas/ZoneObsSuccessResponse"
+                },
+                "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/ObservationCollectionGeoJson"
                 }
               },
               "application/ld\u002Bjson": {
                 "schema": {
+                  "$ref": "#/components/schemas/ZoneObsSuccessResponse"
+                },
+                "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/ObservationCollectionJsonLd"
                 }
               }
@@ -3728,7 +4289,35 @@
         "responses": {
           "200": {
             "description": "A collection of observation stations.",
-            "$ref": "#/components/responses/ObservationStationCollection"
+            "headers": {
+              "X-Correlation-Id": {
+                "$ref": "#/components/headers/CorrelationId"
+              },
+              "X-Request-Id": {
+                "$ref": "#/components/headers/RequestId"
+              },
+              "X-Server-Id": {
+                "$ref": "#/components/headers/ServerId"
+              }
+            },
+            "content": {
+              "application/geo\u002Bjson": {
+                "schema": {
+                  "$ref": "#/components/schemas/ZoneStationsSuccessResponse"
+                },
+                "x-client-original-success-schema": {
+                  "$ref": "#/components/schemas/ObservationStationCollectionGeoJson"
+                }
+              },
+              "application/ld\u002Bjson": {
+                "schema": {
+                  "$ref": "#/components/schemas/ZoneStationsSuccessResponse"
+                },
+                "x-client-original-success-schema": {
+                  "$ref": "#/components/schemas/ObservationStationCollectionJsonLd"
+                }
+              }
+            }
           },
           "default": {
             "description": "An error response.",
@@ -11575,6 +12164,146 @@
             }
           ]
         }
+      },
+      "GridpointSuccessResponse": {
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/GridpointGeoJson"
+          },
+          {
+            "$ref": "#/components/schemas/GridpointJsonLd"
+          }
+        ]
+      },
+      "GridpointStationsSuccessResponse": {
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/ObservationStationCollectionGeoJson"
+          },
+          {
+            "$ref": "#/components/schemas/ObservationStationCollectionJsonLd"
+          }
+        ]
+      },
+      "StationObservationListSuccessResponse": {
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/ObservationCollectionGeoJson"
+          },
+          {
+            "$ref": "#/components/schemas/ObservationCollectionJsonLd"
+          }
+        ]
+      },
+      "ObsStationsSuccessResponse": {
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/ObservationStationCollectionGeoJson"
+          },
+          {
+            "$ref": "#/components/schemas/ObservationStationCollectionJsonLd"
+          }
+        ]
+      },
+      "ObsStationSuccessResponse": {
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/ObservationStationGeoJson"
+          },
+          {
+            "$ref": "#/components/schemas/ObservationStationJsonLd"
+          }
+        ]
+      },
+      "PointSuccessResponse": {
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/PointGeoJson"
+          },
+          {
+            "$ref": "#/components/schemas/PointJsonLd"
+          }
+        ]
+      },
+      "RadarStationsSuccessResponse": {
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/RadarStations200GeoJsonResponseSchema"
+          },
+          {
+            "$ref": "#/components/schemas/RadarStations200LdJsonResponseSchema"
+          }
+        ]
+      },
+      "RadarStationSuccessResponse": {
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/RadarStation200GeoJsonResponseSchema"
+          },
+          {
+            "$ref": "#/components/schemas/RadarStation200LdJsonResponseSchema"
+          }
+        ]
+      },
+      "ZoneListSuccessResponse": {
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/ZoneCollectionGeoJson"
+          },
+          {
+            "$ref": "#/components/schemas/ZoneCollectionJsonLd"
+          }
+        ]
+      },
+      "ZoneListTypeSuccessResponse": {
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/ZoneCollectionGeoJson"
+          },
+          {
+            "$ref": "#/components/schemas/ZoneCollectionJsonLd"
+          }
+        ]
+      },
+      "ZoneSuccessResponse": {
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/ZoneGeoJson"
+          },
+          {
+            "$ref": "#/components/schemas/ZoneJsonLd"
+          }
+        ]
+      },
+      "ZoneForecastSuccessResponse": {
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/ZoneForecastGeoJson"
+          },
+          {
+            "$ref": "#/components/schemas/ZoneForecastJsonLd"
+          }
+        ]
+      },
+      "ZoneObsSuccessResponse": {
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/ObservationCollectionGeoJson"
+          },
+          {
+            "$ref": "#/components/schemas/ObservationCollectionJsonLd"
+          }
+        ]
+      },
+      "ZoneStationsSuccessResponse": {
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/ObservationStationCollectionGeoJson"
+          },
+          {
+            "$ref": "#/components/schemas/ObservationStationCollectionJsonLd"
+          }
+        ]
       }
     },
     "responses": {

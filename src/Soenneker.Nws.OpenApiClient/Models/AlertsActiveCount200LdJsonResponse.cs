@@ -11,38 +11,60 @@ namespace Soenneker.Nws.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class AlertsActiveCount200LdJsonResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("areas") is { } nullNodeAreas && nullNodeAreas.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Areas = null;
+            if (parseNode.GetChildNode("land") is { } nullNodeLand && nullNodeLand.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Land = null;
+            if (parseNode.GetChildNode("marine") is { } nullNodeMarine && nullNodeMarine.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Marine = null;
+            if (parseNode.GetChildNode("regions") is { } nullNodeRegions && nullNodeRegions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Regions = null;
+            if (parseNode.GetChildNode("total") is { } nullNodeTotal && nullNodeTotal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Total = null;
+            if (parseNode.GetChildNode("zones") is { } nullNodeZones && nullNodeZones.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Zones = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Active alerts by area (state/territory)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Nws.OpenApiClient.Models.AlertsActiveCount200LdJsonResponseAreas? Areas { get; set; }
+        public global::Soenneker.Nws.OpenApiClient.Models.AlertsActiveCount200LdJsonResponseAreas? Areas { get => _explicitNullValueAreas; set { _explicitNullValueAreas = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("areas"); else _explicitNullProperties?.Remove("areas"); } }
+        private global::Soenneker.Nws.OpenApiClient.Models.AlertsActiveCount200LdJsonResponseAreas? _explicitNullValueAreas = default!;
 #nullable restore
 #else
-        public global::Soenneker.Nws.OpenApiClient.Models.AlertsActiveCount200LdJsonResponseAreas Areas { get; set; }
+        public global::Soenneker.Nws.OpenApiClient.Models.AlertsActiveCount200LdJsonResponseAreas Areas { get => _explicitNullValueAreas; set { _explicitNullValueAreas = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("areas"); else _explicitNullProperties?.Remove("areas"); } }
+        private global::Soenneker.Nws.OpenApiClient.Models.AlertsActiveCount200LdJsonResponseAreas _explicitNullValueAreas = default!;
 #endif
         /// <summary>The total number of active alerts affecting land zones</summary>
-        public int? Land { get; set; }
+        public int? Land { get => _explicitNullValueLand; set { _explicitNullValueLand = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("land"); else _explicitNullProperties?.Remove("land"); } }
+        private int? _explicitNullValueLand = default!;
         /// <summary>The total number of active alerts affecting marine zones</summary>
-        public int? Marine { get; set; }
+        public int? Marine { get => _explicitNullValueMarine; set { _explicitNullValueMarine = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("marine"); else _explicitNullProperties?.Remove("marine"); } }
+        private int? _explicitNullValueMarine = default!;
         /// <summary>Active alerts by marine region</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Nws.OpenApiClient.Models.AlertsActiveCount200LdJsonResponseRegions? Regions { get; set; }
+        public global::Soenneker.Nws.OpenApiClient.Models.AlertsActiveCount200LdJsonResponseRegions? Regions { get => _explicitNullValueRegions; set { _explicitNullValueRegions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("regions"); else _explicitNullProperties?.Remove("regions"); } }
+        private global::Soenneker.Nws.OpenApiClient.Models.AlertsActiveCount200LdJsonResponseRegions? _explicitNullValueRegions = default!;
 #nullable restore
 #else
-        public global::Soenneker.Nws.OpenApiClient.Models.AlertsActiveCount200LdJsonResponseRegions Regions { get; set; }
+        public global::Soenneker.Nws.OpenApiClient.Models.AlertsActiveCount200LdJsonResponseRegions Regions { get => _explicitNullValueRegions; set { _explicitNullValueRegions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("regions"); else _explicitNullProperties?.Remove("regions"); } }
+        private global::Soenneker.Nws.OpenApiClient.Models.AlertsActiveCount200LdJsonResponseRegions _explicitNullValueRegions = default!;
 #endif
         /// <summary>The total number of active alerts</summary>
-        public int? Total { get; set; }
+        public int? Total { get => _explicitNullValueTotal; set { _explicitNullValueTotal = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total"); else _explicitNullProperties?.Remove("total"); } }
+        private int? _explicitNullValueTotal = default!;
         /// <summary>Active alerts by NWS public zone or county code</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Nws.OpenApiClient.Models.AlertsActiveCount200LdJsonResponseZones? Zones { get; set; }
+        public global::Soenneker.Nws.OpenApiClient.Models.AlertsActiveCount200LdJsonResponseZones? Zones { get => _explicitNullValueZones; set { _explicitNullValueZones = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("zones"); else _explicitNullProperties?.Remove("zones"); } }
+        private global::Soenneker.Nws.OpenApiClient.Models.AlertsActiveCount200LdJsonResponseZones? _explicitNullValueZones = default!;
 #nullable restore
 #else
-        public global::Soenneker.Nws.OpenApiClient.Models.AlertsActiveCount200LdJsonResponseZones Zones { get; set; }
+        public global::Soenneker.Nws.OpenApiClient.Models.AlertsActiveCount200LdJsonResponseZones Zones { get => _explicitNullValueZones; set { _explicitNullValueZones = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("zones"); else _explicitNullProperties?.Remove("zones"); } }
+        private global::Soenneker.Nws.OpenApiClient.Models.AlertsActiveCount200LdJsonResponseZones _explicitNullValueZones = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Nws.OpenApiClient.Models.AlertsActiveCount200LdJsonResponse"/> and sets the default values.
@@ -59,7 +81,7 @@ namespace Soenneker.Nws.OpenApiClient.Models
         public static global::Soenneker.Nws.OpenApiClient.Models.AlertsActiveCount200LdJsonResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Nws.OpenApiClient.Models.AlertsActiveCount200LdJsonResponse();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Nws.OpenApiClient.Models.AlertsActiveCount200LdJsonResponse(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -90,6 +112,7 @@ namespace Soenneker.Nws.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Nws.OpenApiClient.Models.AlertsActiveCount200LdJsonResponseRegions>("regions", Regions);
             writer.WriteIntValue("total", Total);
             writer.WriteObjectValue<global::Soenneker.Nws.OpenApiClient.Models.AlertsActiveCount200LdJsonResponseZones>("zones", Zones);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

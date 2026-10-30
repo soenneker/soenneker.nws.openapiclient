@@ -25,6 +25,7 @@ namespace Soenneker.Nws.OpenApiClient.Points.WithLatitudeWithLongitude
             get => new global::Soenneker.Nws.OpenApiClient.Points.WithLatitudeWithLongitude.Radio.RadioRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The stations property</summary>
+        [Obsolete("")]
         public global::Soenneker.Nws.OpenApiClient.Points.WithLatitudeWithLongitude.Stations.StationsRequestBuilder Stations
         {
             get => new global::Soenneker.Nws.OpenApiClient.Points.WithLatitudeWithLongitude.Stations.StationsRequestBuilder(PathParameters, RequestAdapter);
@@ -52,17 +53,17 @@ namespace Soenneker.Nws.OpenApiClient.Points.WithLatitudeWithLongitude
         /// <summary>
         /// Returns metadata about a given latitude/longitude point
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Nws.OpenApiClient.Models.PointGeoJson"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Nws.OpenApiClient.Models.PointSuccessResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Nws.OpenApiClient.Models.ProblemDetail">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Nws.OpenApiClient.Models.PointGeoJson?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Nws.OpenApiClient.Models.PointSuccessResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Nws.OpenApiClient.Models.PointGeoJson> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Nws.OpenApiClient.Models.PointSuccessResponse> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -70,7 +71,7 @@ namespace Soenneker.Nws.OpenApiClient.Points.WithLatitudeWithLongitude
             {
                 { "XXX", global::Soenneker.Nws.OpenApiClient.Models.ProblemDetail.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Nws.OpenApiClient.Models.PointGeoJson>(requestInfo, global::Soenneker.Nws.OpenApiClient.Models.PointGeoJson.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Nws.OpenApiClient.Models.PointSuccessResponse>(requestInfo, global::Soenneker.Nws.OpenApiClient.Models.PointSuccessResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns metadata about a given latitude/longitude point
@@ -88,7 +89,7 @@ namespace Soenneker.Nws.OpenApiClient.Points.WithLatitudeWithLongitude
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "application/geo+json");
+            requestInfo.Headers.TryAdd("Accept", "application/geo+json, application/ld+json");
             return requestInfo;
         }
         /// <summary>

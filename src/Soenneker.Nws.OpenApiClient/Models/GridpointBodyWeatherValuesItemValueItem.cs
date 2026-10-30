@@ -12,29 +12,48 @@ namespace Soenneker.Nws.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class GridpointBodyWeatherValuesItemValueItem : IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("attributes") is { } nullNodeAttributes && nullNodeAttributes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Attributes = null;
+            if (parseNode.GetChildNode("coverage") is { } nullNodeCoverage && nullNodeCoverage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Coverage = null;
+            if (parseNode.GetChildNode("intensity") is { } nullNodeIntensity && nullNodeIntensity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Intensity = null;
+            if (parseNode.GetChildNode("visibility") is { } nullNodeVisibility && nullNodeVisibility.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Visibility = null;
+            if (parseNode.GetChildNode("weather") is { } nullNodeWeather && nullNodeWeather.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Weather = null;
+        }
+
         /// <summary>The attributes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Nws.OpenApiClient.Models.GridpointBodyWeatherValuesItemValueItemAttributesItem?>? Attributes { get; set; }
+        public List<global::Soenneker.Nws.OpenApiClient.Models.GridpointBodyWeatherValuesItemValueItemAttributesItem?>? Attributes { get => _explicitNullValueAttributes; set { _explicitNullValueAttributes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attributes"); else _explicitNullProperties?.Remove("attributes"); } }
+        private List<global::Soenneker.Nws.OpenApiClient.Models.GridpointBodyWeatherValuesItemValueItemAttributesItem?>? _explicitNullValueAttributes = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Nws.OpenApiClient.Models.GridpointBodyWeatherValuesItemValueItemAttributesItem?> Attributes { get; set; }
+        public List<global::Soenneker.Nws.OpenApiClient.Models.GridpointBodyWeatherValuesItemValueItemAttributesItem?> Attributes { get => _explicitNullValueAttributes; set { _explicitNullValueAttributes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attributes"); else _explicitNullProperties?.Remove("attributes"); } }
+        private List<global::Soenneker.Nws.OpenApiClient.Models.GridpointBodyWeatherValuesItemValueItemAttributesItem?> _explicitNullValueAttributes = default!;
 #endif
         /// <summary>The coverage property</summary>
-        public global::Soenneker.Nws.OpenApiClient.Models.GridpointBodyWeatherValuesItemValueItemCoverage? Coverage { get; set; }
+        public global::Soenneker.Nws.OpenApiClient.Models.GridpointBodyWeatherValuesItemValueItemCoverage? Coverage { get => _explicitNullValueCoverage; set { _explicitNullValueCoverage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("coverage"); else _explicitNullProperties?.Remove("coverage"); } }
+        private global::Soenneker.Nws.OpenApiClient.Models.GridpointBodyWeatherValuesItemValueItemCoverage? _explicitNullValueCoverage = default!;
         /// <summary>The intensity property</summary>
-        public global::Soenneker.Nws.OpenApiClient.Models.GridpointBodyWeatherValuesItemValueItemIntensity? Intensity { get; set; }
+        public global::Soenneker.Nws.OpenApiClient.Models.GridpointBodyWeatherValuesItemValueItemIntensity? Intensity { get => _explicitNullValueIntensity; set { _explicitNullValueIntensity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("intensity"); else _explicitNullProperties?.Remove("intensity"); } }
+        private global::Soenneker.Nws.OpenApiClient.Models.GridpointBodyWeatherValuesItemValueItemIntensity? _explicitNullValueIntensity = default!;
         /// <summary>A structured value representing a measurement and its unit of measure. This object is a slightly modified version of the schema.org definition at https://schema.org/QuantitativeValue</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue? Visibility { get; set; }
+        public global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue? Visibility { get => _explicitNullValueVisibility; set { _explicitNullValueVisibility = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("visibility"); else _explicitNullProperties?.Remove("visibility"); } }
+        private global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue? _explicitNullValueVisibility = default!;
 #nullable restore
 #else
-        public global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue Visibility { get; set; }
+        public global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue Visibility { get => _explicitNullValueVisibility; set { _explicitNullValueVisibility = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("visibility"); else _explicitNullProperties?.Remove("visibility"); } }
+        private global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue _explicitNullValueVisibility = default!;
 #endif
         /// <summary>The weather property</summary>
-        public global::Soenneker.Nws.OpenApiClient.Models.GridpointBodyWeatherValuesItemValueItemWeather? Weather { get; set; }
+        public global::Soenneker.Nws.OpenApiClient.Models.GridpointBodyWeatherValuesItemValueItemWeather? Weather { get => _explicitNullValueWeather; set { _explicitNullValueWeather = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("weather"); else _explicitNullProperties?.Remove("weather"); } }
+        private global::Soenneker.Nws.OpenApiClient.Models.GridpointBodyWeatherValuesItemValueItemWeather? _explicitNullValueWeather = default!;
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -43,7 +62,7 @@ namespace Soenneker.Nws.OpenApiClient.Models
         public static global::Soenneker.Nws.OpenApiClient.Models.GridpointBodyWeatherValuesItemValueItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Nws.OpenApiClient.Models.GridpointBodyWeatherValuesItemValueItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Nws.OpenApiClient.Models.GridpointBodyWeatherValuesItemValueItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -71,7 +90,8 @@ namespace Soenneker.Nws.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Nws.OpenApiClient.Models.GridpointBodyWeatherValuesItemValueItemCoverage>("coverage", Coverage);
             writer.WriteEnumValue<global::Soenneker.Nws.OpenApiClient.Models.GridpointBodyWeatherValuesItemValueItemIntensity>("intensity", Intensity);
             writer.WriteObjectValue<global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue>("visibility", Visibility);
-            writer.WriteEnumValue<global::Soenneker.Nws.OpenApiClient.Models.GridpointBodyWeatherValuesItemValueItemWeather>("weather", Weather);
+            writer.WriteEnumValue<global::Soenneker.Nws.OpenApiClient.Models.GridpointBodyWeatherValuesItemValueItemWeather>("weather", Weather);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

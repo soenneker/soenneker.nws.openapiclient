@@ -12,41 +12,62 @@ namespace Soenneker.Nws.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class GeoJsonFeature : IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("@context") is { } nullNodeContext && nullNodeContext.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Context = null;
+            if (parseNode.GetChildNode("geometry") is { } nullNodeGeometry && nullNodeGeometry.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Geometry = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("properties") is { } nullNodeProperties && nullNodeProperties.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Properties = null;
+            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+        }
+
         /// <summary>The Context property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Context { get; set; }
+        public UntypedNode? Context { get => _explicitNullValueContext; set { _explicitNullValueContext = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("@context"); else _explicitNullProperties?.Remove("@context"); } }
+        private UntypedNode? _explicitNullValueContext = default!;
 #nullable restore
 #else
-        public UntypedNode Context { get; set; }
+        public UntypedNode Context { get => _explicitNullValueContext; set { _explicitNullValueContext = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("@context"); else _explicitNullProperties?.Remove("@context"); } }
+        private UntypedNode _explicitNullValueContext = default!;
 #endif
         /// <summary>A GeoJSON geometry object. Please refer to IETF RFC 7946 for information on the GeoJSON format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Nws.OpenApiClient.Models.GeoJsonGeometry? Geometry { get; set; }
+        public global::Soenneker.Nws.OpenApiClient.Models.GeoJsonGeometry? Geometry { get => _explicitNullValueGeometry; set { _explicitNullValueGeometry = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("geometry"); else _explicitNullProperties?.Remove("geometry"); } }
+        private global::Soenneker.Nws.OpenApiClient.Models.GeoJsonGeometry? _explicitNullValueGeometry = default!;
 #nullable restore
 #else
-        public global::Soenneker.Nws.OpenApiClient.Models.GeoJsonGeometry Geometry { get; set; }
+        public global::Soenneker.Nws.OpenApiClient.Models.GeoJsonGeometry Geometry { get => _explicitNullValueGeometry; set { _explicitNullValueGeometry = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("geometry"); else _explicitNullProperties?.Remove("geometry"); } }
+        private global::Soenneker.Nws.OpenApiClient.Models.GeoJsonGeometry _explicitNullValueGeometry = default!;
 #endif
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>The properties property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Nws.OpenApiClient.Models.GeoJsonFeaturePropertiesProperty? Properties { get; set; }
+        public global::Soenneker.Nws.OpenApiClient.Models.GeoJsonFeaturePropertiesProperty? Properties { get => _explicitNullValueProperties; set { _explicitNullValueProperties = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("properties"); else _explicitNullProperties?.Remove("properties"); } }
+        private global::Soenneker.Nws.OpenApiClient.Models.GeoJsonFeaturePropertiesProperty? _explicitNullValueProperties = default!;
 #nullable restore
 #else
-        public global::Soenneker.Nws.OpenApiClient.Models.GeoJsonFeaturePropertiesProperty Properties { get; set; }
+        public global::Soenneker.Nws.OpenApiClient.Models.GeoJsonFeaturePropertiesProperty Properties { get => _explicitNullValueProperties; set { _explicitNullValueProperties = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("properties"); else _explicitNullProperties?.Remove("properties"); } }
+        private global::Soenneker.Nws.OpenApiClient.Models.GeoJsonFeaturePropertiesProperty _explicitNullValueProperties = default!;
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.Nws.OpenApiClient.Models.FeatureType? Type { get; set; }
+        public global::Soenneker.Nws.OpenApiClient.Models.FeatureType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.Nws.OpenApiClient.Models.FeatureType? _explicitNullValueType = default!;
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -55,7 +76,7 @@ namespace Soenneker.Nws.OpenApiClient.Models
         public static global::Soenneker.Nws.OpenApiClient.Models.GeoJsonFeature CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Nws.OpenApiClient.Models.GeoJsonFeature();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Nws.OpenApiClient.Models.GeoJsonFeature(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -83,7 +104,8 @@ namespace Soenneker.Nws.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Nws.OpenApiClient.Models.GeoJsonGeometry>("geometry", Geometry);
             writer.WriteStringValue("id", Id);
             writer.WriteObjectValue<global::Soenneker.Nws.OpenApiClient.Models.GeoJsonFeaturePropertiesProperty>("properties", Properties);
-            writer.WriteEnumValue<global::Soenneker.Nws.OpenApiClient.Models.FeatureType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Nws.OpenApiClient.Models.FeatureType>("type", Type);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

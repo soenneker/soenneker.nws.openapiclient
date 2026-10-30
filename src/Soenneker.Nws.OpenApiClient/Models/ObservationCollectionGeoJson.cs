@@ -11,35 +11,53 @@ namespace Soenneker.Nws.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ObservationCollectionGeoJson : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("@context") is { } nullNodeContext && nullNodeContext.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Context = null;
+            if (parseNode.GetChildNode("features") is { } nullNodeFeatures && nullNodeFeatures.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Features = null;
+            if (parseNode.GetChildNode("pagination") is { } nullNodePagination && nullNodePagination.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Pagination = null;
+            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The Context property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Context { get; set; }
+        public UntypedNode? Context { get => _explicitNullValueContext; set { _explicitNullValueContext = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("@context"); else _explicitNullProperties?.Remove("@context"); } }
+        private UntypedNode? _explicitNullValueContext = default!;
 #nullable restore
 #else
-        public UntypedNode Context { get; set; }
+        public UntypedNode Context { get => _explicitNullValueContext; set { _explicitNullValueContext = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("@context"); else _explicitNullProperties?.Remove("@context"); } }
+        private UntypedNode _explicitNullValueContext = default!;
 #endif
         /// <summary>The features property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Nws.OpenApiClient.Models.ObservationCollectionGeoJsonFeatures? Features { get; set; }
+        public global::Soenneker.Nws.OpenApiClient.Models.ObservationCollectionGeoJsonFeatures? Features { get => _explicitNullValueFeatures; set { _explicitNullValueFeatures = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("features"); else _explicitNullProperties?.Remove("features"); } }
+        private global::Soenneker.Nws.OpenApiClient.Models.ObservationCollectionGeoJsonFeatures? _explicitNullValueFeatures = default!;
 #nullable restore
 #else
-        public global::Soenneker.Nws.OpenApiClient.Models.ObservationCollectionGeoJsonFeatures Features { get; set; }
+        public global::Soenneker.Nws.OpenApiClient.Models.ObservationCollectionGeoJsonFeatures Features { get => _explicitNullValueFeatures; set { _explicitNullValueFeatures = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("features"); else _explicitNullProperties?.Remove("features"); } }
+        private global::Soenneker.Nws.OpenApiClient.Models.ObservationCollectionGeoJsonFeatures _explicitNullValueFeatures = default!;
 #endif
         /// <summary>Links for retrieving more data from paged data sets</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Nws.OpenApiClient.Models.PaginationInfo? Pagination { get; set; }
+        public global::Soenneker.Nws.OpenApiClient.Models.PaginationInfo? Pagination { get => _explicitNullValuePagination; set { _explicitNullValuePagination = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pagination"); else _explicitNullProperties?.Remove("pagination"); } }
+        private global::Soenneker.Nws.OpenApiClient.Models.PaginationInfo? _explicitNullValuePagination = default!;
 #nullable restore
 #else
-        public global::Soenneker.Nws.OpenApiClient.Models.PaginationInfo Pagination { get; set; }
+        public global::Soenneker.Nws.OpenApiClient.Models.PaginationInfo Pagination { get => _explicitNullValuePagination; set { _explicitNullValuePagination = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pagination"); else _explicitNullProperties?.Remove("pagination"); } }
+        private global::Soenneker.Nws.OpenApiClient.Models.PaginationInfo _explicitNullValuePagination = default!;
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.Nws.OpenApiClient.Models.FeatureCollectionType? Type { get; set; }
+        public global::Soenneker.Nws.OpenApiClient.Models.FeatureCollectionType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.Nws.OpenApiClient.Models.FeatureCollectionType? _explicitNullValueType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Nws.OpenApiClient.Models.ObservationCollectionGeoJson"/> and sets the default values.
         /// </summary>
@@ -55,7 +73,7 @@ namespace Soenneker.Nws.OpenApiClient.Models
         public static global::Soenneker.Nws.OpenApiClient.Models.ObservationCollectionGeoJson CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Nws.OpenApiClient.Models.ObservationCollectionGeoJson();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Nws.OpenApiClient.Models.ObservationCollectionGeoJson(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -82,6 +100,7 @@ namespace Soenneker.Nws.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Nws.OpenApiClient.Models.ObservationCollectionGeoJsonFeatures>("features", Features);
             writer.WriteObjectValue<global::Soenneker.Nws.OpenApiClient.Models.PaginationInfo>("pagination", Pagination);
             writer.WriteEnumValue<global::Soenneker.Nws.OpenApiClient.Models.FeatureCollectionType>("type", Type);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

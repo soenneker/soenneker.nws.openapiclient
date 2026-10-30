@@ -11,16 +11,28 @@ namespace Soenneker.Nws.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ObservationCloudLayersItem : IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("amount") is { } nullNodeAmount && nullNodeAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Amount = null;
+            if (parseNode.GetChildNode("base") is { } nullNodeBase && nullNodeBase.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Base = null;
+        }
+
         /// <summary>The amount property</summary>
-        public global::Soenneker.Nws.OpenApiClient.Models.MetarSkyCoverage? Amount { get; set; }
+        public global::Soenneker.Nws.OpenApiClient.Models.MetarSkyCoverage? Amount { get => _explicitNullValueAmount; set { _explicitNullValueAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amount"); else _explicitNullProperties?.Remove("amount"); } }
+        private global::Soenneker.Nws.OpenApiClient.Models.MetarSkyCoverage? _explicitNullValueAmount = default!;
         /// <summary>A structured value representing a measurement and its unit of measure. This object is a slightly modified version of the schema.org definition at https://schema.org/QuantitativeValue</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue? Base { get; set; }
+        public global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue? Base { get => _explicitNullValueBase; set { _explicitNullValueBase = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("base"); else _explicitNullProperties?.Remove("base"); } }
+        private global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue? _explicitNullValueBase = default!;
 #nullable restore
 #else
-        public global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue Base { get; set; }
+        public global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue Base { get => _explicitNullValueBase; set { _explicitNullValueBase = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("base"); else _explicitNullProperties?.Remove("base"); } }
+        private global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue _explicitNullValueBase = default!;
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -30,7 +42,7 @@ namespace Soenneker.Nws.OpenApiClient.Models
         public static global::Soenneker.Nws.OpenApiClient.Models.ObservationCloudLayersItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Nws.OpenApiClient.Models.ObservationCloudLayersItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Nws.OpenApiClient.Models.ObservationCloudLayersItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -52,7 +64,8 @@ namespace Soenneker.Nws.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Nws.OpenApiClient.Models.MetarSkyCoverage>("amount", Amount);
-            writer.WriteObjectValue<global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue>("base", Base);
+            writer.WriteObjectValue<global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue>("base", Base);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

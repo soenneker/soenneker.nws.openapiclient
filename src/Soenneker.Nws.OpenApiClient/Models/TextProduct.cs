@@ -11,72 +11,105 @@ namespace Soenneker.Nws.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class TextProduct : IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("@context") is { } nullNodeContext && nullNodeContext.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Context = null;
+            if (parseNode.GetChildNode("@id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("issuanceTime") is { } nullNodeIssuanceTime && nullNodeIssuanceTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IssuanceTime = null;
+            if (parseNode.GetChildNode("issuingOffice") is { } nullNodeIssuingOffice && nullNodeIssuingOffice.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IssuingOffice = null;
+            if (parseNode.GetChildNode("productCode") is { } nullNodeProductCode && nullNodeProductCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProductCode = null;
+            if (parseNode.GetChildNode("productName") is { } nullNodeProductName && nullNodeProductName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProductName = null;
+            if (parseNode.GetChildNode("productText") is { } nullNodeProductText && nullNodeProductText.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProductText = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeTextProductId && nullNodeTextProductId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TextProductId = null;
+            if (parseNode.GetChildNode("wmoCollectiveId") is { } nullNodeWmoCollectiveId && nullNodeWmoCollectiveId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WmoCollectiveId = null;
+        }
+
         /// <summary>The Context property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Context { get; set; }
+        public UntypedNode? Context { get => _explicitNullValueContext; set { _explicitNullValueContext = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("@context"); else _explicitNullProperties?.Remove("@context"); } }
+        private UntypedNode? _explicitNullValueContext = default!;
 #nullable restore
 #else
-        public UntypedNode Context { get; set; }
+        public UntypedNode Context { get => _explicitNullValueContext; set { _explicitNullValueContext = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("@context"); else _explicitNullProperties?.Remove("@context"); } }
+        private UntypedNode _explicitNullValueContext = default!;
 #endif
         /// <summary>The Id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("@id"); else _explicitNullProperties?.Remove("@id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("@id"); else _explicitNullProperties?.Remove("@id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>The issuanceTime property</summary>
-        public DateTimeOffset? IssuanceTime { get; set; }
+        public DateTimeOffset? IssuanceTime { get => _explicitNullValueIssuanceTime; set { _explicitNullValueIssuanceTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("issuanceTime"); else _explicitNullProperties?.Remove("issuanceTime"); } }
+        private DateTimeOffset? _explicitNullValueIssuanceTime = default!;
         /// <summary>The issuingOffice property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IssuingOffice { get; set; }
+        public string? IssuingOffice { get => _explicitNullValueIssuingOffice; set { _explicitNullValueIssuingOffice = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("issuingOffice"); else _explicitNullProperties?.Remove("issuingOffice"); } }
+        private string? _explicitNullValueIssuingOffice = default!;
 #nullable restore
 #else
-        public string IssuingOffice { get; set; }
+        public string IssuingOffice { get => _explicitNullValueIssuingOffice; set { _explicitNullValueIssuingOffice = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("issuingOffice"); else _explicitNullProperties?.Remove("issuingOffice"); } }
+        private string _explicitNullValueIssuingOffice = default!;
 #endif
         /// <summary>The productCode property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProductCode { get; set; }
+        public string? ProductCode { get => _explicitNullValueProductCode; set { _explicitNullValueProductCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("productCode"); else _explicitNullProperties?.Remove("productCode"); } }
+        private string? _explicitNullValueProductCode = default!;
 #nullable restore
 #else
-        public string ProductCode { get; set; }
+        public string ProductCode { get => _explicitNullValueProductCode; set { _explicitNullValueProductCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("productCode"); else _explicitNullProperties?.Remove("productCode"); } }
+        private string _explicitNullValueProductCode = default!;
 #endif
         /// <summary>The productName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProductName { get; set; }
+        public string? ProductName { get => _explicitNullValueProductName; set { _explicitNullValueProductName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("productName"); else _explicitNullProperties?.Remove("productName"); } }
+        private string? _explicitNullValueProductName = default!;
 #nullable restore
 #else
-        public string ProductName { get; set; }
+        public string ProductName { get => _explicitNullValueProductName; set { _explicitNullValueProductName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("productName"); else _explicitNullProperties?.Remove("productName"); } }
+        private string _explicitNullValueProductName = default!;
 #endif
         /// <summary>The productText property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProductText { get; set; }
+        public string? ProductText { get => _explicitNullValueProductText; set { _explicitNullValueProductText = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("productText"); else _explicitNullProperties?.Remove("productText"); } }
+        private string? _explicitNullValueProductText = default!;
 #nullable restore
 #else
-        public string ProductText { get; set; }
+        public string ProductText { get => _explicitNullValueProductText; set { _explicitNullValueProductText = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("productText"); else _explicitNullProperties?.Remove("productText"); } }
+        private string _explicitNullValueProductText = default!;
 #endif
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TextProductId { get; set; }
+        public string? TextProductId { get => _explicitNullValueTextProductId; set { _explicitNullValueTextProductId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueTextProductId = default!;
 #nullable restore
 #else
-        public string TextProductId { get; set; }
+        public string TextProductId { get => _explicitNullValueTextProductId; set { _explicitNullValueTextProductId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueTextProductId = default!;
 #endif
         /// <summary>The wmoCollectiveId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WmoCollectiveId { get; set; }
+        public string? WmoCollectiveId { get => _explicitNullValueWmoCollectiveId; set { _explicitNullValueWmoCollectiveId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("wmoCollectiveId"); else _explicitNullProperties?.Remove("wmoCollectiveId"); } }
+        private string? _explicitNullValueWmoCollectiveId = default!;
 #nullable restore
 #else
-        public string WmoCollectiveId { get; set; }
+        public string WmoCollectiveId { get => _explicitNullValueWmoCollectiveId; set { _explicitNullValueWmoCollectiveId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("wmoCollectiveId"); else _explicitNullProperties?.Remove("wmoCollectiveId"); } }
+        private string _explicitNullValueWmoCollectiveId = default!;
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -86,7 +119,7 @@ namespace Soenneker.Nws.OpenApiClient.Models
         public static global::Soenneker.Nws.OpenApiClient.Models.TextProduct CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Nws.OpenApiClient.Models.TextProduct();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Nws.OpenApiClient.Models.TextProduct(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -122,7 +155,8 @@ namespace Soenneker.Nws.OpenApiClient.Models
             writer.WriteStringValue("productName", ProductName);
             writer.WriteStringValue("productText", ProductText);
             writer.WriteStringValue("id", TextProductId);
-            writer.WriteStringValue("wmoCollectiveId", WmoCollectiveId);
+            writer.WriteStringValue("wmoCollectiveId", WmoCollectiveId);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

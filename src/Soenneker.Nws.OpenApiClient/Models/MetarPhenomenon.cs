@@ -12,23 +12,41 @@ namespace Soenneker.Nws.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MetarPhenomenon : IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("intensity") is { } nullNodeIntensity && nullNodeIntensity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Intensity = null;
+            if (parseNode.GetChildNode("inVicinity") is { } nullNodeInVicinity && nullNodeInVicinity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InVicinity = null;
+            if (parseNode.GetChildNode("modifier") is { } nullNodeModifier && nullNodeModifier.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Modifier = null;
+            if (parseNode.GetChildNode("rawString") is { } nullNodeRawString && nullNodeRawString.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RawString = null;
+            if (parseNode.GetChildNode("weather") is { } nullNodeWeather && nullNodeWeather.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Weather = null;
+        }
+
         /// <summary>The intensity property</summary>
-        public global::Soenneker.Nws.OpenApiClient.Models.MetarPhenomenonIntensity? Intensity { get; set; }
+        public global::Soenneker.Nws.OpenApiClient.Models.MetarPhenomenonIntensity? Intensity { get => _explicitNullValueIntensity; set { _explicitNullValueIntensity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("intensity"); else _explicitNullProperties?.Remove("intensity"); } }
+        private global::Soenneker.Nws.OpenApiClient.Models.MetarPhenomenonIntensity? _explicitNullValueIntensity = default!;
         /// <summary>The inVicinity property</summary>
-        public bool? InVicinity { get; set; }
+        public bool? InVicinity { get => _explicitNullValueInVicinity; set { _explicitNullValueInVicinity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inVicinity"); else _explicitNullProperties?.Remove("inVicinity"); } }
+        private bool? _explicitNullValueInVicinity = default!;
         /// <summary>The modifier property</summary>
-        public global::Soenneker.Nws.OpenApiClient.Models.MetarPhenomenonModifier? Modifier { get; set; }
+        public global::Soenneker.Nws.OpenApiClient.Models.MetarPhenomenonModifier? Modifier { get => _explicitNullValueModifier; set { _explicitNullValueModifier = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("modifier"); else _explicitNullProperties?.Remove("modifier"); } }
+        private global::Soenneker.Nws.OpenApiClient.Models.MetarPhenomenonModifier? _explicitNullValueModifier = default!;
         /// <summary>The rawString property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RawString { get; set; }
+        public string? RawString { get => _explicitNullValueRawString; set { _explicitNullValueRawString = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rawString"); else _explicitNullProperties?.Remove("rawString"); } }
+        private string? _explicitNullValueRawString = default!;
 #nullable restore
 #else
-        public string RawString { get; set; }
+        public string RawString { get => _explicitNullValueRawString; set { _explicitNullValueRawString = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rawString"); else _explicitNullProperties?.Remove("rawString"); } }
+        private string _explicitNullValueRawString = default!;
 #endif
         /// <summary>The weather property</summary>
-        public global::Soenneker.Nws.OpenApiClient.Models.MetarPhenomenonWeather? Weather { get; set; }
+        public global::Soenneker.Nws.OpenApiClient.Models.MetarPhenomenonWeather? Weather { get => _explicitNullValueWeather; set { _explicitNullValueWeather = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("weather"); else _explicitNullProperties?.Remove("weather"); } }
+        private global::Soenneker.Nws.OpenApiClient.Models.MetarPhenomenonWeather? _explicitNullValueWeather = default!;
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -37,7 +55,7 @@ namespace Soenneker.Nws.OpenApiClient.Models
         public static global::Soenneker.Nws.OpenApiClient.Models.MetarPhenomenon CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Nws.OpenApiClient.Models.MetarPhenomenon();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Nws.OpenApiClient.Models.MetarPhenomenon(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -65,7 +83,8 @@ namespace Soenneker.Nws.OpenApiClient.Models
             writer.WriteBoolValue("inVicinity", InVicinity);
             writer.WriteEnumValue<global::Soenneker.Nws.OpenApiClient.Models.MetarPhenomenonModifier>("modifier", Modifier);
             writer.WriteStringValue("rawString", RawString);
-            writer.WriteEnumValue<global::Soenneker.Nws.OpenApiClient.Models.MetarPhenomenonWeather>("weather", Weather);
+            writer.WriteEnumValue<global::Soenneker.Nws.OpenApiClient.Models.MetarPhenomenonWeather>("weather", Weather);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

@@ -11,149 +11,216 @@ namespace Soenneker.Nws.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PointBody : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("astronomicalData") is { } nullNodeAstronomicalData && nullNodeAstronomicalData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AstronomicalData = null;
+            if (parseNode.GetChildNode("@context") is { } nullNodeContext && nullNodeContext.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Context = null;
+            if (parseNode.GetChildNode("county") is { } nullNodeCounty && nullNodeCounty.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) County = null;
+            if (parseNode.GetChildNode("cwa") is { } nullNodeCwa && nullNodeCwa.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cwa = null;
+            if (parseNode.GetChildNode("fireWeatherZone") is { } nullNodeFireWeatherZone && nullNodeFireWeatherZone.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FireWeatherZone = null;
+            if (parseNode.GetChildNode("forecast") is { } nullNodeForecast && nullNodeForecast.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Forecast = null;
+            if (parseNode.GetChildNode("forecastGridData") is { } nullNodeForecastGridData && nullNodeForecastGridData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ForecastGridData = null;
+            if (parseNode.GetChildNode("forecastHourly") is { } nullNodeForecastHourly && nullNodeForecastHourly.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ForecastHourly = null;
+            if (parseNode.GetChildNode("forecastOffice") is { } nullNodeForecastOffice && nullNodeForecastOffice.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ForecastOffice = null;
+            if (parseNode.GetChildNode("forecastZone") is { } nullNodeForecastZone && nullNodeForecastZone.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ForecastZone = null;
+            if (parseNode.GetChildNode("geometry") is { } nullNodeGeometry && nullNodeGeometry.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Geometry = null;
+            if (parseNode.GetChildNode("gridId") is { } nullNodeGridId && nullNodeGridId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GridId = null;
+            if (parseNode.GetChildNode("gridX") is { } nullNodeGridX && nullNodeGridX.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GridX = null;
+            if (parseNode.GetChildNode("gridY") is { } nullNodeGridY && nullNodeGridY.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GridY = null;
+            if (parseNode.GetChildNode("@id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("nwr") is { } nullNodeNwr && nullNodeNwr.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Nwr = null;
+            if (parseNode.GetChildNode("observationStations") is { } nullNodeObservationStations && nullNodeObservationStations.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ObservationStations = null;
+            if (parseNode.GetChildNode("type") is { } nullNodePointBodyType && nullNodePointBodyType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PointBodyType = null;
+            if (parseNode.GetChildNode("radarStation") is { } nullNodeRadarStation && nullNodeRadarStation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RadarStation = null;
+            if (parseNode.GetChildNode("relativeLocation") is { } nullNodeRelativeLocation && nullNodeRelativeLocation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RelativeLocation = null;
+            if (parseNode.GetChildNode("timeZone") is { } nullNodeTimeZone && nullNodeTimeZone.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TimeZone = null;
+            if (parseNode.GetChildNode("@type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>An object representing sunrise, sunset, and twilight information for a location.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Nws.OpenApiClient.Models.AstronomicalData? AstronomicalData { get; set; }
+        public global::Soenneker.Nws.OpenApiClient.Models.AstronomicalData? AstronomicalData { get => _explicitNullValueAstronomicalData; set { _explicitNullValueAstronomicalData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("astronomicalData"); else _explicitNullProperties?.Remove("astronomicalData"); } }
+        private global::Soenneker.Nws.OpenApiClient.Models.AstronomicalData? _explicitNullValueAstronomicalData = default!;
 #nullable restore
 #else
-        public global::Soenneker.Nws.OpenApiClient.Models.AstronomicalData AstronomicalData { get; set; }
+        public global::Soenneker.Nws.OpenApiClient.Models.AstronomicalData AstronomicalData { get => _explicitNullValueAstronomicalData; set { _explicitNullValueAstronomicalData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("astronomicalData"); else _explicitNullProperties?.Remove("astronomicalData"); } }
+        private global::Soenneker.Nws.OpenApiClient.Models.AstronomicalData _explicitNullValueAstronomicalData = default!;
 #endif
         /// <summary>The Context property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Context { get; set; }
+        public UntypedNode? Context { get => _explicitNullValueContext; set { _explicitNullValueContext = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("@context"); else _explicitNullProperties?.Remove("@context"); } }
+        private UntypedNode? _explicitNullValueContext = default!;
 #nullable restore
 #else
-        public UntypedNode Context { get; set; }
+        public UntypedNode Context { get => _explicitNullValueContext; set { _explicitNullValueContext = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("@context"); else _explicitNullProperties?.Remove("@context"); } }
+        private UntypedNode _explicitNullValueContext = default!;
 #endif
         /// <summary>The county property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? County { get; set; }
+        public string? County { get => _explicitNullValueCounty; set { _explicitNullValueCounty = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("county"); else _explicitNullProperties?.Remove("county"); } }
+        private string? _explicitNullValueCounty = default!;
 #nullable restore
 #else
-        public string County { get; set; }
+        public string County { get => _explicitNullValueCounty; set { _explicitNullValueCounty = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("county"); else _explicitNullProperties?.Remove("county"); } }
+        private string _explicitNullValueCounty = default!;
 #endif
         /// <summary>Three-letter identifier for a NWS office.</summary>
-        public global::Soenneker.Nws.OpenApiClient.Models.NwsForecastOfficeId? Cwa { get; set; }
+        public global::Soenneker.Nws.OpenApiClient.Models.NwsForecastOfficeId? Cwa { get => _explicitNullValueCwa; set { _explicitNullValueCwa = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cwa"); else _explicitNullProperties?.Remove("cwa"); } }
+        private global::Soenneker.Nws.OpenApiClient.Models.NwsForecastOfficeId? _explicitNullValueCwa = default!;
         /// <summary>The fireWeatherZone property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FireWeatherZone { get; set; }
+        public string? FireWeatherZone { get => _explicitNullValueFireWeatherZone; set { _explicitNullValueFireWeatherZone = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fireWeatherZone"); else _explicitNullProperties?.Remove("fireWeatherZone"); } }
+        private string? _explicitNullValueFireWeatherZone = default!;
 #nullable restore
 #else
-        public string FireWeatherZone { get; set; }
+        public string FireWeatherZone { get => _explicitNullValueFireWeatherZone; set { _explicitNullValueFireWeatherZone = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fireWeatherZone"); else _explicitNullProperties?.Remove("fireWeatherZone"); } }
+        private string _explicitNullValueFireWeatherZone = default!;
 #endif
         /// <summary>The forecast property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Forecast { get; set; }
+        public string? Forecast { get => _explicitNullValueForecast; set { _explicitNullValueForecast = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("forecast"); else _explicitNullProperties?.Remove("forecast"); } }
+        private string? _explicitNullValueForecast = default!;
 #nullable restore
 #else
-        public string Forecast { get; set; }
+        public string Forecast { get => _explicitNullValueForecast; set { _explicitNullValueForecast = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("forecast"); else _explicitNullProperties?.Remove("forecast"); } }
+        private string _explicitNullValueForecast = default!;
 #endif
         /// <summary>The forecastGridData property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ForecastGridData { get; set; }
+        public string? ForecastGridData { get => _explicitNullValueForecastGridData; set { _explicitNullValueForecastGridData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("forecastGridData"); else _explicitNullProperties?.Remove("forecastGridData"); } }
+        private string? _explicitNullValueForecastGridData = default!;
 #nullable restore
 #else
-        public string ForecastGridData { get; set; }
+        public string ForecastGridData { get => _explicitNullValueForecastGridData; set { _explicitNullValueForecastGridData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("forecastGridData"); else _explicitNullProperties?.Remove("forecastGridData"); } }
+        private string _explicitNullValueForecastGridData = default!;
 #endif
         /// <summary>The forecastHourly property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ForecastHourly { get; set; }
+        public string? ForecastHourly { get => _explicitNullValueForecastHourly; set { _explicitNullValueForecastHourly = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("forecastHourly"); else _explicitNullProperties?.Remove("forecastHourly"); } }
+        private string? _explicitNullValueForecastHourly = default!;
 #nullable restore
 #else
-        public string ForecastHourly { get; set; }
+        public string ForecastHourly { get => _explicitNullValueForecastHourly; set { _explicitNullValueForecastHourly = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("forecastHourly"); else _explicitNullProperties?.Remove("forecastHourly"); } }
+        private string _explicitNullValueForecastHourly = default!;
 #endif
         /// <summary>The forecastOffice property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ForecastOffice { get; set; }
+        public string? ForecastOffice { get => _explicitNullValueForecastOffice; set { _explicitNullValueForecastOffice = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("forecastOffice"); else _explicitNullProperties?.Remove("forecastOffice"); } }
+        private string? _explicitNullValueForecastOffice = default!;
 #nullable restore
 #else
-        public string ForecastOffice { get; set; }
+        public string ForecastOffice { get => _explicitNullValueForecastOffice; set { _explicitNullValueForecastOffice = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("forecastOffice"); else _explicitNullProperties?.Remove("forecastOffice"); } }
+        private string _explicitNullValueForecastOffice = default!;
 #endif
         /// <summary>The forecastZone property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ForecastZone { get; set; }
+        public string? ForecastZone { get => _explicitNullValueForecastZone; set { _explicitNullValueForecastZone = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("forecastZone"); else _explicitNullProperties?.Remove("forecastZone"); } }
+        private string? _explicitNullValueForecastZone = default!;
 #nullable restore
 #else
-        public string ForecastZone { get; set; }
+        public string ForecastZone { get => _explicitNullValueForecastZone; set { _explicitNullValueForecastZone = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("forecastZone"); else _explicitNullProperties?.Remove("forecastZone"); } }
+        private string _explicitNullValueForecastZone = default!;
 #endif
         /// <summary>A geometry represented in Well-Known Text (WKT) format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Geometry { get; set; }
+        public string? Geometry { get => _explicitNullValueGeometry; set { _explicitNullValueGeometry = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("geometry"); else _explicitNullProperties?.Remove("geometry"); } }
+        private string? _explicitNullValueGeometry = default!;
 #nullable restore
 #else
-        public string Geometry { get; set; }
+        public string Geometry { get => _explicitNullValueGeometry; set { _explicitNullValueGeometry = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("geometry"); else _explicitNullProperties?.Remove("geometry"); } }
+        private string _explicitNullValueGeometry = default!;
 #endif
         /// <summary>Three-letter identifier for a NWS office.</summary>
-        public global::Soenneker.Nws.OpenApiClient.Models.NwsForecastOfficeId? GridId { get; set; }
+        public global::Soenneker.Nws.OpenApiClient.Models.NwsForecastOfficeId? GridId { get => _explicitNullValueGridId; set { _explicitNullValueGridId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gridId"); else _explicitNullProperties?.Remove("gridId"); } }
+        private global::Soenneker.Nws.OpenApiClient.Models.NwsForecastOfficeId? _explicitNullValueGridId = default!;
         /// <summary>The gridX property</summary>
-        public int? GridX { get; set; }
+        public int? GridX { get => _explicitNullValueGridX; set { _explicitNullValueGridX = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gridX"); else _explicitNullProperties?.Remove("gridX"); } }
+        private int? _explicitNullValueGridX = default!;
         /// <summary>The gridY property</summary>
-        public int? GridY { get; set; }
+        public int? GridY { get => _explicitNullValueGridY; set { _explicitNullValueGridY = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gridY"); else _explicitNullProperties?.Remove("gridY"); } }
+        private int? _explicitNullValueGridY = default!;
         /// <summary>The Id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("@id"); else _explicitNullProperties?.Remove("@id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("@id"); else _explicitNullProperties?.Remove("@id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>NOAA Weather Radio metadata for this point</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Nws.OpenApiClient.Models.PointBodyNwr? Nwr { get; set; }
+        public global::Soenneker.Nws.OpenApiClient.Models.PointBodyNwr? Nwr { get => _explicitNullValueNwr; set { _explicitNullValueNwr = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nwr"); else _explicitNullProperties?.Remove("nwr"); } }
+        private global::Soenneker.Nws.OpenApiClient.Models.PointBodyNwr? _explicitNullValueNwr = default!;
 #nullable restore
 #else
-        public global::Soenneker.Nws.OpenApiClient.Models.PointBodyNwr Nwr { get; set; }
+        public global::Soenneker.Nws.OpenApiClient.Models.PointBodyNwr Nwr { get => _explicitNullValueNwr; set { _explicitNullValueNwr = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nwr"); else _explicitNullProperties?.Remove("nwr"); } }
+        private global::Soenneker.Nws.OpenApiClient.Models.PointBodyNwr _explicitNullValueNwr = default!;
 #endif
         /// <summary>The observationStations property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ObservationStations { get; set; }
+        public string? ObservationStations { get => _explicitNullValueObservationStations; set { _explicitNullValueObservationStations = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("observationStations"); else _explicitNullProperties?.Remove("observationStations"); } }
+        private string? _explicitNullValueObservationStations = default!;
 #nullable restore
 #else
-        public string ObservationStations { get; set; }
+        public string ObservationStations { get => _explicitNullValueObservationStations; set { _explicitNullValueObservationStations = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("observationStations"); else _explicitNullProperties?.Remove("observationStations"); } }
+        private string _explicitNullValueObservationStations = default!;
 #endif
         /// <summary>Whether the specific point is on land or marine</summary>
-        public global::Soenneker.Nws.OpenApiClient.Models.PointBodyType? PointBodyType { get; set; }
+        public global::Soenneker.Nws.OpenApiClient.Models.PointBodyType? PointBodyType { get => _explicitNullValuePointBodyType; set { _explicitNullValuePointBodyType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.Nws.OpenApiClient.Models.PointBodyType? _explicitNullValuePointBodyType = default!;
         /// <summary>The radarStation property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RadarStation { get; set; }
+        public string? RadarStation { get => _explicitNullValueRadarStation; set { _explicitNullValueRadarStation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("radarStation"); else _explicitNullProperties?.Remove("radarStation"); } }
+        private string? _explicitNullValueRadarStation = default!;
 #nullable restore
 #else
-        public string RadarStation { get; set; }
+        public string RadarStation { get => _explicitNullValueRadarStation; set { _explicitNullValueRadarStation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("radarStation"); else _explicitNullProperties?.Remove("radarStation"); } }
+        private string _explicitNullValueRadarStation = default!;
 #endif
         /// <summary>The relativeLocation property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Nws.OpenApiClient.Models.PointBodyRelativeLocation? RelativeLocation { get; set; }
+        public global::Soenneker.Nws.OpenApiClient.Models.PointBodyRelativeLocation? RelativeLocation { get => _explicitNullValueRelativeLocation; set { _explicitNullValueRelativeLocation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("relativeLocation"); else _explicitNullProperties?.Remove("relativeLocation"); } }
+        private global::Soenneker.Nws.OpenApiClient.Models.PointBodyRelativeLocation? _explicitNullValueRelativeLocation = default!;
 #nullable restore
 #else
-        public global::Soenneker.Nws.OpenApiClient.Models.PointBodyRelativeLocation RelativeLocation { get; set; }
+        public global::Soenneker.Nws.OpenApiClient.Models.PointBodyRelativeLocation RelativeLocation { get => _explicitNullValueRelativeLocation; set { _explicitNullValueRelativeLocation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("relativeLocation"); else _explicitNullProperties?.Remove("relativeLocation"); } }
+        private global::Soenneker.Nws.OpenApiClient.Models.PointBodyRelativeLocation _explicitNullValueRelativeLocation = default!;
 #endif
         /// <summary>The timeZone property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TimeZone { get; set; }
+        public string? TimeZone { get => _explicitNullValueTimeZone; set { _explicitNullValueTimeZone = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timeZone"); else _explicitNullProperties?.Remove("timeZone"); } }
+        private string? _explicitNullValueTimeZone = default!;
 #nullable restore
 #else
-        public string TimeZone { get; set; }
+        public string TimeZone { get => _explicitNullValueTimeZone; set { _explicitNullValueTimeZone = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timeZone"); else _explicitNullProperties?.Remove("timeZone"); } }
+        private string _explicitNullValueTimeZone = default!;
 #endif
         /// <summary>The Type property</summary>
-        public global::Soenneker.Nws.OpenApiClient.Models.WxColonPointType? Type { get; set; }
+        public global::Soenneker.Nws.OpenApiClient.Models.WxColonPointType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("@type"); else _explicitNullProperties?.Remove("@type"); } }
+        private global::Soenneker.Nws.OpenApiClient.Models.WxColonPointType? _explicitNullValueType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Nws.OpenApiClient.Models.PointBody"/> and sets the default values.
         /// </summary>
@@ -169,7 +236,7 @@ namespace Soenneker.Nws.OpenApiClient.Models
         public static global::Soenneker.Nws.OpenApiClient.Models.PointBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Nws.OpenApiClient.Models.PointBody();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Nws.OpenApiClient.Models.PointBody(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -232,6 +299,7 @@ namespace Soenneker.Nws.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Nws.OpenApiClient.Models.PointBodyRelativeLocation>("relativeLocation", RelativeLocation);
             writer.WriteStringValue("timeZone", TimeZone);
             writer.WriteEnumValue<global::Soenneker.Nws.OpenApiClient.Models.WxColonPointType>("@type", Type);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -52,17 +52,17 @@ namespace Soenneker.Nws.OpenApiClient.Gridpoints.Item.WithXWithY
         /// <summary>
         /// Returns raw numerical forecast data for a 2.5km grid area
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Nws.OpenApiClient.Models.GridpointGeoJson"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Nws.OpenApiClient.Models.GridpointSuccessResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Nws.OpenApiClient.Models.ProblemDetail">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Nws.OpenApiClient.Models.GridpointGeoJson?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Nws.OpenApiClient.Models.GridpointSuccessResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Nws.OpenApiClient.Models.GridpointGeoJson> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Nws.OpenApiClient.Models.GridpointSuccessResponse> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -70,7 +70,7 @@ namespace Soenneker.Nws.OpenApiClient.Gridpoints.Item.WithXWithY
             {
                 { "XXX", global::Soenneker.Nws.OpenApiClient.Models.ProblemDetail.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Nws.OpenApiClient.Models.GridpointGeoJson>(requestInfo, global::Soenneker.Nws.OpenApiClient.Models.GridpointGeoJson.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Nws.OpenApiClient.Models.GridpointSuccessResponse>(requestInfo, global::Soenneker.Nws.OpenApiClient.Models.GridpointSuccessResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns raw numerical forecast data for a 2.5km grid area
@@ -88,7 +88,7 @@ namespace Soenneker.Nws.OpenApiClient.Gridpoints.Item.WithXWithY
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "application/geo+json");
+            requestInfo.Headers.TryAdd("Accept", "application/geo+json, application/ld+json");
             return requestInfo;
         }
         /// <summary>

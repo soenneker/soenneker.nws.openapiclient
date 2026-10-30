@@ -12,23 +12,41 @@ namespace Soenneker.Nws.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class QuantitativeValue : IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("maxValue") is { } nullNodeMaxValue && nullNodeMaxValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxValue = null;
+            if (parseNode.GetChildNode("minValue") is { } nullNodeMinValue && nullNodeMinValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MinValue = null;
+            if (parseNode.GetChildNode("qualityControl") is { } nullNodeQualityControl && nullNodeQualityControl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QualityControl = null;
+            if (parseNode.GetChildNode("unitCode") is { } nullNodeUnitCode && nullNodeUnitCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UnitCode = null;
+            if (parseNode.GetChildNode("value") is { } nullNodeValue && nullNodeValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Value = null;
+        }
+
         /// <summary>The maximum value of a range of measured values</summary>
-        public double? MaxValue { get; set; }
+        public double? MaxValue { get => _explicitNullValueMaxValue; set { _explicitNullValueMaxValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maxValue"); else _explicitNullProperties?.Remove("maxValue"); } }
+        private double? _explicitNullValueMaxValue = default!;
         /// <summary>The minimum value of a range of measured values</summary>
-        public double? MinValue { get; set; }
+        public double? MinValue { get => _explicitNullValueMinValue; set { _explicitNullValueMinValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("minValue"); else _explicitNullProperties?.Remove("minValue"); } }
+        private double? _explicitNullValueMinValue = default!;
         /// <summary>For values in observation records, the quality control flag from the MADIS system. The definitions of these flags can be found at https://madis.ncep.noaa.gov/madis_sfc_qc_notes.shtml</summary>
-        public global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValueQualityControl? QualityControl { get; set; }
+        public global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValueQualityControl? QualityControl { get => _explicitNullValueQualityControl; set { _explicitNullValueQualityControl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("qualityControl"); else _explicitNullProperties?.Remove("qualityControl"); } }
+        private global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValueQualityControl? _explicitNullValueQualityControl = default!;
         /// <summary>A string denoting a unit of measure, expressed in the format &quot;{unit}&quot; or &quot;{namespace}:{unit}&quot;.Units with the namespace &quot;wmo&quot; or &quot;wmoUnit&quot; are defined in the World Meteorological Organization Codes Registry at http://codes.wmo.int/common/unit and should be canonically resolvable to http://codes.wmo.int/common/unit/{unit}.Units with the namespace &quot;nwsUnit&quot; are currently custom and do not align to any standard.Units with no namespace or the namespace &quot;uc&quot; are compliant with the Unified Code for Units of Measure syntax defined at https://unitsofmeasure.org/. This also aligns with recent versions of the Geographic Markup Language (GML) standard, the IWXXM standard, and OGC Observations and Measurements v2.0 (ISO/DIS 19156).Namespaced units are considered deprecated. We will be aligning API to use the same standards as GML/IWXXM in the future.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UnitCode { get; set; }
+        public string? UnitCode { get => _explicitNullValueUnitCode; set { _explicitNullValueUnitCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unitCode"); else _explicitNullProperties?.Remove("unitCode"); } }
+        private string? _explicitNullValueUnitCode = default!;
 #nullable restore
 #else
-        public string UnitCode { get; set; }
+        public string UnitCode { get => _explicitNullValueUnitCode; set { _explicitNullValueUnitCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unitCode"); else _explicitNullProperties?.Remove("unitCode"); } }
+        private string _explicitNullValueUnitCode = default!;
 #endif
         /// <summary>A measured value</summary>
-        public double? Value { get; set; }
+        public double? Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
+        private double? _explicitNullValueValue = default!;
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -37,7 +55,7 @@ namespace Soenneker.Nws.OpenApiClient.Models
         public static global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -65,7 +83,8 @@ namespace Soenneker.Nws.OpenApiClient.Models
             writer.WriteDoubleValue("minValue", MinValue);
             writer.WriteEnumValue<global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValueQualityControl>("qualityControl", QualityControl);
             writer.WriteStringValue("unitCode", UnitCode);
-            writer.WriteDoubleValue("value", Value);
+            writer.WriteDoubleValue("value", Value);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

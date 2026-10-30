@@ -55,17 +55,17 @@ namespace Soenneker.Nws.OpenApiClient.Stations.Item.Observations
         /// <summary>
         /// Returns a list of observations for a given station
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Nws.OpenApiClient.Models.ObservationCollectionGeoJson"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Nws.OpenApiClient.Models.StationObservationListSuccessResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Nws.OpenApiClient.Models.ProblemDetail">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Nws.OpenApiClient.Models.ObservationCollectionGeoJson?> GetAsync(Action<RequestConfiguration<global::Soenneker.Nws.OpenApiClient.Stations.Item.Observations.ObservationsRequestBuilder.ObservationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Nws.OpenApiClient.Models.StationObservationListSuccessResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Nws.OpenApiClient.Stations.Item.Observations.ObservationsRequestBuilder.ObservationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Nws.OpenApiClient.Models.ObservationCollectionGeoJson> GetAsync(Action<RequestConfiguration<global::Soenneker.Nws.OpenApiClient.Stations.Item.Observations.ObservationsRequestBuilder.ObservationsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Nws.OpenApiClient.Models.StationObservationListSuccessResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Nws.OpenApiClient.Stations.Item.Observations.ObservationsRequestBuilder.ObservationsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -73,7 +73,7 @@ namespace Soenneker.Nws.OpenApiClient.Stations.Item.Observations
             {
                 { "XXX", global::Soenneker.Nws.OpenApiClient.Models.ProblemDetail.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Nws.OpenApiClient.Models.ObservationCollectionGeoJson>(requestInfo, global::Soenneker.Nws.OpenApiClient.Models.ObservationCollectionGeoJson.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Nws.OpenApiClient.Models.StationObservationListSuccessResponse>(requestInfo, global::Soenneker.Nws.OpenApiClient.Models.StationObservationListSuccessResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns a list of observations for a given station
@@ -91,7 +91,7 @@ namespace Soenneker.Nws.OpenApiClient.Stations.Item.Observations
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "application/geo+json");
+            requestInfo.Headers.TryAdd("Accept", "application/geo+json, application/ld+json");
             return requestInfo;
         }
         /// <summary>

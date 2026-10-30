@@ -12,7 +12,12 @@ namespace Soenneker.Nws.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class GeoJsonGeometry : IComposedTypeWrapper, IParsable
-    {
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Nws.OpenApiClient.Models.GeoJsonGeometryGeoJsonLineString"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -81,29 +86,44 @@ namespace Soenneker.Nws.OpenApiClient.Models
             var result = new global::Soenneker.Nws.OpenApiClient.Models.GeoJsonGeometry();
             if("GeoJsonGeometryGeoJsonLineString".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.GeoJsonGeometryGeoJsonLineString = new global::Soenneker.Nws.OpenApiClient.Models.GeoJsonGeometryGeoJsonLineString();
+                
             }
             else if("GeoJsonGeometryGeoJsonMultiLineString".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.GeoJsonGeometryGeoJsonMultiLineString = new global::Soenneker.Nws.OpenApiClient.Models.GeoJsonGeometryGeoJsonMultiLineString();
+                
             }
             else if("GeoJsonGeometryGeoJsonMultiPoint".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.GeoJsonGeometryGeoJsonMultiPoint = new global::Soenneker.Nws.OpenApiClient.Models.GeoJsonGeometryGeoJsonMultiPoint();
+                
             }
             else if("GeoJsonGeometryGeoJsonMultiPolygon".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.GeoJsonGeometryGeoJsonMultiPolygon = new global::Soenneker.Nws.OpenApiClient.Models.GeoJsonGeometryGeoJsonMultiPolygon();
+                
             }
             else if("GeoJsonGeometryGeoJsonPoint".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.GeoJsonGeometryGeoJsonPoint = new global::Soenneker.Nws.OpenApiClient.Models.GeoJsonGeometryGeoJsonPoint();
+                
             }
             else if("GeoJsonGeometryGeoJsonPolygon".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.GeoJsonGeometryGeoJsonPolygon = new global::Soenneker.Nws.OpenApiClient.Models.GeoJsonGeometryGeoJsonPolygon();
+                
             }
-            return result;
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("Point".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("coordinates") != null))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("LineString".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("coordinates") != null))();
+            bool matchesUnionBranch2 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("Polygon".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("coordinates") != null))();
+            bool matchesUnionBranch3 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("MultiPoint".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("coordinates") != null))();
+            bool matchesUnionBranch4 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("MultiLineString".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("coordinates") != null))();
+            bool matchesUnionBranch5 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("MultiPolygon".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("coordinates") != null))();
+            if (result.GeoJsonGeometryGeoJsonLineString == null && result.GeoJsonGeometryGeoJsonMultiLineString == null && result.GeoJsonGeometryGeoJsonMultiPoint == null && result.GeoJsonGeometryGeoJsonMultiPolygon == null && result.GeoJsonGeometryGeoJsonPoint == null && result.GeoJsonGeometryGeoJsonPolygon == null && result.GeoJsonGeometryMember1 == null && matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch5) result.GeoJsonGeometryGeoJsonPoint = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Nws.OpenApiClient.Models.GeoJsonGeometryGeoJsonPoint(), parseNode);
+            if (result.GeoJsonGeometryGeoJsonLineString == null && result.GeoJsonGeometryGeoJsonMultiLineString == null && result.GeoJsonGeometryGeoJsonMultiPoint == null && result.GeoJsonGeometryGeoJsonMultiPolygon == null && result.GeoJsonGeometryGeoJsonPoint == null && result.GeoJsonGeometryGeoJsonPolygon == null && result.GeoJsonGeometryMember1 == null && matchesUnionBranch1 && !matchesUnionBranch0 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch5) result.GeoJsonGeometryGeoJsonLineString = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Nws.OpenApiClient.Models.GeoJsonGeometryGeoJsonLineString(), parseNode);
+            if (result.GeoJsonGeometryGeoJsonLineString == null && result.GeoJsonGeometryGeoJsonMultiLineString == null && result.GeoJsonGeometryGeoJsonMultiPoint == null && result.GeoJsonGeometryGeoJsonMultiPolygon == null && result.GeoJsonGeometryGeoJsonPoint == null && result.GeoJsonGeometryGeoJsonPolygon == null && result.GeoJsonGeometryMember1 == null && matchesUnionBranch2 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch5) result.GeoJsonGeometryGeoJsonPolygon = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Nws.OpenApiClient.Models.GeoJsonGeometryGeoJsonPolygon(), parseNode);
+            if (result.GeoJsonGeometryGeoJsonLineString == null && result.GeoJsonGeometryGeoJsonMultiLineString == null && result.GeoJsonGeometryGeoJsonMultiPoint == null && result.GeoJsonGeometryGeoJsonMultiPolygon == null && result.GeoJsonGeometryGeoJsonPoint == null && result.GeoJsonGeometryGeoJsonPolygon == null && result.GeoJsonGeometryMember1 == null && matchesUnionBranch3 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch4 && !matchesUnionBranch5) result.GeoJsonGeometryGeoJsonMultiPoint = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Nws.OpenApiClient.Models.GeoJsonGeometryGeoJsonMultiPoint(), parseNode);
+            if (result.GeoJsonGeometryGeoJsonLineString == null && result.GeoJsonGeometryGeoJsonMultiLineString == null && result.GeoJsonGeometryGeoJsonMultiPoint == null && result.GeoJsonGeometryGeoJsonMultiPolygon == null && result.GeoJsonGeometryGeoJsonPoint == null && result.GeoJsonGeometryGeoJsonPolygon == null && result.GeoJsonGeometryMember1 == null && matchesUnionBranch4 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch5) result.GeoJsonGeometryGeoJsonMultiLineString = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Nws.OpenApiClient.Models.GeoJsonGeometryGeoJsonMultiLineString(), parseNode);
+            if (result.GeoJsonGeometryGeoJsonLineString == null && result.GeoJsonGeometryGeoJsonMultiLineString == null && result.GeoJsonGeometryGeoJsonMultiPoint == null && result.GeoJsonGeometryGeoJsonMultiPolygon == null && result.GeoJsonGeometryGeoJsonPoint == null && result.GeoJsonGeometryGeoJsonPolygon == null && result.GeoJsonGeometryMember1 == null && matchesUnionBranch5 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4) result.GeoJsonGeometryGeoJsonMultiPolygon = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Nws.OpenApiClient.Models.GeoJsonGeometryGeoJsonMultiPolygon(), parseNode);
+            if (result.GeoJsonGeometryGeoJsonLineString == null && result.GeoJsonGeometryGeoJsonMultiLineString == null && result.GeoJsonGeometryGeoJsonMultiPoint == null && result.GeoJsonGeometryGeoJsonMultiPolygon == null && result.GeoJsonGeometryGeoJsonPoint == null && result.GeoJsonGeometryGeoJsonPolygon == null && result.GeoJsonGeometryMember1 == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -147,33 +167,49 @@ namespace Soenneker.Nws.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (GeoJsonGeometryGeoJsonLineString == null && GeoJsonGeometryGeoJsonMultiLineString == null && GeoJsonGeometryGeoJsonMultiPoint == null && GeoJsonGeometryGeoJsonMultiPolygon == null && GeoJsonGeometryGeoJsonPoint == null && GeoJsonGeometryGeoJsonPolygon == null && GeoJsonGeometryMember1 == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (GeoJsonGeometryGeoJsonLineString != null && GeoJsonGeometryGeoJsonMultiLineString == null && GeoJsonGeometryGeoJsonMultiPoint == null && GeoJsonGeometryGeoJsonMultiPolygon == null && GeoJsonGeometryGeoJsonPoint == null && GeoJsonGeometryGeoJsonPolygon == null && GeoJsonGeometryMember1 == null) { if (GeoJsonGeometryGeoJsonLineString is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, GeoJsonGeometryGeoJsonLineString); return; }
+            if (GeoJsonGeometryGeoJsonMultiLineString != null && GeoJsonGeometryGeoJsonLineString == null && GeoJsonGeometryGeoJsonMultiPoint == null && GeoJsonGeometryGeoJsonMultiPolygon == null && GeoJsonGeometryGeoJsonPoint == null && GeoJsonGeometryGeoJsonPolygon == null && GeoJsonGeometryMember1 == null) { if (GeoJsonGeometryGeoJsonMultiLineString is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, GeoJsonGeometryGeoJsonMultiLineString); return; }
+            if (GeoJsonGeometryGeoJsonMultiPoint != null && GeoJsonGeometryGeoJsonLineString == null && GeoJsonGeometryGeoJsonMultiLineString == null && GeoJsonGeometryGeoJsonMultiPolygon == null && GeoJsonGeometryGeoJsonPoint == null && GeoJsonGeometryGeoJsonPolygon == null && GeoJsonGeometryMember1 == null) { if (GeoJsonGeometryGeoJsonMultiPoint is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, GeoJsonGeometryGeoJsonMultiPoint); return; }
+            if (GeoJsonGeometryGeoJsonMultiPolygon != null && GeoJsonGeometryGeoJsonLineString == null && GeoJsonGeometryGeoJsonMultiLineString == null && GeoJsonGeometryGeoJsonMultiPoint == null && GeoJsonGeometryGeoJsonPoint == null && GeoJsonGeometryGeoJsonPolygon == null && GeoJsonGeometryMember1 == null) { if (GeoJsonGeometryGeoJsonMultiPolygon is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, GeoJsonGeometryGeoJsonMultiPolygon); return; }
+            if (GeoJsonGeometryGeoJsonPoint != null && GeoJsonGeometryGeoJsonLineString == null && GeoJsonGeometryGeoJsonMultiLineString == null && GeoJsonGeometryGeoJsonMultiPoint == null && GeoJsonGeometryGeoJsonMultiPolygon == null && GeoJsonGeometryGeoJsonPolygon == null && GeoJsonGeometryMember1 == null) { if (GeoJsonGeometryGeoJsonPoint is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, GeoJsonGeometryGeoJsonPoint); return; }
+            if (GeoJsonGeometryGeoJsonPolygon != null && GeoJsonGeometryGeoJsonLineString == null && GeoJsonGeometryGeoJsonMultiLineString == null && GeoJsonGeometryGeoJsonMultiPoint == null && GeoJsonGeometryGeoJsonMultiPolygon == null && GeoJsonGeometryGeoJsonPoint == null && GeoJsonGeometryMember1 == null) { if (GeoJsonGeometryGeoJsonPolygon is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, GeoJsonGeometryGeoJsonPolygon); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(GeoJsonGeometryGeoJsonLineString != null)
             {
+                if (GeoJsonGeometryGeoJsonLineString is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Nws.OpenApiClient.Models.GeoJsonGeometryGeoJsonLineString>(null, GeoJsonGeometryGeoJsonLineString);
             }
             else if(GeoJsonGeometryGeoJsonMultiLineString != null)
             {
+                if (GeoJsonGeometryGeoJsonMultiLineString is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Nws.OpenApiClient.Models.GeoJsonGeometryGeoJsonMultiLineString>(null, GeoJsonGeometryGeoJsonMultiLineString);
             }
             else if(GeoJsonGeometryGeoJsonMultiPoint != null)
             {
+                if (GeoJsonGeometryGeoJsonMultiPoint is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Nws.OpenApiClient.Models.GeoJsonGeometryGeoJsonMultiPoint>(null, GeoJsonGeometryGeoJsonMultiPoint);
             }
             else if(GeoJsonGeometryGeoJsonMultiPolygon != null)
             {
+                if (GeoJsonGeometryGeoJsonMultiPolygon is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Nws.OpenApiClient.Models.GeoJsonGeometryGeoJsonMultiPolygon>(null, GeoJsonGeometryGeoJsonMultiPolygon);
             }
             else if(GeoJsonGeometryGeoJsonPoint != null)
             {
+                if (GeoJsonGeometryGeoJsonPoint is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Nws.OpenApiClient.Models.GeoJsonGeometryGeoJsonPoint>(null, GeoJsonGeometryGeoJsonPoint);
             }
             else if(GeoJsonGeometryGeoJsonPolygon != null)
             {
+                if (GeoJsonGeometryGeoJsonPolygon is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Nws.OpenApiClient.Models.GeoJsonGeometryGeoJsonPolygon>(null, GeoJsonGeometryGeoJsonPolygon);
             }
             else if(GeoJsonGeometryMember1 != null)
             {
+                if (GeoJsonGeometryMember1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Nws.OpenApiClient.Models.GeoJsonGeometryMember1>(null, GeoJsonGeometryMember1);
             }
         }

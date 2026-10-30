@@ -11,121 +11,172 @@ namespace Soenneker.Nws.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ObservationStation : IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("bearing") is { } nullNodeBearing && nullNodeBearing.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Bearing = null;
+            if (parseNode.GetChildNode("@context") is { } nullNodeContext && nullNodeContext.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Context = null;
+            if (parseNode.GetChildNode("county") is { } nullNodeCounty && nullNodeCounty.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) County = null;
+            if (parseNode.GetChildNode("distance") is { } nullNodeDistance && nullNodeDistance.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Distance = null;
+            if (parseNode.GetChildNode("elevation") is { } nullNodeElevation && nullNodeElevation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Elevation = null;
+            if (parseNode.GetChildNode("fireWeatherZone") is { } nullNodeFireWeatherZone && nullNodeFireWeatherZone.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FireWeatherZone = null;
+            if (parseNode.GetChildNode("forecast") is { } nullNodeForecast && nullNodeForecast.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Forecast = null;
+            if (parseNode.GetChildNode("geometry") is { } nullNodeGeometry && nullNodeGeometry.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Geometry = null;
+            if (parseNode.GetChildNode("@id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("provider") is { } nullNodeProvider && nullNodeProvider.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Provider = null;
+            if (parseNode.GetChildNode("stationIdentifier") is { } nullNodeStationIdentifier && nullNodeStationIdentifier.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StationIdentifier = null;
+            if (parseNode.GetChildNode("subProvider") is { } nullNodeSubProvider && nullNodeSubProvider.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SubProvider = null;
+            if (parseNode.GetChildNode("timeZone") is { } nullNodeTimeZone && nullNodeTimeZone.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TimeZone = null;
+            if (parseNode.GetChildNode("@type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+        }
+
         /// <summary>A structured value representing a measurement and its unit of measure. This object is a slightly modified version of the schema.org definition at https://schema.org/QuantitativeValue</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue? Bearing { get; set; }
+        public global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue? Bearing { get => _explicitNullValueBearing; set { _explicitNullValueBearing = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bearing"); else _explicitNullProperties?.Remove("bearing"); } }
+        private global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue? _explicitNullValueBearing = default!;
 #nullable restore
 #else
-        public global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue Bearing { get; set; }
+        public global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue Bearing { get => _explicitNullValueBearing; set { _explicitNullValueBearing = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bearing"); else _explicitNullProperties?.Remove("bearing"); } }
+        private global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue _explicitNullValueBearing = default!;
 #endif
         /// <summary>The Context property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Context { get; set; }
+        public UntypedNode? Context { get => _explicitNullValueContext; set { _explicitNullValueContext = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("@context"); else _explicitNullProperties?.Remove("@context"); } }
+        private UntypedNode? _explicitNullValueContext = default!;
 #nullable restore
 #else
-        public UntypedNode Context { get; set; }
+        public UntypedNode Context { get => _explicitNullValueContext; set { _explicitNullValueContext = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("@context"); else _explicitNullProperties?.Remove("@context"); } }
+        private UntypedNode _explicitNullValueContext = default!;
 #endif
         /// <summary>A link to the NWS county zone containing this station.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? County { get; set; }
+        public string? County { get => _explicitNullValueCounty; set { _explicitNullValueCounty = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("county"); else _explicitNullProperties?.Remove("county"); } }
+        private string? _explicitNullValueCounty = default!;
 #nullable restore
 #else
-        public string County { get; set; }
+        public string County { get => _explicitNullValueCounty; set { _explicitNullValueCounty = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("county"); else _explicitNullProperties?.Remove("county"); } }
+        private string _explicitNullValueCounty = default!;
 #endif
         /// <summary>A structured value representing a measurement and its unit of measure. This object is a slightly modified version of the schema.org definition at https://schema.org/QuantitativeValue</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue? Distance { get; set; }
+        public global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue? Distance { get => _explicitNullValueDistance; set { _explicitNullValueDistance = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("distance"); else _explicitNullProperties?.Remove("distance"); } }
+        private global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue? _explicitNullValueDistance = default!;
 #nullable restore
 #else
-        public global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue Distance { get; set; }
+        public global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue Distance { get => _explicitNullValueDistance; set { _explicitNullValueDistance = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("distance"); else _explicitNullProperties?.Remove("distance"); } }
+        private global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue _explicitNullValueDistance = default!;
 #endif
         /// <summary>A structured value representing a measurement and its unit of measure. This object is a slightly modified version of the schema.org definition at https://schema.org/QuantitativeValue</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue? Elevation { get; set; }
+        public global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue? Elevation { get => _explicitNullValueElevation; set { _explicitNullValueElevation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("elevation"); else _explicitNullProperties?.Remove("elevation"); } }
+        private global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue? _explicitNullValueElevation = default!;
 #nullable restore
 #else
-        public global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue Elevation { get; set; }
+        public global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue Elevation { get => _explicitNullValueElevation; set { _explicitNullValueElevation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("elevation"); else _explicitNullProperties?.Remove("elevation"); } }
+        private global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue _explicitNullValueElevation = default!;
 #endif
         /// <summary>A link to the NWS fire weather forecast zone containing this station.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FireWeatherZone { get; set; }
+        public string? FireWeatherZone { get => _explicitNullValueFireWeatherZone; set { _explicitNullValueFireWeatherZone = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fireWeatherZone"); else _explicitNullProperties?.Remove("fireWeatherZone"); } }
+        private string? _explicitNullValueFireWeatherZone = default!;
 #nullable restore
 #else
-        public string FireWeatherZone { get; set; }
+        public string FireWeatherZone { get => _explicitNullValueFireWeatherZone; set { _explicitNullValueFireWeatherZone = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fireWeatherZone"); else _explicitNullProperties?.Remove("fireWeatherZone"); } }
+        private string _explicitNullValueFireWeatherZone = default!;
 #endif
         /// <summary>A link to the NWS public forecast zone containing this station.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Forecast { get; set; }
+        public string? Forecast { get => _explicitNullValueForecast; set { _explicitNullValueForecast = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("forecast"); else _explicitNullProperties?.Remove("forecast"); } }
+        private string? _explicitNullValueForecast = default!;
 #nullable restore
 #else
-        public string Forecast { get; set; }
+        public string Forecast { get => _explicitNullValueForecast; set { _explicitNullValueForecast = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("forecast"); else _explicitNullProperties?.Remove("forecast"); } }
+        private string _explicitNullValueForecast = default!;
 #endif
         /// <summary>A geometry represented in Well-Known Text (WKT) format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Geometry { get; set; }
+        public string? Geometry { get => _explicitNullValueGeometry; set { _explicitNullValueGeometry = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("geometry"); else _explicitNullProperties?.Remove("geometry"); } }
+        private string? _explicitNullValueGeometry = default!;
 #nullable restore
 #else
-        public string Geometry { get; set; }
+        public string Geometry { get => _explicitNullValueGeometry; set { _explicitNullValueGeometry = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("geometry"); else _explicitNullProperties?.Remove("geometry"); } }
+        private string _explicitNullValueGeometry = default!;
 #endif
         /// <summary>The Id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("@id"); else _explicitNullProperties?.Remove("@id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("@id"); else _explicitNullProperties?.Remove("@id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>The data provider for this station. E.g., &quot;ASOS,&quot; &quot;MesoWest,&quot; etc.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Provider { get; set; }
+        public string? Provider { get => _explicitNullValueProvider; set { _explicitNullValueProvider = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("provider"); else _explicitNullProperties?.Remove("provider"); } }
+        private string? _explicitNullValueProvider = default!;
 #nullable restore
 #else
-        public string Provider { get; set; }
+        public string Provider { get => _explicitNullValueProvider; set { _explicitNullValueProvider = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("provider"); else _explicitNullProperties?.Remove("provider"); } }
+        private string _explicitNullValueProvider = default!;
 #endif
         /// <summary>The stationIdentifier property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? StationIdentifier { get; set; }
+        public string? StationIdentifier { get => _explicitNullValueStationIdentifier; set { _explicitNullValueStationIdentifier = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stationIdentifier"); else _explicitNullProperties?.Remove("stationIdentifier"); } }
+        private string? _explicitNullValueStationIdentifier = default!;
 #nullable restore
 #else
-        public string StationIdentifier { get; set; }
+        public string StationIdentifier { get => _explicitNullValueStationIdentifier; set { _explicitNullValueStationIdentifier = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stationIdentifier"); else _explicitNullProperties?.Remove("stationIdentifier"); } }
+        private string _explicitNullValueStationIdentifier = default!;
 #endif
         /// <summary>The sub-provider of for this station. E.g., &quot;FAA,&quot; &quot;DOT,&quot; etc.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SubProvider { get; set; }
+        public string? SubProvider { get => _explicitNullValueSubProvider; set { _explicitNullValueSubProvider = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subProvider"); else _explicitNullProperties?.Remove("subProvider"); } }
+        private string? _explicitNullValueSubProvider = default!;
 #nullable restore
 #else
-        public string SubProvider { get; set; }
+        public string SubProvider { get => _explicitNullValueSubProvider; set { _explicitNullValueSubProvider = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subProvider"); else _explicitNullProperties?.Remove("subProvider"); } }
+        private string _explicitNullValueSubProvider = default!;
 #endif
         /// <summary>The timeZone property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TimeZone { get; set; }
+        public string? TimeZone { get => _explicitNullValueTimeZone; set { _explicitNullValueTimeZone = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timeZone"); else _explicitNullProperties?.Remove("timeZone"); } }
+        private string? _explicitNullValueTimeZone = default!;
 #nullable restore
 #else
-        public string TimeZone { get; set; }
+        public string TimeZone { get => _explicitNullValueTimeZone; set { _explicitNullValueTimeZone = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timeZone"); else _explicitNullProperties?.Remove("timeZone"); } }
+        private string _explicitNullValueTimeZone = default!;
 #endif
         /// <summary>The Type property</summary>
-        public global::Soenneker.Nws.OpenApiClient.Models.WxColonObservationStationType? Type { get; set; }
+        public global::Soenneker.Nws.OpenApiClient.Models.WxColonObservationStationType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("@type"); else _explicitNullProperties?.Remove("@type"); } }
+        private global::Soenneker.Nws.OpenApiClient.Models.WxColonObservationStationType? _explicitNullValueType = default!;
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -134,7 +185,7 @@ namespace Soenneker.Nws.OpenApiClient.Models
         public static global::Soenneker.Nws.OpenApiClient.Models.ObservationStation CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Nws.OpenApiClient.Models.ObservationStation();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Nws.OpenApiClient.Models.ObservationStation(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -182,7 +233,8 @@ namespace Soenneker.Nws.OpenApiClient.Models
             writer.WriteStringValue("stationIdentifier", StationIdentifier);
             writer.WriteStringValue("subProvider", SubProvider);
             writer.WriteStringValue("timeZone", TimeZone);
-            writer.WriteEnumValue<global::Soenneker.Nws.OpenApiClient.Models.WxColonObservationStationType>("@type", Type);
+            writer.WriteEnumValue<global::Soenneker.Nws.OpenApiClient.Models.WxColonObservationStationType>("@type", Type);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

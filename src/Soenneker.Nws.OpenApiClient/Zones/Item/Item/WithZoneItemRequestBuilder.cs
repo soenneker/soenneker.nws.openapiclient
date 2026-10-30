@@ -48,17 +48,17 @@ namespace Soenneker.Nws.OpenApiClient.Zones.Item.Item
         /// <summary>
         /// Returns metadata about a given zone
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Nws.OpenApiClient.Models.ZoneGeoJson"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Nws.OpenApiClient.Models.ZoneSuccessResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Nws.OpenApiClient.Models.ProblemDetail">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Nws.OpenApiClient.Models.ZoneGeoJson?> GetAsync(Action<RequestConfiguration<global::Soenneker.Nws.OpenApiClient.Zones.Item.Item.WithZoneItemRequestBuilder.WithZoneItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Nws.OpenApiClient.Models.ZoneSuccessResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Nws.OpenApiClient.Zones.Item.Item.WithZoneItemRequestBuilder.WithZoneItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Nws.OpenApiClient.Models.ZoneGeoJson> GetAsync(Action<RequestConfiguration<global::Soenneker.Nws.OpenApiClient.Zones.Item.Item.WithZoneItemRequestBuilder.WithZoneItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Nws.OpenApiClient.Models.ZoneSuccessResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Nws.OpenApiClient.Zones.Item.Item.WithZoneItemRequestBuilder.WithZoneItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -66,7 +66,7 @@ namespace Soenneker.Nws.OpenApiClient.Zones.Item.Item
             {
                 { "XXX", global::Soenneker.Nws.OpenApiClient.Models.ProblemDetail.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Nws.OpenApiClient.Models.ZoneGeoJson>(requestInfo, global::Soenneker.Nws.OpenApiClient.Models.ZoneGeoJson.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Nws.OpenApiClient.Models.ZoneSuccessResponse>(requestInfo, global::Soenneker.Nws.OpenApiClient.Models.ZoneSuccessResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns metadata about a given zone
@@ -84,7 +84,7 @@ namespace Soenneker.Nws.OpenApiClient.Zones.Item.Item
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "application/geo+json");
+            requestInfo.Headers.TryAdd("Accept", "application/geo+json, application/ld+json");
             return requestInfo;
         }
         /// <summary>

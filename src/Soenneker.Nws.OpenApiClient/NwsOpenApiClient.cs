@@ -52,6 +52,7 @@ namespace Soenneker.Nws.OpenApiClient
             get => new global::Soenneker.Nws.OpenApiClient.Gridpoints.GridpointsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The icons property</summary>
+        [Obsolete("")]
         public global::Soenneker.Nws.OpenApiClient.Icons.IconsRequestBuilder Icons
         {
             get => new global::Soenneker.Nws.OpenApiClient.Icons.IconsRequestBuilder(PathParameters, RequestAdapter);

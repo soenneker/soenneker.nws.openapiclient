@@ -12,40 +12,59 @@ namespace Soenneker.Nws.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PointBodyNwr : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("areaBroadcast") is { } nullNodeAreaBroadcast && nullNodeAreaBroadcast.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AreaBroadcast = null;
+            if (parseNode.GetChildNode("pointBroadcast") is { } nullNodePointBroadcast && nullNodePointBroadcast.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PointBroadcast = null;
+            if (parseNode.GetChildNode("sameCode") is { } nullNodeSameCode && nullNodeSameCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SameCode = null;
+            if (parseNode.GetChildNode("transmitter") is { } nullNodeTransmitter && nullNodeTransmitter.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Transmitter = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>A link to the area NWR broadcast from this transmitter</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AreaBroadcast { get; set; }
+        public string? AreaBroadcast { get => _explicitNullValueAreaBroadcast; set { _explicitNullValueAreaBroadcast = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("areaBroadcast"); else _explicitNullProperties?.Remove("areaBroadcast"); } }
+        private string? _explicitNullValueAreaBroadcast = default!;
 #nullable restore
 #else
-        public string AreaBroadcast { get; set; }
+        public string AreaBroadcast { get => _explicitNullValueAreaBroadcast; set { _explicitNullValueAreaBroadcast = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("areaBroadcast"); else _explicitNullProperties?.Remove("areaBroadcast"); } }
+        private string _explicitNullValueAreaBroadcast = default!;
 #endif
         /// <summary>A link to the local NWR broadcast for this point</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PointBroadcast { get; set; }
+        public string? PointBroadcast { get => _explicitNullValuePointBroadcast; set { _explicitNullValuePointBroadcast = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pointBroadcast"); else _explicitNullProperties?.Remove("pointBroadcast"); } }
+        private string? _explicitNullValuePointBroadcast = default!;
 #nullable restore
 #else
-        public string PointBroadcast { get; set; }
+        public string PointBroadcast { get => _explicitNullValuePointBroadcast; set { _explicitNullValuePointBroadcast = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pointBroadcast"); else _explicitNullProperties?.Remove("pointBroadcast"); } }
+        private string _explicitNullValuePointBroadcast = default!;
 #endif
         /// <summary>The SAME code of this point&apos;s county</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SameCode { get; set; }
+        public string? SameCode { get => _explicitNullValueSameCode; set { _explicitNullValueSameCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sameCode"); else _explicitNullProperties?.Remove("sameCode"); } }
+        private string? _explicitNullValueSameCode = default!;
 #nullable restore
 #else
-        public string SameCode { get; set; }
+        public string SameCode { get => _explicitNullValueSameCode; set { _explicitNullValueSameCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sameCode"); else _explicitNullProperties?.Remove("sameCode"); } }
+        private string _explicitNullValueSameCode = default!;
 #endif
         /// <summary>Transmitter callsign</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Transmitter { get; set; }
+        public string? Transmitter { get => _explicitNullValueTransmitter; set { _explicitNullValueTransmitter = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transmitter"); else _explicitNullProperties?.Remove("transmitter"); } }
+        private string? _explicitNullValueTransmitter = default!;
 #nullable restore
 #else
-        public string Transmitter { get; set; }
+        public string Transmitter { get => _explicitNullValueTransmitter; set { _explicitNullValueTransmitter = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transmitter"); else _explicitNullProperties?.Remove("transmitter"); } }
+        private string _explicitNullValueTransmitter = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Nws.OpenApiClient.Models.PointBodyNwr"/> and sets the default values.
@@ -62,7 +81,7 @@ namespace Soenneker.Nws.OpenApiClient.Models
         public static global::Soenneker.Nws.OpenApiClient.Models.PointBodyNwr CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Nws.OpenApiClient.Models.PointBodyNwr();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Nws.OpenApiClient.Models.PointBodyNwr(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -89,6 +108,7 @@ namespace Soenneker.Nws.OpenApiClient.Models
             writer.WriteStringValue("pointBroadcast", PointBroadcast);
             writer.WriteStringValue("sameCode", SameCode);
             writer.WriteStringValue("transmitter", Transmitter);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

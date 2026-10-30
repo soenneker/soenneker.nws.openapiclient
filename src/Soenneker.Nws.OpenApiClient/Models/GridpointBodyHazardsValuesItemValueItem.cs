@@ -12,26 +12,41 @@ namespace Soenneker.Nws.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class GridpointBodyHazardsValuesItemValueItem : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("event_number") is { } nullNodeEventNumber && nullNodeEventNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EventNumber = null;
+            if (parseNode.GetChildNode("phenomenon") is { } nullNodePhenomenon && nullNodePhenomenon.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Phenomenon = null;
+            if (parseNode.GetChildNode("significance") is { } nullNodeSignificance && nullNodeSignificance.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Significance = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Event number. If this hazard refers to a national or regional center product (such as a Storm Prediction Center convective watch), this value will be the sequence number of that product.</summary>
-        public int? EventNumber { get; set; }
+        public int? EventNumber { get => _explicitNullValueEventNumber; set { _explicitNullValueEventNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("event_number"); else _explicitNullProperties?.Remove("event_number"); } }
+        private int? _explicitNullValueEventNumber = default!;
         /// <summary>Hazard code. This value will correspond to a P-VTEC phenomenon code as defined in NWS Directive 10-1703.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Phenomenon { get; set; }
+        public string? Phenomenon { get => _explicitNullValuePhenomenon; set { _explicitNullValuePhenomenon = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("phenomenon"); else _explicitNullProperties?.Remove("phenomenon"); } }
+        private string? _explicitNullValuePhenomenon = default!;
 #nullable restore
 #else
-        public string Phenomenon { get; set; }
+        public string Phenomenon { get => _explicitNullValuePhenomenon; set { _explicitNullValuePhenomenon = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("phenomenon"); else _explicitNullProperties?.Remove("phenomenon"); } }
+        private string _explicitNullValuePhenomenon = default!;
 #endif
         /// <summary>Significance code. This value will correspond to a P-VTEC significance code as defined in NWS Directive 10-1703.This will most frequently be &quot;A&quot; for a watch or &quot;Y&quot; for an advisory.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Significance { get; set; }
+        public string? Significance { get => _explicitNullValueSignificance; set { _explicitNullValueSignificance = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("significance"); else _explicitNullProperties?.Remove("significance"); } }
+        private string? _explicitNullValueSignificance = default!;
 #nullable restore
 #else
-        public string Significance { get; set; }
+        public string Significance { get => _explicitNullValueSignificance; set { _explicitNullValueSignificance = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("significance"); else _explicitNullProperties?.Remove("significance"); } }
+        private string _explicitNullValueSignificance = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Nws.OpenApiClient.Models.GridpointBodyHazardsValuesItemValueItem"/> and sets the default values.
@@ -48,7 +63,7 @@ namespace Soenneker.Nws.OpenApiClient.Models
         public static global::Soenneker.Nws.OpenApiClient.Models.GridpointBodyHazardsValuesItemValueItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Nws.OpenApiClient.Models.GridpointBodyHazardsValuesItemValueItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Nws.OpenApiClient.Models.GridpointBodyHazardsValuesItemValueItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -73,6 +88,7 @@ namespace Soenneker.Nws.OpenApiClient.Models
             writer.WriteIntValue("event_number", EventNumber);
             writer.WriteStringValue("phenomenon", Phenomenon);
             writer.WriteStringValue("significance", Significance);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

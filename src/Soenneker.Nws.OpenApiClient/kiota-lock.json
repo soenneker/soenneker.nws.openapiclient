@@ -1,8 +1,8 @@
 {
-  "descriptionHash": "851BF8D8FE454D12CE3C4840F7CB30857AA3EFE510852055B0D2B687367B3B23307DF1EA97D1DF3C200306EABEA215338A43D32D282742B551E4A7EDBFA56EA4",
+  "descriptionHash": "6A554FE006D23700F56549C10D6801210E6DB26F72B26B241FC5FB03D6D58ECA9DBBF535F18B1B4FBBB8E5A9EBF30568C568292BA2AC8B1E8EB00C0DE55570A9",
   "descriptionLocation": "../../fixed.json",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.36.1",
+  "kiotaVersion": "1.37.0",
   "clientClassName": "NwsOpenApiClient",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "Soenneker.Nws.OpenApiClient",

@@ -11,22 +11,35 @@ namespace Soenneker.Nws.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class GridpointBodyWeatherValuesItem : IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("validTime") is { } nullNodeValidTime && nullNodeValidTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ValidTime = null;
+            if (parseNode.GetChildNode("value") is { } nullNodeValue && nullNodeValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Value = null;
+        }
+
         /// <summary>A time interval in ISO 8601 format. This can be one of:    1. Start and end time    2. Start time and duration    3. Duration and end timeThe string &quot;NOW&quot; can also be used in place of a start/end time.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Nws.OpenApiClient.Models.Iso8601Interval? ValidTime { get; set; }
+        public global::Soenneker.Nws.OpenApiClient.Models.Iso8601Interval? ValidTime { get => _explicitNullValueValidTime; set { _explicitNullValueValidTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("validTime"); else _explicitNullProperties?.Remove("validTime"); } }
+        private global::Soenneker.Nws.OpenApiClient.Models.Iso8601Interval? _explicitNullValueValidTime = default!;
 #nullable restore
 #else
-        public global::Soenneker.Nws.OpenApiClient.Models.Iso8601Interval ValidTime { get; set; }
+        public global::Soenneker.Nws.OpenApiClient.Models.Iso8601Interval ValidTime { get => _explicitNullValueValidTime; set { _explicitNullValueValidTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("validTime"); else _explicitNullProperties?.Remove("validTime"); } }
+        private global::Soenneker.Nws.OpenApiClient.Models.Iso8601Interval _explicitNullValueValidTime = default!;
 #endif
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Nws.OpenApiClient.Models.GridpointBodyWeatherValuesItemValueItem>? Value { get; set; }
+        public List<global::Soenneker.Nws.OpenApiClient.Models.GridpointBodyWeatherValuesItemValueItem>? Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
+        private List<global::Soenneker.Nws.OpenApiClient.Models.GridpointBodyWeatherValuesItemValueItem>? _explicitNullValueValue = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Nws.OpenApiClient.Models.GridpointBodyWeatherValuesItemValueItem> Value { get; set; }
+        public List<global::Soenneker.Nws.OpenApiClient.Models.GridpointBodyWeatherValuesItemValueItem> Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
+        private List<global::Soenneker.Nws.OpenApiClient.Models.GridpointBodyWeatherValuesItemValueItem> _explicitNullValueValue = default!;
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -36,7 +49,7 @@ namespace Soenneker.Nws.OpenApiClient.Models
         public static global::Soenneker.Nws.OpenApiClient.Models.GridpointBodyWeatherValuesItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Nws.OpenApiClient.Models.GridpointBodyWeatherValuesItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Nws.OpenApiClient.Models.GridpointBodyWeatherValuesItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -58,7 +71,8 @@ namespace Soenneker.Nws.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Nws.OpenApiClient.Models.Iso8601Interval>("validTime", ValidTime);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Nws.OpenApiClient.Models.GridpointBodyWeatherValuesItemValueItem>("value", Value);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Nws.OpenApiClient.Models.GridpointBodyWeatherValuesItemValueItem>("value", Value);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

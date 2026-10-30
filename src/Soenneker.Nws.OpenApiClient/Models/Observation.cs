@@ -11,235 +11,330 @@ namespace Soenneker.Nws.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class Observation : IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("barometricPressure") is { } nullNodeBarometricPressure && nullNodeBarometricPressure.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BarometricPressure = null;
+            if (parseNode.GetChildNode("cloudLayers") is { } nullNodeCloudLayers && nullNodeCloudLayers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CloudLayers = null;
+            if (parseNode.GetChildNode("@context") is { } nullNodeContext && nullNodeContext.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Context = null;
+            if (parseNode.GetChildNode("dewpoint") is { } nullNodeDewpoint && nullNodeDewpoint.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Dewpoint = null;
+            if (parseNode.GetChildNode("elevation") is { } nullNodeElevation && nullNodeElevation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Elevation = null;
+            if (parseNode.GetChildNode("geometry") is { } nullNodeGeometry && nullNodeGeometry.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Geometry = null;
+            if (parseNode.GetChildNode("heatIndex") is { } nullNodeHeatIndex && nullNodeHeatIndex.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HeatIndex = null;
+            if (parseNode.GetChildNode("icon") is { } nullNodeIcon && nullNodeIcon.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Icon = null;
+            if (parseNode.GetChildNode("@id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("maxTemperatureLast24Hours") is { } nullNodeMaxTemperatureLast24Hours && nullNodeMaxTemperatureLast24Hours.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxTemperatureLast24Hours = null;
+            if (parseNode.GetChildNode("minTemperatureLast24Hours") is { } nullNodeMinTemperatureLast24Hours && nullNodeMinTemperatureLast24Hours.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MinTemperatureLast24Hours = null;
+            if (parseNode.GetChildNode("precipitationLast3Hours") is { } nullNodePrecipitationLast3Hours && nullNodePrecipitationLast3Hours.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrecipitationLast3Hours = null;
+            if (parseNode.GetChildNode("precipitationLast6Hours") is { } nullNodePrecipitationLast6Hours && nullNodePrecipitationLast6Hours.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrecipitationLast6Hours = null;
+            if (parseNode.GetChildNode("precipitationLastHour") is { } nullNodePrecipitationLastHour && nullNodePrecipitationLastHour.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrecipitationLastHour = null;
+            if (parseNode.GetChildNode("presentWeather") is { } nullNodePresentWeather && nullNodePresentWeather.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PresentWeather = null;
+            if (parseNode.GetChildNode("rawMessage") is { } nullNodeRawMessage && nullNodeRawMessage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RawMessage = null;
+            if (parseNode.GetChildNode("relativeHumidity") is { } nullNodeRelativeHumidity && nullNodeRelativeHumidity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RelativeHumidity = null;
+            if (parseNode.GetChildNode("seaLevelPressure") is { } nullNodeSeaLevelPressure && nullNodeSeaLevelPressure.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SeaLevelPressure = null;
+            if (parseNode.GetChildNode("station") is { } nullNodeStation && nullNodeStation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Station = null;
+            if (parseNode.GetChildNode("stationId") is { } nullNodeStationId && nullNodeStationId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StationId = null;
+            if (parseNode.GetChildNode("stationName") is { } nullNodeStationName && nullNodeStationName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StationName = null;
+            if (parseNode.GetChildNode("temperature") is { } nullNodeTemperature && nullNodeTemperature.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Temperature = null;
+            if (parseNode.GetChildNode("textDescription") is { } nullNodeTextDescription && nullNodeTextDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TextDescription = null;
+            if (parseNode.GetChildNode("timestamp") is { } nullNodeTimestamp && nullNodeTimestamp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Timestamp = null;
+            if (parseNode.GetChildNode("@type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("visibility") is { } nullNodeVisibility && nullNodeVisibility.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Visibility = null;
+            if (parseNode.GetChildNode("windChill") is { } nullNodeWindChill && nullNodeWindChill.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WindChill = null;
+            if (parseNode.GetChildNode("windDirection") is { } nullNodeWindDirection && nullNodeWindDirection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WindDirection = null;
+            if (parseNode.GetChildNode("windGust") is { } nullNodeWindGust && nullNodeWindGust.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WindGust = null;
+            if (parseNode.GetChildNode("windSpeed") is { } nullNodeWindSpeed && nullNodeWindSpeed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WindSpeed = null;
+        }
+
         /// <summary>A structured value representing a measurement and its unit of measure. This object is a slightly modified version of the schema.org definition at https://schema.org/QuantitativeValue</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue? BarometricPressure { get; set; }
+        public global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue? BarometricPressure { get => _explicitNullValueBarometricPressure; set { _explicitNullValueBarometricPressure = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("barometricPressure"); else _explicitNullProperties?.Remove("barometricPressure"); } }
+        private global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue? _explicitNullValueBarometricPressure = default!;
 #nullable restore
 #else
-        public global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue BarometricPressure { get; set; }
+        public global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue BarometricPressure { get => _explicitNullValueBarometricPressure; set { _explicitNullValueBarometricPressure = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("barometricPressure"); else _explicitNullProperties?.Remove("barometricPressure"); } }
+        private global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue _explicitNullValueBarometricPressure = default!;
 #endif
         /// <summary>The cloudLayers property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Nws.OpenApiClient.Models.ObservationCloudLayersItem>? CloudLayers { get; set; }
+        public List<global::Soenneker.Nws.OpenApiClient.Models.ObservationCloudLayersItem>? CloudLayers { get => _explicitNullValueCloudLayers; set { _explicitNullValueCloudLayers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cloudLayers"); else _explicitNullProperties?.Remove("cloudLayers"); } }
+        private List<global::Soenneker.Nws.OpenApiClient.Models.ObservationCloudLayersItem>? _explicitNullValueCloudLayers = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Nws.OpenApiClient.Models.ObservationCloudLayersItem> CloudLayers { get; set; }
+        public List<global::Soenneker.Nws.OpenApiClient.Models.ObservationCloudLayersItem> CloudLayers { get => _explicitNullValueCloudLayers; set { _explicitNullValueCloudLayers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cloudLayers"); else _explicitNullProperties?.Remove("cloudLayers"); } }
+        private List<global::Soenneker.Nws.OpenApiClient.Models.ObservationCloudLayersItem> _explicitNullValueCloudLayers = default!;
 #endif
         /// <summary>The Context property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Context { get; set; }
+        public UntypedNode? Context { get => _explicitNullValueContext; set { _explicitNullValueContext = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("@context"); else _explicitNullProperties?.Remove("@context"); } }
+        private UntypedNode? _explicitNullValueContext = default!;
 #nullable restore
 #else
-        public UntypedNode Context { get; set; }
+        public UntypedNode Context { get => _explicitNullValueContext; set { _explicitNullValueContext = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("@context"); else _explicitNullProperties?.Remove("@context"); } }
+        private UntypedNode _explicitNullValueContext = default!;
 #endif
         /// <summary>A structured value representing a measurement and its unit of measure. This object is a slightly modified version of the schema.org definition at https://schema.org/QuantitativeValue</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue? Dewpoint { get; set; }
+        public global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue? Dewpoint { get => _explicitNullValueDewpoint; set { _explicitNullValueDewpoint = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dewpoint"); else _explicitNullProperties?.Remove("dewpoint"); } }
+        private global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue? _explicitNullValueDewpoint = default!;
 #nullable restore
 #else
-        public global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue Dewpoint { get; set; }
+        public global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue Dewpoint { get => _explicitNullValueDewpoint; set { _explicitNullValueDewpoint = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dewpoint"); else _explicitNullProperties?.Remove("dewpoint"); } }
+        private global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue _explicitNullValueDewpoint = default!;
 #endif
         /// <summary>A structured value representing a measurement and its unit of measure. This object is a slightly modified version of the schema.org definition at https://schema.org/QuantitativeValue</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue? Elevation { get; set; }
+        public global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue? Elevation { get => _explicitNullValueElevation; set { _explicitNullValueElevation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("elevation"); else _explicitNullProperties?.Remove("elevation"); } }
+        private global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue? _explicitNullValueElevation = default!;
 #nullable restore
 #else
-        public global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue Elevation { get; set; }
+        public global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue Elevation { get => _explicitNullValueElevation; set { _explicitNullValueElevation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("elevation"); else _explicitNullProperties?.Remove("elevation"); } }
+        private global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue _explicitNullValueElevation = default!;
 #endif
         /// <summary>A geometry represented in Well-Known Text (WKT) format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Geometry { get; set; }
+        public string? Geometry { get => _explicitNullValueGeometry; set { _explicitNullValueGeometry = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("geometry"); else _explicitNullProperties?.Remove("geometry"); } }
+        private string? _explicitNullValueGeometry = default!;
 #nullable restore
 #else
-        public string Geometry { get; set; }
+        public string Geometry { get => _explicitNullValueGeometry; set { _explicitNullValueGeometry = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("geometry"); else _explicitNullProperties?.Remove("geometry"); } }
+        private string _explicitNullValueGeometry = default!;
 #endif
         /// <summary>A structured value representing a measurement and its unit of measure. This object is a slightly modified version of the schema.org definition at https://schema.org/QuantitativeValue</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue? HeatIndex { get; set; }
+        public global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue? HeatIndex { get => _explicitNullValueHeatIndex; set { _explicitNullValueHeatIndex = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("heatIndex"); else _explicitNullProperties?.Remove("heatIndex"); } }
+        private global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue? _explicitNullValueHeatIndex = default!;
 #nullable restore
 #else
-        public global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue HeatIndex { get; set; }
+        public global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue HeatIndex { get => _explicitNullValueHeatIndex; set { _explicitNullValueHeatIndex = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("heatIndex"); else _explicitNullProperties?.Remove("heatIndex"); } }
+        private global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue _explicitNullValueHeatIndex = default!;
 #endif
         /// <summary>The icon property</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Icon { get; set; }
+        public string? Icon { get => _explicitNullValueIcon; set { _explicitNullValueIcon = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("icon"); else _explicitNullProperties?.Remove("icon"); } }
+        private string? _explicitNullValueIcon = default!;
 #nullable restore
 #else
-        public string Icon { get; set; }
+        public string Icon { get => _explicitNullValueIcon; set { _explicitNullValueIcon = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("icon"); else _explicitNullProperties?.Remove("icon"); } }
+        private string _explicitNullValueIcon = default!;
 #endif
         /// <summary>The Id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("@id"); else _explicitNullProperties?.Remove("@id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("@id"); else _explicitNullProperties?.Remove("@id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>A structured value representing a measurement and its unit of measure. This object is a slightly modified version of the schema.org definition at https://schema.org/QuantitativeValue</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue? MaxTemperatureLast24Hours { get; set; }
+        public global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue? MaxTemperatureLast24Hours { get => _explicitNullValueMaxTemperatureLast24Hours; set { _explicitNullValueMaxTemperatureLast24Hours = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maxTemperatureLast24Hours"); else _explicitNullProperties?.Remove("maxTemperatureLast24Hours"); } }
+        private global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue? _explicitNullValueMaxTemperatureLast24Hours = default!;
 #nullable restore
 #else
-        public global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue MaxTemperatureLast24Hours { get; set; }
+        public global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue MaxTemperatureLast24Hours { get => _explicitNullValueMaxTemperatureLast24Hours; set { _explicitNullValueMaxTemperatureLast24Hours = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maxTemperatureLast24Hours"); else _explicitNullProperties?.Remove("maxTemperatureLast24Hours"); } }
+        private global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue _explicitNullValueMaxTemperatureLast24Hours = default!;
 #endif
         /// <summary>A structured value representing a measurement and its unit of measure. This object is a slightly modified version of the schema.org definition at https://schema.org/QuantitativeValue</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue? MinTemperatureLast24Hours { get; set; }
+        public global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue? MinTemperatureLast24Hours { get => _explicitNullValueMinTemperatureLast24Hours; set { _explicitNullValueMinTemperatureLast24Hours = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("minTemperatureLast24Hours"); else _explicitNullProperties?.Remove("minTemperatureLast24Hours"); } }
+        private global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue? _explicitNullValueMinTemperatureLast24Hours = default!;
 #nullable restore
 #else
-        public global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue MinTemperatureLast24Hours { get; set; }
+        public global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue MinTemperatureLast24Hours { get => _explicitNullValueMinTemperatureLast24Hours; set { _explicitNullValueMinTemperatureLast24Hours = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("minTemperatureLast24Hours"); else _explicitNullProperties?.Remove("minTemperatureLast24Hours"); } }
+        private global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue _explicitNullValueMinTemperatureLast24Hours = default!;
 #endif
         /// <summary>A structured value representing a measurement and its unit of measure. This object is a slightly modified version of the schema.org definition at https://schema.org/QuantitativeValue</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue? PrecipitationLast3Hours { get; set; }
+        public global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue? PrecipitationLast3Hours { get => _explicitNullValuePrecipitationLast3Hours; set { _explicitNullValuePrecipitationLast3Hours = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("precipitationLast3Hours"); else _explicitNullProperties?.Remove("precipitationLast3Hours"); } }
+        private global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue? _explicitNullValuePrecipitationLast3Hours = default!;
 #nullable restore
 #else
-        public global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue PrecipitationLast3Hours { get; set; }
+        public global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue PrecipitationLast3Hours { get => _explicitNullValuePrecipitationLast3Hours; set { _explicitNullValuePrecipitationLast3Hours = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("precipitationLast3Hours"); else _explicitNullProperties?.Remove("precipitationLast3Hours"); } }
+        private global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue _explicitNullValuePrecipitationLast3Hours = default!;
 #endif
         /// <summary>A structured value representing a measurement and its unit of measure. This object is a slightly modified version of the schema.org definition at https://schema.org/QuantitativeValue</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue? PrecipitationLast6Hours { get; set; }
+        public global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue? PrecipitationLast6Hours { get => _explicitNullValuePrecipitationLast6Hours; set { _explicitNullValuePrecipitationLast6Hours = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("precipitationLast6Hours"); else _explicitNullProperties?.Remove("precipitationLast6Hours"); } }
+        private global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue? _explicitNullValuePrecipitationLast6Hours = default!;
 #nullable restore
 #else
-        public global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue PrecipitationLast6Hours { get; set; }
+        public global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue PrecipitationLast6Hours { get => _explicitNullValuePrecipitationLast6Hours; set { _explicitNullValuePrecipitationLast6Hours = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("precipitationLast6Hours"); else _explicitNullProperties?.Remove("precipitationLast6Hours"); } }
+        private global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue _explicitNullValuePrecipitationLast6Hours = default!;
 #endif
         /// <summary>A structured value representing a measurement and its unit of measure. This object is a slightly modified version of the schema.org definition at https://schema.org/QuantitativeValue</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue? PrecipitationLastHour { get; set; }
+        public global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue? PrecipitationLastHour { get => _explicitNullValuePrecipitationLastHour; set { _explicitNullValuePrecipitationLastHour = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("precipitationLastHour"); else _explicitNullProperties?.Remove("precipitationLastHour"); } }
+        private global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue? _explicitNullValuePrecipitationLastHour = default!;
 #nullable restore
 #else
-        public global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue PrecipitationLastHour { get; set; }
+        public global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue PrecipitationLastHour { get => _explicitNullValuePrecipitationLastHour; set { _explicitNullValuePrecipitationLastHour = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("precipitationLastHour"); else _explicitNullProperties?.Remove("precipitationLastHour"); } }
+        private global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue _explicitNullValuePrecipitationLastHour = default!;
 #endif
         /// <summary>The presentWeather property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Nws.OpenApiClient.Models.MetarPhenomenon>? PresentWeather { get; set; }
+        public List<global::Soenneker.Nws.OpenApiClient.Models.MetarPhenomenon>? PresentWeather { get => _explicitNullValuePresentWeather; set { _explicitNullValuePresentWeather = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("presentWeather"); else _explicitNullProperties?.Remove("presentWeather"); } }
+        private List<global::Soenneker.Nws.OpenApiClient.Models.MetarPhenomenon>? _explicitNullValuePresentWeather = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Nws.OpenApiClient.Models.MetarPhenomenon> PresentWeather { get; set; }
+        public List<global::Soenneker.Nws.OpenApiClient.Models.MetarPhenomenon> PresentWeather { get => _explicitNullValuePresentWeather; set { _explicitNullValuePresentWeather = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("presentWeather"); else _explicitNullProperties?.Remove("presentWeather"); } }
+        private List<global::Soenneker.Nws.OpenApiClient.Models.MetarPhenomenon> _explicitNullValuePresentWeather = default!;
 #endif
         /// <summary>The rawMessage property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RawMessage { get; set; }
+        public string? RawMessage { get => _explicitNullValueRawMessage; set { _explicitNullValueRawMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rawMessage"); else _explicitNullProperties?.Remove("rawMessage"); } }
+        private string? _explicitNullValueRawMessage = default!;
 #nullable restore
 #else
-        public string RawMessage { get; set; }
+        public string RawMessage { get => _explicitNullValueRawMessage; set { _explicitNullValueRawMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rawMessage"); else _explicitNullProperties?.Remove("rawMessage"); } }
+        private string _explicitNullValueRawMessage = default!;
 #endif
         /// <summary>A structured value representing a measurement and its unit of measure. This object is a slightly modified version of the schema.org definition at https://schema.org/QuantitativeValue</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue? RelativeHumidity { get; set; }
+        public global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue? RelativeHumidity { get => _explicitNullValueRelativeHumidity; set { _explicitNullValueRelativeHumidity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("relativeHumidity"); else _explicitNullProperties?.Remove("relativeHumidity"); } }
+        private global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue? _explicitNullValueRelativeHumidity = default!;
 #nullable restore
 #else
-        public global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue RelativeHumidity { get; set; }
+        public global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue RelativeHumidity { get => _explicitNullValueRelativeHumidity; set { _explicitNullValueRelativeHumidity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("relativeHumidity"); else _explicitNullProperties?.Remove("relativeHumidity"); } }
+        private global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue _explicitNullValueRelativeHumidity = default!;
 #endif
         /// <summary>A structured value representing a measurement and its unit of measure. This object is a slightly modified version of the schema.org definition at https://schema.org/QuantitativeValue</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue? SeaLevelPressure { get; set; }
+        public global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue? SeaLevelPressure { get => _explicitNullValueSeaLevelPressure; set { _explicitNullValueSeaLevelPressure = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("seaLevelPressure"); else _explicitNullProperties?.Remove("seaLevelPressure"); } }
+        private global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue? _explicitNullValueSeaLevelPressure = default!;
 #nullable restore
 #else
-        public global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue SeaLevelPressure { get; set; }
+        public global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue SeaLevelPressure { get => _explicitNullValueSeaLevelPressure; set { _explicitNullValueSeaLevelPressure = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("seaLevelPressure"); else _explicitNullProperties?.Remove("seaLevelPressure"); } }
+        private global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue _explicitNullValueSeaLevelPressure = default!;
 #endif
         /// <summary>The station property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Station { get; set; }
+        public string? Station { get => _explicitNullValueStation; set { _explicitNullValueStation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("station"); else _explicitNullProperties?.Remove("station"); } }
+        private string? _explicitNullValueStation = default!;
 #nullable restore
 #else
-        public string Station { get; set; }
+        public string Station { get => _explicitNullValueStation; set { _explicitNullValueStation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("station"); else _explicitNullProperties?.Remove("station"); } }
+        private string _explicitNullValueStation = default!;
 #endif
         /// <summary>The stationId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? StationId { get; set; }
+        public string? StationId { get => _explicitNullValueStationId; set { _explicitNullValueStationId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stationId"); else _explicitNullProperties?.Remove("stationId"); } }
+        private string? _explicitNullValueStationId = default!;
 #nullable restore
 #else
-        public string StationId { get; set; }
+        public string StationId { get => _explicitNullValueStationId; set { _explicitNullValueStationId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stationId"); else _explicitNullProperties?.Remove("stationId"); } }
+        private string _explicitNullValueStationId = default!;
 #endif
         /// <summary>The stationName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? StationName { get; set; }
+        public string? StationName { get => _explicitNullValueStationName; set { _explicitNullValueStationName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stationName"); else _explicitNullProperties?.Remove("stationName"); } }
+        private string? _explicitNullValueStationName = default!;
 #nullable restore
 #else
-        public string StationName { get; set; }
+        public string StationName { get => _explicitNullValueStationName; set { _explicitNullValueStationName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stationName"); else _explicitNullProperties?.Remove("stationName"); } }
+        private string _explicitNullValueStationName = default!;
 #endif
         /// <summary>A structured value representing a measurement and its unit of measure. This object is a slightly modified version of the schema.org definition at https://schema.org/QuantitativeValue</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue? Temperature { get; set; }
+        public global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue? Temperature { get => _explicitNullValueTemperature; set { _explicitNullValueTemperature = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("temperature"); else _explicitNullProperties?.Remove("temperature"); } }
+        private global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue? _explicitNullValueTemperature = default!;
 #nullable restore
 #else
-        public global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue Temperature { get; set; }
+        public global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue Temperature { get => _explicitNullValueTemperature; set { _explicitNullValueTemperature = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("temperature"); else _explicitNullProperties?.Remove("temperature"); } }
+        private global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue _explicitNullValueTemperature = default!;
 #endif
         /// <summary>The textDescription property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TextDescription { get; set; }
+        public string? TextDescription { get => _explicitNullValueTextDescription; set { _explicitNullValueTextDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("textDescription"); else _explicitNullProperties?.Remove("textDescription"); } }
+        private string? _explicitNullValueTextDescription = default!;
 #nullable restore
 #else
-        public string TextDescription { get; set; }
+        public string TextDescription { get => _explicitNullValueTextDescription; set { _explicitNullValueTextDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("textDescription"); else _explicitNullProperties?.Remove("textDescription"); } }
+        private string _explicitNullValueTextDescription = default!;
 #endif
         /// <summary>The timestamp property</summary>
-        public DateTimeOffset? Timestamp { get; set; }
+        public DateTimeOffset? Timestamp { get => _explicitNullValueTimestamp; set { _explicitNullValueTimestamp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timestamp"); else _explicitNullProperties?.Remove("timestamp"); } }
+        private DateTimeOffset? _explicitNullValueTimestamp = default!;
         /// <summary>The Type property</summary>
-        public global::Soenneker.Nws.OpenApiClient.Models.WxColonObservationStationType? Type { get; set; }
+        public global::Soenneker.Nws.OpenApiClient.Models.WxColonObservationStationType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("@type"); else _explicitNullProperties?.Remove("@type"); } }
+        private global::Soenneker.Nws.OpenApiClient.Models.WxColonObservationStationType? _explicitNullValueType = default!;
         /// <summary>A structured value representing a measurement and its unit of measure. This object is a slightly modified version of the schema.org definition at https://schema.org/QuantitativeValue</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue? Visibility { get; set; }
+        public global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue? Visibility { get => _explicitNullValueVisibility; set { _explicitNullValueVisibility = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("visibility"); else _explicitNullProperties?.Remove("visibility"); } }
+        private global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue? _explicitNullValueVisibility = default!;
 #nullable restore
 #else
-        public global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue Visibility { get; set; }
+        public global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue Visibility { get => _explicitNullValueVisibility; set { _explicitNullValueVisibility = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("visibility"); else _explicitNullProperties?.Remove("visibility"); } }
+        private global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue _explicitNullValueVisibility = default!;
 #endif
         /// <summary>A structured value representing a measurement and its unit of measure. This object is a slightly modified version of the schema.org definition at https://schema.org/QuantitativeValue</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue? WindChill { get; set; }
+        public global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue? WindChill { get => _explicitNullValueWindChill; set { _explicitNullValueWindChill = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("windChill"); else _explicitNullProperties?.Remove("windChill"); } }
+        private global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue? _explicitNullValueWindChill = default!;
 #nullable restore
 #else
-        public global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue WindChill { get; set; }
+        public global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue WindChill { get => _explicitNullValueWindChill; set { _explicitNullValueWindChill = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("windChill"); else _explicitNullProperties?.Remove("windChill"); } }
+        private global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue _explicitNullValueWindChill = default!;
 #endif
         /// <summary>A structured value representing a measurement and its unit of measure. This object is a slightly modified version of the schema.org definition at https://schema.org/QuantitativeValue</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue? WindDirection { get; set; }
+        public global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue? WindDirection { get => _explicitNullValueWindDirection; set { _explicitNullValueWindDirection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("windDirection"); else _explicitNullProperties?.Remove("windDirection"); } }
+        private global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue? _explicitNullValueWindDirection = default!;
 #nullable restore
 #else
-        public global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue WindDirection { get; set; }
+        public global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue WindDirection { get => _explicitNullValueWindDirection; set { _explicitNullValueWindDirection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("windDirection"); else _explicitNullProperties?.Remove("windDirection"); } }
+        private global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue _explicitNullValueWindDirection = default!;
 #endif
         /// <summary>A structured value representing a measurement and its unit of measure. This object is a slightly modified version of the schema.org definition at https://schema.org/QuantitativeValue</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue? WindGust { get; set; }
+        public global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue? WindGust { get => _explicitNullValueWindGust; set { _explicitNullValueWindGust = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("windGust"); else _explicitNullProperties?.Remove("windGust"); } }
+        private global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue? _explicitNullValueWindGust = default!;
 #nullable restore
 #else
-        public global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue WindGust { get; set; }
+        public global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue WindGust { get => _explicitNullValueWindGust; set { _explicitNullValueWindGust = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("windGust"); else _explicitNullProperties?.Remove("windGust"); } }
+        private global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue _explicitNullValueWindGust = default!;
 #endif
         /// <summary>A structured value representing a measurement and its unit of measure. This object is a slightly modified version of the schema.org definition at https://schema.org/QuantitativeValue</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue? WindSpeed { get; set; }
+        public global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue? WindSpeed { get => _explicitNullValueWindSpeed; set { _explicitNullValueWindSpeed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("windSpeed"); else _explicitNullProperties?.Remove("windSpeed"); } }
+        private global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue? _explicitNullValueWindSpeed = default!;
 #nullable restore
 #else
-        public global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue WindSpeed { get; set; }
+        public global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue WindSpeed { get => _explicitNullValueWindSpeed; set { _explicitNullValueWindSpeed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("windSpeed"); else _explicitNullProperties?.Remove("windSpeed"); } }
+        private global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue _explicitNullValueWindSpeed = default!;
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -249,7 +344,7 @@ namespace Soenneker.Nws.OpenApiClient.Models
         public static global::Soenneker.Nws.OpenApiClient.Models.Observation CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Nws.OpenApiClient.Models.Observation();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Nws.OpenApiClient.Models.Observation(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -327,7 +422,8 @@ namespace Soenneker.Nws.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue>("windChill", WindChill);
             writer.WriteObjectValue<global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue>("windDirection", WindDirection);
             writer.WriteObjectValue<global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue>("windGust", WindGust);
-            writer.WriteObjectValue<global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue>("windSpeed", WindSpeed);
+            writer.WriteObjectValue<global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue>("windSpeed", WindSpeed);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }
