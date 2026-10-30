@@ -56,6 +56,8 @@ return result;
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
+            if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawFields) { var fields = new global::System.Collections.Generic.Dictionary<string, global::System.Action<IParseNode>>(); foreach (var entry in rawFields.GetValue()) fields[entry.Key] = _ => { }; return fields; }
+
             if(RadarStation200GeoJsonResponseSchema != null || RadarStation200LdJsonResponseSchema != null)
             {
                 return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(RadarStation200GeoJsonResponseSchema, RadarStation200LdJsonResponseSchema);
@@ -70,8 +72,11 @@ return result;
         {
             if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
             if (RadarStation200GeoJsonResponseSchema == null && RadarStation200LdJsonResponseSchema == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
-            if (RadarStation200GeoJsonResponseSchema != null && RadarStation200LdJsonResponseSchema == null) { if (RadarStation200GeoJsonResponseSchema is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, RadarStation200GeoJsonResponseSchema); return; }
-            if (RadarStation200LdJsonResponseSchema != null && RadarStation200GeoJsonResponseSchema == null) { if (RadarStation200LdJsonResponseSchema is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, RadarStation200LdJsonResponseSchema); return; }
+            int selectedUnionBranches = 0;
+            if (RadarStation200GeoJsonResponseSchema != null) selectedUnionBranches++;
+            if (RadarStation200LdJsonResponseSchema != null) selectedUnionBranches++;
+            if (RadarStation200GeoJsonResponseSchema != null && selectedUnionBranches == 1) { if (RadarStation200GeoJsonResponseSchema is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, RadarStation200GeoJsonResponseSchema); return; }
+            if (RadarStation200LdJsonResponseSchema != null && selectedUnionBranches == 1) { if (RadarStation200LdJsonResponseSchema is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, RadarStation200LdJsonResponseSchema); return; }
 
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Nws.OpenApiClient.Models.RadarStation200GeoJsonResponseSchema>(null, RadarStation200GeoJsonResponseSchema, RadarStation200LdJsonResponseSchema);

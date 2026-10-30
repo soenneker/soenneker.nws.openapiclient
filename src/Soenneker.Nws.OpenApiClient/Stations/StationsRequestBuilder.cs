@@ -49,17 +49,17 @@ namespace Soenneker.Nws.OpenApiClient.Stations
         /// <summary>
         /// Returns a list of observation stations.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Nws.OpenApiClient.Models.ObsStationsSuccessResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Nws.OpenApiClient.Models.GridpointStationsSuccessResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Nws.OpenApiClient.Models.ProblemDetail">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Nws.OpenApiClient.Models.ObsStationsSuccessResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Nws.OpenApiClient.Stations.StationsRequestBuilder.StationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Nws.OpenApiClient.Models.GridpointStationsSuccessResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Nws.OpenApiClient.Stations.StationsRequestBuilder.StationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Nws.OpenApiClient.Models.ObsStationsSuccessResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Nws.OpenApiClient.Stations.StationsRequestBuilder.StationsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Nws.OpenApiClient.Models.GridpointStationsSuccessResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Nws.OpenApiClient.Stations.StationsRequestBuilder.StationsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -67,7 +67,7 @@ namespace Soenneker.Nws.OpenApiClient.Stations
             {
                 { "XXX", global::Soenneker.Nws.OpenApiClient.Models.ProblemDetail.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Nws.OpenApiClient.Models.ObsStationsSuccessResponse>(requestInfo, global::Soenneker.Nws.OpenApiClient.Models.ObsStationsSuccessResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Nws.OpenApiClient.Models.GridpointStationsSuccessResponse>(requestInfo, global::Soenneker.Nws.OpenApiClient.Models.GridpointStationsSuccessResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns a list of observation stations.
@@ -83,7 +83,7 @@ namespace Soenneker.Nws.OpenApiClient.Stations
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Nws.OpenApiClient.Stations.StationsRequestBuilder.StationsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://api.weather.gov", "/stations", PathParameters.ContainsKey("request-raw-url")), PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/geo+json, application/ld+json");
             return requestInfo;

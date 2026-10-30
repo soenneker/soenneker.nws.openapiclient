@@ -1988,7 +1988,7 @@
             "content": {
               "application/geo\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/ObsStationsSuccessResponse"
+                  "$ref": "#/components/schemas/GridpointStationsSuccessResponse"
                 },
                 "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/ObservationStationCollectionGeoJson"
@@ -1996,7 +1996,7 @@
               },
               "application/ld\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/ObsStationsSuccessResponse"
+                  "$ref": "#/components/schemas/GridpointStationsSuccessResponse"
                 },
                 "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/ObservationStationCollectionJsonLd"
@@ -3963,7 +3963,7 @@
             "content": {
               "application/geo\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/ZoneListTypeSuccessResponse"
+                  "$ref": "#/components/schemas/ZoneListSuccessResponse"
                 },
                 "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/ZoneCollectionGeoJson"
@@ -3971,7 +3971,7 @@
               },
               "application/ld\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/ZoneListTypeSuccessResponse"
+                  "$ref": "#/components/schemas/ZoneListSuccessResponse"
                 },
                 "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/ZoneCollectionJsonLd"
@@ -4246,7 +4246,7 @@
             "content": {
               "application/geo\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/ZoneObsSuccessResponse"
+                  "$ref": "#/components/schemas/StationObservationListSuccessResponse"
                 },
                 "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/ObservationCollectionGeoJson"
@@ -4254,7 +4254,7 @@
               },
               "application/ld\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/ZoneObsSuccessResponse"
+                  "$ref": "#/components/schemas/StationObservationListSuccessResponse"
                 },
                 "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/ObservationCollectionJsonLd"
@@ -4303,7 +4303,7 @@
             "content": {
               "application/geo\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/ZoneStationsSuccessResponse"
+                  "$ref": "#/components/schemas/GridpointStationsSuccessResponse"
                 },
                 "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/ObservationStationCollectionGeoJson"
@@ -4311,7 +4311,7 @@
               },
               "application/ld\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/ZoneStationsSuccessResponse"
+                  "$ref": "#/components/schemas/GridpointStationsSuccessResponse"
                 },
                 "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/ObservationStationCollectionJsonLd"
@@ -5781,7 +5781,7 @@
             "description": "Indicates whether this period is daytime or nighttime."
           },
           "temperature": {
-            "$ref": "#/components/schemas/GridpointHourlyForecastPeriodTemperature"
+            "$ref": "#/components/schemas/Gridpoint12HForecastPeriodTemperature"
           },
           "temperatureUnit": {
             "$ref": "#/components/schemas/GridpointHourlyForecastPeriodTemperatureUnit"
@@ -5802,10 +5802,10 @@
             "$ref": "#/components/schemas/QuantitativeValue"
           },
           "windSpeed": {
-            "$ref": "#/components/schemas/GridpointHourlyForecastPeriodWindSpeed"
+            "$ref": "#/components/schemas/Gridpoint12HForecastPeriodWindSpeed"
           },
           "windGust": {
-            "$ref": "#/components/schemas/GridpointHourlyForecastPeriodWindGust"
+            "$ref": "#/components/schemas/Gridpoint12HForecastPeriodWindGust"
           },
           "windDirection": {
             "$ref": "#/components/schemas/GridpointHourlyForecastPeriodWindDirection"
@@ -10163,7 +10163,17 @@
             "enum": [
               ""
             ],
-            "type": "string"
+            "type": "string",
+            "x-ms-enum": {
+              "name": "ZoneBodyState",
+              "modelAsString": false,
+              "values": [
+                {
+                  "value": "",
+                  "name": "EnumValue"
+                }
+              ]
+            }
           },
           {
             "type": "null"
@@ -11610,7 +11620,17 @@
         "enum": [
           ""
         ],
-        "type": "string"
+        "type": "string",
+        "x-ms-enum": {
+          "name": "ZoneBodyStateOneOf2",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "",
+              "name": "EnumValue"
+            }
+          ]
+        }
       },
       "PostalAddressType": {
         "enum": [

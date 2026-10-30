@@ -18,34 +18,37 @@ namespace Soenneker.Nws.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("event_number") is { } nullNodeEventNumber && nullNodeEventNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EventNumber = null;
-            if (parseNode.GetChildNode("phenomenon") is { } nullNodePhenomenon && nullNodePhenomenon.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Phenomenon = null;
-            if (parseNode.GetChildNode("significance") is { } nullNodeSignificance && nullNodeSignificance.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Significance = null;
+            if (parseNode.GetChildNode("event_number") is null) { _explicitNullValueEventNumber = default!; _explicitNullProperties?.Remove("event_number"); }
+            else if (parseNode.GetChildNode("event_number") is { } nullNodeEventNumber && nullNodeEventNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EventNumber = null;
+            if (parseNode.GetChildNode("phenomenon") is null) { _explicitNullValuePhenomenon = default!; _explicitNullProperties?.Remove("phenomenon"); }
+            else if (parseNode.GetChildNode("phenomenon") is { } nullNodePhenomenon && nullNodePhenomenon.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Phenomenon = null;
+            if (parseNode.GetChildNode("significance") is null) { _explicitNullValueSignificance = default!; _explicitNullProperties?.Remove("significance"); }
+            else if (parseNode.GetChildNode("significance") is { } nullNodeSignificance && nullNodeSignificance.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Significance = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Event number. If this hazard refers to a national or regional center product (such as a Storm Prediction Center convective watch), this value will be the sequence number of that product.</summary>
-        public int? EventNumber { get => _explicitNullValueEventNumber; set { _explicitNullValueEventNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("event_number"); else _explicitNullProperties?.Remove("event_number"); } }
+        public int? EventNumber { get => _explicitNullValueEventNumber; set { _explicitNullValueEventNumber = value; AdditionalData?.Remove("event_number"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("event_number"); else _explicitNullProperties?.Remove("event_number"); } }
         private int? _explicitNullValueEventNumber = default!;
         /// <summary>Hazard code. This value will correspond to a P-VTEC phenomenon code as defined in NWS Directive 10-1703.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Phenomenon { get => _explicitNullValuePhenomenon; set { _explicitNullValuePhenomenon = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("phenomenon"); else _explicitNullProperties?.Remove("phenomenon"); } }
+        public string? Phenomenon { get => _explicitNullValuePhenomenon; set { _explicitNullValuePhenomenon = value; AdditionalData?.Remove("phenomenon"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("phenomenon"); else _explicitNullProperties?.Remove("phenomenon"); } }
         private string? _explicitNullValuePhenomenon = default!;
 #nullable restore
 #else
-        public string Phenomenon { get => _explicitNullValuePhenomenon; set { _explicitNullValuePhenomenon = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("phenomenon"); else _explicitNullProperties?.Remove("phenomenon"); } }
+        public string Phenomenon { get => _explicitNullValuePhenomenon; set { _explicitNullValuePhenomenon = value; AdditionalData?.Remove("phenomenon"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("phenomenon"); else _explicitNullProperties?.Remove("phenomenon"); } }
         private string _explicitNullValuePhenomenon = default!;
 #endif
         /// <summary>Significance code. This value will correspond to a P-VTEC significance code as defined in NWS Directive 10-1703.This will most frequently be &quot;A&quot; for a watch or &quot;Y&quot; for an advisory.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Significance { get => _explicitNullValueSignificance; set { _explicitNullValueSignificance = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("significance"); else _explicitNullProperties?.Remove("significance"); } }
+        public string? Significance { get => _explicitNullValueSignificance; set { _explicitNullValueSignificance = value; AdditionalData?.Remove("significance"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("significance"); else _explicitNullProperties?.Remove("significance"); } }
         private string? _explicitNullValueSignificance = default!;
 #nullable restore
 #else
-        public string Significance { get => _explicitNullValueSignificance; set { _explicitNullValueSignificance = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("significance"); else _explicitNullProperties?.Remove("significance"); } }
+        public string Significance { get => _explicitNullValueSignificance; set { _explicitNullValueSignificance = value; AdditionalData?.Remove("significance"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("significance"); else _explicitNullProperties?.Remove("significance"); } }
         private string _explicitNullValueSignificance = default!;
 #endif
         /// <summary>

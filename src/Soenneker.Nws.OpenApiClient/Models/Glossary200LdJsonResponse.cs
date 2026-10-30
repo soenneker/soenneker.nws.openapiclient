@@ -17,8 +17,10 @@ namespace Soenneker.Nws.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("@context") is { } nullNodeContext && nullNodeContext.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Context = null;
-            if (parseNode.GetChildNode("glossary") is { } nullNodeGlossary && nullNodeGlossary.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Glossary = null;
+            if (parseNode.GetChildNode("@context") is null) { _explicitNullValueContext = default!; _explicitNullProperties?.Remove("@context"); }
+            else if (parseNode.GetChildNode("@context") is { } nullNodeContext && nullNodeContext.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Context = null;
+            if (parseNode.GetChildNode("glossary") is null) { _explicitNullValueGlossary = default!; _explicitNullProperties?.Remove("glossary"); }
+            else if (parseNode.GetChildNode("glossary") is { } nullNodeGlossary && nullNodeGlossary.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Glossary = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Nws.OpenApiClient.Models
         /// <summary>The Context property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Context { get => _explicitNullValueContext; set { _explicitNullValueContext = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("@context"); else _explicitNullProperties?.Remove("@context"); } }
+        public UntypedNode? Context { get => _explicitNullValueContext; set { _explicitNullValueContext = value; AdditionalData?.Remove("@context"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("@context"); else _explicitNullProperties?.Remove("@context"); } }
         private UntypedNode? _explicitNullValueContext = default!;
 #nullable restore
 #else
-        public UntypedNode Context { get => _explicitNullValueContext; set { _explicitNullValueContext = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("@context"); else _explicitNullProperties?.Remove("@context"); } }
+        public UntypedNode Context { get => _explicitNullValueContext; set { _explicitNullValueContext = value; AdditionalData?.Remove("@context"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("@context"); else _explicitNullProperties?.Remove("@context"); } }
         private UntypedNode _explicitNullValueContext = default!;
 #endif
         /// <summary>A list of glossary terms</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Nws.OpenApiClient.Models.Glossary200LdJsonResponseGlossaryItem>? Glossary { get => _explicitNullValueGlossary; set { _explicitNullValueGlossary = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("glossary"); else _explicitNullProperties?.Remove("glossary"); } }
+        public List<global::Soenneker.Nws.OpenApiClient.Models.Glossary200LdJsonResponseGlossaryItem>? Glossary { get => _explicitNullValueGlossary; set { _explicitNullValueGlossary = value; AdditionalData?.Remove("glossary"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("glossary"); else _explicitNullProperties?.Remove("glossary"); } }
         private List<global::Soenneker.Nws.OpenApiClient.Models.Glossary200LdJsonResponseGlossaryItem>? _explicitNullValueGlossary = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Nws.OpenApiClient.Models.Glossary200LdJsonResponseGlossaryItem> Glossary { get => _explicitNullValueGlossary; set { _explicitNullValueGlossary = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("glossary"); else _explicitNullProperties?.Remove("glossary"); } }
+        public List<global::Soenneker.Nws.OpenApiClient.Models.Glossary200LdJsonResponseGlossaryItem> Glossary { get => _explicitNullValueGlossary; set { _explicitNullValueGlossary = value; AdditionalData?.Remove("glossary"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("glossary"); else _explicitNullProperties?.Remove("glossary"); } }
         private List<global::Soenneker.Nws.OpenApiClient.Models.Glossary200LdJsonResponseGlossaryItem> _explicitNullValueGlossary = default!;
 #endif
         /// <summary>

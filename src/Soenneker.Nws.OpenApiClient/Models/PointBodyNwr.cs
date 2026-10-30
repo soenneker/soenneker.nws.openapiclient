@@ -18,10 +18,14 @@ namespace Soenneker.Nws.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("areaBroadcast") is { } nullNodeAreaBroadcast && nullNodeAreaBroadcast.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AreaBroadcast = null;
-            if (parseNode.GetChildNode("pointBroadcast") is { } nullNodePointBroadcast && nullNodePointBroadcast.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PointBroadcast = null;
-            if (parseNode.GetChildNode("sameCode") is { } nullNodeSameCode && nullNodeSameCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SameCode = null;
-            if (parseNode.GetChildNode("transmitter") is { } nullNodeTransmitter && nullNodeTransmitter.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Transmitter = null;
+            if (parseNode.GetChildNode("areaBroadcast") is null) { _explicitNullValueAreaBroadcast = default!; _explicitNullProperties?.Remove("areaBroadcast"); }
+            else if (parseNode.GetChildNode("areaBroadcast") is { } nullNodeAreaBroadcast && nullNodeAreaBroadcast.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AreaBroadcast = null;
+            if (parseNode.GetChildNode("pointBroadcast") is null) { _explicitNullValuePointBroadcast = default!; _explicitNullProperties?.Remove("pointBroadcast"); }
+            else if (parseNode.GetChildNode("pointBroadcast") is { } nullNodePointBroadcast && nullNodePointBroadcast.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PointBroadcast = null;
+            if (parseNode.GetChildNode("sameCode") is null) { _explicitNullValueSameCode = default!; _explicitNullProperties?.Remove("sameCode"); }
+            else if (parseNode.GetChildNode("sameCode") is { } nullNodeSameCode && nullNodeSameCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SameCode = null;
+            if (parseNode.GetChildNode("transmitter") is null) { _explicitNullValueTransmitter = default!; _explicitNullProperties?.Remove("transmitter"); }
+            else if (parseNode.GetChildNode("transmitter") is { } nullNodeTransmitter && nullNodeTransmitter.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Transmitter = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,41 +33,41 @@ namespace Soenneker.Nws.OpenApiClient.Models
         /// <summary>A link to the area NWR broadcast from this transmitter</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AreaBroadcast { get => _explicitNullValueAreaBroadcast; set { _explicitNullValueAreaBroadcast = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("areaBroadcast"); else _explicitNullProperties?.Remove("areaBroadcast"); } }
+        public string? AreaBroadcast { get => _explicitNullValueAreaBroadcast; set { _explicitNullValueAreaBroadcast = value; AdditionalData?.Remove("areaBroadcast"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("areaBroadcast"); else _explicitNullProperties?.Remove("areaBroadcast"); } }
         private string? _explicitNullValueAreaBroadcast = default!;
 #nullable restore
 #else
-        public string AreaBroadcast { get => _explicitNullValueAreaBroadcast; set { _explicitNullValueAreaBroadcast = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("areaBroadcast"); else _explicitNullProperties?.Remove("areaBroadcast"); } }
+        public string AreaBroadcast { get => _explicitNullValueAreaBroadcast; set { _explicitNullValueAreaBroadcast = value; AdditionalData?.Remove("areaBroadcast"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("areaBroadcast"); else _explicitNullProperties?.Remove("areaBroadcast"); } }
         private string _explicitNullValueAreaBroadcast = default!;
 #endif
         /// <summary>A link to the local NWR broadcast for this point</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PointBroadcast { get => _explicitNullValuePointBroadcast; set { _explicitNullValuePointBroadcast = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pointBroadcast"); else _explicitNullProperties?.Remove("pointBroadcast"); } }
+        public string? PointBroadcast { get => _explicitNullValuePointBroadcast; set { _explicitNullValuePointBroadcast = value; AdditionalData?.Remove("pointBroadcast"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pointBroadcast"); else _explicitNullProperties?.Remove("pointBroadcast"); } }
         private string? _explicitNullValuePointBroadcast = default!;
 #nullable restore
 #else
-        public string PointBroadcast { get => _explicitNullValuePointBroadcast; set { _explicitNullValuePointBroadcast = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pointBroadcast"); else _explicitNullProperties?.Remove("pointBroadcast"); } }
+        public string PointBroadcast { get => _explicitNullValuePointBroadcast; set { _explicitNullValuePointBroadcast = value; AdditionalData?.Remove("pointBroadcast"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pointBroadcast"); else _explicitNullProperties?.Remove("pointBroadcast"); } }
         private string _explicitNullValuePointBroadcast = default!;
 #endif
         /// <summary>The SAME code of this point&apos;s county</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SameCode { get => _explicitNullValueSameCode; set { _explicitNullValueSameCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sameCode"); else _explicitNullProperties?.Remove("sameCode"); } }
+        public string? SameCode { get => _explicitNullValueSameCode; set { _explicitNullValueSameCode = value; AdditionalData?.Remove("sameCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sameCode"); else _explicitNullProperties?.Remove("sameCode"); } }
         private string? _explicitNullValueSameCode = default!;
 #nullable restore
 #else
-        public string SameCode { get => _explicitNullValueSameCode; set { _explicitNullValueSameCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sameCode"); else _explicitNullProperties?.Remove("sameCode"); } }
+        public string SameCode { get => _explicitNullValueSameCode; set { _explicitNullValueSameCode = value; AdditionalData?.Remove("sameCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sameCode"); else _explicitNullProperties?.Remove("sameCode"); } }
         private string _explicitNullValueSameCode = default!;
 #endif
         /// <summary>Transmitter callsign</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Transmitter { get => _explicitNullValueTransmitter; set { _explicitNullValueTransmitter = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transmitter"); else _explicitNullProperties?.Remove("transmitter"); } }
+        public string? Transmitter { get => _explicitNullValueTransmitter; set { _explicitNullValueTransmitter = value; AdditionalData?.Remove("transmitter"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transmitter"); else _explicitNullProperties?.Remove("transmitter"); } }
         private string? _explicitNullValueTransmitter = default!;
 #nullable restore
 #else
-        public string Transmitter { get => _explicitNullValueTransmitter; set { _explicitNullValueTransmitter = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transmitter"); else _explicitNullProperties?.Remove("transmitter"); } }
+        public string Transmitter { get => _explicitNullValueTransmitter; set { _explicitNullValueTransmitter = value; AdditionalData?.Remove("transmitter"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transmitter"); else _explicitNullProperties?.Remove("transmitter"); } }
         private string _explicitNullValueTransmitter = default!;
 #endif
         /// <summary>

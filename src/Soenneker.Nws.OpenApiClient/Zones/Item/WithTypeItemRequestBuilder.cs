@@ -49,17 +49,17 @@ namespace Soenneker.Nws.OpenApiClient.Zones.Item
         /// <summary>
         /// Returns a list of zones of a given type
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Nws.OpenApiClient.Models.ZoneListTypeSuccessResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Nws.OpenApiClient.Models.ZoneListSuccessResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Nws.OpenApiClient.Models.ProblemDetail">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Nws.OpenApiClient.Models.ZoneListTypeSuccessResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Nws.OpenApiClient.Zones.Item.WithTypeItemRequestBuilder.WithTypeItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Nws.OpenApiClient.Models.ZoneListSuccessResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Nws.OpenApiClient.Zones.Item.WithTypeItemRequestBuilder.WithTypeItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Nws.OpenApiClient.Models.ZoneListTypeSuccessResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Nws.OpenApiClient.Zones.Item.WithTypeItemRequestBuilder.WithTypeItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Nws.OpenApiClient.Models.ZoneListSuccessResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Nws.OpenApiClient.Zones.Item.WithTypeItemRequestBuilder.WithTypeItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -67,7 +67,7 @@ namespace Soenneker.Nws.OpenApiClient.Zones.Item
             {
                 { "XXX", global::Soenneker.Nws.OpenApiClient.Models.ProblemDetail.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Nws.OpenApiClient.Models.ZoneListTypeSuccessResponse>(requestInfo, global::Soenneker.Nws.OpenApiClient.Models.ZoneListTypeSuccessResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Nws.OpenApiClient.Models.ZoneListSuccessResponse>(requestInfo, global::Soenneker.Nws.OpenApiClient.Models.ZoneListSuccessResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns a list of zones of a given type
@@ -83,7 +83,7 @@ namespace Soenneker.Nws.OpenApiClient.Zones.Item
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Nws.OpenApiClient.Zones.Item.WithTypeItemRequestBuilder.WithTypeItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://api.weather.gov", "/zones/{type}", PathParameters.ContainsKey("request-raw-url")), PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/geo+json, application/ld+json");
             return requestInfo;

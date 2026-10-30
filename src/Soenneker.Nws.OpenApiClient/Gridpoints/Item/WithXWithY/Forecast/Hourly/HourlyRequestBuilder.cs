@@ -70,7 +70,7 @@ namespace Soenneker.Nws.OpenApiClient.Gridpoints.Item.WithXWithY.Forecast.Hourly
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Nws.OpenApiClient.Gridpoints.Item.WithXWithY.Forecast.Hourly.HourlyRequestBuilder.HourlyRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://api.weather.gov", "/gridpoints/{wfo}/{x},{y}/forecast/hourly", PathParameters.ContainsKey("request-raw-url")), PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/geo+json");
             return requestInfo;
