@@ -70,7 +70,7 @@ namespace Soenneker.Nws.OpenApiClient.Stations.Item.Observations.Latest
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Nws.OpenApiClient.Stations.Item.Observations.Latest.LatestRequestBuilder.LatestRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://api.weather.gov", "/stations/{stationId}/observations/latest", PathParameters.ContainsKey("request-raw-url")), PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/geo+json");
             return requestInfo;

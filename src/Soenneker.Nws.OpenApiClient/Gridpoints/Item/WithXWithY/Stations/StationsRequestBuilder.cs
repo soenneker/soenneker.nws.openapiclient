@@ -70,7 +70,7 @@ namespace Soenneker.Nws.OpenApiClient.Gridpoints.Item.WithXWithY.Stations
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Nws.OpenApiClient.Gridpoints.Item.WithXWithY.Stations.StationsRequestBuilder.StationsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://api.weather.gov", "/gridpoints/{wfo}/{x},{y}/stations", PathParameters.ContainsKey("request-raw-url")), PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/geo+json, application/ld+json");
             return requestInfo;
