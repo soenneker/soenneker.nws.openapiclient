@@ -108,8 +108,7 @@
             "content": {
               "application/geo\u002Bjson": {
                 "schema": {
-                  "type": "string",
-                  "format": "binary"
+                  "$ref": "#/components/schemas/AlertsQuerySuccessResponse"
                 },
                 "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/AlertCollectionGeoJson"
@@ -117,26 +116,23 @@
               },
               "application/ld\u002Bjson": {
                 "schema": {
-                  "type": "string",
-                  "format": "binary"
+                  "$ref": "#/components/schemas/AlertsQuerySuccessResponse"
                 },
                 "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/AlertCollectionJsonLd"
-                }
-              },
-              "application/atom\u002Bxml": {
-                "schema": {
-                  "type": "string",
-                  "format": "binary"
-                },
-                "x-client-original-success-schema": {
-                  "$ref": "#/components/schemas/AlertAtomFeed"
                 }
               }
             },
             "x-url-content-negotiation-extensions": {
               "json": "application/geo\u002Bjson",
               "atom": "application/atom\u002Bxml"
+            },
+            "x-client-original-non-json-content": {
+              "application/atom\u002Bxml": {
+                "schema": {
+                  "$ref": "#/components/schemas/AlertAtomFeed"
+                }
+              }
             }
           },
           "301": {
@@ -220,8 +216,7 @@
             "content": {
               "application/geo\u002Bjson": {
                 "schema": {
-                  "type": "string",
-                  "format": "binary"
+                  "$ref": "#/components/schemas/AlertsActiveAreaSuccessResponse"
                 },
                 "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/ActiveAlertCollectionGeoJson"
@@ -229,26 +224,23 @@
               },
               "application/ld\u002Bjson": {
                 "schema": {
-                  "type": "string",
-                  "format": "binary"
+                  "$ref": "#/components/schemas/AlertsActiveAreaSuccessResponse"
                 },
                 "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/ActiveAlertCollectionJsonLd"
-                }
-              },
-              "application/atom\u002Bxml": {
-                "schema": {
-                  "type": "string",
-                  "format": "binary"
-                },
-                "x-client-original-success-schema": {
-                  "$ref": "#/components/schemas/AlertAtomFeed"
                 }
               }
             },
             "x-url-content-negotiation-extensions": {
               "json": "application/geo\u002Bjson",
               "atom": "application/atom\u002Bxml"
+            },
+            "x-client-original-non-json-content": {
+              "application/atom\u002Bxml": {
+                "schema": {
+                  "$ref": "#/components/schemas/AlertAtomFeed"
+                }
+              }
             }
           },
           "301": {
@@ -315,8 +307,7 @@
             "content": {
               "application/geo\u002Bjson": {
                 "schema": {
-                  "type": "string",
-                  "format": "binary"
+                  "$ref": "#/components/schemas/AlertsActiveAreaSuccessResponse"
                 },
                 "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/ActiveAlertCollectionGeoJson"
@@ -324,26 +315,23 @@
               },
               "application/ld\u002Bjson": {
                 "schema": {
-                  "type": "string",
-                  "format": "binary"
+                  "$ref": "#/components/schemas/AlertsActiveAreaSuccessResponse"
                 },
                 "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/ActiveAlertCollectionJsonLd"
-                }
-              },
-              "application/atom\u002Bxml": {
-                "schema": {
-                  "type": "string",
-                  "format": "binary"
-                },
-                "x-client-original-success-schema": {
-                  "$ref": "#/components/schemas/AlertAtomFeed"
                 }
               }
             },
             "x-url-content-negotiation-extensions": {
               "json": "application/geo\u002Bjson",
               "atom": "application/atom\u002Bxml"
+            },
+            "x-client-original-non-json-content": {
+              "application/atom\u002Bxml": {
+                "schema": {
+                  "$ref": "#/components/schemas/AlertAtomFeed"
+                }
+              }
             }
           },
           "default": {
@@ -387,8 +375,7 @@
             "content": {
               "application/geo\u002Bjson": {
                 "schema": {
-                  "type": "string",
-                  "format": "binary"
+                  "$ref": "#/components/schemas/AlertsActiveAreaSuccessResponse"
                 },
                 "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/ActiveAlertCollectionGeoJson"
@@ -396,26 +383,23 @@
               },
               "application/ld\u002Bjson": {
                 "schema": {
-                  "type": "string",
-                  "format": "binary"
+                  "$ref": "#/components/schemas/AlertsActiveAreaSuccessResponse"
                 },
                 "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/ActiveAlertCollectionJsonLd"
-                }
-              },
-              "application/atom\u002Bxml": {
-                "schema": {
-                  "type": "string",
-                  "format": "binary"
-                },
-                "x-client-original-success-schema": {
-                  "$ref": "#/components/schemas/AlertAtomFeed"
                 }
               }
             },
             "x-url-content-negotiation-extensions": {
               "json": "application/geo\u002Bjson",
               "atom": "application/atom\u002Bxml"
+            },
+            "x-client-original-non-json-content": {
+              "application/atom\u002Bxml": {
+                "schema": {
+                  "$ref": "#/components/schemas/AlertAtomFeed"
+                }
+              }
             }
           },
           "default": {
@@ -457,8 +441,7 @@
             "content": {
               "application/geo\u002Bjson": {
                 "schema": {
-                  "type": "string",
-                  "format": "binary"
+                  "$ref": "#/components/schemas/AlertsActiveAreaSuccessResponse"
                 },
                 "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/ActiveAlertCollectionGeoJson"
@@ -466,26 +449,23 @@
               },
               "application/ld\u002Bjson": {
                 "schema": {
-                  "type": "string",
-                  "format": "binary"
+                  "$ref": "#/components/schemas/AlertsActiveAreaSuccessResponse"
                 },
                 "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/ActiveAlertCollectionJsonLd"
-                }
-              },
-              "application/atom\u002Bxml": {
-                "schema": {
-                  "type": "string",
-                  "format": "binary"
-                },
-                "x-client-original-success-schema": {
-                  "$ref": "#/components/schemas/AlertAtomFeed"
                 }
               }
             },
             "x-url-content-negotiation-extensions": {
               "json": "application/geo\u002Bjson",
               "atom": "application/atom\u002Bxml"
+            },
+            "x-client-original-non-json-content": {
+              "application/atom\u002Bxml": {
+                "schema": {
+                  "$ref": "#/components/schemas/AlertAtomFeed"
+                }
+              }
             }
           },
           "default": {
@@ -560,8 +540,7 @@
             "content": {
               "application/geo\u002Bjson": {
                 "schema": {
-                  "type": "string",
-                  "format": "binary"
+                  "$ref": "#/components/schemas/AlertsSingleSuccessResponse"
                 },
                 "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/AlertGeoJson"
@@ -569,26 +548,23 @@
               },
               "application/ld\u002Bjson": {
                 "schema": {
-                  "type": "string",
-                  "format": "binary"
+                  "$ref": "#/components/schemas/AlertsSingleSuccessResponse"
                 },
                 "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/AlertJsonLd"
-                }
-              },
-              "application/cap\u002Bxml": {
-                "schema": {
-                  "type": "string",
-                  "format": "binary"
-                },
-                "x-client-original-success-schema": {
-                  "$ref": "#/components/schemas/AlertsSingle200CapXmlResponse"
                 }
               }
             },
             "x-url-content-negotiation-extensions": {
               "json": "application/geo\u002Bjson",
               "cap": "application/cap\u002Bxml"
+            },
+            "x-client-original-non-json-content": {
+              "application/cap\u002Bxml": {
+                "schema": {
+                  "$ref": "#/components/schemas/AlertsSingle200CapXmlResponse"
+                }
+              }
             }
           },
           "default": {
@@ -718,19 +694,13 @@
             "content": {
               "application/geo\u002Bjson": {
                 "schema": {
-                  "type": "string",
-                  "format": "binary"
-                },
-                "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/CenterWeatherAdvisoryGeoJson"
                 }
-              },
+              }
+            },
+            "x-client-original-non-json-content": {
               "application/vnd.noaa.uswx\u002Bxml": {
                 "schema": {
-                  "type": "string",
-                  "format": "binary"
-                },
-                "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/Cwa200NoaaUswxXmlResponseSchema"
                 }
               }
@@ -923,19 +893,13 @@
             "content": {
               "application/geo\u002Bjson": {
                 "schema": {
-                  "type": "string",
-                  "format": "binary"
-                },
-                "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/SigmetGeoJson"
                 }
-              },
+              }
+            },
+            "x-client-original-non-json-content": {
               "application/vnd.noaa.uswx\u002Bxml": {
                 "schema": {
-                  "type": "string",
-                  "format": "binary"
-                },
-                "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/Sigmet200NoaaUswxXmlResponseSchema"
                 }
               }
@@ -1087,8 +1051,7 @@
             "content": {
               "application/geo\u002Bjson": {
                 "schema": {
-                  "type": "string",
-                  "format": "binary"
+                  "$ref": "#/components/schemas/GridpointForecastSuccessResponse"
                 },
                 "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/Gridpoint12HForecastGeoJson"
@@ -1096,19 +1059,16 @@
               },
               "application/ld\u002Bjson": {
                 "schema": {
-                  "type": "string",
-                  "format": "binary"
+                  "$ref": "#/components/schemas/GridpointForecastSuccessResponse"
                 },
                 "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/Gridpoint12HForecastJsonLd"
                 }
-              },
+              }
+            },
+            "x-client-original-non-json-content": {
               "application/vnd.noaa.dwml\u002Bxml": {
                 "schema": {
-                  "type": "string",
-                  "format": "binary"
-                },
-                "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/Gridpoint12HForecastResponseNoaaDwmlXmlContent"
                 }
               }
@@ -1183,8 +1143,7 @@
             "content": {
               "application/geo\u002Bjson": {
                 "schema": {
-                  "type": "string",
-                  "format": "binary"
+                  "$ref": "#/components/schemas/GridpointForecastHourlySuccessResponse"
                 },
                 "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/GridpointHourlyForecastGeoJson"
@@ -1192,19 +1151,16 @@
               },
               "application/ld\u002Bjson": {
                 "schema": {
-                  "type": "string",
-                  "format": "binary"
+                  "$ref": "#/components/schemas/GridpointForecastHourlySuccessResponse"
                 },
                 "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/GridpointHourlyForecastJsonLd"
                 }
-              },
+              }
+            },
+            "x-client-original-non-json-content": {
               "application/vnd.noaa.dwml\u002Bxml": {
                 "schema": {
-                  "type": "string",
-                  "format": "binary"
-                },
-                "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/GridpointHourlyForecastResponseNoaaDwmlXmlContent"
                 }
               }
@@ -1704,8 +1660,7 @@
             "content": {
               "application/geo\u002Bjson": {
                 "schema": {
-                  "type": "string",
-                  "format": "binary"
+                  "$ref": "#/components/schemas/StationObservationLatestSuccessResponse"
                 },
                 "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/ObservationGeoJson"
@@ -1713,28 +1668,21 @@
               },
               "application/ld\u002Bjson": {
                 "schema": {
-                  "type": "string",
-                  "format": "binary"
+                  "$ref": "#/components/schemas/StationObservationLatestSuccessResponse"
                 },
                 "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/ObservationJsonLd"
                 }
-              },
+              }
+            },
+            "x-client-original-non-json-content": {
               "application/vnd.noaa.uswx\u002Bxml": {
                 "schema": {
-                  "type": "string",
-                  "format": "binary"
-                },
-                "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/ObservationResponseNoaaUswxXmlContent"
                 }
               },
               "application/vnd.noaa.obs\u002Bxml": {
                 "schema": {
-                  "type": "string",
-                  "format": "binary"
-                },
-                "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/ObservationResponseNoaaObsXmlContent"
                 }
               }
@@ -1791,8 +1739,7 @@
             "content": {
               "application/geo\u002Bjson": {
                 "schema": {
-                  "type": "string",
-                  "format": "binary"
+                  "$ref": "#/components/schemas/StationObservationLatestSuccessResponse"
                 },
                 "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/ObservationGeoJson"
@@ -1800,28 +1747,21 @@
               },
               "application/ld\u002Bjson": {
                 "schema": {
-                  "type": "string",
-                  "format": "binary"
+                  "$ref": "#/components/schemas/StationObservationLatestSuccessResponse"
                 },
                 "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/ObservationJsonLd"
                 }
-              },
+              }
+            },
+            "x-client-original-non-json-content": {
               "application/vnd.noaa.uswx\u002Bxml": {
                 "schema": {
-                  "type": "string",
-                  "format": "binary"
-                },
-                "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/ObservationResponseNoaaUswxXmlContent"
                 }
               },
               "application/vnd.noaa.obs\u002Bxml": {
                 "schema": {
-                  "type": "string",
-                  "format": "binary"
-                },
-                "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/ObservationResponseNoaaObsXmlContent"
                 }
               }
@@ -12185,6 +12125,66 @@
           ]
         }
       },
+      "AlertsQuerySuccessResponse": {
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/AlertCollectionGeoJson"
+          },
+          {
+            "$ref": "#/components/schemas/AlertCollectionJsonLd"
+          }
+        ]
+      },
+      "AlertsActiveSuccessResponse": {
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/ActiveAlertCollectionGeoJson"
+          },
+          {
+            "$ref": "#/components/schemas/ActiveAlertCollectionJsonLd"
+          }
+        ]
+      },
+      "AlertsActiveZoneSuccessResponse": {
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/ActiveAlertCollectionGeoJson"
+          },
+          {
+            "$ref": "#/components/schemas/ActiveAlertCollectionJsonLd"
+          }
+        ]
+      },
+      "AlertsActiveAreaSuccessResponse": {
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/ActiveAlertCollectionGeoJson"
+          },
+          {
+            "$ref": "#/components/schemas/ActiveAlertCollectionJsonLd"
+          }
+        ]
+      },
+      "AlertsActiveRegionSuccessResponse": {
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/ActiveAlertCollectionGeoJson"
+          },
+          {
+            "$ref": "#/components/schemas/ActiveAlertCollectionJsonLd"
+          }
+        ]
+      },
+      "AlertsSingleSuccessResponse": {
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/AlertGeoJson"
+          },
+          {
+            "$ref": "#/components/schemas/AlertJsonLd"
+          }
+        ]
+      },
       "GridpointSuccessResponse": {
         "anyOf": [
           {
@@ -12192,6 +12192,26 @@
           },
           {
             "$ref": "#/components/schemas/GridpointJsonLd"
+          }
+        ]
+      },
+      "GridpointForecastSuccessResponse": {
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/Gridpoint12HForecastGeoJson"
+          },
+          {
+            "$ref": "#/components/schemas/Gridpoint12HForecastJsonLd"
+          }
+        ]
+      },
+      "GridpointForecastHourlySuccessResponse": {
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/GridpointHourlyForecastGeoJson"
+          },
+          {
+            "$ref": "#/components/schemas/GridpointHourlyForecastJsonLd"
           }
         ]
       },
@@ -12212,6 +12232,26 @@
           },
           {
             "$ref": "#/components/schemas/ObservationCollectionJsonLd"
+          }
+        ]
+      },
+      "StationObservationLatestSuccessResponse": {
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/ObservationGeoJson"
+          },
+          {
+            "$ref": "#/components/schemas/ObservationJsonLd"
+          }
+        ]
+      },
+      "StationObservationTimeSuccessResponse": {
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/ObservationGeoJson"
+          },
+          {
+            "$ref": "#/components/schemas/ObservationJsonLd"
           }
         ]
       },
