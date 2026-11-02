@@ -4306,7 +4306,7 @@
             "type": "array",
             "items": {
               "type": "string",
-              "format": "uri"
+              "x-client-original-format": "uri"
             },
             "description": "An array of API links for zones affected by the alert. This is an API-specific extension field and is not part of the CAP specification.\n"
           },
@@ -4430,38 +4430,6 @@
         },
         "description": "An object representing a public alert message.\nUnless otherwise noted, the fields in this object correspond to the National Weather Service CAP v1.2 specification, which extends the OASIS Common Alerting Protocol (CAP) v1.2 specification and USA Integrated Public Alert and Warning System (IPAWS) Profile v1.0. Refer to this documentation for more complete information.\nhttp://docs.oasis-open.org/emergency/cap/v1.2/CAP-v1.2-os.html http://docs.oasis-open.org/emergency/cap/v1.2/ipaws-profile/v1.0/cs01/cap-v1.2-ipaws-profile-cs01.html https://vlab.noaa.gov/web/nws-common-alerting-protocol/cap-documentation\n"
       },
-      "ActiveAlertCollection": {
-        "type": "object",
-        "properties": {
-          "title": {
-            "type": "string",
-            "description": "A title describing the alert collection"
-          },
-          "updated": {
-            "type": "string",
-            "description": "The last time a change occurred to this collection",
-            "format": "date-time"
-          }
-        }
-      },
-      "AlertCollection": {
-        "type": "object",
-        "properties": {
-          "title": {
-            "type": "string",
-            "description": "A title describing the alert collection"
-          },
-          "updated": {
-            "type": "string",
-            "description": "The last time a change occurred to this collection",
-            "format": "date-time"
-          },
-          "pagination": {
-            "description": "Links for retrieving more data from paged data sets",
-            "$ref": "#/components/schemas/PaginationInfo"
-          }
-        }
-      },
       "ActiveAlertCollectionGeoJson": {
         "required": [
           "type",
@@ -4570,9 +4538,6 @@
           }
         }
       },
-      "AlertCap": {
-        "type": "object"
-      },
       "AlertGeoJson": {
         "type": "object",
         "allOf": [
@@ -4597,10 +4562,6 @@
             }
           }
         }
-      },
-      "AlertId": {
-        "type": "string",
-        "description": "The identifier of the alert message."
       },
       "AlertCertainty": {
         "enum": [
@@ -5296,15 +5257,6 @@
         },
         "description": "An object representing sunrise, sunset, and twilight information for a location.\n"
       },
-      "AtsuIdentifier": {
-        "pattern": "^[A-Z]{3,4}$",
-        "type": "string",
-        "description": "ATSU Identifier"
-      },
-      "BinaryFile": {
-        "type": "string",
-        "format": "binary"
-      },
       "CenterWeatherAdvisoryCollectionGeoJson": {
         "required": [
           "type",
@@ -5373,34 +5325,13 @@
       "CenterWeatherServiceUnitJsonLd": {
         "$ref": "#/components/schemas/OfficeBody"
       },
-      "Date": {
-        "type": "string",
-        "description": "Date (in YYYY-MM-DD format).",
-        "format": "date"
-      },
       "GeometryString": {
         "type": [
           "null",
           "string"
         ],
         "description": "A geometry represented in Well-Known Text (WKT) format.",
-        "format": "wkt"
-      },
-      "GeoJsonBoundingBox": {
-        "minItems": 4,
-        "type": "array",
-        "items": {
-          "type": "number"
-        },
-        "description": "A GeoJSON bounding box. Please refer to IETF RFC 7946 for information on the GeoJSON format."
-      },
-      "GeoJsonCoordinate": {
-        "minItems": 2,
-        "type": "array",
-        "items": {
-          "type": "number"
-        },
-        "description": "A GeoJSON coordinate. Please refer to IETF RFC 7946 for information on the GeoJSON format."
+        "x-client-original-format": "wkt"
       },
       "GeoJsonGeometry": {
         "oneOf": [
@@ -5441,7 +5372,7 @@
           },
           "id": {
             "type": "string",
-            "format": "uri"
+            "x-client-original-format": "uri"
           },
           "type": {
             "$ref": "#/components/schemas/FeatureType"
@@ -5457,57 +5388,6 @@
         "additionalProperties": false,
         "description": "A GeoJSON feature. Please refer to IETF RFC 7946 for information on the GeoJSON format."
       },
-      "GeoJsonFeatureCollection": {
-        "required": [
-          "type",
-          "features"
-        ],
-        "type": "object",
-        "properties": {
-          "@context": {
-            "$ref": "#/components/schemas/JsonLdContext"
-          },
-          "type": {
-            "$ref": "#/components/schemas/FeatureCollectionType"
-          },
-          "features": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/GeoJsonFeature"
-            }
-          }
-        },
-        "description": "A GeoJSON feature collection. Please refer to IETF RFC 7946 for information on the GeoJSON format."
-      },
-      "GeoJsonLineString": {
-        "minItems": 2,
-        "type": "array",
-        "items": {
-          "minItems": 2,
-          "type": "array",
-          "items": {
-            "type": "number"
-          },
-          "description": "A GeoJSON coordinate. Please refer to IETF RFC 7946 for information on the GeoJSON format."
-        },
-        "description": "A GeoJSON line string. Please refer to IETF RFC 7946 for information on the GeoJSON format."
-      },
-      "GeoJsonPolygon": {
-        "type": "array",
-        "items": {
-          "minItems": 4,
-          "type": "array",
-          "items": {
-            "minItems": 2,
-            "type": "array",
-            "items": {
-              "type": "number"
-            },
-            "description": "A GeoJSON coordinate. Please refer to IETF RFC 7946 for information on the GeoJSON format."
-          }
-        },
-        "description": "A GeoJSON polygon. Please refer to IETF RFC 7946 for information on the GeoJSON format."
-      },
       "GridpointBody": {
         "type": "object",
         "properties": {
@@ -5520,7 +5400,7 @@
           },
           "@id": {
             "type": "string",
-            "format": "uri"
+            "x-client-original-format": "uri"
           },
           "@type": {
             "$ref": "#/components/schemas/WxColonGridpointType"
@@ -5538,7 +5418,7 @@
           },
           "forecastOffice": {
             "type": "string",
-            "format": "uri"
+            "x-client-original-format": "uri"
           },
           "gridId": {
             "type": "string"
@@ -5753,8 +5633,8 @@
           "icon": {
             "type": "string",
             "description": "A link to an icon representing the forecast summary.",
-            "format": "uri",
-            "deprecated": true
+            "deprecated": true,
+            "x-client-original-format": "uri"
           },
           "shortForecast": {
             "type": "string",
@@ -5822,8 +5702,8 @@
           "icon": {
             "type": "string",
             "description": "A link to an icon representing the forecast summary.",
-            "format": "uri",
-            "deprecated": true
+            "deprecated": true,
+            "x-client-original-format": "uri"
           },
           "shortForecast": {
             "type": "string",
@@ -5928,14 +5808,6 @@
           }
         }
       },
-      "Iso8601Duration": {
-        "examples": [
-          "P2DT12H"
-        ],
-        "pattern": "^P(\\d\u002BY)?(\\d\u002BM)?(\\d\u002BD)?(T(\\d\u002BH)?(\\d\u002BM)?(\\d\u002BS)?)?$",
-        "type": "string",
-        "description": "A time duration in ISO 8601 format."
-      },
       "Iso8601Interval": {
         "oneOf": [
           {
@@ -5972,135 +5844,6 @@
             "type": "object"
           }
         ]
-      },
-      "LandRegionCode": {
-        "enum": [
-          "AR",
-          "CR",
-          "ER",
-          "PR",
-          "SR",
-          "WR"
-        ],
-        "type": "string",
-        "description": "Land region code. These correspond to the six NWS regional headquarters:\n* AR: Alaska Region\n* CR: Central Region\n* ER: Eastern Region\n* PR: Pacific Region\n* SR: Southern Region\n* WR: Western Region\n",
-        "x-ms-enum": {
-          "name": "LandRegionCode",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "AR",
-              "name": "Ar"
-            },
-            {
-              "value": "CR",
-              "name": "Cr"
-            },
-            {
-              "value": "ER",
-              "name": "Er"
-            },
-            {
-              "value": "PR",
-              "name": "Pr"
-            },
-            {
-              "value": "SR",
-              "name": "Sr"
-            },
-            {
-              "value": "WR",
-              "name": "Wr"
-            }
-          ]
-        }
-      },
-      "MarineAreaCode": {
-        "enum": [
-          "AM",
-          "AN",
-          "GM",
-          "LC",
-          "LE",
-          "LH",
-          "LM",
-          "LO",
-          "LS",
-          "PH",
-          "PK",
-          "PM",
-          "PS",
-          "PZ",
-          "SL"
-        ],
-        "type": "string",
-        "description": "Marine area code as defined in NWS Directive 10-302:\n* AM: Western North Atlantic Ocean and along U.S. East Coast south of Currituck Beach Light NC following the coastline into Gulf of Mexico to Ocean Reef FL including the Caribbean\n* AN: Western North Atlantic Ocean and along U.S. East Coast from Canadian border south to Currituck Beach Light NC\n* GM: Gulf of Mexico and along the U.S. Gulf Coast from the Mexican border to Ocean Reef FL\n* LC: Lake St. Clair\n* LE: Lake Erie\n* LH: Lake Huron\n* LM: Lake Michigan\n* LO: Lake Ontario\n* LS: Lake Superior\n* PH: Central Pacific Ocean including Hawaiian waters\n* PK: North Pacific Ocean near Alaska and along Alaska coastline including the Bering Sea and the Gulf of Alaska\n* PM: Western Pacific Ocean including Mariana Island waters\n* PS: South Central Pacific Ocean including American Samoa waters\n* PZ: Eastern North Pacific Ocean and along U.S. West Coast from Canadian border to Mexican border\n* SL: St. Lawrence River above St. Regis\n",
-        "x-ms-enum": {
-          "name": "MarineAreaCode",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "AM",
-              "name": "Am"
-            },
-            {
-              "value": "AN",
-              "name": "An"
-            },
-            {
-              "value": "GM",
-              "name": "Gm"
-            },
-            {
-              "value": "LC",
-              "name": "Lc"
-            },
-            {
-              "value": "LE",
-              "name": "Le"
-            },
-            {
-              "value": "LH",
-              "name": "Lh"
-            },
-            {
-              "value": "LM",
-              "name": "Lm"
-            },
-            {
-              "value": "LO",
-              "name": "Lo"
-            },
-            {
-              "value": "LS",
-              "name": "Ls"
-            },
-            {
-              "value": "PH",
-              "name": "Ph"
-            },
-            {
-              "value": "PK",
-              "name": "Pk"
-            },
-            {
-              "value": "PM",
-              "name": "Pm"
-            },
-            {
-              "value": "PS",
-              "name": "Ps"
-            },
-            {
-              "value": "PZ",
-              "name": "Pz"
-            },
-            {
-              "value": "SL",
-              "name": "Sl"
-            }
-          ]
-        }
       },
       "MarineRegionCode": {
         "enum": [
@@ -6378,7 +6121,7 @@
           "download": {
             "type": "string",
             "description": "The URL of the media content for the weather story.",
-            "format": "uri"
+            "x-client-original-format": "uri"
           }
         },
         "description": "Metadata for an NWS Connect document."
@@ -7056,23 +6799,6 @@
             {
               "value": "ONP",
               "name": "Onp"
-            }
-          ]
-        }
-      },
-      "NwsNationalHqId": {
-        "enum": [
-          "NWS"
-        ],
-        "type": "string",
-        "description": "Three-letter identifier for NWS National HQ.",
-        "x-ms-enum": {
-          "name": "NwsNationalHqId",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "NWS",
-              "name": "Nws"
             }
           ]
         }
@@ -7788,53 +7514,6 @@
           ]
         }
       },
-      "NwsRegionalHqId": {
-        "enum": [
-          "ARH",
-          "CRH",
-          "ERH",
-          "PRH",
-          "SRH",
-          "WRH"
-        ],
-        "type": "string",
-        "description": "Three-letter identifier for a NWS Regional HQ.",
-        "x-ms-enum": {
-          "name": "NwsRegionalHqId",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "ARH",
-              "name": "Arh"
-            },
-            {
-              "value": "CRH",
-              "name": "Crh"
-            },
-            {
-              "value": "ERH",
-              "name": "Erh"
-            },
-            {
-              "value": "PRH",
-              "name": "Prh"
-            },
-            {
-              "value": "SRH",
-              "name": "Srh"
-            },
-            {
-              "value": "WRH",
-              "name": "Wrh"
-            }
-          ]
-        }
-      },
-      "NwsZoneId": {
-        "pattern": "^(A[KLMNRSZ]|C[AOT]|D[CE]|F[LM]|G[AMU]|I[ADLN]|K[SY]|L[ACEHMOS]|M[ADEHINOPST]|N[CDEHJMVY]|O[HKR]|P[AHKMRSWZ]|S[CDL]|T[NX]|UT|V[AIT]|W[AIVY]|[HR]I)[CZ]\\d{3}$",
-        "type": "string",
-        "description": "UGC identifier for a NWS forecast zone or county.\nThe first two letters will correspond to either a state code or marine area code (see #/components/schemas/StateTerritoryCode and #/components/schemas/MarineAreaCode for lists of valid letter combinations).\nThe third letter will be Z for public/fire zone or C for county.\n"
-      },
       "NwsZoneType": {
         "enum": [
           "land",
@@ -7898,7 +7577,7 @@
           },
           "@id": {
             "type": "string",
-            "format": "uri"
+            "x-client-original-format": "uri"
           },
           "@type": {
             "$ref": "#/components/schemas/WxColonObservationStationType"
@@ -7909,7 +7588,7 @@
           },
           "station": {
             "type": "string",
-            "format": "uri"
+            "x-client-original-format": "uri"
           },
           "stationId": {
             "type": "string"
@@ -7932,8 +7611,8 @@
               "null",
               "string"
             ],
-            "format": "uri",
-            "deprecated": true
+            "deprecated": true,
+            "x-client-original-format": "uri"
           },
           "presentWeather": {
             "type": "array",
@@ -8086,7 +7765,7 @@
           },
           "@id": {
             "type": "string",
-            "format": "uri"
+            "x-client-original-format": "uri"
           },
           "@type": {
             "$ref": "#/components/schemas/WxColonObservationStationType"
@@ -8103,7 +7782,7 @@
           },
           "timeZone": {
             "type": "string",
-            "format": "iana-time-zone-identifier"
+            "x-client-original-format": "iana-time-zone-identifier"
           },
           "provider": {
             "type": "string",
@@ -8116,17 +7795,17 @@
           "forecast": {
             "type": "string",
             "description": "A link to the NWS public forecast zone containing this station.",
-            "format": "uri"
+            "x-client-original-format": "uri"
           },
           "county": {
             "type": "string",
             "description": "A link to the NWS county zone containing this station.",
-            "format": "uri"
+            "x-client-original-format": "uri"
           },
           "fireWeatherZone": {
             "type": "string",
             "description": "A link to the NWS fire weather forecast zone containing this station.",
-            "format": "uri"
+            "x-client-original-format": "uri"
           },
           "distance": {
             "description": "A structured value representing a measurement and its unit of measure. This object is a slightly modified version of the schema.org definition at https://schema.org/QuantitativeValue\n",
@@ -8193,7 +7872,7 @@
             "type": "array",
             "items": {
               "type": "string",
-              "format": "uri"
+              "x-client-original-format": "uri"
             }
           },
           "pagination": {
@@ -8218,7 +7897,7 @@
             "type": "array",
             "items": {
               "type": "string",
-              "format": "uri"
+              "x-client-original-format": "uri"
             }
           },
           "pagination": {
@@ -8239,7 +7918,7 @@
           },
           "@id": {
             "type": "string",
-            "format": "uri"
+            "x-client-original-format": "uri"
           },
           "id": {
             "type": "string"
@@ -8261,41 +7940,41 @@
           },
           "sameAs": {
             "type": "string",
-            "format": "uri"
+            "x-client-original-format": "uri"
           },
           "nwsRegion": {
             "type": "string"
           },
           "parentOrganization": {
             "type": "string",
-            "format": "uri"
+            "x-client-original-format": "uri"
           },
           "responsibleCounties": {
             "type": "array",
             "items": {
               "type": "string",
-              "format": "uri"
+              "x-client-original-format": "uri"
             }
           },
           "responsibleForecastZones": {
             "type": "array",
             "items": {
               "type": "string",
-              "format": "uri"
+              "x-client-original-format": "uri"
             }
           },
           "responsibleFireZones": {
             "type": "array",
             "items": {
               "type": "string",
-              "format": "uri"
+              "x-client-original-format": "uri"
             }
           },
           "approvedObservationStations": {
             "type": "array",
             "items": {
               "type": "string",
-              "format": "uri"
+              "x-client-original-format": "uri"
             }
           }
         },
@@ -8312,14 +7991,14 @@
           },
           "@id": {
             "type": "string",
-            "format": "uri"
+            "x-client-original-format": "uri"
           },
           "id": {
             "type": "string"
           },
           "office": {
             "type": "string",
-            "format": "uri"
+            "x-client-original-format": "uri"
           },
           "important": {
             "type": "boolean"
@@ -8330,7 +8009,7 @@
           },
           "link": {
             "type": "string",
-            "format": "uri"
+            "x-client-original-format": "uri"
           },
           "name": {
             "type": "string"
@@ -8417,7 +8096,7 @@
           "download": {
             "type": "string",
             "description": "The URL of the media content for the weather story.",
-            "format": "uri"
+            "x-client-original-format": "uri"
           },
           "altText": {
             "type": "string",
@@ -8431,12 +8110,6 @@
           }
         }
       },
-      "OfficeWeatherStoryCollection": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/OfficeWeatherStoryBody"
-        }
-      },
       "PaginationInfo": {
         "required": [
           "next"
@@ -8446,7 +8119,7 @@
           "next": {
             "type": "string",
             "description": "A link to the next page of records",
-            "format": "uri"
+            "x-client-original-format": "uri"
           }
         },
         "additionalProperties": false,
@@ -8464,7 +8137,7 @@
           },
           "@id": {
             "type": "string",
-            "format": "uri"
+            "x-client-original-format": "uri"
           },
           "@type": {
             "$ref": "#/components/schemas/WxColonPointType"
@@ -8477,7 +8150,7 @@
           },
           "forecastOffice": {
             "type": "string",
-            "format": "uri"
+            "x-client-original-format": "uri"
           },
           "gridId": {
             "$ref": "#/components/schemas/NwsForecastOfficeId"
@@ -8492,34 +8165,34 @@
           },
           "forecast": {
             "type": "string",
-            "format": "uri"
+            "x-client-original-format": "uri"
           },
           "forecastHourly": {
             "type": "string",
-            "format": "uri"
+            "x-client-original-format": "uri"
           },
           "forecastGridData": {
             "type": "string",
-            "format": "uri"
+            "x-client-original-format": "uri"
           },
           "observationStations": {
             "type": "string",
-            "format": "uri"
+            "x-client-original-format": "uri"
           },
           "relativeLocation": {
             "$ref": "#/components/schemas/PointBodyRelativeLocation"
           },
           "forecastZone": {
             "type": "string",
-            "format": "uri"
+            "x-client-original-format": "uri"
           },
           "county": {
             "type": "string",
-            "format": "uri"
+            "x-client-original-format": "uri"
           },
           "fireWeatherZone": {
             "type": "string",
-            "format": "uri"
+            "x-client-original-format": "uri"
           },
           "timeZone": {
             "type": "string"
@@ -8565,7 +8238,7 @@
           },
           "@id": {
             "type": "string",
-            "format": "uri"
+            "x-client-original-format": "uri"
           },
           "@type": {
             "$ref": "#/components/schemas/WxColonPointType"
@@ -8578,7 +8251,7 @@
           },
           "forecastOffice": {
             "type": "string",
-            "format": "uri"
+            "x-client-original-format": "uri"
           },
           "gridId": {
             "$ref": "#/components/schemas/NwsForecastOfficeId"
@@ -8593,34 +8266,34 @@
           },
           "forecast": {
             "type": "string",
-            "format": "uri"
+            "x-client-original-format": "uri"
           },
           "forecastHourly": {
             "type": "string",
-            "format": "uri"
+            "x-client-original-format": "uri"
           },
           "forecastGridData": {
             "type": "string",
-            "format": "uri"
+            "x-client-original-format": "uri"
           },
           "observationStations": {
             "type": "string",
-            "format": "uri"
+            "x-client-original-format": "uri"
           },
           "relativeLocation": {
             "$ref": "#/components/schemas/PointBodyRelativeLocation"
           },
           "forecastZone": {
             "type": "string",
-            "format": "uri"
+            "x-client-original-format": "uri"
           },
           "county": {
             "type": "string",
-            "format": "uri"
+            "x-client-original-format": "uri"
           },
           "fireWeatherZone": {
             "type": "string",
-            "format": "uri"
+            "x-client-original-format": "uri"
           },
           "timeZone": {
             "type": "string"
@@ -8636,10 +8309,6 @@
             "$ref": "#/components/schemas/PointBodyNwr"
           }
         }
-      },
-      "PointString": {
-        "pattern": "^(-?\\d\u002B(?:\\.\\d\u002B)?),(-?\\d\u002B(?:\\.\\d\u002B)?)$",
-        "type": "string"
       },
       "ProblemDetail": {
         "required": [
@@ -8658,8 +8327,8 @@
             ],
             "type": "string",
             "description": "A URI reference (RFC 3986) that identifies the problem type. This is only an identifier and is not necessarily a resolvable URL.\n",
-            "format": "uri",
-            "default": "about:blank"
+            "default": "about:blank",
+            "x-client-original-format": "uri"
           },
           "title": {
             "examples": [
@@ -8690,7 +8359,7 @@
             ],
             "type": "string",
             "description": "A URI reference (RFC 3986) that identifies the specific occurrence of the problem. This is only an identifier and is not necessarily a resolvable URL.\n",
-            "format": "uri"
+            "x-client-original-format": "uri"
           },
           "correlationId": {
             "examples": [
@@ -8866,7 +8535,7 @@
         "properties": {
           "id": {
             "type": "string",
-            "format": "uri"
+            "x-client-original-format": "uri"
           },
           "issueTime": {
             "type": "string",
@@ -8894,7 +8563,7 @@
               "null",
               "string"
             ],
-            "format": "uri"
+            "x-client-original-format": "uri"
           },
           "start": {
             "type": "string",
@@ -8937,9 +8606,6 @@
             "$ref": "#/components/schemas/SigmetBody"
           }
         }
-      },
-      "SigmetSequenceNumber": {
-        "type": "string"
       },
       "StateTerritoryCode": {
         "enum": [
@@ -9255,7 +8921,7 @@
           },
           "@id": {
             "type": "string",
-            "format": "uri"
+            "x-client-original-format": "uri"
           },
           "id": {
             "type": "string"
@@ -9324,16 +8990,6 @@
         },
         "additionalProperties": false
       },
-      "Time": {
-        "pattern": "^([01][0-9]|2[0-3])[0-5][0-9]$",
-        "type": "string",
-        "description": "A time (in HHMM format). This is always specified in UTC (Zulu) time."
-      },
-      "UnitOfMeasure": {
-        "pattern": "^((wmo|uc|wmoUnit|nwsUnit):)?.*$",
-        "type": "string",
-        "description": "A string denoting a unit of measure, expressed in the format \u0022{unit}\u0022 or \u0022{namespace}:{unit}\u0022.\nUnits with the namespace \u0022wmo\u0022 or \u0022wmoUnit\u0022 are defined in the World Meteorological Organization Codes Registry at http://codes.wmo.int/common/unit and should be canonically resolvable to http://codes.wmo.int/common/unit/{unit}.\nUnits with the namespace \u0022nwsUnit\u0022 are currently custom and do not align to any standard.\nUnits with no namespace or the namespace \u0022uc\u0022 are compliant with the Unified Code for Units of Measure syntax defined at https://unitsofmeasure.org/. This also aligns with recent versions of the Geographic Markup Language (GML) standard, the IWXXM standard, and OGC Observations and Measurements v2.0 (ISO/DIS 19156).\nNamespaced units are considered deprecated. We will be aligning API to use the same standards as GML/IWXXM in the future.\n"
-      },
       "ZoneBody": {
         "type": "object",
         "properties": {
@@ -9346,7 +9002,7 @@
           },
           "@id": {
             "type": "string",
-            "format": "uri"
+            "x-client-original-format": "uri"
           },
           "@type": {
             "$ref": "#/components/schemas/WxColonZoneType"
@@ -9375,7 +9031,7 @@
           },
           "forecastOffice": {
             "type": "string",
-            "format": "uri"
+            "x-client-original-format": "uri"
           },
           "gridIdentifier": {
             "type": "string"
@@ -9394,7 +9050,7 @@
             "type": "array",
             "items": {
               "type": "string",
-              "format": "uri"
+              "x-client-original-format": "uri"
             },
             "deprecated": true
           },
@@ -9402,14 +9058,14 @@
             "type": "array",
             "items": {
               "type": "string",
-              "format": "iana-time-zone-identifier"
+              "x-client-original-format": "iana-time-zone-identifier"
             }
           },
           "observationStations": {
             "type": "array",
             "items": {
               "type": "string",
-              "format": "uri"
+              "x-client-original-format": "uri"
             }
           },
           "radarStation": {
@@ -9483,7 +9139,7 @@
           "zone": {
             "type": "string",
             "description": "An API link to the zone this forecast is for.",
-            "format": "uri"
+            "x-client-original-format": "uri"
           },
           "updated": {
             "type": "string",
@@ -9516,88 +9172,6 @@
       },
       "ZoneForecastJsonLd": {
         "$ref": "#/components/schemas/ZoneForecastBody"
-      },
-      "Gridpoint12HForecastResponseNoaaDwmlXml": {},
-      "GridpointHourlyForecastResponseNoaaDwmlXml": {},
-      "ObservationResponseNoaaUswxXml": {},
-      "ObservationResponseNoaaObsXml": {},
-      "ActiveAlertCollectionGeoJsonAllOf2": {
-        "type": "object",
-        "properties": {
-          "features": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ActiveAlertCollectionGeoJsonAllOf2FeaturesItem"
-            }
-          }
-        }
-      },
-      "AlertCollectionGeoJsonAllOf2": {
-        "type": "object",
-        "properties": {
-          "features": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/AlertCollectionGeoJsonAllOf2FeaturesItem"
-            }
-          }
-        }
-      },
-      "ActiveAlertCollectionJsonLdAllOf2": {
-        "type": "object",
-        "properties": {
-          "@context": {
-            "$ref": "#/components/schemas/JsonLdContext"
-          },
-          "@graph": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Alert"
-            }
-          }
-        }
-      },
-      "AlertCollectionJsonLdAllOf2": {
-        "type": "object",
-        "properties": {
-          "@context": {
-            "$ref": "#/components/schemas/JsonLdContext"
-          },
-          "@graph": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Alert"
-            }
-          }
-        }
-      },
-      "AlertGeoJsonAllOf2": {
-        "type": "object",
-        "properties": {
-          "properties": {
-            "description": "An object representing a public alert message.\nUnless otherwise noted, the fields in this object correspond to the National Weather Service CAP v1.2 specification, which extends the OASIS Common Alerting Protocol (CAP) v1.2 specification and USA Integrated Public Alert and Warning System (IPAWS) Profile v1.0. Refer to this documentation for more complete information.\nhttp://docs.oasis-open.org/emergency/cap/v1.2/CAP-v1.2-os.html http://docs.oasis-open.org/emergency/cap/v1.2/ipaws-profile/v1.0/cs01/cap-v1.2-ipaws-profile-cs01.html https://vlab.noaa.gov/web/nws-common-alerting-protocol/cap-documentation\n",
-            "$ref": "#/components/schemas/Alert"
-          }
-        }
-      },
-      "CenterWeatherAdvisoryCollectionGeoJsonAllOf2": {
-        "type": "object",
-        "properties": {
-          "features": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/CenterWeatherAdvisoryCollectionGeoJsonAllOf2FeaturesItem"
-            }
-          }
-        }
-      },
-      "CenterWeatherAdvisoryGeoJsonAllOf2": {
-        "type": "object",
-        "properties": {
-          "properties": {
-            "$ref": "#/components/schemas/CenterWeatherAdvisory"
-          }
-        }
       },
       "GeoJsonGeometryGeoJsonPoint": {
         "title": "GeoJSON Point",
@@ -9808,50 +9382,6 @@
           }
         }
       },
-      "GridpointGeoJsonAllOf2": {
-        "type": "object",
-        "properties": {
-          "properties": {
-            "$ref": "#/components/schemas/GridpointBody"
-          }
-        }
-      },
-      "GridpointHourlyForecastPeriodTemperature": {
-        "oneOf": [
-          {
-            "$ref": "#/components/schemas/QuantitativeValue"
-          },
-          {
-            "type": "integer"
-          }
-        ],
-        "description": "High/low temperature for the period, depending on whether the period is day or night.\nThis property as an integer value is deprecated. Future versions will express this value as a quantitative value object. To make use of the future standard format now, set the \u0022forecast_temperature_qv\u0022 feature flag on the request.\n"
-      },
-      "GridpointHourlyForecastPeriodWindSpeed": {
-        "oneOf": [
-          {
-            "$ref": "#/components/schemas/QuantitativeValue"
-          },
-          {
-            "type": "string"
-          }
-        ],
-        "description": "Wind speed for the period.\nThis property as an string value is deprecated. Future versions will express this value as a quantitative value object. To make use of the future standard format now, set the \u0022forecast_wind_speed_qv\u0022 feature flag on the request.\n"
-      },
-      "GridpointHourlyForecastPeriodWindGust": {
-        "oneOf": [
-          {
-            "$ref": "#/components/schemas/QuantitativeValue"
-          },
-          {
-            "type": "string"
-          },
-          {
-            "type": "null"
-          }
-        ],
-        "description": "Peak wind gust for the period.\nThis property as an string value is deprecated. Future versions will express this value as a quantitative value object. To make use of the future standard format now, set the \u0022forecast_wind_speed_qv\u0022 feature flag on the request.\n"
-      },
       "Gridpoint12HForecastPeriodTemperature": {
         "oneOf": [
           {
@@ -9888,139 +9418,6 @@
         ],
         "description": "Peak wind gust for the period.\nThis property as an string value is deprecated. Future versions will express this value as a quantitative value object. To make use of the future standard format now, set the \u0022forecast_wind_speed_qv\u0022 feature flag on the request.\n"
       },
-      "Gridpoint12HForecastGeoJsonAllOf2": {
-        "type": "object",
-        "properties": {
-          "properties": {
-            "$ref": "#/components/schemas/Gridpoint12HForecast"
-          }
-        }
-      },
-      "GridpointHourlyForecastGeoJsonAllOf2": {
-        "type": "object",
-        "properties": {
-          "properties": {
-            "description": "An hourly forecast for a 2.5km grid square.",
-            "$ref": "#/components/schemas/GridpointHourlyForecast"
-          }
-        }
-      },
-      "Gridpoint12HForecastJsonLdAllOf2": {
-        "required": [
-          "@context",
-          "geometry"
-        ],
-        "type": "object",
-        "properties": {
-          "@context": {
-            "$ref": "#/components/schemas/JsonLdContext"
-          },
-          "geometry": {
-            "description": "A geometry represented in Well-Known Text (WKT) format.",
-            "$ref": "#/components/schemas/GeometryString"
-          }
-        }
-      },
-      "GridpointHourlyForecastJsonLdAllOf2": {
-        "required": [
-          "@context",
-          "geometry"
-        ],
-        "type": "object",
-        "properties": {
-          "@context": {
-            "$ref": "#/components/schemas/JsonLdContext"
-          },
-          "geometry": {
-            "description": "A geometry represented in Well-Known Text (WKT) format.",
-            "$ref": "#/components/schemas/GeometryString"
-          }
-        }
-      },
-      "ObservationGeoJsonAllOf2": {
-        "type": "object",
-        "properties": {
-          "properties": {
-            "$ref": "#/components/schemas/Observation"
-          }
-        }
-      },
-      "ObservationCollectionGeoJsonAllOf2": {
-        "type": "object",
-        "properties": {
-          "features": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ObservationCollectionGeoJsonAllOf2FeaturesItem"
-            }
-          },
-          "pagination": {
-            "description": "Links for retrieving more data from paged data sets",
-            "$ref": "#/components/schemas/PaginationInfo"
-          }
-        }
-      },
-      "ObservationStationGeoJsonAllOf2": {
-        "type": "object",
-        "properties": {
-          "properties": {
-            "$ref": "#/components/schemas/ObservationStation"
-          }
-        }
-      },
-      "ObservationStationJsonLdAllOf2": {
-        "required": [
-          "@context",
-          "geometry"
-        ],
-        "type": "object",
-        "properties": {
-          "@context": {
-            "$ref": "#/components/schemas/JsonLdContext"
-          },
-          "geometry": {
-            "description": "A geometry represented in Well-Known Text (WKT) format.",
-            "$ref": "#/components/schemas/GeometryString"
-          }
-        }
-      },
-      "ObservationStationCollectionGeoJsonAllOf2": {
-        "type": "object",
-        "properties": {
-          "features": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ObservationStationCollectionGeoJsonAllOf2FeaturesItem"
-            }
-          },
-          "observationStations": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "format": "uri"
-            }
-          },
-          "pagination": {
-            "description": "Links for retrieving more data from paged data sets",
-            "$ref": "#/components/schemas/PaginationInfo"
-          }
-        }
-      },
-      "OfficeWeatherStoryBodyAllOf2": {
-        "type": "object",
-        "properties": {
-          "altText": {
-            "type": "string",
-            "description": "Alternative text description of the content of the image for assistive technology."
-          },
-          "order": {
-            "maximum": 7,
-            "minimum": 1,
-            "type": "integer",
-            "description": "The order in which a weather story should be displayed. Unique for each object."
-          }
-        }
-      },
       "PointBodyRelativeLocation": {
         "oneOf": [
           {
@@ -10030,69 +9427,6 @@
             "$ref": "#/components/schemas/RelativeLocationJsonLd"
           }
         ]
-      },
-      "PointGeoJsonAllOf2": {
-        "type": "object",
-        "properties": {
-          "properties": {
-            "$ref": "#/components/schemas/PointBody"
-          }
-        }
-      },
-      "PointJsonLdAllOf2": {
-        "required": [
-          "@context",
-          "geometry"
-        ],
-        "type": "object",
-        "properties": {
-          "@context": {
-            "$ref": "#/components/schemas/JsonLdContext"
-          },
-          "geometry": {
-            "description": "A geometry represented in Well-Known Text (WKT) format.",
-            "$ref": "#/components/schemas/GeometryString"
-          }
-        }
-      },
-      "RelativeLocationGeoJsonAllOf2": {
-        "type": "object",
-        "properties": {
-          "properties": {
-            "$ref": "#/components/schemas/RelativeLocation"
-          }
-        }
-      },
-      "RelativeLocationJsonLdAllOf2": {
-        "required": [
-          "geometry"
-        ],
-        "type": "object",
-        "properties": {
-          "geometry": {
-            "description": "A geometry represented in Well-Known Text (WKT) format.",
-            "$ref": "#/components/schemas/GeometryString"
-          }
-        }
-      },
-      "SigmetCollectionGeoJsonAllOf2": {
-        "type": "object",
-        "properties": {
-          "features": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/SigmetGeoJson"
-            }
-          }
-        }
-      },
-      "SigmetGeoJsonAllOf2": {
-        "type": "object",
-        "properties": {
-          "properties": {
-            "$ref": "#/components/schemas/SigmetBody"
-          }
-        }
       },
       "ZoneBodyState": {
         "oneOf": [
@@ -10119,33 +9453,6 @@
             "type": "null"
           }
         ]
-      },
-      "ZoneGeoJsonAllOf2": {
-        "type": "object",
-        "properties": {
-          "properties": {
-            "$ref": "#/components/schemas/ZoneBody"
-          }
-        }
-      },
-      "ZoneCollectionGeoJsonAllOf2": {
-        "type": "object",
-        "properties": {
-          "features": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ZoneCollectionGeoJsonAllOf2FeaturesItem"
-            }
-          }
-        }
-      },
-      "ZoneForecastGeoJsonAllOf2": {
-        "type": "object",
-        "properties": {
-          "properties": {
-            "$ref": "#/components/schemas/ZoneForecastBody"
-          }
-        }
       },
       "AlertGeocode": {
         "type": "object",
@@ -10176,7 +9483,7 @@
           "@id": {
             "type": "string",
             "description": "An API link to the prior alert.",
-            "format": "uri"
+            "x-client-original-format": "uri"
           },
           "identifier": {
             "type": "string",
@@ -10192,22 +9499,6 @@
             "format": "date-time"
           }
         }
-      },
-      "AlertParameters": {
-        "type": "object",
-        "additionalProperties": {
-          "type": "array",
-          "items": {}
-        },
-        "description": "System-specific additional parameters associated with the alert message.\nThe keys in this object correspond to parameter definitions in the NWS CAP specification.\n"
-      },
-      "AlertEventCode": {
-        "type": "object",
-        "additionalProperties": {
-          "type": "array",
-          "items": {}
-        },
-        "description": "System-specific code identifiying the event type of the alert message The keys in this object correspond to eventCode definitions in the NWS CAP specification.\n"
       },
       "AlertAtomEntryAuthor": {
         "type": "object",
@@ -10233,9 +9524,6 @@
         "xml": {
           "namespace": "http://www.w3.org/2005/Atom"
         }
-      },
-      "GeoJsonFeatureProperties": {
-        "type": "object"
       },
       "GridpointBodyWeather": {
         "required": [
@@ -10342,7 +9630,7 @@
               "string"
             ],
             "description": "A link to the area NWR broadcast from this transmitter",
-            "format": "uri"
+            "x-client-original-format": "uri"
           },
           "pointBroadcast": {
             "type": [
@@ -10350,7 +9638,7 @@
               "string"
             ],
             "description": "A link to the local NWR broadcast for this point",
-            "format": "uri"
+            "x-client-original-format": "uri"
           }
         },
         "description": "NOAA Weather Radio metadata for this point"
@@ -10370,15 +9658,6 @@
           }
         },
         "additionalProperties": false
-      },
-      "TextProductLocationCollectionLocations": {
-        "type": "object",
-        "additionalProperties": {
-          "type": [
-            "null",
-            "string"
-          ]
-        }
       },
       "ZoneForecastBodyPeriodsItem": {
         "required": [
@@ -10596,16 +9875,6 @@
           }
         }
       },
-      "Cwa200NoaaUswxXmlResponse": {},
-      "Sigmet200NoaaUswxXmlResponse": {},
-      "Icons200PngResponse": {
-        "type": "string",
-        "format": "binary"
-      },
-      "IconsDualCondition200PngResponse": {
-        "type": "string",
-        "format": "binary"
-      },
       "IconsSummary200LdJsonResponse": {
         "required": [
           "icons"
@@ -10621,44 +9890,6 @@
         },
         "additionalProperties": false
       },
-      "SatelliteThumbnails200JpegResponse": {
-        "type": "string",
-        "format": "binary"
-      },
-      "Tafs200LdJsonResponse": {},
-      "Taf200WmoIwxxmXmlResponse": {},
-      "OfficeBriefingDownload200PdfResponse": {
-        "type": "string",
-        "format": "binary"
-      },
-      "OfficeWeatherstoryImage200MediaResponse": {
-        "type": "string",
-        "format": "binary"
-      },
-      "PointRadio200SsmlXmlResponse": {},
-      "RadarServers200LdJsonResponse": {},
-      "RadarServer200LdJsonResponse": {},
-      "RadarSpgds200LdJsonResponse": {},
-      "RadarStations200GeoJsonResponse": {},
-      "RadarStations200LdJsonResponse": {},
-      "RadarStation200GeoJsonResponse": {},
-      "RadarStation200LdJsonResponse": {},
-      "RadarStationAlarms200LdJsonResponse": {},
-      "RadarQueue200LdJsonResponse": {},
-      "RadarProfiler200LdJsonResponse": {},
-      "Transmitters200LdJsonResponse": {},
-      "Transmitter200LdJsonResponse": {},
-      "AreaRadio200SsmlXmlResponse": {},
-      "TransmitterZone200LdJsonResponse": {},
-      "ExamplePayload": {
-        "type": "object",
-        "description": "Placeholder schema for path example refs"
-      },
-      "AlertsSingle200CapXmlResponse": {
-        "type": "object"
-      },
-      "Cwa200NoaaUswxXmlResponseSchema": {},
-      "Sigmet200NoaaUswxXmlResponseSchema": {},
       "Glossary200LdJsonResponse": {
         "type": "object",
         "properties": {
@@ -11556,22 +10787,6 @@
         ],
         "type": "string"
       },
-      "ZoneBodyStateOneOf2": {
-        "enum": [
-          ""
-        ],
-        "type": "string",
-        "x-ms-enum": {
-          "name": "ZoneBodyStateOneOf2",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "",
-              "name": "EnumValue"
-            }
-          ]
-        }
-      },
       "PostalAddressType": {
         "enum": [
           "PostalAddress"
@@ -12135,37 +11350,7 @@
           }
         ]
       },
-      "AlertsActiveSuccessResponse": {
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/ActiveAlertCollectionGeoJson"
-          },
-          {
-            "$ref": "#/components/schemas/ActiveAlertCollectionJsonLd"
-          }
-        ]
-      },
-      "AlertsActiveZoneSuccessResponse": {
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/ActiveAlertCollectionGeoJson"
-          },
-          {
-            "$ref": "#/components/schemas/ActiveAlertCollectionJsonLd"
-          }
-        ]
-      },
       "AlertsActiveAreaSuccessResponse": {
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/ActiveAlertCollectionGeoJson"
-          },
-          {
-            "$ref": "#/components/schemas/ActiveAlertCollectionJsonLd"
-          }
-        ]
-      },
-      "AlertsActiveRegionSuccessResponse": {
         "anyOf": [
           {
             "$ref": "#/components/schemas/ActiveAlertCollectionGeoJson"
@@ -12245,26 +11430,6 @@
           }
         ]
       },
-      "StationObservationTimeSuccessResponse": {
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/ObservationGeoJson"
-          },
-          {
-            "$ref": "#/components/schemas/ObservationJsonLd"
-          }
-        ]
-      },
-      "ObsStationsSuccessResponse": {
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/ObservationStationCollectionGeoJson"
-          },
-          {
-            "$ref": "#/components/schemas/ObservationStationCollectionJsonLd"
-          }
-        ]
-      },
       "ObsStationSuccessResponse": {
         "anyOf": [
           {
@@ -12315,16 +11480,6 @@
           }
         ]
       },
-      "ZoneListTypeSuccessResponse": {
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/ZoneCollectionGeoJson"
-          },
-          {
-            "$ref": "#/components/schemas/ZoneCollectionJsonLd"
-          }
-        ]
-      },
       "ZoneSuccessResponse": {
         "anyOf": [
           {
@@ -12342,26 +11497,6 @@
           },
           {
             "$ref": "#/components/schemas/ZoneForecastJsonLd"
-          }
-        ]
-      },
-      "ZoneObsSuccessResponse": {
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/ObservationCollectionGeoJson"
-          },
-          {
-            "$ref": "#/components/schemas/ObservationCollectionJsonLd"
-          }
-        ]
-      },
-      "ZoneStationsSuccessResponse": {
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/ObservationStationCollectionGeoJson"
-          },
-          {
-            "$ref": "#/components/schemas/ObservationStationCollectionJsonLd"
           }
         ]
       }
@@ -13012,5 +12147,872 @@
   "externalDocs": {
     "description": "Full API documentation",
     "url": "https://www.weather.gov/documentation/services-web-api"
+  },
+  "x-client-unused-schemas": {
+    "ActiveAlertCollection": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string",
+          "description": "A title describing the alert collection"
+        },
+        "updated": {
+          "type": "string",
+          "description": "The last time a change occurred to this collection",
+          "format": "date-time"
+        }
+      }
+    },
+    "AlertCollection": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string",
+          "description": "A title describing the alert collection"
+        },
+        "updated": {
+          "type": "string",
+          "description": "The last time a change occurred to this collection",
+          "format": "date-time"
+        },
+        "pagination": {
+          "description": "Links for retrieving more data from paged data sets",
+          "$ref": "#/components/schemas/PaginationInfo"
+        }
+      }
+    },
+    "AlertCap": {
+      "type": "object"
+    },
+    "AlertId": {
+      "type": "string",
+      "description": "The identifier of the alert message."
+    },
+    "AtsuIdentifier": {
+      "pattern": "^[A-Z]{3,4}$",
+      "type": "string",
+      "description": "ATSU Identifier"
+    },
+    "BinaryFile": {
+      "type": "string",
+      "format": "binary"
+    },
+    "Date": {
+      "type": "string",
+      "description": "Date (in YYYY-MM-DD format).",
+      "format": "date"
+    },
+    "GeoJsonBoundingBox": {
+      "minItems": 4,
+      "type": "array",
+      "items": {
+        "type": "number"
+      },
+      "description": "A GeoJSON bounding box. Please refer to IETF RFC 7946 for information on the GeoJSON format."
+    },
+    "GeoJsonCoordinate": {
+      "minItems": 2,
+      "type": "array",
+      "items": {
+        "type": "number"
+      },
+      "description": "A GeoJSON coordinate. Please refer to IETF RFC 7946 for information on the GeoJSON format."
+    },
+    "GeoJsonFeatureCollection": {
+      "required": [
+        "type",
+        "features"
+      ],
+      "type": "object",
+      "properties": {
+        "@context": {
+          "$ref": "#/components/schemas/JsonLdContext"
+        },
+        "type": {
+          "$ref": "#/components/schemas/FeatureCollectionType"
+        },
+        "features": {
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/GeoJsonFeature"
+          }
+        }
+      },
+      "description": "A GeoJSON feature collection. Please refer to IETF RFC 7946 for information on the GeoJSON format."
+    },
+    "GeoJsonLineString": {
+      "minItems": 2,
+      "type": "array",
+      "items": {
+        "minItems": 2,
+        "type": "array",
+        "items": {
+          "type": "number"
+        },
+        "description": "A GeoJSON coordinate. Please refer to IETF RFC 7946 for information on the GeoJSON format."
+      },
+      "description": "A GeoJSON line string. Please refer to IETF RFC 7946 for information on the GeoJSON format."
+    },
+    "GeoJsonPolygon": {
+      "type": "array",
+      "items": {
+        "minItems": 4,
+        "type": "array",
+        "items": {
+          "minItems": 2,
+          "type": "array",
+          "items": {
+            "type": "number"
+          },
+          "description": "A GeoJSON coordinate. Please refer to IETF RFC 7946 for information on the GeoJSON format."
+        }
+      },
+      "description": "A GeoJSON polygon. Please refer to IETF RFC 7946 for information on the GeoJSON format."
+    },
+    "Iso8601Duration": {
+      "examples": [
+        "P2DT12H"
+      ],
+      "pattern": "^P(\\d\u002BY)?(\\d\u002BM)?(\\d\u002BD)?(T(\\d\u002BH)?(\\d\u002BM)?(\\d\u002BS)?)?$",
+      "type": "string",
+      "description": "A time duration in ISO 8601 format."
+    },
+    "LandRegionCode": {
+      "enum": [
+        "AR",
+        "CR",
+        "ER",
+        "PR",
+        "SR",
+        "WR"
+      ],
+      "type": "string",
+      "description": "Land region code. These correspond to the six NWS regional headquarters:\n* AR: Alaska Region\n* CR: Central Region\n* ER: Eastern Region\n* PR: Pacific Region\n* SR: Southern Region\n* WR: Western Region\n",
+      "x-ms-enum": {
+        "name": "LandRegionCode",
+        "modelAsString": false,
+        "values": [
+          {
+            "value": "AR",
+            "name": "Ar"
+          },
+          {
+            "value": "CR",
+            "name": "Cr"
+          },
+          {
+            "value": "ER",
+            "name": "Er"
+          },
+          {
+            "value": "PR",
+            "name": "Pr"
+          },
+          {
+            "value": "SR",
+            "name": "Sr"
+          },
+          {
+            "value": "WR",
+            "name": "Wr"
+          }
+        ]
+      }
+    },
+    "MarineAreaCode": {
+      "enum": [
+        "AM",
+        "AN",
+        "GM",
+        "LC",
+        "LE",
+        "LH",
+        "LM",
+        "LO",
+        "LS",
+        "PH",
+        "PK",
+        "PM",
+        "PS",
+        "PZ",
+        "SL"
+      ],
+      "type": "string",
+      "description": "Marine area code as defined in NWS Directive 10-302:\n* AM: Western North Atlantic Ocean and along U.S. East Coast south of Currituck Beach Light NC following the coastline into Gulf of Mexico to Ocean Reef FL including the Caribbean\n* AN: Western North Atlantic Ocean and along U.S. East Coast from Canadian border south to Currituck Beach Light NC\n* GM: Gulf of Mexico and along the U.S. Gulf Coast from the Mexican border to Ocean Reef FL\n* LC: Lake St. Clair\n* LE: Lake Erie\n* LH: Lake Huron\n* LM: Lake Michigan\n* LO: Lake Ontario\n* LS: Lake Superior\n* PH: Central Pacific Ocean including Hawaiian waters\n* PK: North Pacific Ocean near Alaska and along Alaska coastline including the Bering Sea and the Gulf of Alaska\n* PM: Western Pacific Ocean including Mariana Island waters\n* PS: South Central Pacific Ocean including American Samoa waters\n* PZ: Eastern North Pacific Ocean and along U.S. West Coast from Canadian border to Mexican border\n* SL: St. Lawrence River above St. Regis\n",
+      "x-ms-enum": {
+        "name": "MarineAreaCode",
+        "modelAsString": false,
+        "values": [
+          {
+            "value": "AM",
+            "name": "Am"
+          },
+          {
+            "value": "AN",
+            "name": "An"
+          },
+          {
+            "value": "GM",
+            "name": "Gm"
+          },
+          {
+            "value": "LC",
+            "name": "Lc"
+          },
+          {
+            "value": "LE",
+            "name": "Le"
+          },
+          {
+            "value": "LH",
+            "name": "Lh"
+          },
+          {
+            "value": "LM",
+            "name": "Lm"
+          },
+          {
+            "value": "LO",
+            "name": "Lo"
+          },
+          {
+            "value": "LS",
+            "name": "Ls"
+          },
+          {
+            "value": "PH",
+            "name": "Ph"
+          },
+          {
+            "value": "PK",
+            "name": "Pk"
+          },
+          {
+            "value": "PM",
+            "name": "Pm"
+          },
+          {
+            "value": "PS",
+            "name": "Ps"
+          },
+          {
+            "value": "PZ",
+            "name": "Pz"
+          },
+          {
+            "value": "SL",
+            "name": "Sl"
+          }
+        ]
+      }
+    },
+    "NwsNationalHqId": {
+      "enum": [
+        "NWS"
+      ],
+      "type": "string",
+      "description": "Three-letter identifier for NWS National HQ.",
+      "x-ms-enum": {
+        "name": "NwsNationalHqId",
+        "modelAsString": false,
+        "values": [
+          {
+            "value": "NWS",
+            "name": "Nws"
+          }
+        ]
+      }
+    },
+    "NwsRegionalHqId": {
+      "enum": [
+        "ARH",
+        "CRH",
+        "ERH",
+        "PRH",
+        "SRH",
+        "WRH"
+      ],
+      "type": "string",
+      "description": "Three-letter identifier for a NWS Regional HQ.",
+      "x-ms-enum": {
+        "name": "NwsRegionalHqId",
+        "modelAsString": false,
+        "values": [
+          {
+            "value": "ARH",
+            "name": "Arh"
+          },
+          {
+            "value": "CRH",
+            "name": "Crh"
+          },
+          {
+            "value": "ERH",
+            "name": "Erh"
+          },
+          {
+            "value": "PRH",
+            "name": "Prh"
+          },
+          {
+            "value": "SRH",
+            "name": "Srh"
+          },
+          {
+            "value": "WRH",
+            "name": "Wrh"
+          }
+        ]
+      }
+    },
+    "NwsZoneId": {
+      "pattern": "^(A[KLMNRSZ]|C[AOT]|D[CE]|F[LM]|G[AMU]|I[ADLN]|K[SY]|L[ACEHMOS]|M[ADEHINOPST]|N[CDEHJMVY]|O[HKR]|P[AHKMRSWZ]|S[CDL]|T[NX]|UT|V[AIT]|W[AIVY]|[HR]I)[CZ]\\d{3}$",
+      "type": "string",
+      "description": "UGC identifier for a NWS forecast zone or county.\nThe first two letters will correspond to either a state code or marine area code (see #/components/schemas/StateTerritoryCode and #/components/schemas/MarineAreaCode for lists of valid letter combinations).\nThe third letter will be Z for public/fire zone or C for county.\n"
+    },
+    "OfficeWeatherStoryCollection": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/OfficeWeatherStoryBody"
+      }
+    },
+    "PointString": {
+      "pattern": "^(-?\\d\u002B(?:\\.\\d\u002B)?),(-?\\d\u002B(?:\\.\\d\u002B)?)$",
+      "type": "string"
+    },
+    "SigmetSequenceNumber": {
+      "type": "string"
+    },
+    "Time": {
+      "pattern": "^([01][0-9]|2[0-3])[0-5][0-9]$",
+      "type": "string",
+      "description": "A time (in HHMM format). This is always specified in UTC (Zulu) time."
+    },
+    "UnitOfMeasure": {
+      "pattern": "^((wmo|uc|wmoUnit|nwsUnit):)?.*$",
+      "type": "string",
+      "description": "A string denoting a unit of measure, expressed in the format \u0022{unit}\u0022 or \u0022{namespace}:{unit}\u0022.\nUnits with the namespace \u0022wmo\u0022 or \u0022wmoUnit\u0022 are defined in the World Meteorological Organization Codes Registry at http://codes.wmo.int/common/unit and should be canonically resolvable to http://codes.wmo.int/common/unit/{unit}.\nUnits with the namespace \u0022nwsUnit\u0022 are currently custom and do not align to any standard.\nUnits with no namespace or the namespace \u0022uc\u0022 are compliant with the Unified Code for Units of Measure syntax defined at https://unitsofmeasure.org/. This also aligns with recent versions of the Geographic Markup Language (GML) standard, the IWXXM standard, and OGC Observations and Measurements v2.0 (ISO/DIS 19156).\nNamespaced units are considered deprecated. We will be aligning API to use the same standards as GML/IWXXM in the future.\n"
+    },
+    "Gridpoint12HForecastResponseNoaaDwmlXml": {},
+    "GridpointHourlyForecastResponseNoaaDwmlXml": {},
+    "ObservationResponseNoaaUswxXml": {},
+    "ObservationResponseNoaaObsXml": {},
+    "ActiveAlertCollectionGeoJsonAllOf2": {
+      "type": "object",
+      "properties": {
+        "features": {
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/ActiveAlertCollectionGeoJsonAllOf2FeaturesItem"
+          }
+        }
+      }
+    },
+    "AlertCollectionGeoJsonAllOf2": {
+      "type": "object",
+      "properties": {
+        "features": {
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/AlertCollectionGeoJsonAllOf2FeaturesItem"
+          }
+        }
+      }
+    },
+    "ActiveAlertCollectionJsonLdAllOf2": {
+      "type": "object",
+      "properties": {
+        "@context": {
+          "$ref": "#/components/schemas/JsonLdContext"
+        },
+        "@graph": {
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/Alert"
+          }
+        }
+      }
+    },
+    "AlertCollectionJsonLdAllOf2": {
+      "type": "object",
+      "properties": {
+        "@context": {
+          "$ref": "#/components/schemas/JsonLdContext"
+        },
+        "@graph": {
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/Alert"
+          }
+        }
+      }
+    },
+    "AlertGeoJsonAllOf2": {
+      "type": "object",
+      "properties": {
+        "properties": {
+          "description": "An object representing a public alert message.\nUnless otherwise noted, the fields in this object correspond to the National Weather Service CAP v1.2 specification, which extends the OASIS Common Alerting Protocol (CAP) v1.2 specification and USA Integrated Public Alert and Warning System (IPAWS) Profile v1.0. Refer to this documentation for more complete information.\nhttp://docs.oasis-open.org/emergency/cap/v1.2/CAP-v1.2-os.html http://docs.oasis-open.org/emergency/cap/v1.2/ipaws-profile/v1.0/cs01/cap-v1.2-ipaws-profile-cs01.html https://vlab.noaa.gov/web/nws-common-alerting-protocol/cap-documentation\n",
+          "$ref": "#/components/schemas/Alert"
+        }
+      }
+    },
+    "CenterWeatherAdvisoryCollectionGeoJsonAllOf2": {
+      "type": "object",
+      "properties": {
+        "features": {
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/CenterWeatherAdvisoryCollectionGeoJsonAllOf2FeaturesItem"
+          }
+        }
+      }
+    },
+    "CenterWeatherAdvisoryGeoJsonAllOf2": {
+      "type": "object",
+      "properties": {
+        "properties": {
+          "$ref": "#/components/schemas/CenterWeatherAdvisory"
+        }
+      }
+    },
+    "GridpointGeoJsonAllOf2": {
+      "type": "object",
+      "properties": {
+        "properties": {
+          "$ref": "#/components/schemas/GridpointBody"
+        }
+      }
+    },
+    "GridpointHourlyForecastPeriodTemperature": {
+      "oneOf": [
+        {
+          "$ref": "#/components/schemas/QuantitativeValue"
+        },
+        {
+          "type": "integer"
+        }
+      ],
+      "description": "High/low temperature for the period, depending on whether the period is day or night.\nThis property as an integer value is deprecated. Future versions will express this value as a quantitative value object. To make use of the future standard format now, set the \u0022forecast_temperature_qv\u0022 feature flag on the request.\n"
+    },
+    "GridpointHourlyForecastPeriodWindSpeed": {
+      "oneOf": [
+        {
+          "$ref": "#/components/schemas/QuantitativeValue"
+        },
+        {
+          "type": "string"
+        }
+      ],
+      "description": "Wind speed for the period.\nThis property as an string value is deprecated. Future versions will express this value as a quantitative value object. To make use of the future standard format now, set the \u0022forecast_wind_speed_qv\u0022 feature flag on the request.\n"
+    },
+    "GridpointHourlyForecastPeriodWindGust": {
+      "oneOf": [
+        {
+          "$ref": "#/components/schemas/QuantitativeValue"
+        },
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "description": "Peak wind gust for the period.\nThis property as an string value is deprecated. Future versions will express this value as a quantitative value object. To make use of the future standard format now, set the \u0022forecast_wind_speed_qv\u0022 feature flag on the request.\n"
+    },
+    "Gridpoint12HForecastGeoJsonAllOf2": {
+      "type": "object",
+      "properties": {
+        "properties": {
+          "$ref": "#/components/schemas/Gridpoint12HForecast"
+        }
+      }
+    },
+    "GridpointHourlyForecastGeoJsonAllOf2": {
+      "type": "object",
+      "properties": {
+        "properties": {
+          "description": "An hourly forecast for a 2.5km grid square.",
+          "$ref": "#/components/schemas/GridpointHourlyForecast"
+        }
+      }
+    },
+    "Gridpoint12HForecastJsonLdAllOf2": {
+      "required": [
+        "@context",
+        "geometry"
+      ],
+      "type": "object",
+      "properties": {
+        "@context": {
+          "$ref": "#/components/schemas/JsonLdContext"
+        },
+        "geometry": {
+          "description": "A geometry represented in Well-Known Text (WKT) format.",
+          "$ref": "#/components/schemas/GeometryString"
+        }
+      }
+    },
+    "GridpointHourlyForecastJsonLdAllOf2": {
+      "required": [
+        "@context",
+        "geometry"
+      ],
+      "type": "object",
+      "properties": {
+        "@context": {
+          "$ref": "#/components/schemas/JsonLdContext"
+        },
+        "geometry": {
+          "description": "A geometry represented in Well-Known Text (WKT) format.",
+          "$ref": "#/components/schemas/GeometryString"
+        }
+      }
+    },
+    "ObservationGeoJsonAllOf2": {
+      "type": "object",
+      "properties": {
+        "properties": {
+          "$ref": "#/components/schemas/Observation"
+        }
+      }
+    },
+    "ObservationCollectionGeoJsonAllOf2": {
+      "type": "object",
+      "properties": {
+        "features": {
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/ObservationCollectionGeoJsonAllOf2FeaturesItem"
+          }
+        },
+        "pagination": {
+          "description": "Links for retrieving more data from paged data sets",
+          "$ref": "#/components/schemas/PaginationInfo"
+        }
+      }
+    },
+    "ObservationStationGeoJsonAllOf2": {
+      "type": "object",
+      "properties": {
+        "properties": {
+          "$ref": "#/components/schemas/ObservationStation"
+        }
+      }
+    },
+    "ObservationStationJsonLdAllOf2": {
+      "required": [
+        "@context",
+        "geometry"
+      ],
+      "type": "object",
+      "properties": {
+        "@context": {
+          "$ref": "#/components/schemas/JsonLdContext"
+        },
+        "geometry": {
+          "description": "A geometry represented in Well-Known Text (WKT) format.",
+          "$ref": "#/components/schemas/GeometryString"
+        }
+      }
+    },
+    "ObservationStationCollectionGeoJsonAllOf2": {
+      "type": "object",
+      "properties": {
+        "features": {
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/ObservationStationCollectionGeoJsonAllOf2FeaturesItem"
+          }
+        },
+        "observationStations": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "x-client-original-format": "uri"
+          }
+        },
+        "pagination": {
+          "description": "Links for retrieving more data from paged data sets",
+          "$ref": "#/components/schemas/PaginationInfo"
+        }
+      }
+    },
+    "OfficeWeatherStoryBodyAllOf2": {
+      "type": "object",
+      "properties": {
+        "altText": {
+          "type": "string",
+          "description": "Alternative text description of the content of the image for assistive technology."
+        },
+        "order": {
+          "maximum": 7,
+          "minimum": 1,
+          "type": "integer",
+          "description": "The order in which a weather story should be displayed. Unique for each object."
+        }
+      }
+    },
+    "PointGeoJsonAllOf2": {
+      "type": "object",
+      "properties": {
+        "properties": {
+          "$ref": "#/components/schemas/PointBody"
+        }
+      }
+    },
+    "PointJsonLdAllOf2": {
+      "required": [
+        "@context",
+        "geometry"
+      ],
+      "type": "object",
+      "properties": {
+        "@context": {
+          "$ref": "#/components/schemas/JsonLdContext"
+        },
+        "geometry": {
+          "description": "A geometry represented in Well-Known Text (WKT) format.",
+          "$ref": "#/components/schemas/GeometryString"
+        }
+      }
+    },
+    "RelativeLocationGeoJsonAllOf2": {
+      "type": "object",
+      "properties": {
+        "properties": {
+          "$ref": "#/components/schemas/RelativeLocation"
+        }
+      }
+    },
+    "RelativeLocationJsonLdAllOf2": {
+      "required": [
+        "geometry"
+      ],
+      "type": "object",
+      "properties": {
+        "geometry": {
+          "description": "A geometry represented in Well-Known Text (WKT) format.",
+          "$ref": "#/components/schemas/GeometryString"
+        }
+      }
+    },
+    "SigmetCollectionGeoJsonAllOf2": {
+      "type": "object",
+      "properties": {
+        "features": {
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/SigmetGeoJson"
+          }
+        }
+      }
+    },
+    "SigmetGeoJsonAllOf2": {
+      "type": "object",
+      "properties": {
+        "properties": {
+          "$ref": "#/components/schemas/SigmetBody"
+        }
+      }
+    },
+    "ZoneGeoJsonAllOf2": {
+      "type": "object",
+      "properties": {
+        "properties": {
+          "$ref": "#/components/schemas/ZoneBody"
+        }
+      }
+    },
+    "ZoneCollectionGeoJsonAllOf2": {
+      "type": "object",
+      "properties": {
+        "features": {
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/ZoneCollectionGeoJsonAllOf2FeaturesItem"
+          }
+        }
+      }
+    },
+    "ZoneForecastGeoJsonAllOf2": {
+      "type": "object",
+      "properties": {
+        "properties": {
+          "$ref": "#/components/schemas/ZoneForecastBody"
+        }
+      }
+    },
+    "AlertParameters": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "array",
+        "items": {}
+      },
+      "description": "System-specific additional parameters associated with the alert message.\nThe keys in this object correspond to parameter definitions in the NWS CAP specification.\n"
+    },
+    "AlertEventCode": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "array",
+        "items": {}
+      },
+      "description": "System-specific code identifiying the event type of the alert message The keys in this object correspond to eventCode definitions in the NWS CAP specification.\n"
+    },
+    "GeoJsonFeatureProperties": {
+      "type": "object"
+    },
+    "TextProductLocationCollectionLocations": {
+      "type": "object",
+      "additionalProperties": {
+        "type": [
+          "null",
+          "string"
+        ]
+      }
+    },
+    "Cwa200NoaaUswxXmlResponse": {},
+    "Sigmet200NoaaUswxXmlResponse": {},
+    "Icons200PngResponse": {
+      "type": "string",
+      "format": "binary"
+    },
+    "IconsDualCondition200PngResponse": {
+      "type": "string",
+      "format": "binary"
+    },
+    "SatelliteThumbnails200JpegResponse": {
+      "type": "string",
+      "format": "binary"
+    },
+    "Tafs200LdJsonResponse": {},
+    "Taf200WmoIwxxmXmlResponse": {},
+    "OfficeBriefingDownload200PdfResponse": {
+      "type": "string",
+      "format": "binary"
+    },
+    "OfficeWeatherstoryImage200MediaResponse": {
+      "type": "string",
+      "format": "binary"
+    },
+    "PointRadio200SsmlXmlResponse": {},
+    "RadarServers200LdJsonResponse": {},
+    "RadarServer200LdJsonResponse": {},
+    "RadarSpgds200LdJsonResponse": {},
+    "RadarStations200GeoJsonResponse": {},
+    "RadarStations200LdJsonResponse": {},
+    "RadarStation200GeoJsonResponse": {},
+    "RadarStation200LdJsonResponse": {},
+    "RadarStationAlarms200LdJsonResponse": {},
+    "RadarQueue200LdJsonResponse": {},
+    "RadarProfiler200LdJsonResponse": {},
+    "Transmitters200LdJsonResponse": {},
+    "Transmitter200LdJsonResponse": {},
+    "AreaRadio200SsmlXmlResponse": {},
+    "TransmitterZone200LdJsonResponse": {},
+    "ExamplePayload": {
+      "type": "object",
+      "description": "Placeholder schema for path example refs"
+    },
+    "AlertsSingle200CapXmlResponse": {
+      "type": "object"
+    },
+    "Cwa200NoaaUswxXmlResponseSchema": {},
+    "Sigmet200NoaaUswxXmlResponseSchema": {},
+    "ZoneBodyStateOneOf2": {
+      "enum": [
+        ""
+      ],
+      "type": "string",
+      "x-ms-enum": {
+        "name": "ZoneBodyStateOneOf2",
+        "modelAsString": false,
+        "values": [
+          {
+            "value": "",
+            "name": "EnumValue"
+          }
+        ]
+      }
+    },
+    "AlertsActiveSuccessResponse": {
+      "anyOf": [
+        {
+          "$ref": "#/components/schemas/ActiveAlertCollectionGeoJson"
+        },
+        {
+          "$ref": "#/components/schemas/ActiveAlertCollectionJsonLd"
+        }
+      ]
+    },
+    "AlertsActiveZoneSuccessResponse": {
+      "anyOf": [
+        {
+          "$ref": "#/components/schemas/ActiveAlertCollectionGeoJson"
+        },
+        {
+          "$ref": "#/components/schemas/ActiveAlertCollectionJsonLd"
+        }
+      ]
+    },
+    "AlertsActiveRegionSuccessResponse": {
+      "anyOf": [
+        {
+          "$ref": "#/components/schemas/ActiveAlertCollectionGeoJson"
+        },
+        {
+          "$ref": "#/components/schemas/ActiveAlertCollectionJsonLd"
+        }
+      ]
+    },
+    "StationObservationTimeSuccessResponse": {
+      "anyOf": [
+        {
+          "$ref": "#/components/schemas/ObservationGeoJson"
+        },
+        {
+          "$ref": "#/components/schemas/ObservationJsonLd"
+        }
+      ]
+    },
+    "ObsStationsSuccessResponse": {
+      "anyOf": [
+        {
+          "$ref": "#/components/schemas/ObservationStationCollectionGeoJson"
+        },
+        {
+          "$ref": "#/components/schemas/ObservationStationCollectionJsonLd"
+        }
+      ]
+    },
+    "ZoneListTypeSuccessResponse": {
+      "anyOf": [
+        {
+          "$ref": "#/components/schemas/ZoneCollectionGeoJson"
+        },
+        {
+          "$ref": "#/components/schemas/ZoneCollectionJsonLd"
+        }
+      ]
+    },
+    "ZoneObsSuccessResponse": {
+      "anyOf": [
+        {
+          "$ref": "#/components/schemas/ObservationCollectionGeoJson"
+        },
+        {
+          "$ref": "#/components/schemas/ObservationCollectionJsonLd"
+        }
+      ]
+    },
+    "ZoneStationsSuccessResponse": {
+      "anyOf": [
+        {
+          "$ref": "#/components/schemas/ObservationStationCollectionGeoJson"
+        },
+        {
+          "$ref": "#/components/schemas/ObservationStationCollectionJsonLd"
+        }
+      ]
+    }
   }
 }
