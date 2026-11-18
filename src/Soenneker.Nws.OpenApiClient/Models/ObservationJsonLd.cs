@@ -382,7 +382,7 @@ namespace Soenneker.Nws.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(30)
             {
                 { "barometricPressure", n => { BarometricPressure = n.GetObjectValue<global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue>(global::Soenneker.Nws.OpenApiClient.Models.QuantitativeValue.CreateFromDiscriminatorValue); } },
                 { "cloudLayers", n => { CloudLayers = n.GetCollectionOfObjectValues<global::Soenneker.Nws.OpenApiClient.Models.ObservationCloudLayersItem>(global::Soenneker.Nws.OpenApiClient.Models.ObservationCloudLayersItem.CreateFromDiscriminatorValue)?.AsList(); } },
